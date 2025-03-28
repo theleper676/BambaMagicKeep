@@ -1,14 +1,14 @@
 package;
 
+import motion.Actuate;
 import haxe.Constraints.Function;
 import openfl.display.DisplayObject;
-import flash.display.*;
-import flash.events.MouseEvent;
-import flash.net.SharedObject;
-import flash.net.URLRequest;
+import openfl.display.*;
+import openfl.events.MouseEvent;
+import openfl.net.SharedObject;
+import openfl.net.URLRequest;
 import general.Heb;
 import general.MsgBox;
-import tween.TweenLiteHaxe;
 
 class BambaHelp extends DisplayObject {
 	public var tutorialSharedObject:SharedObject;
@@ -23,9 +23,9 @@ class BambaHelp extends DisplayObject {
 
 	public var currTutorialCode:Float;
 
-	public function new(mainGame:BambaMain) {
+	public function new(game:BambaMain) {
 		super();
-		game = mainGame;
+		this.game = game;
 		tutorialSharedObject = SharedObject.getLocal("Bamba_Tutorial");
 		if (tutorialSharedObject.data.tutorial == null) {
 			currTutorialCode = 0;
@@ -162,12 +162,17 @@ class BambaHelp extends DisplayObject {
 				_loc5_++;
 			}
 			if (param2) {
-				TweenLiteHaxe.to(mc, 1.5, {
+				Actuate.tween(mc, 1.5, {
+					alpha: 1,
+					delay: 1.2,
+				});
+			/* 	TweenLiteHaxe.to(mc, 1.5, {
 					"alpha": 1,
 					"delay": 1.2
-				});
+				}); */
 			} else {
-				TweenLiteHaxe.to(mc, 0.5, {"alpha": 1});
+				Actuate.tween(mc, 0.5, {alpha: 1});
+				//TweenLiteHaxe.to(mc, 0.5, {"alpha": 1});
 			}
 		} else {
 			MsgBox.show("מסך עזרה לא נמצא, קוד מסך:" + param1);

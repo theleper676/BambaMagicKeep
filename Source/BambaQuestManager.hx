@@ -1,5 +1,6 @@
 package;
 
+import motion.Actuate;
 import openfl.events.EventDispatcher;
 import openfl.display.*;
 import openfl.events.MouseEvent;
@@ -7,8 +8,6 @@ import general.ButtonUpdater;
 import general.Heb;
 import general.MsgBox;
 import general.PlayerDataUpdater;
-import tween.TweenLiteHaxe;
-import tween.easing.*;
 // import com.greensock.easing.*;
 
 class BambaQuestManager extends EventDispatcher {
@@ -77,10 +76,14 @@ class BambaQuestManager extends EventDispatcher {
 
 	function revealQuest():Void {
 		mc.questMC.alpha = 0;
-		TweenLiteHaxe.to(mc.questMC, 2, {
+		Actuate.tween(mc.questMC, 2, {
+			alpha: 1,
+			delay: 0.5
+		});
+	/* 	TweenLiteHaxe.to(mc.questMC, 2, {
 			"alpha": 1,
 			"delay": 0.5
-		});
+		}); */
 	}
 
 	function exitClicked(param1:MouseEvent):Void {
@@ -291,10 +294,10 @@ class BambaQuestManager extends EventDispatcher {
 	}
 
 	public function reportQuestCompleted(param1:Int):Bool {
-		var _loc2_:Null<Dynamic> = null;
-		var _loc3_:Int = null;
-		var _loc4_:Null<Dynamic> = null;
-		var _loc5_:Array<Dynamic> = null;
+		var _loc2_:Null<Dynamic>;
+		var _loc3_:Int;
+		var _loc4_:Null<Dynamic>;
+		var _loc5_:Array<Dynamic>;
 		_loc2_ = false;
 		if (currQuestId != 0) {
 			if (param1 == currQuest.type) {
@@ -317,9 +320,9 @@ class BambaQuestManager extends EventDispatcher {
 	}
 
 	function goQuestClicked(param1:MouseEvent):Void {
-		var _loc2_:Int = null;
-		var _loc3_:Null<Dynamic> = null;
-		var _loc4_:Null<Dynamic> = null;
+		var _loc2_:Int;
+		var _loc3_:Null<Dynamic>;
+		var _loc4_:Null<Dynamic>;
 		if (!game.msgShown) {
 			if (tempQuestId != 0) {
 				if (tempQuestId != currQuestId) {

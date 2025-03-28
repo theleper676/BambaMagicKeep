@@ -5,9 +5,9 @@
 	<app main="Main" path="Export" file="BambaMagicKeep" />
 	
 	<source path="Source" />
-	
 	<haxelib name="openfl" />
 	<haxelib name="actuate" />
+	<library name="default" embed="true" />
 	<assets path="Assets" rename="assets" />
 	
 </project>

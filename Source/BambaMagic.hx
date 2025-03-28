@@ -94,8 +94,8 @@ class BambaMagic extends DisplayObject {
 	}
 	public function setGraphics():Void {
 		var _loc1_:Bool = false;
-		var _loc2_:Dynamic = null;
-		var _loc3_:Int = null;
+		var _loc2_:Dynamic;
+		var _loc3_:Int;
 		if (minLevel <= magicBookScreen.game.gameData.playerData.level) {
 			_loc1_ = false;
 			_loc2_ = magicBookScreen.game.gameData.playerData.magic;
@@ -156,11 +156,11 @@ class BambaMagic extends DisplayObject {
 	}
 
 	function generateMC():Void {
-		var _loc1_:BambaCard = null;
-		var _loc2_:ColorTransform = null;
-		var _loc3_:Dynamic = null;
-		var _loc4_:Int = null;
-		var _loc5_:String = null;
+		var _loc1_:BambaCard;
+		var _loc2_:ColorTransform;
+		var _loc3_:Dynamic;
+		var _loc4_:Int;
+		var _loc5_:String;
 		if (mc == null) {
 			mc = BambaAssets.magicBase();
 			Heb.setText(mc.textMC.nameDT, mName);

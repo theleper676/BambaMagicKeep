@@ -1,0 +1,160 @@
+﻿<params>
+    <playerDataSource>xmls/playerData.xml</playerDataSource>
+    <newPlayerDataSource>xmls/newPlayerAnswer.xml</newPlayerDataSource>
+    <updatePlayerDataSource>local</updatePlayerDataSource>
+    <forgetPassSource>local</forgetPassSource>
+    <xmlpath>xmls</xmlpath>
+    <assetspath>assets</assetspath>
+    <soundspath>sounds</soundspath>
+    <dictionaryfilename>dictionary.xml</dictionaryfilename>
+    <generaldatafilename>generalData.xml</generaldatafilename>
+    <playerlevelsfilename>playerLevels.xml</playerlevelsfilename>
+    <magicbookfilename>magicBook.xml</magicbookfilename>
+    <cardsfilename>cards.xml</cardsfilename>
+    <enemiesfilename>enemies.xml</enemiesfilename>
+    <enemieslevelsfilename>enemiesLevels.xml</enemieslevelsfilename>
+    <itemsbasefilename>itemsBase.xml</itemsbasefilename>
+    <itemsfilename>items.xml</itemsfilename>
+    <storeitemsfilename>storeItems.xml</storeitemsfilename>
+    <prizesfilename>prizes.xml</prizesfilename>
+    <surprisesfilename>surprises.xml</surprisesfilename>
+    <dungeonsdatafilename>dungeonsData.xml</dungeonsdatafilename>
+    <questsfilename>quests.xml</questsfilename>
+    <helpfilename>help.xml</helpfilename>
+    <soundsfilename>sounds.xml</soundsfilename>
+
+    <openingassets>
+        <asset>openingAssets.swf</asset>
+        <asset>openingScreen</asset>
+    </openingassets>
+
+    <generalassets>
+        <asset>general.swf</asset>
+        <asset>msgBox</asset>
+        <asset>waitBox</asset>
+        <asset>yesNoBox</asset>
+        <asset>winBox</asset>
+        <asset>questBox</asset>
+        <asset>levelBox</asset>
+        <asset>generalFrame</asset>
+        <asset>prizeIcon</asset>
+        <asset>questIcon</asset>
+        <asset>skipButton</asset>
+    </generalassets>
+
+    <menuassets>
+        <asset>menu.swf</asset>
+        <asset>menuScreen</asset>
+    </menuassets>
+
+    <newplayerassets>
+        <asset>newPlayer.swf</asset>
+        <asset>newPlayerScreen</asset>
+        <asset>characterBuildScreen</asset>
+    </newplayerassets>
+
+    <cardsassets>
+        <asset>cards.swf</asset>
+        <asset>cardBase</asset>
+        <asset>magicBase</asset>
+        <asset>cardPopup</asset>
+    </cardsassets>
+
+    <itemsassets>
+        <asset>items.swf</asset>
+        <asset>stickMC</asset>
+        <asset>capeMC</asset>
+        <asset>beltMC</asset>
+        <asset>hatMC</asset>
+        <asset>shoesMC</asset>
+        <asset>hairMC</asset>
+        <asset>eyesMC</asset>
+        <asset>daiperMC</asset>
+        <asset>itemFrame</asset>
+        <asset>itemPopup</asset>
+    </itemsassets>
+
+    <babyassets>
+        <asset>baby.swf</asset>
+        <asset>babyMain</asset>
+        <asset>babyAttacks</asset>
+    </babyassets>
+
+    <enemiesassets>
+        <asset>enemies2.swf</asset>
+        <asset>enemy01</asset>
+        <asset>enemy01b</asset>
+        <asset>enemy02</asset>
+        <asset>enemy02b</asset>
+        <asset>enemy03</asset>
+        <asset>enemy03b</asset>
+        <asset>enemy04</asset>
+        <asset>enemy04b</asset>
+        <asset>enemy05</asset>
+        <asset>enemy05b</asset>
+        <asset>enemy01a</asset>
+        <asset>enemy02a</asset>
+        <asset>enemy03a</asset>
+        <asset>enemy04a</asset>
+        <asset>enemy05a</asset>
+    </enemiesassets>
+
+    <fightgraphicsassets>
+        <asset>fightGraphics.swf</asset>
+        <asset>fightScreen</asset>
+        <asset>fighterIcon</asset>
+        <asset>hitAnim</asset>
+        <asset>hitMatrix</asset>
+        <asset>hitPoints</asset>
+    </fightgraphicsassets>
+
+    <dungeoniconsassets>
+        <asset>dungeonGraphics.swf</asset>
+        <asset>dungeonMain</asset>
+        <asset>dungeonIcon</asset>
+        <asset>possibleMove</asset>
+        <asset>enemyTip</asset>
+    </dungeoniconsassets>
+
+    <towerassets>
+        <asset>towerScreens.swf</asset>
+        <asset>towerScreen</asset>
+        <asset>questManagerScreen</asset>
+        <asset>magicBookScreen</asset>
+        <asset>cardsUpgradeScreen</asset>
+        <asset>storeScreen</asset>
+        <asset>characterScreen</asset>
+    </towerassets>
+
+    <mapassets>
+        <asset>mapGraphics.swf</asset>
+        <asset>kingdomMap</asset>
+        <asset>mapIcon</asset>
+    </mapassets>
+
+    <helpassets>
+        <asset>help.swf</asset>
+        <asset>help01</asset>
+        <asset>help02</asset>
+        <asset>help03</asset>
+        <asset>help04</asset>
+        <asset>help05</asset>
+        <asset>help06</asset>
+        <asset>help07</asset>
+        <asset>help08</asset>
+        <asset>emptyCard</asset>
+    </helpassets>
+
+    <movieasset>IntroBamba.swf</movieasset>
+
+    <dungeonassets>
+        <asset>dungeonMap</asset>
+        <asset>fightBack</asset>
+    </dungeonassets>
+
+    <enemyassets>
+        <asset>enemyReg</asset>
+        <asset>enemyBoss</asset>
+        <asset>enemyAttacks</asset>
+    </enemyassets>
+</params>

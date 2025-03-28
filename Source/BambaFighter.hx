@@ -2,11 +2,8 @@ package;
 
 import haxe.Timer;
 import openfl.display.*;
-import openfl.utils.*;
 import motion.Actuate;
-//import tween.TweenLiteHaxe;
-// import com.greensock.TweenLite;
-import com.greensock.easing.*;
+
 
 class BambaFighter extends DisplayObject {
 	public var maxLife:Float;

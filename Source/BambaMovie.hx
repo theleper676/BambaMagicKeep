@@ -153,8 +153,7 @@ class BambaMovie {
 
 	
 	function loadAndShowProgress(param1:ProgressEvent):Void {
-		var _loc2_:Float = null;
-		_loc2_ = Math.floor(param1.bytesLoaded / param1.bytesTotal * 100);
+		var _loc2_:Float = Math.floor(param1.bytesLoaded / param1.bytesTotal * 100);
 		++loadingCounter;
 		MsgBox.updateWaitBox(_loc2_);
 	}

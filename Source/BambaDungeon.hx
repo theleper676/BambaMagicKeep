@@ -511,7 +511,7 @@ class BambaDungeon extends DisplayObject {
 	}
 
 	function generateDungeonIcons(param1:Dynamic, param2:Dynamic, param3:Dynamic, param4:Dynamic):Void {
-		var _loc5_:Null<Dynamic> = null;
+		var _loc5_:Int = 0;
 		var _loc6_:BambaDungeonIcon = null;
 		var _loc7_:Null<Dynamic> = null;
 		var _loc8_:Float = Math.NaN;
@@ -565,6 +565,7 @@ class BambaDungeon extends DisplayObject {
 		}
 		_loc7_ = param4;
 		_loc5_ = 0;
+		
 		while (_loc5_ < dungeonData.difficultiesData[dungeonDifficulty][1]) {
 			_loc6_ = new BambaDungeonIcon(this, 4);
 			dungeonMC.lowerMC.addChild(_loc6_.iconGraphics);
@@ -700,8 +701,8 @@ class BambaDungeon extends DisplayObject {
 	}
 
 	public function checkTile():Void {
-		var _loc1_:Bool = null;
-		var _loc2_:Int = null;
+		var _loc1_:Bool;
+		var _loc2_:Int;
 		var _loc3_:Float = Math.NaN;
 		var _loc4_:Float = Math.NaN;
 		var _loc5_:Float = Math.NaN;
@@ -811,10 +812,10 @@ class BambaDungeon extends DisplayObject {
 
 	function closeSurpriseMsgBox():Void {
 		var _loc1_:Bool = false;
-		var _loc2_:Null<Dynamic> = null;
-		var _loc3_:Int = null;
-		var _loc4_:Null<Dynamic> = null;
-		var _loc5_:Null<Dynamic> = null;
+		var _loc2_:Null<Dynamic>;
+		var _loc3_:Int;
+		var _loc4_:Null<Dynamic>;
+		var _loc5_:Null<Dynamic>;
 		_loc1_ = true;
 		switch (currSurprise.type) {
 			case 1:

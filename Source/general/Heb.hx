@@ -91,15 +91,11 @@ class Heb {
 	}
 
 	public static function arangeLastFirstChars(param1:String):Dynamic {
-		var _loc2_:Array<String> = null;
-		var _loc3_:Array<Dynamic> = null;
-		var _loc4_:Int = null;
-		var _loc5_:Bool = null;
-		var _loc6_:Int = null;
-		_loc2_ = [];
-		_loc3_ = [];
-		_loc5_ = true;
-		_loc6_ = 0;
+		var _loc2_:Array<String> = [];
+		var _loc3_:Array<Dynamic> = [];
+		var _loc4_:Int;
+		var _loc5_:Bool = true;
+		var _loc6_:Int = 0;
 		while (_loc6_ < param1.length) {
 			_loc4_ = param1.charCodeAt(_loc6_);
 			if (!(_loc4_ == 63 || _loc4_ == 33 || _loc4_ == 44 || _loc4_ == 58 || _loc4_ == 45 || _loc4_ == 39 || _loc4_ == 46)) {

@@ -73,7 +73,7 @@ class BambaMain extends DisplayObjectContainer {
 	
 	public var userSharedObject:SharedObject;
 
-	var eventTypeCodes:Dynamic;
+	var eventTypeCodes:Array<Int>;
 
 	public var frameMC:Null<Dynamic>;
 
@@ -188,13 +188,13 @@ class BambaMain extends DisplayObjectContainer {
 		}
 	}
 
-	public function innerCount(param1:Int):Void {
-		var _loc2_:Null<Dynamic> = null;
-		var _loc3_:Null<Dynamic> = null;
-		var _loc4_:Null<Dynamic> = null;
-		ERate.sendEvent(ToolID, param1);
+	public function innerCount(eventCodeId:Int):Void {
+		var _loc2_:Null<Dynamic>;
+		var _loc3_:Null<Dynamic>;
+		var _loc4_:Null<Dynamic>;
+		ERate.sendEvent(ToolID, eventCodeId);
 		_loc2_ = "edcount";
-		_loc3_ = eventTypeCodes.indexOf(param1);
+		_loc3_ = eventTypeCodes.indexOf(eventCodeId);
 		_loc4_ = eventTypeNames[_loc3_];
 		//fscommand(_loc2_, _loc4_);
 	}
@@ -594,7 +594,6 @@ class BambaMain extends DisplayObjectContainer {
 	}
 
 	public function getHTMLvars():Void {
-		var _loc1_:Dynamic = null;
 		// _loc1_ = LoaderInfo(this.root.loaderInfo).parameters;
 		ToolID = "SBCKOS";
 		/* if (ToolID == "undefined") {

@@ -6,11 +6,11 @@ class BambaMapData {
 	var dungeons:Array<Dynamic>;
 
 	public function new(param1:Xml) {
-		var _loc2_:Int = null;
-		var _loc3_:Array<Dynamic> = null;
-		var _loc4_:Array<Dynamic> = null;
-		var _loc5_:Array<Dynamic> = null;
-		var _loc6_:Array<Dynamic> = null;
+		var _loc2_:Int;
+		var _loc3_:Array<Dynamic>;
+		var _loc4_:Array<Dynamic>;
+		var _loc5_:Array<Dynamic>;
+		var _loc6_:Array<Dynamic>;
       _loc3_ = param1.get("areas").split("*");
      
 		//_loc3_ = param1.areas.split("*");

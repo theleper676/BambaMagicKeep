@@ -205,7 +205,7 @@ class BambaCard {
 		var _loc3_:TextFormat = null;
 		var _loc4_:ColorTransform = null;
 		var _loc5_:Dynamic = null;
-		var _loc6_:Int = null;
+		var _loc6_:Int = 0;
 		var _loc7_:Dynamic = null;
 		if (mc == null) {
 			mc = BambaAssets.cardBase();
@@ -243,8 +243,8 @@ class BambaCard {
 	}
 
 	function pickCard(param1:MouseEvent):Void {
-		var _loc2_:Int = null;
-		var _loc3_:Int = null;
+		var _loc2_:Int = 0;
+		var _loc3_:Int = 0;
 		if (!game.msgShown) {
 			if (picked == false) {
 				if (disabled == false) {

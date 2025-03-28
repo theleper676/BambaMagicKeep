@@ -1,9 +1,9 @@
 package;
 
-import openfl.display.DisplayObject;
+import openfl.events.EventDispatcher;
 import general.MsgBox;
 import openfl.display.MovieClip;
-class BambaAssets extends DisplayObject {
+class BambaAssets extends EventDispatcher {
 	public static var cardBase:Dynamic;
 
 	public static var help02:Dynamic;

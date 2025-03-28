@@ -1,5 +1,6 @@
 package;
 
+import motion.Actuate;
 import haxe.Timer;
 import openfl.display.*;
 import openfl.events.MouseEvent;
@@ -8,8 +9,6 @@ import openfl.utils.*;
 import general.ButtonUpdater;
 import general.Heb;
 import general.MsgBox;
-import tween.TweenLiteHaxe;
-import com.greensock.easing.*;
 
 class BambaFight extends DisplayObject {
 	var roundCardsIds:Array<Dynamic>;
@@ -396,13 +395,13 @@ class BambaFight extends DisplayObject {
 	}
 
 	public function animCards():Void {
-		var _loc1_:Int = null;
-		var _loc2_:BambaCard = null;
-		var _loc3_:BambaCard = null;
-		var _loc4_:Int = null;
-		var _loc5_:Null<Dynamic> = null;
-		var _loc6_:Null<Dynamic> = null;
-		var _loc7_:Null<Dynamic> = null;
+		var _loc1_:Int;
+		var _loc2_:BambaCard;
+		var _loc3_:BambaCard;
+		var _loc4_:Int;
+		var _loc5_:Null<Dynamic>;
+		var _loc6_:Null<Dynamic>;
+		var _loc7_:Null<Dynamic>;
 		_loc1_ = Math.floor(currStep / 2);
 		if (_loc1_ != 0) {
 			_loc4_ = _loc1_;
@@ -411,22 +410,35 @@ class BambaFight extends DisplayObject {
 				_loc6_ = cardFightLocationAndSize[_loc4_ - _loc1_][1];
 				_loc7_ = cardFightLocationAndSize[_loc4_ - _loc1_][2];
 				roundCards[_loc4_].setCardDir(me.dir);
-				TweenLiteHaxe.to(roundCards[_loc4_].mc, 0.6, {
+				Actuate.tween(roundCards[_loc4_].mc, 0.6, {
+					x: _loc5_,
+					y: _loc6_,
+					scaleX: _loc7_,
+					scaleY: _loc7_
+				});
+			
+				/* TweenLiteHaxe.to(roundCards[_loc4_].mc, 0.6, {
 					"x": _loc5_,
 					"y": _loc6_,
 					"scaleX": _loc7_,
 					"scaleY": _loc7_
-				});
+				}); */
 				_loc5_ = cardFightLocationAndSize[_loc4_ + 3 - _loc1_][0];
 				_loc6_ = cardFightLocationAndSize[_loc4_ + 3 - _loc1_][1];
 				_loc7_ = cardFightLocationAndSize[_loc4_ + 3 - _loc1_][2];
 				roundCards[_loc4_ + 3].setCardDir(enemy.dir);
-				TweenLiteHaxe.to(roundCards[_loc4_ + 3].mc, 0.6, {
+				Actuate.tween(roundCards[_loc4_ + 3].mc, 0.6, {
+					x: _loc5_,
+					y: _loc6_,
+					scaleX: _loc7_,
+					scaleY: _loc7_
+				});
+				/* TweenLiteHaxe.to(roundCards[_loc4_ + 3].mc, 0.6, {
 					"x": _loc5_,
 					"y": _loc6_,
 					"scaleX": _loc7_,
 					"scaleY": _loc7_
-				});
+				}); */
 				_loc4_++;
 			}
 			MC.cardsFightMC.removeChild(roundCards[_loc1_ - 1].mc);

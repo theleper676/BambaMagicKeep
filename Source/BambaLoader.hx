@@ -1,5 +1,6 @@
 package;
 
+import sys.io.File;
 import openfl.Lib;
 import haxe.Timer;
 import openfl.display.*;
@@ -98,9 +99,9 @@ class BambaLoader extends EventDispatcher {
 	}
 
 	function loadAssets():Void {
-		var tempCurrAssetString:Null<Dynamic> = null;
-		var loader:Loader = null;
-		var request:URLRequest = null;
+		var tempCurrAssetString:Null<Dynamic>;
+		var loader:Loader;
+		var request:URLRequest;
 		currFunctionName = "loadAssets";
 		++loadingCounter;
 		if (assetsIndex < assets.length) {
@@ -149,9 +150,13 @@ class BambaLoader extends EventDispatcher {
 		currFunctionName = "loadParams";
 		request = new URLRequest(paramFile);
 		loader = new URLLoader();
-		loader.addEventListener(Event.COMPLETE, loadParamsComplete, false, 0, true);
+	
+		//loader.addEventListener(Event.COMPLETE, loadParamsComplete, false, 0, true);
 		try {
-			loader.load(request);
+			var paramString:String = Assets.getText("assets/xmls/params.xml");
+			var paramsXml = Xml.parse(paramString);
+			loadParamsComplete(paramsXml);
+			//loader.load(request);
 		} catch (error:ArgumentError) {
 			trace("An ArgumentError has occurred.");
 		} catch (error:SecurityError) {
@@ -271,8 +276,8 @@ class BambaLoader extends EventDispatcher {
 		loadAssets();
 	}
 
-	function loadParamsComplete(param1:Event):Void {
-		var _loc2_:Null<Dynamic> = null;
+	function loadParamsComplete(paramXml:Xml):Void {
+		var _loc2_:Xml;
 		var _loc3_:Null<Dynamic> = null;
 		var _loc4_:Null<Dynamic> = null;
 		var _loc5_:Null<Dynamic> = null;
@@ -298,7 +303,7 @@ class BambaLoader extends EventDispatcher {
 		var _loc25_:Null<Dynamic> = null;
 		var _loc26_:Null<Dynamic> = null;
 		trace("BambaLoader.loadParamsComplete");
-		_loc2_ = Xml.parse(param1.target.data);
+		_loc2_ = paramXml;
 		dictionaryFileName = _loc2_.dictionaryFileName;
 		generalDataFileName = _loc2_.generalDataFileName;
 		soundsFileName = _loc2_.soundsFileName;
