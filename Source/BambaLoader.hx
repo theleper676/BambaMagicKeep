@@ -1,5 +1,7 @@
 package;
 
+import openfl.Assets;
+import haxe.xml.Access;
 import sys.io.File;
 import openfl.Lib;
 import haxe.Timer;
@@ -17,7 +19,7 @@ import general.MsgBox;
 class BambaLoader extends EventDispatcher {
 	private var generalDataFileName:String;
 
-	private var openingAssets:Array<Dynamic>;
+	private var openingAssets:Array<String> = [];
 
 	var continueTime:Float;
 
@@ -277,48 +279,66 @@ class BambaLoader extends EventDispatcher {
 	}
 
 	function loadParamsComplete(paramXml:Xml):Void {
-		var _loc2_:Xml;
-		var _loc3_:Null<Dynamic> = null;
-		var _loc4_:Null<Dynamic> = null;
-		var _loc5_:Null<Dynamic> = null;
-		var _loc6_:Null<Dynamic> = null;
-		var _loc7_:Null<Dynamic> = null;
-		var _loc8_:Null<Dynamic> = null;
-		var _loc9_:Null<Dynamic> = null;
-		var _loc10_:Null<Dynamic> = null;
-		var _loc11_:Null<Dynamic> = null;
-		var _loc12_:Null<Dynamic> = null;
-		var _loc13_:Null<Dynamic> = null;
-		var _loc14_:Null<Dynamic> = null;
-		var _loc15_:Null<Dynamic> = null;
-		var _loc16_:Null<Dynamic> = null;
-		var _loc17_:Null<Dynamic> = null;
-		var _loc18_:Null<Dynamic> = null;
-		var _loc19_:Null<Dynamic> = null;
-		var _loc20_:Null<Dynamic> = null;
-		var _loc21_:Null<Dynamic> = null;
-		var _loc22_:Null<Dynamic> = null;
-		var _loc23_:Null<Dynamic> = null;
-		var _loc24_:Null<Dynamic> = null;
-		var _loc25_:Null<Dynamic> = null;
-		var _loc26_:Null<Dynamic> = null;
+		var _playerLevelFileName:String;
+		var _magicBookFileName :String;
+		var _cardsFileName:String;
+		var _loc6_:Dynamic;
+		var _loc7_:Dynamic;
+		var _loc8_:Dynamic;
+		var _loc9_:Dynamic;
+		var _loc10_:Dynamic;
+		var _loc11_:Dynamic;
+		var _loc12_:Dynamic;
+		var _loc13_:Dynamic;
+		var _loc14_:Dynamic;
+		var _loc15_:Dynamic;
+		var _loc16_:Dynamic;
+		var _loc17_:Dynamic;
+		var _loc18_:Dynamic;
+		var _loc19_:Dynamic;
+		var _loc20_:Dynamic;
+		var _loc21_:Dynamic;
+		var _loc22_:Dynamic;
+		var _loc23_:Dynamic;
+		var _loc24_:Dynamic;
+		var _loc25_:Dynamic;
+		var _loc26_:Dynamic;
 		trace("BambaLoader.loadParamsComplete");
-		_loc2_ = paramXml;
-		dictionaryFileName = _loc2_.dictionaryFileName;
-		generalDataFileName = _loc2_.generalDataFileName;
-		soundsFileName = _loc2_.soundsFileName;
-		playerDataSource = _loc2_.playerDataSource;
-		newPlayerDataSource = _loc2_.newPlayerDataSource;
-		updatePlayerDataSource = _loc2_.updatePlayerDataSource;
-		forgetPassSource = _loc2_.forgetPassSource;
-		sendPassSource = _loc2_.sendPassSource;
-		openingAssets = _loc2_.openingAssets.split(",");
-		xmlPath = _loc2_.xmlPath;
-		assetsPath = _loc2_.assetsPath;
-		soundsPath = _loc2_.soundsPath;
-		_loc3_ = _loc2_.playerLevelsFileName;
-		_loc4_ = _loc2_.magicBookFileName;
-		_loc5_ = _loc2_.cardsFileName;
+		
+		var root = new Access(paramXml.firstElement());
+		var node  = root.node;
+		dictionaryFileName = node.dictionaryfilename.innerData;
+		generalDataFileName = node.generaldatafilename.innerData;
+		soundsFileName = node.soundsfilename.innerData;
+		playerDataSource = node.playerDataSource.innerData;
+		newPlayerDataSource = node.newPlayerDataSource.innerData;
+		updatePlayerDataSource = node.updatePlayerDataSource.innerData;
+		forgetPassSource = node.forgetPassSource.innerData;
+		_playerLevelFileName = node.playerlevelsfilename.innerData;
+		_magicBookFileName = node.magicbookfilename.innerData;
+		_cardsFileName = node.cardsfilename.innerData;
+		sendPassSource = node.forgetPassSource.innerData;
+		for (element in node.openingassets.elements) {
+			openingAssets.push(element.innerData);
+		};
+		xmlPath = "assets/xmls";
+		soundsPath = "assets/sounds";
+
+		//dictionaryFileName = _loc2_.dictionaryFileName;
+		//generalDataFileName = _loc2_.generalDataFileName;
+		//soundsFileName = _loc2_.soundsFileName;
+		//playerDataSource = _loc2_.playerDataSource;
+		//newPlayerDataSource = _loc2_.newPlayerDataSource;
+		//updatePlayerDataSource = _loc2_.updatePlayerDataSource;
+		//forgetPassSource = _loc2_.forgetPassSource;
+		//sendPassSource = _loc2_.sendPassSource;
+		//openingAssets = _loc2_.openingAssets.split(",");
+		//xmlPath = _loc2_.xmlPath;
+		//assetsPath = _loc2_.assetsPath;
+		//soundsPath = _loc2_.soundsPath;
+		//_loc3_ = _loc2_.playerLevelsFileName;
+		//_loc4_ = _loc2_.magicBookFileName;
+		//_loc5_ = _loc2_.cardsFileName;
 		_loc6_ = _loc2_.enemiesFileName;
 		_loc7_ = _loc2_.enemiesLevelsFileName;
 		_loc8_ = _loc2_.itemsBaseFileName;
