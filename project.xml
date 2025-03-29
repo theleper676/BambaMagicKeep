@@ -9,5 +9,6 @@
 	<haxelib name="actuate" />
 	<library name="default" embed="true" />
 	<assets path="Assets" rename="assets" />
+	<assets path="assets/swf/IntroBamba.swf" embed="false" id="IntroBamba" />
 	
 </project>

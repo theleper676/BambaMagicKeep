@@ -31,7 +31,7 @@ class BambaMovie {
 	var game:BambaMain;
 
 	
-	var assetFileName:Dynamic;
+	var assetFileName:String;
 
 	public function new(mainGame:BambaMain) {
 		game = mainGame;
@@ -128,8 +128,8 @@ class BambaMovie {
 	}
 
 	
-	public function setMovieAsset(param1:Dynamic):Void {
-		assetFileName = param1;
+	public function setMovieAsset(movieAssetPath:Dynamic):Void {
+		assetFileName = movieAssetPath;
 	}
 
 	

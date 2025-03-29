@@ -101,19 +101,18 @@ class BambaLoader extends EventDispatcher {
 		loadParams();
 	}
 
-	function extractAssetElements (root:Access, nodeName:String):Array<String> {
+	static inline function extractAssetElements (root:Access, nodeName:String):Array<String> {
 		var _assetArray:Array<String> = [];
-		try {
-			var node  = root.node;
-			var element:Access = Reflect.getProperty(node, nodeName);
-			if (element != null && Reflect.hasField(node, nodeName)) {
-				_assetArray.push(element.innerData);
-			}
-			return _assetArray;	
+		for (element in root.elements) {
+			if(element.elements.hasNext()) {
+				if(element.name == nodeName) {
+					for (value in element.elements) {
+						_assetArray.push(value.innerData);
+					}
+				}
+			} 
 		}
-		catch(error: Dynamic) {
-			throw "extracted asset error for" + nodeName;
-		}
+		return _assetArray;
 	}
 	
 	function loadAssets():Void {
@@ -312,13 +311,13 @@ class BambaLoader extends EventDispatcher {
 		var _newPlayerAssets:Array<String> = [];
 		var _menuAssets:Array<String> = [];
 		var _cardsAssets:Array<String> = [];
-		var _loc20_:Dynamic;
-		var _loc21_:Dynamic;
-		var _loc22_:Dynamic;
-		var _loc23_:Dynamic;
-		var _loc24_:Dynamic;
-		var _loc25_:Dynamic;
-		var _loc26_:Dynamic;
+		var _itemsAssets:Array<String> = [];
+		var _babyAssets:Array<String> = [];
+		var _fightGraphicsAssets:Array<String> = [];
+		var _dungeonIconsAssets:Array<String> = [];
+		var _towerAssets:Array<String> = [];
+		var _mapAssets:Array<String> = [];
+		var _helpAssets:Array<String> = [];
 		trace("BambaLoader.loadParamsComplete");
 		
 		var root = new Access(paramXml.firstElement());
@@ -331,7 +330,7 @@ class BambaLoader extends EventDispatcher {
 		_enemiesLevelsFileName = node.enemieslevelsfilename.innerData;
 		_itemsBaseFileName = node.itemsbasefilename.innerData;
 		_itemsFileName = node.itemsfilename.innerData;
-		_storeItemsFileName = node.storeitemsdilename.innerData;
+		_storeItemsFileName = node.storeitemsfilename.innerData;
 		_prizesFileName = node.prizesfilename.innerData;
 		_surprisesFileName = node.surprisesfilename.innerData;
 		_dungeonsDataFileName = node.dungeonsdatafilename.innerData;
@@ -421,28 +420,45 @@ class BambaLoader extends EventDispatcher {
 		//_loc17_ = _loc2_.newPlayerAssets;
 		openingAssets = extractAssetElements(root, "openingassets");
 		_generalAssets = extractAssetElements(root, "generalassets");
+		_generalAssets = extractAssetElements(root, "generalassets");
 		_newPlayerAssets = extractAssetElements(root,"newplayerassets");
 		_menuAssets = extractAssetElements(root,"menuassets");
 		_cardsAssets =  extractAssetElements(root, "cardsassets");
+		_itemsAssets = extractAssetElements(root, "itemsassets");
+		_babyAssets = extractAssetElements(root, "babyassets");
+		_fightGraphicsAssets = extractAssetElements(root, "fightgraphicsassets");
+		_dungeonIconsAssets = extractAssetElements(root, "dungeoniconsassets");
+		_towerAssets = extractAssetElements(root, "towerassets");
+		_mapAssets = extractAssetElements(root, "mapassets");
+		_helpAssets = extractAssetElements(root, "helpassets");
+		trace(_helpAssets);
 		//_loc18_ = _loc2_.menuAssets;
 		//_loc19_ = _loc2_.cardsAssets;
-		_loc20_ = _loc2_.itemsAssets;
-		_loc21_ = _loc2_.babyAssets;
-		_loc22_ = _loc2_.fightGraphicsAssets;
-		_loc23_ = _loc2_.dungeonIconsAssets;
-		_loc24_ = _loc2_.towerAssets;
-		_loc25_ = _loc2_.mapAssets;
-		_loc26_ = _loc2_.helpAssets;
+		// _loc20_ = _loc2_.itemsAssets;
+		//_loc21_ = _loc2_.babyAssets;
+		//_loc22_ = _loc2_.fightGraphicsAssets;
+		//_loc23_ = _loc2_.dungeonIconsAssets;
+		//_loc24_ = _loc2_.towerAssets;
+		//_loc25_ = _loc2_.mapAssets;
+		//_loc26_ = _loc2_.helpAssets;
 		assets = [
 			_generalAssets,
 			_newPlayerAssets,
 			_menuAssets,
-			_cardsAssets, _loc20_, _loc21_, _loc22_, _loc23_, _loc24_, _loc25_, _loc26_
+			_cardsAssets,
+			_itemsAssets,
+			_babyAssets,
+			_fightGraphicsAssets,
+			_dungeonIconsAssets,
+			_towerAssets,
+			_mapAssets,
+			_helpAssets
 		];
-		dungeonAssetsNames = _loc2_.dungeonAssetsNames;
-		enemyAssetsNames = _loc2_.enemyAssetsNames;
-		game.movie.setMovieAsset(assetsPath + "/" + _loc2_.movieAsset);
-		loadOpeningAssets();
+		dungeonAssetsNames =  "dugeonname,dugeonname2";//_loc2_.dungeonAssetsNames;
+		enemyAssetsNames = "enemyassset1, enemyasset2";
+		var introPath = Assets.getPath("IntroBamba");
+		game.movie.setMovieAsset(introPath);
+		//loadOpeningAssets();
 	}
 
 	public function loadDungeonAssetStart(param1:Dynamic):Void {
