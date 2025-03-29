@@ -1,5 +1,6 @@
 package;
 
+import haxe.macro.Expr.Catch;
 import openfl.Assets;
 import haxe.xml.Access;
 import sys.io.File;
@@ -53,7 +54,7 @@ class BambaLoader extends EventDispatcher {
 
 	var fileSizes:Array<Dynamic>;
 
-	var xmlFunctionNames:Array<Dynamic>;
+	var xmlFunctionNames:Array<String>;
 
 	var continueLoadingIntervalTimer: Timer = null;
 	//var continueLoadingInterval:Float;
@@ -68,7 +69,7 @@ class BambaLoader extends EventDispatcher {
 
 	private var soundsFileName:String;
 
-	var xmlFiles:Array<Dynamic>;
+	var xmlFiles:Array<String>;
 
 	private var paramFile:String = "params.xml";
 
@@ -100,6 +101,21 @@ class BambaLoader extends EventDispatcher {
 		loadParams();
 	}
 
+	function extractAssetElements (root:Access, nodeName:String):Array<String> {
+		var _assetArray:Array<String> = [];
+		try {
+			var node  = root.node;
+			var element:Access = Reflect.getProperty(node, nodeName);
+			if (element != null && Reflect.hasField(node, nodeName)) {
+				_assetArray.push(element.innerData);
+			}
+			return _assetArray;	
+		}
+		catch(error: Dynamic) {
+			throw "extracted asset error for" + nodeName;
+		}
+	}
+	
 	function loadAssets():Void {
 		var tempCurrAssetString:Null<Dynamic>;
 		var loader:Loader;
@@ -279,23 +295,23 @@ class BambaLoader extends EventDispatcher {
 	}
 
 	function loadParamsComplete(paramXml:Xml):Void {
-		var _playerLevelFileName:String;
+		var _playerLevelsFileName:String;
 		var _magicBookFileName :String;
 		var _cardsFileName:String;
-		var _loc6_:Dynamic;
-		var _loc7_:Dynamic;
-		var _loc8_:Dynamic;
-		var _loc9_:Dynamic;
-		var _loc10_:Dynamic;
-		var _loc11_:Dynamic;
-		var _loc12_:Dynamic;
-		var _loc13_:Dynamic;
-		var _loc14_:Dynamic;
-		var _loc15_:Dynamic;
-		var _loc16_:Dynamic;
-		var _loc17_:Dynamic;
-		var _loc18_:Dynamic;
-		var _loc19_:Dynamic;
+		var _enemiesFileName:String;
+		var _enemiesLevelsFileName:String;
+		var _itemsBaseFileName:String;
+		var _itemsFileName:String;
+		var _storeItemsFileName:String;
+		var _prizesFileName:String;
+		var _surprisesFileName:String;
+		var _dungeonsDataFileName:String;
+		var _questsFileName:String;
+		var _helpFileName:String;
+		var _generalAssets:Array<String> =[];
+		var _newPlayerAssets:Array<String> = [];
+		var _menuAssets:Array<String> = [];
+		var _cardsAssets:Array<String> = [];
 		var _loc20_:Dynamic;
 		var _loc21_:Dynamic;
 		var _loc22_:Dynamic;
@@ -307,6 +323,21 @@ class BambaLoader extends EventDispatcher {
 		
 		var root = new Access(paramXml.firstElement());
 		var node  = root.node;
+		//local vars
+		_playerLevelsFileName = node.playerlevelsfilename.innerData;
+		_magicBookFileName = node.magicbookfilename.innerData;
+		_cardsFileName = node.cardsfilename.innerData;
+		_enemiesFileName = node.enemiesfilename.innerData;
+		_enemiesLevelsFileName = node.enemieslevelsfilename.innerData;
+		_itemsBaseFileName = node.itemsbasefilename.innerData;
+		_itemsFileName = node.itemsfilename.innerData;
+		_storeItemsFileName = node.storeitemsdilename.innerData;
+		_prizesFileName = node.prizesfilename.innerData;
+		_surprisesFileName = node.surprisesfilename.innerData;
+		_dungeonsDataFileName = node.dungeonsdatafilename.innerData;
+		_questsFileName = node.questsfilename.innerData;
+		_helpFileName = node.helpfilename.innerData;
+
 		dictionaryFileName = node.dictionaryfilename.innerData;
 		generalDataFileName = node.generaldatafilename.innerData;
 		soundsFileName = node.soundsfilename.innerData;
@@ -314,44 +345,36 @@ class BambaLoader extends EventDispatcher {
 		newPlayerDataSource = node.newPlayerDataSource.innerData;
 		updatePlayerDataSource = node.updatePlayerDataSource.innerData;
 		forgetPassSource = node.forgetPassSource.innerData;
-		_playerLevelFileName = node.playerlevelsfilename.innerData;
-		_magicBookFileName = node.magicbookfilename.innerData;
-		_cardsFileName = node.cardsfilename.innerData;
 		sendPassSource = node.forgetPassSource.innerData;
-		for (element in node.openingassets.elements) {
+		xmlFiles = [
+			_playerLevelsFileName,
+			_magicBookFileName,
+			 _cardsFileName,
+			 _enemiesFileName,
+			 _enemiesLevelsFileName,
+			 _itemsBaseFileName,
+			 _itemsFileName,
+			 _storeItemsFileName,
+			 _prizesFileName,
+			 _surprisesFileName,
+			 _dungeonsDataFileName,
+			 _questsFileName,
+			 _helpFileName,
+		];
+	
+		/* for (element in node.openingassets.elements) {
 			openingAssets.push(element.innerData);
 		};
+		for (element in node.generalassets.elements) {
+			_generalAssets.push(element.innerData);
+		};
+		for (element in node.newplayerassets.elements) {
+			_newPlayerAssets.push(element.innerData);
+		}; */
+
+		
 		xmlPath = "assets/xmls";
 		soundsPath = "assets/sounds";
-
-		//dictionaryFileName = _loc2_.dictionaryFileName;
-		//generalDataFileName = _loc2_.generalDataFileName;
-		//soundsFileName = _loc2_.soundsFileName;
-		//playerDataSource = _loc2_.playerDataSource;
-		//newPlayerDataSource = _loc2_.newPlayerDataSource;
-		//updatePlayerDataSource = _loc2_.updatePlayerDataSource;
-		//forgetPassSource = _loc2_.forgetPassSource;
-		//sendPassSource = _loc2_.sendPassSource;
-		//openingAssets = _loc2_.openingAssets.split(",");
-		//xmlPath = _loc2_.xmlPath;
-		//assetsPath = _loc2_.assetsPath;
-		//soundsPath = _loc2_.soundsPath;
-		//_loc3_ = _loc2_.playerLevelsFileName;
-		//_loc4_ = _loc2_.magicBookFileName;
-		//_loc5_ = _loc2_.cardsFileName;
-		_loc6_ = _loc2_.enemiesFileName;
-		_loc7_ = _loc2_.enemiesLevelsFileName;
-		_loc8_ = _loc2_.itemsBaseFileName;
-		_loc9_ = _loc2_.itemsFileName;
-		_loc10_ = _loc2_.storeItemsFileName;
-		_loc11_ = _loc2_.prizesFileName;
-		_loc12_ = _loc2_.surprisesFileName;
-		_loc13_ = _loc2_.dungeonsDataFileName;
-		_loc14_ = _loc2_.questsFileName;
-		_loc15_ = _loc2_.helpFileName;
-		xmlFiles = [
-			_loc3_, _loc4_, _loc5_, _loc6_, _loc7_, _loc8_, _loc9_, _loc10_, _loc11_, _loc12_, _loc13_, _loc14_, _loc15_
-		];
 		xmlFunctionNames = [
 			"buildPlayerLevelsCatalog",
 			"buildMagicCatalog",
@@ -367,10 +390,42 @@ class BambaLoader extends EventDispatcher {
 			"buildQuestsCatalog",
 			"buildHelpCatalog"
 		];
-		_loc16_ = _loc2_.generalAssets;
-		_loc17_ = _loc2_.newPlayerAssets;
-		_loc18_ = _loc2_.menuAssets;
-		_loc19_ = _loc2_.cardsAssets;
+		//dictionaryFileName = _loc2_.dictionaryFileName;
+		//generalDataFileName = _loc2_.generalDataFileName;
+		//soundsFileName = _loc2_.soundsFileName;
+		//playerDataSource = _loc2_.playerDataSource;
+		//newPlayerDataSource = _loc2_.newPlayerDataSource;
+		//updatePlayerDataSource = _loc2_.updatePlayerDataSource;
+		//forgetPassSource = _loc2_.forgetPassSource;
+		//sendPassSource = _loc2_.sendPassSource;
+		//openingAssets = _loc2_.openingAssets.split(",");
+		//xmlPath = _loc2_.xmlPath;
+		//assetsPath = _loc2_.assetsPath;
+		//soundsPath = _loc2_.soundsPath;
+		//_loc3_ = _loc2_.playerLevelsFileName;
+		//_loc4_ = _loc2_.magicBookFileName;
+		//_loc5_ = _loc2_.cardsFileName;
+		//_loc6_ = _loc2_.enemiesFileName;
+		// _loc7_ = _loc2_.enemiesLevelsFileName;
+		//_loc8_ = _loc2_.itemsBaseFileName;
+		//_loc9_ = _loc2_.itemsFileName;
+		//_loc10_ = _loc2_.storeItemsFileName;
+		//_loc11_ = _loc2_.prizesFileName;
+		//_loc12_ = _loc2_.surprisesFileName;
+		//_loc13_ = _loc2_.dungeonsDataFileName;
+		//_loc14_ = _loc2_.questsFileName;
+		//_loc15_ = _loc2_.helpFileName;
+		
+		//_loc16_ = _loc2_.generalAssets;
+		
+		//_loc17_ = _loc2_.newPlayerAssets;
+		openingAssets = extractAssetElements(root, "openingassets");
+		_generalAssets = extractAssetElements(root, "generalassets");
+		_newPlayerAssets = extractAssetElements(root,"newplayerassets");
+		_menuAssets = extractAssetElements(root,"menuassets");
+		_cardsAssets =  extractAssetElements(root, "cardsassets");
+		//_loc18_ = _loc2_.menuAssets;
+		//_loc19_ = _loc2_.cardsAssets;
 		_loc20_ = _loc2_.itemsAssets;
 		_loc21_ = _loc2_.babyAssets;
 		_loc22_ = _loc2_.fightGraphicsAssets;
@@ -379,7 +434,10 @@ class BambaLoader extends EventDispatcher {
 		_loc25_ = _loc2_.mapAssets;
 		_loc26_ = _loc2_.helpAssets;
 		assets = [
-			_loc16_, _loc17_, _loc18_, _loc19_, _loc20_, _loc21_, _loc22_, _loc23_, _loc24_, _loc25_, _loc26_
+			_generalAssets,
+			_newPlayerAssets,
+			_menuAssets,
+			_cardsAssets, _loc20_, _loc21_, _loc22_, _loc23_, _loc24_, _loc25_, _loc26_
 		];
 		dungeonAssetsNames = _loc2_.dungeonAssetsNames;
 		enemyAssetsNames = _loc2_.enemyAssetsNames;
