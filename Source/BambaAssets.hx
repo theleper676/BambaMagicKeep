@@ -1,8 +1,15 @@
 package;
 
+
+import openfl.events.Event;
+import openfl.utils.Assets;
+import swf.exporters.animate.AnimateLibrary;
+import haxe.Exception;
 import openfl.events.EventDispatcher;
 import general.MsgBox;
 import openfl.display.MovieClip;
+
+@:access(swf.exporters.animate)
 class BambaAssets extends EventDispatcher {
 	public static var cardBase:Dynamic;
 
@@ -114,7 +121,7 @@ class BambaAssets extends EventDispatcher {
 
 	public static var beltMC:MovieClip;
 
-	public static var openingScreen:Dynamic;
+	public static var openingScreen:OpeningScreen;
 
 	public static var possibleMove:Dynamic;
 
@@ -133,6 +140,17 @@ class BambaAssets extends EventDispatcher {
 	public function new(mainGame:BambaMain) {
 		super();
 		game = mainGame;
+	}
+
+	static function loadAsset(libraryName:String) {
+		var libraryPath = Assets.getPath("openingAssets");
+		if (libraryPath != null) {
+			AnimateLibrary.loadFromFile(libraryPath).onComplete(library -> {
+				trace("loading library...");
+				Assets.registerLibrary(libraryName, library);
+				trace("done loading library...");
+			});
+		}
 	}
 
 	function define_characterScreen(param1:Dynamic):Void {
@@ -372,9 +390,12 @@ class BambaAssets extends EventDispatcher {
 		// hitPoints = cast(param1, Dynamic);
 	}
 
-	function define_openingScreen(param1:Dynamic):Void  {
-		openingScreen = param1;
-		// openingScreen = cast(param1, Dynamic);
+	function define_openingScreen(openingScreenInstance:Dynamic):Void  {
+		var libraryPath = Assets.getPath("openingAssets");
+		var event = new Event("loadOpeningScreenComplete");
+		AnimateLibrary.loadFromFile(libraryPath).onComplete(library -> {
+			dispatchEvent(event);
+		});
 	}
 
 	function define_beltMC(param1:Dynamic):Void {
@@ -414,18 +435,19 @@ class BambaAssets extends EventDispatcher {
 
 	/**
 	 * Needed to write a new function to check if a function in define exists
-	 * and to call it with the param2
-	 * @param param1 
-	 * @param param2 
+	 * and to call it with the class itself
+	 * @param instace 
+	 * @param instanceClass  
 	 */
-	public function defineAsset(param1:String, param2:Dynamic):Void {
-		var _loc3_:String = "define_" + param1;
-		var method = Reflect.field(this, _loc3_);
+	public function defineAsset<T>(instance:String, instanceClass:T):Void {
+		var functionName:String = "define_" + instance;
+		var method = Reflect.field(this, functionName);
 
 		if(method != null && Reflect.isFunction(method)) {
-			Reflect.callMethod(this, method, [param2]);
+			Reflect.callMethod(this,method, []);
+			//Reflect.callMethod(this, method, [param2]);
 		} else {
-			trace("define asset error" + _loc3_ + "method not found in instance0");
+			throw new Exception("define asset error" + functionName + "method not found in instance" + instance);
 		}
 	}
 

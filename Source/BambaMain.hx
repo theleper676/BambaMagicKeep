@@ -10,7 +10,7 @@ import general.Heb;
 import general.MsgBox;
 import general.PlayerDataUpdater;
 
-class BambaMain extends DisplayObjectContainer {
+class BambaMain extends Sprite{
 	var soundTimer: Timer = null;
 
 	var characterBuildTimer: Timer = null;
@@ -189,9 +189,9 @@ class BambaMain extends DisplayObjectContainer {
 	}
 
 	public function innerCount(eventCodeId:Int):Void {
-		var _loc2_:Null<Dynamic>;
-		var _loc3_:Null<Dynamic>;
-		var _loc4_:Null<Dynamic>;
+		var _loc2_:String;
+		var _loc3_:Int;
+		var _loc4_:Dynamic;
 		ERate.sendEvent(ToolID, eventCodeId);
 		_loc2_ = "edcount";
 		_loc3_ = eventTypeCodes.indexOf(eventCodeId);
@@ -519,7 +519,7 @@ class BambaMain extends DisplayObjectContainer {
 				showMenuScreen();
 			}
 		} else if (!finishLoading) {
-			Heb.setText(opening.mc.loadingBarMC.msgDT.text, "רגע... עוד לא סיימנו לטעון");
+			Heb.setText(opening.mc.loadingBarMC.msgDT, "רגע... עוד לא סיימנו לטעון");
 		}
 	}
 
@@ -656,7 +656,7 @@ class BambaMain extends DisplayObjectContainer {
 		if (opening == null) {
 			opening = new BambaOpeningScreen(this);
 		}
-		this.addChild(opening.mc);
+		this.addChild(opening.mc);	
 	}
 
 	public function showCharacterBuildAfterNewPlayer():Void {

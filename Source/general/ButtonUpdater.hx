@@ -1,5 +1,6 @@
 package general;
 
+import openfl.utils.Function;
 import openfl.events.EventDispatcher;
 import openfl.events.MouseEvent;
 
@@ -9,7 +10,7 @@ class ButtonUpdater {
 		param1.currentTarget.gotoAndStop(2);
 	}
 
-	public static function setButton(param1:Dynamic, param2:Dynamic = null):Void {
+	public static function setButton(param1:Dynamic, param2:Function):Void {
 		if (param2 != null) {
 			param1.addEventListener(MouseEvent.CLICK, param2);
 		}

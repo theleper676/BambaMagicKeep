@@ -9,7 +9,7 @@ import general.ButtonUpdater;
 import general.Heb;
 
 class BambaOpeningScreen extends Sprite {
-	public var mc:Dynamic;
+	public var mc:OpeningScreen;
 
 	var userPassSharedObject:SharedObject;
 
@@ -20,15 +20,15 @@ class BambaOpeningScreen extends Sprite {
 	public function new(mainGame:BambaMain) {
 		super();
 		game = mainGame;
-		mc = BambaAssets.openingScreen;
-		ButtonUpdater.setButton(mc.enterMC, enterClicked);
+		mc = new OpeningScreen();
+		/* ButtonUpdater.setButton(mc.enterMC, enterClicked);
 		ButtonUpdater.setButton(mc.newMC, newClicked);
 		ButtonUpdater.setButton(mc.loginMC.forgetPassMC, forgetPassClicked);
 		ButtonUpdater.setButton(mc.loginMC.backMC, loginBackClicked);
 		ButtonUpdater.setButton(mc.forgetPassWinMC.sendMailMC, sendMailClicked);
-		ButtonUpdater.setButton(mc.forgetPassWinMC.backMC, forgetBackClicked);
+		ButtonUpdater.setButton(mc.forgetPassWinMC.backMC, forgetBackClicked); */
 		mc.loginMC.passIT.displayAsPassword = true;
-		game.stage.addEventListener(MouseEvent.CLICK, setFocusOnUser);
+		game.addEventListener(MouseEvent.CLICK, setFocusOnUser);
 		mc.addEventListener(KeyboardEvent.KEY_DOWN, keyPressedDown);
 		setOnStart();
 		if (!game.finishLoading) {

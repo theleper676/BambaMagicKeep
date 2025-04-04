@@ -1,6 +1,5 @@
 package;
 
-import haxe.macro.Expr.Catch;
 import openfl.Assets;
 import haxe.xml.Access;
 import sys.io.File;
@@ -170,10 +169,10 @@ class BambaLoader extends EventDispatcher {
 	
 		//loader.addEventListener(Event.COMPLETE, loadParamsComplete, false, 0, true);
 		try {
-			var paramString:String = Assets.getText("assets/xmls/params.xml");
-			var paramsXml = Xml.parse(paramString);
+			var paramXMLPath = Assets.getPath("params");
+			var paramXMLContent:String = File.getContent(paramXMLPath);
+			var paramsXml = Xml.parse(paramXMLContent);
 			loadParamsComplete(paramsXml);
-			//loader.load(request);
 		} catch (error:ArgumentError) {
 			trace("An ArgumentError has occurred.");
 		} catch (error:SecurityError) {
@@ -190,17 +189,16 @@ class BambaLoader extends EventDispatcher {
 		}
 	}
 
-	function loadOpeningAssetsComplete(param1:Event):Void {
-		var _loc2_:Null<Dynamic> = null;
-		var _loc3_:Null<Dynamic> = null;
-		_loc2_ = 1;
+	function loadOpeningAssetsComplete():Void {
+		var _loc2_:Int = 1;
+		var _loc3_:String;
 		while (_loc2_ < openingAssets.length) {
 			_loc3_ = openingAssets[_loc2_];
-			game.gameAssets.defineAsset(_loc3_, param1.target.applicationDomain.getDefinition(_loc3_));
+			game.gameAssets.defineAsset(_loc3_, OpeningScreen);
 			_loc2_++;
-		}
-		game.showOpeningScreen();
-		loadDictionary();
+		};
+		haxe.Timer.delay(game.showOpeningScreen, 3000);
+		//loadDictionary();		
 	}
 
 	function loadDictionary():Void {
@@ -286,7 +284,7 @@ class BambaLoader extends EventDispatcher {
 		_loc2_ = 1;
 		while (_loc2_ < currAsset.length) {
 			_loc3_ = currAsset[_loc2_];
-			game.gameAssets.defineAsset(_loc3_, param1.target.applicationDomain.getDefinition(_loc3_));
+			game.gameAssets.defineAsset(_loc3_, BambaMain);
 			_loc2_++;
 		}
 		++assetsIndex;
@@ -294,6 +292,9 @@ class BambaLoader extends EventDispatcher {
 	}
 
 	function loadParamsComplete(paramXml:Xml):Void {
+		var root = new Access(paramXml.firstElement());
+		var node  = root.node;
+		
 		var _playerLevelsFileName:String;
 		var _magicBookFileName :String;
 		var _cardsFileName:String;
@@ -318,10 +319,7 @@ class BambaLoader extends EventDispatcher {
 		var _towerAssets:Array<String> = [];
 		var _mapAssets:Array<String> = [];
 		var _helpAssets:Array<String> = [];
-		trace("BambaLoader.loadParamsComplete");
-		
-		var root = new Access(paramXml.firstElement());
-		var node  = root.node;
+			
 		//local vars
 		_playerLevelsFileName = node.playerlevelsfilename.innerData;
 		_magicBookFileName = node.magicbookfilename.innerData;
@@ -431,7 +429,6 @@ class BambaLoader extends EventDispatcher {
 		_towerAssets = extractAssetElements(root, "towerassets");
 		_mapAssets = extractAssetElements(root, "mapassets");
 		_helpAssets = extractAssetElements(root, "helpassets");
-		trace(_helpAssets);
 		//_loc18_ = _loc2_.menuAssets;
 		//_loc19_ = _loc2_.cardsAssets;
 		// _loc20_ = _loc2_.itemsAssets;
@@ -456,9 +453,9 @@ class BambaLoader extends EventDispatcher {
 		];
 		dungeonAssetsNames =  "dugeonname,dugeonname2";//_loc2_.dungeonAssetsNames;
 		enemyAssetsNames = "enemyassset1, enemyasset2";
+		loadOpeningAssets();
 		var introPath = Assets.getPath("IntroBamba");
-		game.movie.setMovieAsset(introPath);
-		//loadOpeningAssets();
+		game.movie.setMovieAsset(introPath);	
 	}
 
 	public function loadDungeonAssetStart(param1:Dynamic):Void {
@@ -657,14 +654,16 @@ class BambaLoader extends EventDispatcher {
 	}
 
 	function loadOpeningAssets():Void {
-		var _loc1_:Loader = null;
-		var _loc2_:URLRequest = null;
-		currFunctionName = "loadOpeningAssets";
-		_loc1_ = new Loader();
-		_loc2_ = new URLRequest(assetsPath + "/" + openingAssets[0]);
-		_loc1_.contentLoaderInfo.addEventListener(Event.COMPLETE, loadOpeningAssetsComplete, false, 0, true);
-		currLoader = _loc1_;
-		_loc1_.load(_loc2_);
+		//var _loc1_:Loader = null;
+		//var _loc2_:URLRequest;
+		//currFunctionName = "loadOpeningAssets";
+		//_loc1_ = new Loader();
+		//_loc2_  = new URLRequest(Assets.getPath("OpeningAssets"));
+		//_loc2_ = //new URLRequest(assetsPath + "/" + openingAssets[0]);
+		//_loc1_.contentLoaderInfo.addEventListener(Event.COMPLETE, loadOpeningAssetsComplete, false, 0, true);
+		//currLoader = _loc1_;
+		//_loc1_.load(_loc2_); 
+		loadOpeningAssetsComplete();
 	}
 
 	function loadEnemyAssetsComplete(param1:Event):Void {
@@ -676,7 +675,7 @@ class BambaLoader extends EventDispatcher {
 		_loc3_ = 0;
 		while (_loc3_ < _loc2_.length) {
 			_loc4_ = _loc2_[_loc3_];
-			game.gameAssets.defineAsset(_loc4_, param1.target.applicationDomain.getDefinition(_loc4_));
+			game.gameAssets.defineAsset(_loc4_, BambaMain);
 			_loc3_++;
 		}
 		finishContinueLoading();
@@ -790,7 +789,7 @@ class BambaLoader extends EventDispatcher {
 		_loc3_ = 0;
 		while (_loc3_ < _loc2_.length) {
 			_loc4_ = _loc2_[_loc3_];
-			game.gameAssets.defineAsset(_loc4_, param1.target.applicationDomain.getDefinition(_loc4_));
+			game.gameAssets.defineAsset(_loc4_, BambaMain);
 			_loc3_++;
 		}
 		game.finishDungeonAssetLoad();
