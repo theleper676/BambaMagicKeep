@@ -81,6 +81,7 @@ class BambaMain extends Sprite{
 
 	public function new() {
 		super();
+		
 		eventTypeCodes = [1, 3, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28];
 		eventTypeNames = [
 			"hasifa",
@@ -117,6 +118,30 @@ class BambaMain extends Sprite{
 		finishLoading = false;
 		didLogin = false;
 		autoLogin = true;
+		
+		if(this.stage != null) {
+			init();
+		}
+	}
+
+	private function init() {
+		stage.scaleMode = StageScaleMode.EXACT_FIT;
+		//this.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+        //stage.align = StageAlign.TOP_LEFT;
+		//fitToStage();
+	}
+
+	private function fitToStage () {
+		var originalWidth = this.width / this.scaleX;
+		var originalHeight = this.height / this.scaleY;
+
+		var scaleX = stage.stageWidth / originalWidth;
+		var scaleY = stage.stageHeight / originalHeight;
+		var scaleFactor = Math.max(scaleX, scaleY);
+		this.scaleX = this.scaleY = scaleFactor;
+		trace(scaleX);
+		this.x = (stage.stageWidth / this.width) / 2;
+		this.y = (stage.stageHeight / this.height) / 2;
 	}
 
 	public function hideCharacter():Void {

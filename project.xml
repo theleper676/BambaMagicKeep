@@ -2,8 +2,9 @@
 <project>
 	
 	<meta title="BambaMagicKeep" package="com.sample.bambamagickeep" version="1.0.0" company="Company Name" />
-	<app main="Main" path="Export" file="BambaMagicKeep" />
+	<app main="BambaMain" path="Export" file="BambaMagicKeep" />
 	
+	<window width="1280" height="720"/>
 	<source path="Source" />
 	<haxelib name="openfl" />
 	<haxelib name="actuate" />

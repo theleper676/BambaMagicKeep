@@ -161,13 +161,7 @@ class BambaLoader extends EventDispatcher {
 	}
 
 	function loadParams():Void {
-		var request:URLRequest = null;
-		var loader:URLLoader = null;
 		currFunctionName = "loadParams";
-		request = new URLRequest(paramFile);
-		loader = new URLLoader();
-	
-		//loader.addEventListener(Event.COMPLETE, loadParamsComplete, false, 0, true);
 		try {
 			var paramXMLPath = Assets.getPath("params");
 			var paramXMLContent:String = File.getContent(paramXMLPath);

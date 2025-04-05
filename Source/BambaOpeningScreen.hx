@@ -17,16 +17,20 @@ class BambaOpeningScreen extends Sprite {
 
 	var game:BambaMain;
 
+	
+
 	public function new(mainGame:BambaMain) {
 		super();
 		game = mainGame;
 		mc = new OpeningScreen();
-		/* ButtonUpdater.setButton(mc.enterMC, enterClicked);
+		//ButtonUpdater.setButton(mc.enterMC, enterClicked);
+
+		ButtonUpdater.setButton(mc.enterMC, enterClicked);
+		ButtonUpdater.setButton(mc.loginMC.backMC, loginBackClicked);
 		ButtonUpdater.setButton(mc.newMC, newClicked);
 		ButtonUpdater.setButton(mc.loginMC.forgetPassMC, forgetPassClicked);
-		ButtonUpdater.setButton(mc.loginMC.backMC, loginBackClicked);
 		ButtonUpdater.setButton(mc.forgetPassWinMC.sendMailMC, sendMailClicked);
-		ButtonUpdater.setButton(mc.forgetPassWinMC.backMC, forgetBackClicked); */
+		ButtonUpdater.setButton(mc.forgetPassWinMC.backMC, forgetBackClicked);
 		mc.loginMC.passIT.displayAsPassword = true;
 		game.addEventListener(MouseEvent.CLICK, setFocusOnUser);
 		mc.addEventListener(KeyboardEvent.KEY_DOWN, keyPressedDown);
@@ -150,6 +154,7 @@ class BambaOpeningScreen extends Sprite {
 					if (game.autoLogin) {
 						enterGame();
 					} else {
+						mc.loginMC.visible = true;
 						currStage = 2;
 						mc.gotoAndStop("login");
 					}
