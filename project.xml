@@ -14,4 +14,5 @@
 	<assets path="assets/swf/OpeningAssets.swf" preload="true" generate="true"  />
 	<assets path="assets/openingAssets/openingAssets.zip" preload="true" id="openingAssets"/> 
 	<assets path="assets/xmls/params.xml" embed="false" id="params" />
+	<assets path="assets/xmls/dictionary.xml" embed="false" id="dictionary" />
 </project>

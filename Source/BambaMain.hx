@@ -611,19 +611,14 @@ class BambaMain extends Sprite{
 			showMap();
 		}
 		try {
-			//new LocalConnection().connect("foo");
-			//new LocalConnection().connect("foo");
+		
 		} catch (e:Dynamic) {
 			trace("close doungen error" + e);
 		}
 	}
 
 	public function getHTMLvars():Void {
-		// _loc1_ = LoaderInfo(this.root.loaderInfo).parameters;
 		ToolID = "SBCKOS";
-		/* if (ToolID == "undefined") {
-			ToolID = "SBCKOS";
-		} */
 	}
 
 	public function showMagicBook():Void {
@@ -692,8 +687,8 @@ class BambaMain extends Sprite{
 	}
 
 	public function startDungeon(param1:Dynamic):Void {
-		var _loc2_:Float = Math.NaN;
-		var _loc3_:BambaDungeonData = null;
+		var _loc2_:Float;
+		var _loc3_:BambaDungeonData;
 		_loc2_ = 100 + param1;
 		currDongeonId = param1;
 		_loc3_ = gameData.getCatalogDungeonData(currDongeonId);

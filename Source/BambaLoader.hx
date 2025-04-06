@@ -192,19 +192,23 @@ class BambaLoader extends EventDispatcher {
 			_loc2_++;
 		};
 		haxe.Timer.delay(game.showOpeningScreen, 3000);
-		//loadDictionary();		
+		loadDictionary();		
 	}
 
 	function loadDictionary():Void {
-		var _loc1_:URLRequest = null;
-		var _loc2_:URLLoader = null;
+		/* if(game.opening.mc?.loadingBarMC != null) {
+			Heb.setText(game.opening.mc.loadingBarMC.loaderDT, "טוען מילון נתונים");
+		} */
 		currFunctionName = "loadDictionary";
-		Heb.setText(game.opening.mc.loadingBarMC.loaderDT, "טוען מילון נתונים");
-		_loc1_ = new URLRequest(xmlPath + "/" + dictionaryFileName);
-		_loc2_ = new URLLoader();
-		_loc2_.addEventListener(Event.COMPLETE, loadDictionaryComplete);
-		currLoader = _loc2_;
-		_loc2_.load(_loc1_);
+		try{
+			var dictionaryXMLpath = Assets.getPath("dictionary");
+			var dictionaryXMLContent:String = File.getContent(dictionaryXMLpath);
+			var dictionary = Xml.parse(dictionaryXMLContent);
+			loadDictionaryComplete(dictionary);
+		}
+		catch (error: ArgumentError) {
+			trace("An ArgumentError has occurred.");
+		}	
 	}
 
 	public function sendNewPlayerData(param1:Dynamic, param2:Dynamic, param3:Dynamic, param4:Dynamic):Void {
@@ -490,26 +494,26 @@ class BambaLoader extends EventDispatcher {
 		}
 	}
 
-	function loadDictionaryComplete(param1:Event):Void {
-		var dataXML:Xml = null;
+	function loadDictionaryComplete(dictionaryXml:Xml):Void {
+		/* var dataXML:Xml = null;
 		var i:Dynamic = null;
-		var event:Event = param1;
-		try {
+		var event:Event = param1; */
+		/* try {
 			ExternalInterface.call("console.log", {"fb_loadDictionaryComplete": loadingCounter});
-		} catch (error:Dynamic) {}
-		dataXML = Xml.parse(event.target.data);
-		game.gameData.loadDictionary(dataXML);
+		} catch (error:Dynamic) {} */
+		/* dataXML = Xml.parse(event.target.data); */
+		game.gameData.loadDictionary(dictionaryXml);
 		loadingMsgs = game.gameData.dictionary.LOADING_MSGS.split(",");
 		fileSizes = game.gameData.dictionary.LOADING_FILE_SIZES.split(",");
 		totalBytes = 0;
-		i = 0;
+		var i  = 0;
 		while (i < fileSizes.length) {
 			totalBytes += Std.parseFloat(fileSizes[i]);
 			i++;
 		}
 		currBytes = 0;
 		setContinueLoading();
-		loadGeneralData();
+	/* 	loadGeneralData(); */
 	}
 
 	function loadFinished():Void {
