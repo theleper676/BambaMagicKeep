@@ -192,13 +192,13 @@ class BambaLoader extends EventDispatcher {
 			_loc2_++;
 		};
 		haxe.Timer.delay(game.showOpeningScreen, 3000);
-		loadDictionary();		
+		haxe.Timer.delay(loadDictionary, 3500);	
 	}
 
 	function loadDictionary():Void {
-		/* if(game.opening.mc?.loadingBarMC != null) {
+		if(game.opening.mc.loadingBarMC != null) {
 			Heb.setText(game.opening.mc.loadingBarMC.loaderDT, "טוען מילון נתונים");
-		} */
+		}
 		currFunctionName = "loadDictionary";
 		try{
 			var dictionaryXMLpath = Assets.getPath("dictionary");
@@ -208,7 +208,7 @@ class BambaLoader extends EventDispatcher {
 		}
 		catch (error: ArgumentError) {
 			trace("An ArgumentError has occurred.");
-		}	
+		}
 	}
 
 	public function sendNewPlayerData(param1:Dynamic, param2:Dynamic, param3:Dynamic, param4:Dynamic):Void {
@@ -495,13 +495,6 @@ class BambaLoader extends EventDispatcher {
 	}
 
 	function loadDictionaryComplete(dictionaryXml:Xml):Void {
-		/* var dataXML:Xml = null;
-		var i:Dynamic = null;
-		var event:Event = param1; */
-		/* try {
-			ExternalInterface.call("console.log", {"fb_loadDictionaryComplete": loadingCounter});
-		} catch (error:Dynamic) {} */
-		/* dataXML = Xml.parse(event.target.data); */
 		game.gameData.loadDictionary(dictionaryXml);
 		loadingMsgs = game.gameData.dictionary.LOADING_MSGS.split(",");
 		fileSizes = game.gameData.dictionary.LOADING_FILE_SIZES.split(",");
@@ -513,7 +506,7 @@ class BambaLoader extends EventDispatcher {
 		}
 		currBytes = 0;
 		setContinueLoading();
-	/* 	loadGeneralData(); */
+		loadGeneralData();
 	}
 
 	function loadFinished():Void {
@@ -587,7 +580,6 @@ class BambaLoader extends EventDispatcher {
 		} catch (error:Dynamic) {}
 		trace("BambaLoader.continueLoading:" + currFunctionName);
 		continueLoadingIntervalTimer.stop();
-		//clearInterval(continueLoadingInterval);
 		var arrayAccess:Function = Reflect.field(this, currCompleteFunctionName);
 		currCompleteFunctionName = currFunctionName + "Complete";
 		currLoader.removeEventListener(Event.COMPLETE, arrayAccess());
@@ -757,7 +749,8 @@ class BambaLoader extends EventDispatcher {
 	}
 
 	function loadGeneralData():Void {
-		var _loc1_:URLRequest = null;
+		trace("loading general data...");
+		/* var _loc1_:URLRequest = null;
 		var _loc2_:URLLoader = null;
 		currFunctionName = "loadGeneralData";
 		++loadingCounter;
@@ -766,7 +759,7 @@ class BambaLoader extends EventDispatcher {
 		_loc2_ = new URLLoader();
 		_loc2_.addEventListener(Event.COMPLETE, loadGeneralDataComplete, false, 0, true);
 		currLoader = _loc2_;
-		_loc2_.load(_loc1_);
+		_loc2_.load(_loc1_); */
 	}
 
 	function loadSoundsDataComplete(param1:Event):Void {

@@ -15,4 +15,7 @@
 	<assets path="assets/openingAssets/openingAssets.zip" preload="true" id="openingAssets"/> 
 	<assets path="assets/xmls/params.xml" embed="false" id="params" />
 	<assets path="assets/xmls/dictionary.xml" embed="false" id="dictionary" />
+	<assets path="assets/fonts/Arial.ttf" id="Arial" embed="true" />
+	<assets path="assets/fonts/Choco.ttf" id="Choco" embed="true" />
+	<assets path="assets/fonts/Choco_Bold.ttf" id="Choco Bold" embed="true" />
 </project>

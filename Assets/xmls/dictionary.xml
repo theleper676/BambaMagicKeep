@@ -1,4 +1,5 @@
-﻿<dictionary>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
 	<new_player_name_existing>שם המשתמש תפוס, בחר שם אחר</new_player_name_existing>
 	<new_player_min_name>על שם המשתמש להיות לפחות 3 תווים</new_player_min_name>
 	<new_player_min_pass>על הסיסמא להיות לפחות 3 תווים</new_player_min_pass>

@@ -129,8 +129,8 @@ class BambaData {
 		}
 	}
 
-	public function loadDictionary(param1:Xml):Void {
-		dictionary.load(param1);
+	public function loadDictionary(dictionaryXml:Xml):Void {
+		dictionary.load(dictionaryXml);
 	}
 
 	//TODO: RETURN TYPE SHOULD BE BambaEnemyLevel

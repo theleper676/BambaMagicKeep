@@ -4,7 +4,7 @@ package ;
 
 class LoadingBarMC extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.display.MovieClip #end
 {
-	@:keep @:noCompletion @:dox(hide) public var loaderDT(default, null):openfl.text.TextField;
+	@:keep  @:dox(hide) public var loaderDT(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var msgDT(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var maskMC(default, null):openfl.display.MovieClip;
 	@:keep @:noCompletion @:dox(hide) public var flareMC(default, null):openfl.display.MovieClip;
