@@ -1,5 +1,7 @@
 package;
 
+import haxe.xml.Access;
+
 class BambaData {
 	public var questsCatalog:Array<Dynamic>;
 
@@ -27,7 +29,7 @@ class BambaData {
 
 	public var fightBoardXY:Array<Dynamic>;
 
-	public var prizesCatalog:Array<Dynamic>;
+	public var prizesCatalog:Array<BambaPrize>;
 
 	public var itemsCatalog:Array<Dynamic>;
 
@@ -566,15 +568,18 @@ class BambaData {
 		}
 	}
 
-	public function loadGeneralData(param1:Dynamic):Void {
-		var _loc2_:Null<Dynamic> = null;
-		var _loc3_:Null<Dynamic> = null;
-		var _loc4_:Null<Dynamic> = null;
-		var _loc5_:Null<Dynamic> = null;
-		var _loc6_:Null<Dynamic> = null;
-		var _loc7_:Null<Dynamic> = null;
-		var _loc8_:Null<Dynamic> = null;
+	public function loadGeneralData(generalDataXml:Xml):Void {
+		var xmlAccess = new Access(generalDataXml.firstChild());
+		trace(xmlAccess);
+		var _fightBoard:String;
+		var _fightBoardXY:String;
+		var _fightXoffset:String;
+		var _fightZsize:String;
+		var _fightSmallBoardXY:String;
+		var _mapTimes:Array<String> = [];
+		var _loc8_:Int;
 		var _loc9_:Null<Dynamic> = null;
+		
 		_loc2_ = param1.fightBoard;
 		_loc3_ = _loc2_.fightBoardXY;
 		_loc4_ = _loc2_.fightXoffset;
@@ -606,10 +611,8 @@ class BambaData {
 		}
 	}
 
-	//TODO: type should be BambaPrize
-	public function getCatalogPrize(param1:Dynamic):Dynamic {
-		var _loc2_:Null<Dynamic> = null;
-		_loc2_ = 0;
+	public function getCatalogPrize(param1:Dynamic):BambaPrize {
+		var _loc2_:Int = 0;
 		while (_loc2_ < prizesCatalog.length) {
 			if (prizesCatalog[_loc2_].id == param1) {
 				return prizesCatalog[_loc2_];

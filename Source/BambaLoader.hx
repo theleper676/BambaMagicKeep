@@ -3,6 +3,7 @@ package;
 import openfl.Assets;
 import haxe.xml.Access;
 import sys.io.File;
+import swf.exporters.animate.AnimateLibrary;
 import openfl.Lib;
 import haxe.Timer;
 import openfl.display.*;
@@ -55,7 +56,7 @@ class BambaLoader extends EventDispatcher {
 
 	var xmlFunctionNames:Array<String>;
 
-	var continueLoadingIntervalTimer: Timer = null;
+	var continueLoadingIntervalTimer: Timer;
 	//var continueLoadingInterval:Float;
 
 	var currFileName:String;
@@ -184,18 +185,21 @@ class BambaLoader extends EventDispatcher {
 	}
 
 	function loadOpeningAssetsComplete():Void {
-		var _loc2_:Int = 1;
-		var _loc3_:String;
-		while (_loc2_ < openingAssets.length) {
-			_loc3_ = openingAssets[_loc2_];
-			game.gameAssets.defineAsset(_loc3_, OpeningScreen);
-			_loc2_++;
-		};
-		haxe.Timer.delay(game.showOpeningScreen, 3000);
-		haxe.Timer.delay(loadDictionary, 3500);	
+		
+		var libraryPath = Assets.getPath("openingAssets");
+		AnimateLibrary.loadFromFile(libraryPath).onComplete((_)-> {
+			for (i in 1...openingAssets.length) {
+				var assetName = openingAssets[i];
+				game.gameAssets.defineAsset(assetName, OpeningScreen);
+			}
+			game.showOpeningScreen();  
+			loadDictionary();
+        });
+		
 	}
 
 	function loadDictionary():Void {
+		trace(game.opening);
 		if(game.opening.mc.loadingBarMC != null) {
 			Heb.setText(game.opening.mc.loadingBarMC.loaderDT, "טוען מילון נתונים");
 		}
@@ -232,15 +236,13 @@ class BambaLoader extends EventDispatcher {
 		MsgBox.showWaitBox("יוצר משתמש חדש");
 	}
 
-	function loadGeneralDataComplete(param1:Event):Void {
-		var _loc2_:Xml = null;
+	function loadGeneralDataComplete(generalDataXml:Xml):Void {
 		currBytes += Std.parseFloat(fileSizes[msgCounter]);
 		setLoaderGraphics(currBytes / totalBytes);
 		++msgCounter;
 		++loadingCounter;
-		_loc2_ = Xml.parse(param1.target.data);
-		game.gameData.loadGeneralData(_loc2_);
-		loadXMLFile();
+		game.gameData.loadGeneralData(generalDataXml);
+		//loadXMLFile();
 	}
 
 	function loadAssetsProgress(param1:ProgressEvent):Void {
@@ -452,6 +454,8 @@ class BambaLoader extends EventDispatcher {
 		dungeonAssetsNames =  "dugeonname,dugeonname2";//_loc2_.dungeonAssetsNames;
 		enemyAssetsNames = "enemyassset1, enemyasset2";
 		loadOpeningAssets();
+		var libraryPath = Assets.getPath("openingAssets");
+		AnimateLibrary.loadFromFile(libraryPath);
 		var introPath = Assets.getPath("IntroBamba");
 		game.movie.setMovieAsset(introPath);	
 	}
@@ -494,7 +498,7 @@ class BambaLoader extends EventDispatcher {
 		}
 	}
 
-	function loadDictionaryComplete(dictionaryXml:Xml):Void {
+	public function loadDictionaryComplete(dictionaryXml:Xml):Void {
 		game.gameData.loadDictionary(dictionaryXml);
 		loadingMsgs = game.gameData.dictionary.LOADING_MSGS.split(",");
 		fileSizes = game.gameData.dictionary.LOADING_FILE_SIZES.split(",");
@@ -572,22 +576,17 @@ class BambaLoader extends EventDispatcher {
 	
 	function continueLoading():Void {
 		var currCompleteFunctionName:Dynamic = null;
-		try {
-			ExternalInterface.call("console.log", {
-				"fb_loadingCounter": loadingCounter,
-				"fb_functionName": currFunctionName
-			});
-		} catch (error:Dynamic) {}
+
 		trace("BambaLoader.continueLoading:" + currFunctionName);
 		continueLoadingIntervalTimer.stop();
-		var arrayAccess:Function = Reflect.field(this, currCompleteFunctionName);
+		//var arrayAccess:Function = Reflect.field(this, currCompleteFunctionName);
 		currCompleteFunctionName = currFunctionName + "Complete";
-		currLoader.removeEventListener(Event.COMPLETE, arrayAccess());
+		//currLoader.removeEventListener(Event.COMPLETE, arrayAccess());
 		continueTime += 500;
 		continueLoadingIntervalTimer = new Timer(continueTime);
 		continueLoadingIntervalTimer.run = chackContinueLoadingNeeded;
 		// continueLoadingInterval = setInterval(chackContinueLoadingNeeded, continueTime);
-		arrayAccess();
+		//loadDictionaryComplete();
 	}
 
 	function sendNewPlayerDataComplete(param1:Event):Void {
@@ -644,15 +643,6 @@ class BambaLoader extends EventDispatcher {
 	}
 
 	function loadOpeningAssets():Void {
-		//var _loc1_:Loader = null;
-		//var _loc2_:URLRequest;
-		//currFunctionName = "loadOpeningAssets";
-		//_loc1_ = new Loader();
-		//_loc2_  = new URLRequest(Assets.getPath("OpeningAssets"));
-		//_loc2_ = //new URLRequest(assetsPath + "/" + openingAssets[0]);
-		//_loc1_.contentLoaderInfo.addEventListener(Event.COMPLETE, loadOpeningAssetsComplete, false, 0, true);
-		//currLoader = _loc1_;
-		//_loc1_.load(_loc2_); 
 		loadOpeningAssetsComplete();
 	}
 
@@ -672,10 +662,10 @@ class BambaLoader extends EventDispatcher {
 		game.finishEnemyAssetLoad();
 	}
 
-	function setLoaderGraphics(param1:Float):Void {
-		game.opening.mc.loadingBarMC.flareMC.x = 800 - 800 * param1;
-		game.opening.mc.loadingBarMC.maskMC.width = 800 * param1;
-		game.opening.mc.loadingBarMC.maskMC.x = 800 - 800 * param1;
+	function setLoaderGraphics(precentComplete:Float):Void {
+		game.opening.mc.loadingBarMC.flareMC.x = 800 - 800 * precentComplete;
+		game.opening.mc.loadingBarMC.maskMC.width = 800 * precentComplete;
+		game.opening.mc.loadingBarMC.maskMC.x = 800 - 800 * precentComplete;
 	}
 
 	function showSecurityError(error:SecurityErrorEvent):Void {
@@ -750,6 +740,13 @@ class BambaLoader extends EventDispatcher {
 
 	function loadGeneralData():Void {
 		trace("loading general data...");
+		currFunctionName = "loadGeneralData";
+		++loadingCounter;
+		Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);
+		var generalDataXMLPath = Assets.getPath("generalData");
+		var generalDataXMLContent:String = File.getContent(generalDataXMLPath);
+		var generalDataXml:Xml = Xml.parse(generalDataXMLContent);
+		loadGeneralDataComplete(generalDataXml);
 		/* var _loc1_:URLRequest = null;
 		var _loc2_:URLLoader = null;
 		currFunctionName = "loadGeneralData";

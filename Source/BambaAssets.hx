@@ -10,7 +10,7 @@ import general.MsgBox;
 import openfl.display.MovieClip;
 
 @:access(swf.exporters.animate)
-class BambaAssets extends EventDispatcher {
+class BambaAssets {
 	public static var cardBase:Dynamic;
 
 	public static var help02:Dynamic;
@@ -138,19 +138,7 @@ class BambaAssets extends EventDispatcher {
 	public var game:BambaMain;
 
 	public function new(mainGame:BambaMain) {
-		super();
 		game = mainGame;
-	}
-
-	static function loadAsset(libraryName:String) {
-		var libraryPath = Assets.getPath("openingAssets");
-		if (libraryPath != null) {
-			AnimateLibrary.loadFromFile(libraryPath).onComplete(library -> {
-				trace("loading library...");
-				Assets.registerLibrary(libraryName, library);
-				trace("done loading library...");
-			});
-		}
 	}
 
 	function define_characterScreen(param1:Dynamic):Void {
@@ -391,11 +379,9 @@ class BambaAssets extends EventDispatcher {
 	}
 
 	function define_openingScreen(openingScreenInstance:Dynamic):Void  {
-		var libraryPath = Assets.getPath("openingAssets");
-		var event = new Event("loadOpeningScreenComplete");
-		AnimateLibrary.loadFromFile(libraryPath).onComplete(library -> {
-			dispatchEvent(event);
-		});
+		openingScreen = new OpeningScreen();
+		/* var libraryPath = Assets.getPath("openingAssets");
+		AnimateLibrary.loadFromFile(libraryPath); */
 	}
 
 	function define_beltMC(param1:Dynamic):Void {
