@@ -41,7 +41,7 @@ class BambaData {
 
 	public var fightZsize:Array<Dynamic>;
 
-	public var itemsLevels:Array<Dynamic>;
+	public var itemsLevels:Array<String>;
 
 	public var minLevel:Float;
 
@@ -576,20 +576,31 @@ class BambaData {
 		var fightZsize = "0.8,0.9,1";
 		var fightSmallBoardXY = "16,17:44,17:72,17:102,17*
 		16,45:44,45:72,45:102,45*
-		16,73:44,73:72,73:102,73"; 
+		16,73:44,73:72,73:102,73";
+		itemsLevels = ["-3","-2","-1","0","1"];
+		defaultAnimLength = 0.7;
+		defaultDungeonAnimLength = 0.3;
+		winAnimLength = 2;
+		barAnimLength = 1;
+		beenHitAnimName = "beenHit";
+		winAnimName = "win";
+		loseAnimName = "lose";
+		sharedOrder = 4;
+		mapData = new BambaMapData(xml);
 		loadFightData(fightBoardXY, fightXoffset, fightZsize, fightSmallBoardXY);
-		loadDungeonDifficulties()
+		//TODO: WORKD ON LOAD DIFFULUTIES
+		//loadDungeonDifficulties();
 		/* 
 		loadDungeonDifficulties(param1.dungeonDifficulties.children());
-		itemsLevels = Std.string(param1.itemsLevels).split(",");
-		defaultAnimLength = param1.defaultAnimLength;
-		defaultDungeonAnimLength = param1.defaultDungeonAnimLength;
-		winAnimLength = param1.winAnimLength;
-		barAnimLength = param1.barAnimLength;
-		beenHitAnimName = param1.beenHitAnimName;
-		winAnimName = param1.winAnimName;
-		loseAnimName = param1.loseAnimName;
-		sharedOrder = param1.sharedOrder;
+		//itemsLevels = Std.string(param1.itemsLevels).split(",");
+		//defaultAnimLength = param1.defaultAnimLength;
+		//defaultDungeonAnimLength = param1.defaultDungeonAnimLength;
+		//winAnimLength = param1.winAnimLength;
+		//barAnimLength = param1.barAnimLength;
+		//beenHitAnimName = param1.beenHitAnimName;
+		//winAnimName = param1.winAnimName;
+		//loseAnimName = param1.loseAnimName;
+		//sharedOrder = param1.sharedOrder;
 		mapData = new BambaMapData(param1.mainMap);
 		loadOrdersStartDef(param1.ordersStartDef.children());
 		loadCharacterCustom(param1.characterCustom.children());
