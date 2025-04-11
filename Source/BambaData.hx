@@ -29,7 +29,7 @@ class BambaData {
 
 	public var fightBoardXY:Array<Dynamic>;
 
-	public var prizesCatalog:Array<BambaPrize>;
+	public var prizesCatalog:Array<Dynamic>;
 
 	public var itemsCatalog:Array<Dynamic>;
 
@@ -387,48 +387,46 @@ class BambaData {
 		return null;
 	}
 
-	public function loadFightData(param1:String, param2:String, param3:String, param4:String):Void {
-		var _loc5_:Dynamic = null;
-		var _loc6_:Dynamic = null;
-		var _loc7_:Array<Dynamic> = null;
-		var _loc8_:Array<Dynamic> = null;
-		var _loc9_:Array<Dynamic> = null;
+	public function loadFightData(fightBoardXYString:String, fightXoffsetString:String, fightZsizeString:String, fightSmallBoardXYString:String):Void {
+		var _fightBoardXYIndex:Int = 0;
+		var _boardCordsIndex:Int = 0;
+		var _fightBoardXYStringArray:Array<String> = [];
+		var _fightSmallBoardXYStringArray:Array<String> = [];
+		var _boardcords:Array<String> = null;
 		var _loc10_:Dynamic = null;
-		var _loc11_:Array<Dynamic> = null;
+		var _currentBarCordsArray:Array<String> = null;
 		var _loc12_:Array<Dynamic> = null;
 		var _loc13_:Dynamic = null;
 		var _loc14_:Array<Dynamic> = null;
 		fightBoardXY = [];
-		_loc7_ = param1.split("*");
-		_loc5_ = 0;
-		while (_loc5_ < _loc7_.length) {
-			_loc9_ = _loc7_[_loc5_].split(":");
+		_fightBoardXYStringArray = fightBoardXYString.split("*");
+		while (_fightBoardXYIndex < _fightBoardXYStringArray.length) {
+			_boardcords = _fightBoardXYStringArray[_fightBoardXYIndex].split(":");
 			_loc10_ = [];
-			_loc6_ = 0;
-			while (_loc6_ < _loc9_.length) {
-				_loc11_ = _loc9_[_loc6_].split(",");
-				_loc10_.push(_loc11_);
-				_loc6_++;
+			while (_boardCordsIndex < _boardcords.length) {
+				_currentBarCordsArray = _boardcords[_boardCordsIndex].split(",");
+				_loc10_.push(_currentBarCordsArray);
+				_boardCordsIndex++;
 			}
 			fightBoardXY.push(_loc10_);
-			_loc5_++;
+			_fightBoardXYIndex++;
 		}
-		fightXoffset = param2.split(",");
-		fightZsize = param3.split(",");
+		fightXoffset = fightXoffsetString.split(",");
+		fightZsize = fightZsizeString.split(",");
 		fightSmallBoardXY = [];
-		_loc8_ = param4.split("*");
-		_loc5_ = 0;
-		while (_loc5_ < _loc8_.length) {
-			_loc12_ = _loc8_[_loc5_].split(":");
+		_fightSmallBoardXYStringArray = fightSmallBoardXYString.split("*");
+		_fightBoardXYIndex = 0;
+		while (_fightBoardXYIndex < _fightSmallBoardXYStringArray.length) {
+			_loc12_ = _fightSmallBoardXYStringArray[_fightBoardXYIndex].split(":");
 			_loc13_ = [];
-			_loc6_ = 0;
-			while (_loc6_ < _loc12_.length) {
-				_loc14_ = _loc12_[_loc6_].split(",");
+			_boardCordsIndex = 0;
+			while (_boardCordsIndex < _loc12_.length) {
+				_loc14_ = _loc12_[_boardCordsIndex].split(",");
 				_loc13_.push(_loc14_);
-				_loc6_++;
+				_boardCordsIndex++;
 			}
 			fightSmallBoardXY.push(_loc13_);
-			_loc5_++;
+			_fightBoardXYIndex++;
 		}
 	}
 
@@ -568,24 +566,20 @@ class BambaData {
 		}
 	}
 
-	public function loadGeneralData(generalDataXml:Xml):Void {
-		var xmlAccess = new Access(generalDataXml.firstChild());
-		trace(xmlAccess);
-		var _fightBoard:String;
-		var _fightBoardXY:String;
-		var _fightXoffset:String;
-		var _fightZsize:String;
-		var _fightSmallBoardXY:String;
-		var _mapTimes:Array<String> = [];
-		var _loc8_:Int;
-		var _loc9_:Null<Dynamic> = null;
-		
-		_loc2_ = param1.fightBoard;
-		_loc3_ = _loc2_.fightBoardXY;
-		_loc4_ = _loc2_.fightXoffset;
-		_loc5_ = _loc2_.fightZsize;
-		_loc6_ = _loc2_.fightSmallBoardXY;
-		loadFightData(_loc3_, _loc4_, _loc5_, _loc6_);
+
+	public function loadGeneralData(xml:Xml):Void {
+		// There is no point of parsing the XML for this little of information that will not be changed either way		
+		var fightBoardXY = "195,285:360,285:525,285:690,285*
+		165,335:347,335:540,335:720,335*
+		130,400:338,400:550,400:760,400";
+		var fightXoffset = "45,50,55";
+		var fightZsize = "0.8,0.9,1";
+		var fightSmallBoardXY = "16,17:44,17:72,17:102,17*
+		16,45:44,45:72,45:102,45*
+		16,73:44,73:72,73:102,73"; 
+		loadFightData(fightBoardXY, fightXoffset, fightZsize, fightSmallBoardXY);
+		loadDungeonDifficulties()
+		/* 
 		loadDungeonDifficulties(param1.dungeonDifficulties.children());
 		itemsLevels = Std.string(param1.itemsLevels).split(",");
 		defaultAnimLength = param1.defaultAnimLength;
@@ -608,11 +602,13 @@ class BambaData {
 			_loc9_ = _loc7_[_loc8_].split("%");
 			mapTimes.push(_loc9_);
 			_loc8_++;
-		}
+		} */
 	}
 
-	public function getCatalogPrize(param1:Dynamic):BambaPrize {
-		var _loc2_:Int = 0;
+	//TODO: type should be BambaPrize
+	public function getCatalogPrize(param1:Dynamic):Dynamic {
+		var _loc2_:Null<Dynamic> = null;
+		_loc2_ = 0;
 		while (_loc2_ < prizesCatalog.length) {
 			if (prizesCatalog[_loc2_].id == param1) {
 				return prizesCatalog[_loc2_];

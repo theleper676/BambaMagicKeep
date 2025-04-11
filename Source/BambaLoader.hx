@@ -101,7 +101,7 @@ class BambaLoader extends EventDispatcher {
 		loadParams();
 	}
 
-	static inline function extractAssetElements (root:Access, nodeName:String):Array<String> {
+	public static inline function extractAssetElements (root:Access, nodeName:String):Array<String> {
 		var _assetArray:Array<String> = [];
 		for (element in root.elements) {
 			if(element.elements.hasNext()) {

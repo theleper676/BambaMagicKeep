@@ -143,28 +143,15 @@ class BambaDictionary  {
 	}
 
 	public function load(xml:Xml):Void {
-		var _loc2_:Xml = null;
-		var _loc3_:Null<Dynamic> = null;
-		//var root = new Access(xml);
 		var root = new Access(xml.firstElement());
 		var elements = root.elements;
 
 		for (element in elements){
 			if(Reflect.hasField(this, element.name.toUpperCase())) {
-				Reflect.setProperty(this, element.name.toUpperCase(), element.innerData);
-				trace(this.LIFE);	
+				Reflect.setProperty(this, element.name.toUpperCase(), element.innerData);	
 			}
-			/* if(Reflect.hasField(this, element.name.toUpperCase())) {
-				Reflect.setField(this,element.name.toUpperCase(), element.innerData);
-				trace(this.MONEY_NAME);
-			} */
+			
 		}
-      /* var iterable:Array<Dynamic> = cast(param1.children(), Array<Dynamic>); */
-     /*  //TODO:CHECK WHAT IS THE REAL TYPE
-      var someField:Null<Dynamic> = Reflect.field(this, _loc3_);
-		for (_loc2_ in iterable) {
-			_loc3_ = _loc2_.name();
-			someField = _loc2_;
-		} */
+    
 	}
 }
