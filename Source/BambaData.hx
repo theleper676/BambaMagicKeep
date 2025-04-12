@@ -703,20 +703,19 @@ class BambaData {
 		}
 	}
 
-	function buildPlayerLevelsCatalog(param1:Array<Xml>):Void {
-		var _loc2_:Xml = null;
-		var _loc3_:BambaPlayerLevel = null;
+	function buildPlayerLevelsCatalog(playerDataXml:Xml):Void {
+		var _bambaPlayerLevel:BambaPlayerLevel = new BambaPlayerLevel();	
 		minLevel = 99;
 		maxLevel = -99;
-		for (_loc2_ in param1) {
-			_loc3_ = new BambaPlayerLevel(_loc2_);
-			playerLevelsCatalog.push(_loc3_);
-			if (minLevel > _loc3_.level) {
-				minLevel = _loc3_.level;
-			}
-			if (maxLevel < _loc3_.level) {
-				maxLevel = _loc3_.level;
-			}
+
+		playerLevelsCatalog.push(_bambaPlayerLevel);
+
+		if(minLevel > _bambaPlayerLevel.level) {
+			minLevel = _bambaPlayerLevel.level;
+		};
+
+		if(maxLevel < _bambaPlayerLevel.level) {
+			maxLevel = _bambaPlayerLevel.level;
 		}
 	}
 }

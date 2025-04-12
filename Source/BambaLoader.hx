@@ -321,7 +321,7 @@ class BambaLoader extends EventDispatcher {
 		var _helpAssets:Array<String> = [];
 			
 		//local vars
-		_playerLevelsFileName = node.playerlevelsfilename.innerData;
+		_playerLevelsFileName = "playerLevels";
 		_magicBookFileName = node.magicbookfilename.innerData;
 		_cardsFileName = node.cardsfilename.innerData;
 		_enemiesFileName = node.enemiesfilename.innerData;
@@ -467,28 +467,17 @@ class BambaLoader extends EventDispatcher {
 	}
 
 	function loadXMLFile():Void {
-		var request:URLRequest = null;
-		var loader:URLLoader = null;
+		var currentXmlPath:String;
 		currFunctionName = "loadXMLFile";
 		++loadingCounter;
 		if (xmlFilesIndex < xmlFiles.length) {
 			currFileName = xmlFiles[xmlFilesIndex];
 			Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);
-			/* try {
-				ExternalInterface.call("console.log", {
-					"fb_msgCounter": msgCounter,
-					"fb_currFileName": currFileName
-				});
-			} catch (error:Dynamic) {} */
 			currLoadXMLFunctionName = xmlFunctionNames[xmlFilesIndex];
-			request = new URLRequest(xmlPath + "/" + currFileName);
-			loader = new URLLoader();
-			loader.addEventListener(Event.COMPLETE, loadXMLComplete);
-			loader.addEventListener(IOErrorEvent.IO_ERROR, showIOError);
-			loader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, showSecurityError);
-			currLoader = loader;
 			try {
-				loader.load(request);
+				currentXmlPath = Assets.getPath(currFileName);
+				var xml = Xml.parse(currentXmlPath);
+				loadXMLComplete(xml);
 			} catch (error:Dynamic) {
 				trace("XML load error: " + error.message);
 				//game.errorDT.text = error.errorID + ":" + error.name + ":" + error.message;
@@ -629,15 +618,13 @@ class BambaLoader extends EventDispatcher {
 		}
 	}
 
-	function loadXMLComplete(param1:Event):Void {
-		var _loc2_:Null<Dynamic> = null;
+	function loadXMLComplete(xml:Xml):Void {
 		var gameDataAccessFunction:Function = Reflect.field(game.gameData,currLoadXMLFunctionName);
 		++loadingCounter;
 		currBytes += Std.parseFloat(fileSizes[msgCounter]);
 		setLoaderGraphics(currBytes / totalBytes);
 		++msgCounter;
-		_loc2_ = Xml.parse(param1.target.data);
-		gameDataAccessFunction(_loc2_.children());
+		gameDataAccessFunction(xml);
 		++xmlFilesIndex;
 		loadXMLFile();
 	}
