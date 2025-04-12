@@ -236,7 +236,7 @@ class BambaLoader extends EventDispatcher {
 		MsgBox.showWaitBox("יוצר משתמש חדש");
 	}
 
-	function loadGeneralDataComplete(generalDataXml:Xml):Void {
+	function loadGeneralDataComplete():Void {
 		currBytes += Std.parseFloat(fileSizes[msgCounter]);
 		setLoaderGraphics(currBytes / totalBytes);
 		++msgCounter;
@@ -729,21 +729,8 @@ class BambaLoader extends EventDispatcher {
 		trace("loading general data...");
 		currFunctionName = "loadGeneralData";
 		++loadingCounter;
-		Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);
-		var generalDataXMLPath = Assets.getPath("generalData");
-		var generalDataXMLContent:String = File.getContent(generalDataXMLPath);
-		var generalDataXml:Xml = Xml.parse(generalDataXMLContent);
-		loadGeneralDataComplete(generalDataXml);
-		/* var _loc1_:URLRequest = null;
-		var _loc2_:URLLoader = null;
-		currFunctionName = "loadGeneralData";
-		++loadingCounter;
-		Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);
-		_loc1_ = new URLRequest(xmlPath + "/" + generalDataFileName);
-		_loc2_ = new URLLoader();
-		_loc2_.addEventListener(Event.COMPLETE, loadGeneralDataComplete, false, 0, true);
-		currLoader = _loc2_;
-		_loc2_.load(_loc1_); */
+		Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);	
+		loadGeneralDataComplete();
 	}
 
 	function loadSoundsDataComplete(param1:Event):Void {
