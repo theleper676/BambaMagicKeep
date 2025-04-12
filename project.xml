@@ -9,6 +9,7 @@
 	<haxelib name="openfl" />
 	<haxelib name="actuate" />
 	<haxelib name="swf" />
+	<haxelib name="tjson"/>
 	<assets path="Assets" rename="assets" />
 	<assets path="assets/swf/IntroBamba.swf" embed="false" id="IntroBamba" />
 	<assets path="assets/swf/OpeningAssets.swf" preload="true" generate="true"  />
@@ -16,6 +17,7 @@
 	<assets path="assets/xmls/params.xml" embed="false" id="params" />
 	<assets path="assets/xmls/dictionary.xml" embed="false" id="dictionary" />
 	<assets path="assets/xmls/generalData.xml" embed="false" id="generalData" />
+	<assets path="assets/json/generalData.json" embed="false" id="generalDataJson" />
 	<assets path="assets/fonts/Arial.ttf" id="Arial" embed="true" />
 	<assets path="assets/fonts/Choco.ttf" id="Choco" embed="true" />
 	<assets path="assets/fonts/Choco_Bold.ttf" id="Choco Bold" embed="true" />

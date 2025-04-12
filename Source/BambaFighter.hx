@@ -107,10 +107,10 @@ class BambaFighter extends DisplayObject {
 		xPos = param1;
 		yPos = param2;
 		dir = param3;
-		ponGraphics.x = Std.parseFloat(fight.game.gameData.fightBoardXY[yPos][xPos][0]) - dir * Std.parseFloat(fight.game.gameData.fightXoffset[yPos]);
+		ponGraphics.x = Std.parseFloat(fight.game.gameData.fightBoardXY[yPos][xPos][0]) - dir * fight.game.gameData.fightXoffset[yPos];
 		ponGraphics.y = fight.game.gameData.fightBoardXY[yPos][xPos][1];
-		ponGraphics.scaleX = Std.parseFloat(fight.game.gameData.fightZsize[yPos]) * dir;
-		ponGraphics.scaleY = Std.parseFloat(fight.game.gameData.fightZsize[yPos]);
+		ponGraphics.scaleX = fight.game.gameData.fightZsize[yPos] * dir;
+		ponGraphics.scaleY =fight.game.gameData.fightZsize[yPos];
 		updateAttacksGraphics();
 	}
 
@@ -355,12 +355,12 @@ class BambaFighter extends DisplayObject {
 		xPos = param1;
 		yPos = param2;
 		dir = param3;
-		_loc6_ = Std.parseFloat(fight.game.gameData.fightBoardXY[yPos][xPos][0]) - dir * Std.parseFloat(fight.game.gameData.fightXoffset[yPos]);
-		_loc7_ = Std.parseFloat(fight.game.gameData.fightBoardXY[param2][param1][0]) - param3 * Std.parseFloat(fight.game.gameData.fightXoffset[param2]);
+		_loc6_ = Std.parseFloat(fight.game.gameData.fightBoardXY[yPos][xPos][0]) - dir * fight.game.gameData.fightXoffset[yPos];
+		_loc7_ = Std.parseFloat(fight.game.gameData.fightBoardXY[param2][param1][0]) - param3 * fight.game.gameData.fightXoffset[param2];
 		_loc8_ = Std.parseFloat(fight.game.gameData.fightBoardXY[yPos][xPos][1]);
 		_loc9_ = Std.parseFloat(fight.game.gameData.fightBoardXY[param2][param1][1]);
-		_loc10_ = Std.parseFloat(fight.game.gameData.fightZsize[yPos]);
-		_loc11_ = Std.parseFloat(fight.game.gameData.fightZsize[param2]);
+		_loc10_ = fight.game.gameData.fightZsize[yPos];
+		_loc11_ = fight.game.gameData.fightZsize[param2];
 		if (movedBecauseOfOtherPlayer) {
 			_loc12_ = otherPlayerCard.animLength - otherPlayerCard.animDelay - 0.2;
 			_loc13_ = 0;

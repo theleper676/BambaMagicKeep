@@ -241,8 +241,8 @@ class BambaLoader extends EventDispatcher {
 		setLoaderGraphics(currBytes / totalBytes);
 		++msgCounter;
 		++loadingCounter;
-		game.gameData.loadGeneralData(generalDataXml);
-		//loadXMLFile();
+		game.gameData.loadGeneralData();
+		loadXMLFile();
 	}
 
 	function loadAssetsProgress(param1:ProgressEvent):Void {
@@ -474,12 +474,12 @@ class BambaLoader extends EventDispatcher {
 		if (xmlFilesIndex < xmlFiles.length) {
 			currFileName = xmlFiles[xmlFilesIndex];
 			Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);
-			try {
+			/* try {
 				ExternalInterface.call("console.log", {
 					"fb_msgCounter": msgCounter,
 					"fb_currFileName": currFileName
 				});
-			} catch (error:Dynamic) {}
+			} catch (error:Dynamic) {} */
 			currLoadXMLFunctionName = xmlFunctionNames[xmlFilesIndex];
 			request = new URLRequest(xmlPath + "/" + currFileName);
 			loader = new URLLoader();

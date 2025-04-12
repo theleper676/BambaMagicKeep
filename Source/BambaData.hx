@@ -1,5 +1,10 @@
 package;
 
+import tjson.TJSON;
+import sys.io.File;
+import haxe.Json;
+import openfl.utils.Assets;
+//import lime.utils.Assets;
 import haxe.xml.Access;
 
 class BambaData {
@@ -27,7 +32,7 @@ class BambaData {
 
 	public var cardsCatalog:Array<Dynamic>;
 
-	public var fightBoardXY:Array<Dynamic>;
+	public var fightBoardXY:Array<Array<Array<String>>>;
 
 	public var prizesCatalog:Array<Dynamic>;
 
@@ -39,9 +44,9 @@ class BambaData {
 
 	public var mapTimes:Array<Dynamic>;
 
-	public var fightZsize:Array<Dynamic>;
+	public var fightZsize:Array<Float>;
 
-	public var itemsLevels:Array<String>;
+	public var itemsLevels:Array<Int>;
 
 	public var minLevel:Float;
 
@@ -61,7 +66,7 @@ class BambaData {
 
 	public var maxLevel:Float;
 
-	public var fightSmallBoardXY:Array<Dynamic>;
+	public var fightSmallBoardXY:Array<Array<Array<String>>>;
 
 	public var dictionary:BambaDictionary;
 
@@ -79,7 +84,7 @@ class BambaData {
 
 	public var minEnemyLevel:Float;
 
-	public var fightXoffset:Array<Dynamic>;
+	public var fightXoffset:Array<Int>;
 
 	public var enemyType:Float;
 
@@ -226,7 +231,7 @@ class BambaData {
 		var _loc2_:Dynamic = null;
 		var _loc3_:Array<Dynamic> = null;
 		var _loc4_:Dynamic = null;
-		_loc1_ = playerData.level + Std.parseFloat(itemsLevels[Math.floor(Math.random() * itemsLevels.length)]);
+		_loc1_ = playerData.level + itemsLevels[Math.floor(Math.random() * itemsLevels.length)];
 		if (_loc1_ < minLevel) {
 			_loc1_ = minLevel;
 		}
@@ -387,7 +392,36 @@ class BambaData {
 		return null;
 	}
 
-	public function loadFightData(fightBoardXYString:String, fightXoffsetString:String, fightZsizeString:String, fightSmallBoardXYString:String):Void {
+	public function loadFightData(fightBoardXy: Array<String>,fightSmallBoardXy:Array<String>) {
+		var _fightBoardXYArray = [];
+		var _fightSmallBoardXYArray = [];
+
+		for(boardString in fightBoardXy) {
+			var boardRows:Array<String> = boardString.split(":");
+			var processedBoard:Array<Array<String>> = [];
+
+			for (row in boardRows) {
+				processedBoard.push(row.split(','));
+			}
+
+			_fightBoardXYArray.push(processedBoard);
+		}
+
+		for (smallBoardString in fightSmallBoardXy) {
+			var smallBoardRows:Array<String> = smallBoardString.split(":");
+			var processedSmallBoard:Array<Array<String>> = [];
+			
+			for (row in smallBoardRows) {
+				processedSmallBoard.push(row.split(","));
+			}
+			
+			_fightSmallBoardXYArray.push(processedSmallBoard);
+		}
+
+		fightBoardXY = _fightBoardXYArray;
+		fightSmallBoardXY = _fightSmallBoardXYArray;
+	}
+	/* public function loadFightData(fightBoardXy:Array<String>, fightXoffset:Array<Int>, fightZsize:Array<Float>, fightSmallBoardXy:Array<String>):Void {
 		var _fightBoardXYIndex:Int = 0;
 		var _boardCordsIndex:Int = 0;
 		var _fightBoardXYStringArray:Array<String> = [];
@@ -399,7 +433,7 @@ class BambaData {
 		var _loc13_:Dynamic = null;
 		var _loc14_:Array<Dynamic> = null;
 		fightBoardXY = [];
-		_fightBoardXYStringArray = fightBoardXYString.split("*");
+		_fightBoardXYStringArray = fightBoardXy.split("*");
 		while (_fightBoardXYIndex < _fightBoardXYStringArray.length) {
 			_boardcords = _fightBoardXYStringArray[_fightBoardXYIndex].split(":");
 			_loc10_ = [];
@@ -412,7 +446,7 @@ class BambaData {
 			_fightBoardXYIndex++;
 		}
 		fightXoffset = fightXoffsetString.split(",");
-		fightZsize = fightZsizeString.split(",");
+		//fightZsize = fightZsize;
 		fightSmallBoardXY = [];
 		_fightSmallBoardXYStringArray = fightSmallBoardXYString.split("*");
 		_fightBoardXYIndex = 0;
@@ -428,7 +462,7 @@ class BambaData {
 			fightSmallBoardXY.push(_loc13_);
 			_fightBoardXYIndex++;
 		}
-	}
+	} */
 
 	//Return type: BambaItem
 	public function getCatalogItem(param1:Dynamic):Dynamic {
@@ -567,28 +601,59 @@ class BambaData {
 	}
 
 
-	public function loadGeneralData(xml:Xml):Void {
-		// There is no point of parsing the XML for this little of information that will not be changed either way		
-		var fightBoardXY = "195,285:360,285:525,285:690,285*
+	/**
+	 * Load general data (map data, board location etc)
+	 * @param xml 
+	 */
+	public function loadGeneralData():Void {
+		//Macro to parse generalData Json
+		var data = JsonParser.load("Assets/json/generalData.json");
+		
+		//load fight data 
+		var _fightBoardXy = data.generaldata.fightboard.fightboardxy;
+		var _fightSmallBoardXy = data.generaldata.fightboard.fightsmallboardxy;
+		loadFightData(_fightBoardXy, _fightSmallBoardXy);
+
+		// Load Map Data;
+		var _areas = data.generaldata.mainmap.areas;
+		var _dungeons = data.generaldata.mainmap.dungeons;
+		mapData = new BambaMapData(_areas,_dungeons);
+		
+
+		itemsLevels = data.generaldata.itemslevels;
+		defaultAnimLength = data.generaldata.defaultanimlength;
+		defaultDungeonAnimLength = data.generaldata.defaultdungeonanimlength;
+		winAnimLength = data.generaldata.winanimlength;
+		barAnimLength = data.generaldata.baranimlength;
+		winAnimName = data.generaldata.winanimname;
+		beenHitAnimName = data.generaldata.beenhitanimname;
+		loseAnimName = data.generaldata.loseanimname;
+		sharedOrder = data.generaldata.sharedorder;
+		fightZsize = data.generaldata.fightboard.fightzsize;
+		fightXoffset = data.generaldata.fightboard.fightxoffset;
+		
+	
+		//var data = JsonMacro.load("F:/Projects/BambaMagicKeep/Assets/json/generalData.json");
+		//var varfightBoardXY = data.generaldata.fightboard.fightboardxy;
+	 /* 	var fightBoardXY = "195,285:360,285:525,285:690,285*
 		165,335:347,335:540,335:720,335*
-		130,400:338,400:550,400:760,400";
-		var fightXoffset = "45,50,55";
+		130,400:338,400:550,400:760,400";  */
+		/* var fightXoffset = "45,50,55";
 		var fightZsize = "0.8,0.9,1";
 		var fightSmallBoardXY = "16,17:44,17:72,17:102,17*
 		16,45:44,45:72,45:102,45*
-		16,73:44,73:72,73:102,73";
-		itemsLevels = ["-3","-2","-1","0","1"];
-		defaultAnimLength = 0.7;
-		defaultDungeonAnimLength = 0.3;
-		winAnimLength = 2;
-		barAnimLength = 1;
-		beenHitAnimName = "beenHit";
-		winAnimName = "win";
-		loseAnimName = "lose";
-		sharedOrder = 4;
-		mapData = new BambaMapData(xml);
-		loadFightData(fightBoardXY, fightXoffset, fightZsize, fightSmallBoardXY);
-		//TODO: WORKD ON LOAD DIFFULUTIES
+		16,73:44,73:72,73:102,73"; */
+		//itemsLevels = ["-3","-2","-1","0","1"];
+		//defaultAnimLength = 0.7;
+		//defaultDungeonAnimLength = 0.3;
+		//winAnimLength = 2;
+		//barAnimLength = 1;
+		//beenHitAnimName = "beenHit";
+		//winAnimName = "win";
+		//loseAnimName = "lose";
+		//sharedOrder = 4;
+		
+		//loadFightData(fightBoardXY, fightXoffset, fightZsize, fightSmallBoardXY);
 		//loadDungeonDifficulties();
 		/* 
 		loadDungeonDifficulties(param1.dungeonDifficulties.children());
