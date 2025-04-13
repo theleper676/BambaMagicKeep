@@ -1,7 +1,7 @@
 package;
 
 class BambaMapData {
-	var areas:Array<Dynamic>;
+	public var areas(get,null):Array<Array<String>>;
 
 	var dungeons:Array<Dynamic>;
 
@@ -33,4 +33,8 @@ class BambaMapData {
 		}
 	} */
 }
+
+	function get_areas() {
+		return this.areas;
+	}
 }

@@ -12,7 +12,7 @@ class BambaData {
 
 	public var enemiesLevelsCatalog:Array<Dynamic>;
 
-	public var mapData:Dynamic;
+	public var mapData:BambaMapData;
 	//TODO: public var mapData:BambaMapData;
 
 	public var itemsBaseCatalog:Array<Dynamic>;
