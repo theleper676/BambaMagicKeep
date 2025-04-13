@@ -322,7 +322,7 @@ class BambaLoader extends EventDispatcher {
 			
 		//local vars
 		_playerLevelsFileName = "playerLevels";
-		_magicBookFileName = node.magicbookfilename.innerData;
+		_magicBookFileName = "magicBook";
 		_cardsFileName = node.cardsfilename.innerData;
 		_enemiesFileName = node.enemiesfilename.innerData;
 		_enemiesLevelsFileName = node.enemieslevelsfilename.innerData;

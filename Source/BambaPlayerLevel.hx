@@ -1,11 +1,11 @@
 package;
 
 class BambaPlayerLevel {
-	public var maxLife:Float;
+	public var maxLife:Int;
 
-	public var level:Float;
+	public var level:Int;
 
-	public var missionIngredientsIncreasePrc:Float;
+	public var missionIngredientsIncreasePrc:Int;
 
 	public var missionMoneyIncreasePrc:Float;
 
@@ -13,33 +13,29 @@ class BambaPlayerLevel {
 
 	public var missionExIncreasePrc:Float;
 
-	public var nextLevelEx:Float;
+	public var nextLevelEx:Int;
 
-	public var fightMoneyIncreasePrc:Float;
+	public var fightMoneyIncreasePrc:Int;
 
-	public var maxMagic:Float;
+	public var maxMagic:Int;
 
-	public var treasureIngredientsIncreasePrc:Float;
+	public var treasureIngredientsIncreasePrc:Int;
 
-	public var treasureMoneyIncreasePrc:Float;
+	public var treasureMoneyIncreasePrc:Int;
 
-	public var roundRegeneration:Float;
+	public var roundRegeneration:Int;
 
-	public function new() {
-		var json = JsonParser.load("Assets/json/playerLevels.json");
-		if(json != null && json.playerlevels != null) {
-			var playerLevels = json.playerlevels[0];
-			level = playerLevels.level;
-				nextLevelEx = playerLevels.nextlevelex;
-				maxLife = playerLevels.maxlife;
-				maxMagic = playerLevels.maxmagic;
-				roundRegeneration = playerLevels.roundregeneration;
-				missionExIncreasePrc = playerLevels.missionexincreaseprc;
-				missionMoneyIncreasePrc = playerLevels.missionmoneyincreaseprc;
-				missionIngredientsIncreasePrc = playerLevels.missioningredientsincreaseprc;
-				fightMoneyIncreasePrc = playerLevels.fightmoneyincreaseprc;
-				fightIngredientsIncreasePrc = playerLevels.fightingredientsincreaseprc;
-				treasureIngredientsIncreasePrc = playerLevels.treasureingredientsincreaseprc;
-		}
+	public function new(treasuremoneyincreaseprc:Int, treasureingredientsincreaseprc:Int, roundregeneration:Int, nextlevelex:Int, missionmoneyincreaseprc:Float, missioningredientsincreaseprc:Int, missionexincreaseprc:Float, maxmagic:Int, maxlife:Int, level:Int, fightmoneyincreaseprc:Int, fightingredientsincreaseprc:Float) {
+		this.level = level;
+		this.nextLevelEx = nextlevelex;
+		this.maxLife = maxlife;
+		this.maxMagic = maxmagic;
+		this.roundRegeneration = roundregeneration;
+		this.missionExIncreasePrc = missionexincreaseprc;
+		this.missionMoneyIncreasePrc = missionmoneyincreaseprc;
+		this.fightMoneyIncreasePrc = fightmoneyincreaseprc;
+		this.missionIngredientsIncreasePrc = missioningredientsincreaseprc;
+		this.fightIngredientsIncreasePrc = fightingredientsincreaseprc;
+		this.treasureIngredientsIncreasePrc = treasureingredientsincreaseprc;
 	}
 }

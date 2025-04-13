@@ -1,0 +1,24 @@
+{
+  "magicbook": {
+    "magic": [
+      {
+        "id": 1,
+        "name": "עשן שחור",
+        "desc": "\"אין עשן בלי אש\" (אמרה עממית)",
+        "graphicsname": "pic11",
+        "order": 1,
+        "firstcard": 100,
+        "cost": 0,
+        "minlevel": 1,
+        "color": 1,
+        "attackstring": "110010110",
+        "ponanimname": "attack2",
+        "magicanimname": "fire1",
+        "animlength": 3.2,
+        "magicanimdepth": 1,
+        "sound": "FIRE1"
+      },
+      {
+        "id": 2,
+        "name": "כדור אש",
+        "desc": "\"החלק הקשה ביותר הוא לגרום לאש להשאר 

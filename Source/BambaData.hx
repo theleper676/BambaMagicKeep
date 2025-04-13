@@ -1,11 +1,5 @@
 package;
 
-import tjson.TJSON;
-import sys.io.File;
-import haxe.Json;
-import openfl.utils.Assets;
-//import lime.utils.Assets;
-import haxe.xml.Access;
 
 class BambaData {
 	public var questsCatalog:Array<Dynamic>;
@@ -40,7 +34,7 @@ class BambaData {
 
 	public var winAnimName:String;
 
-	public var playerLevelsCatalog:Array<Dynamic>;
+	public var playerLevelsCatalog:Array<BambaPlayerLevel> = [];
 
 	public var mapTimes:Array<Dynamic>;
 
@@ -74,7 +68,7 @@ class BambaData {
 
 	public var mapTrails:Array<Dynamic>;
 
-	public var magicCatalog:Array<Dynamic>;
+	public var magicCatalog:Array<BambaMagic>;
 
 	public var storeItemsCatalog:Array<Dynamic>;
 
@@ -208,13 +202,19 @@ class BambaData {
 		return null;
 	}
 
-	function buildMagicCatalog(param1:Array<Xml>):Void {
-		var _loc2_:Xml = null;
+	function buildMagicCatalog(param1:Xml):Void {
+		/* var json:Ara = JsonParser.load("Assets/json/magicBook.json");
+		for (magicBook in json.magicbook) {
+
+		} */
+		//var bambaMagic = new BambaMagic(param1);
+		//magicCatalog.push(bambaMagic);
+		/* var _loc2_:Xml = null;
 		var _loc3_:BambaMagic = null;
 		for (_loc2_ in param1) {
 			_loc3_ = new BambaMagic(_loc2_);
 			magicCatalog.push(_loc3_);
-		}
+		} */
 	}
 
 	function buildHelpCatalog(param1:Array<Xml>):Void {
@@ -477,25 +477,17 @@ class BambaData {
 		return null;
 	}
 
-	public function loadDungeonDifficulties(param1:Dynamic):Void {
-		var _loc2_:Dynamic = null;
-		var _loc3_:Dynamic = null;
-		var _loc4_:Dynamic = null;
-		var _loc5_:Dynamic = null;
-		var _loc6_:Dynamic = null;
-		dungeonDifficulties = [];
+	public function loadDungeonDifficulties(dungeonDifficulties:Array<{prizeprc:Float, enemylevels:Array<Int>, bosslevels:Array<Int>}>):Void {
+		this.dungeonDifficulties = [];
 
-		if(param1 != null) {
-			var iterable:Array<Dynamic> = cast(param1, Array<Dynamic>);
-			for (_loc2_ in iterable) {
-				_loc3_ = [];
-				_loc4_ = Std.string(_loc2_.enemyLevels).split(",");
-				_loc5_ = Std.string(_loc2_.bossLevels).split(",");
-				_loc6_ = _loc2_.prizePrc;
-				_loc3_.push(_loc4_);
-				_loc3_.push(_loc5_);
-				_loc3_.push(_loc6_);
-				dungeonDifficulties.push(_loc3_);
+		if(dungeonDifficulties != null) {
+			for (difficulty in dungeonDifficulties) {
+				var difficultyData:  Array<Dynamic> = [
+					difficulty.bosslevels,
+					difficulty.enemylevels,
+					difficulty.prizeprc,
+				];
+				this.dungeonDifficulties.push(difficultyData);
 			}
 		}
 	}
@@ -577,15 +569,20 @@ class BambaData {
 		}
 	}
 
-	public function loadOrdersStartDef(param1:Null<Dynamic>):Void {
-		var _loc2_:Null<Dynamic> = null;
-		var _loc3_:Null<Dynamic> = null;
-		var _loc4_:Null<Dynamic> = null;
-		var _loc5_:Null<Dynamic> = null;
-		var _loc6_:Null<Dynamic> = null;
-		ordersStartDefs = [];
+	public function loadOrdersStartDef(orders:Array<{magic:Array<Int>, items:Array<Int>, cards:Array<Int>}>):Void {
+		this.ordersStartDefs = [];
 
-		if(param1 != null) {
+		if (orders != null) {
+			for (order in orders) {
+				var orderData = [
+					order.magic,
+					order.cards,
+					order.items,
+				];
+				this.ordersStartDefs.push(orderData);
+			} 
+		}
+		/* if(param1 != null) {
 			var iterable:Array<Dynamic> = cast(param1, Array<Dynamic>);
 			for (_loc2_ in iterable) {
 				_loc3_ = [];
@@ -597,7 +594,7 @@ class BambaData {
 				_loc3_.push(_loc6_);
 				ordersStartDefs.push(_loc3_);
 			}
-		}
+		} */
 	}
 
 
@@ -614,10 +611,16 @@ class BambaData {
 		var _fightSmallBoardXy = data.generaldata.fightboard.fightsmallboardxy;
 		loadFightData(_fightBoardXy, _fightSmallBoardXy);
 
+		// Load Dungeons Difficulties
+		loadDungeonDifficulties(data.generaldata.dungeondifficulties.difficulty);
+
 		// Load Map Data;
 		var _areas = data.generaldata.mainmap.areas;
 		var _dungeons = data.generaldata.mainmap.dungeons;
 		mapData = new BambaMapData(_areas,_dungeons);
+
+		//Load order start Definition
+		loadOrdersStartDef(data.generaldata.ordersstartdef.order);
 		
 
 		itemsLevels = data.generaldata.itemslevels;
@@ -666,8 +669,8 @@ class BambaData {
 		//winAnimName = param1.winAnimName;
 		//loseAnimName = param1.loseAnimName;
 		//sharedOrder = param1.sharedOrder;
-		mapData = new BambaMapData(param1.mainMap);
-		loadOrdersStartDef(param1.ordersStartDef.children());
+		//mapData = new BambaMapData(param1.mainMap);
+		//loadOrdersStartDef(param1.ordersStartDef.children());
 		loadCharacterCustom(param1.characterCustom.children());
 		mapTrails = param1.mapTrails.split(",");
 		mapTimeDef = param1.mapTimeDef;
@@ -704,18 +707,34 @@ class BambaData {
 	}
 
 	function buildPlayerLevelsCatalog(playerDataXml:Xml):Void {
-		var _bambaPlayerLevel:BambaPlayerLevel = new BambaPlayerLevel();	
+		var json = JsonParser.load("Assets/json/playerLevels.json");
 		minLevel = 99;
 		maxLevel = -99;
+		for (playerLevel in json.playerlevels) {
+			var _playerLevel: BambaPlayerLevel = new BambaPlayerLevel(
+				playerLevel.treasuremoneyincreaseprc,
+				playerLevel.treasureingredientsincreaseprc,
+				playerLevel.roundregeneration,
+				playerLevel.nextlevelex,
+				playerLevel.missionmoneyincreaseprc,
+				playerLevel.missioningredientsincreaseprc,
+				playerLevel.missionexincreaseprc,
+				playerLevel.maxmagic,
+				playerLevel.maxlife,
+				playerLevel.level,
+				playerLevel.fightmoneyincreaseprc,
+				playerLevel.fightingredientsincreaseprc,
+			);
 
-		playerLevelsCatalog.push(_bambaPlayerLevel);
+			if(minLevel > _playerLevel.level) {
+				minLevel = _playerLevel.level;
+			};
+	
+			if(maxLevel < _playerLevel.level) {
+				maxLevel = _playerLevel.level;
+			}
 
-		if(minLevel > _bambaPlayerLevel.level) {
-			minLevel = _bambaPlayerLevel.level;
-		};
-
-		if(maxLevel < _bambaPlayerLevel.level) {
-			maxLevel = _bambaPlayerLevel.level;
+			playerLevelsCatalog.push(_playerLevel);
 		}
 	}
 }
