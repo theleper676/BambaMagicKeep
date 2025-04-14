@@ -20,6 +20,7 @@
 	<assets path="assets/json/generalData.json" embed="false" id="generalDataJson" />
 	<assets path="assets/xmls/playerLevels.xml" embed="false" id="playerLevels" />
 	<assets path="assets/xmls/magicBook.xml" embed="false" id="magicBook" />
+	<assets path="assets/json/magicBook.json" embed="false" id="magicBookJson" />
 	<assets path="assets/fonts/Arial.ttf" id="Arial" embed="true" />
 	<assets path="assets/fonts/Choco.ttf" id="Choco" embed="true" />
 	<assets path="assets/fonts/Choco_Bold.ttf" id="Choco Bold" embed="true" />

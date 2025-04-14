@@ -2,10 +2,9 @@ package;
 
 class BambaMapData {
 	public var areas(get,null):Array<Array<String>>;
+	public var dungeons(get,null):Array<Array<Int>>;
 
-	var dungeons:Array<Dynamic>;
-
-	public function new(areas:Array<Array<String>>, dugneons:Array<Array<Int>> ) {
+	public function new(areas:Array<Array<String>>, dungeons:Array<Array<Int>> ) {
 		/* var _loc2_:Int;
 		var _loc3_:Array<Dynamic>;
 		var _loc4_:Array<Dynamic>;
@@ -15,7 +14,7 @@ class BambaMapData {
      
 		//_loc3_ = param1.areas.split("*");
 		this.areas = areas;
-		this.dungeons = dugneons;
+		this.dungeons = dungeons;
 		//_loc2_ = 0;
 		/* while (_loc2_ < _loc3_.length) {
 			_loc5_ = _loc3_[_loc2_].split(",");
@@ -36,5 +35,9 @@ class BambaMapData {
 
 	function get_areas() {
 		return this.areas;
+	}
+
+	function get_dungeons() {
+		return this.dungeons;
 	}
 }

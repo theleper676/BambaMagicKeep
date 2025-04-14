@@ -1,5 +1,10 @@
 package;
 
+import sys.io.File;
+import haxe.Json;
+import BambaMagic.Magic;
+import openfl.Assets;
+
 
 class BambaData {
 	public var questsCatalog:Array<Dynamic>;
@@ -203,18 +208,14 @@ class BambaData {
 	}
 
 	function buildMagicCatalog(param1:Xml):Void {
-		/* var json:Ara = JsonParser.load("Assets/json/magicBook.json");
-		for (magicBook in json.magicbook) {
-
-		} */
-		//var bambaMagic = new BambaMagic(param1);
-		//magicCatalog.push(bambaMagic);
-		/* var _loc2_:Xml = null;
-		var _loc3_:BambaMagic = null;
-		for (_loc2_ in param1) {
-			_loc3_ = new BambaMagic(_loc2_);
-			magicCatalog.push(_loc3_);
-		} */
+		this.magicCatalog = [];
+		// Because we have mixed objects (some have properties that others dont), we load the json at runtime
+		var magicsJsonPath = Assets.getPath("magicBookJson");
+		var json:{magics:Array<Magic>} = Json.parse(File.getContent(magicsJsonPath));
+		for (magicData in json.magics) {
+			var bambaMagic = new BambaMagic(magicData);
+			magicCatalog.push(bambaMagic);
+		}
 	}
 
 	function buildHelpCatalog(param1:Array<Xml>):Void {
@@ -560,13 +561,12 @@ class BambaData {
 	}
 
 	function buildCardsCatalog(param1:Array<Xml>):Void {
-		var _loc2_:Null<Dynamic> = null;
-		var _loc3_:Null<Dynamic> = null;
-		for (_loc2_ in param1) {
+		trace("building cards catalog");
+		/* for (_loc2_ in param1) {
 			_loc3_ = new BambaCard(_loc2_);
 			_loc3_.init(game);
 			cardsCatalog.push(_loc3_);
-		}
+		} */
 	}
 
 	public function loadOrdersStartDef(orders:Array<{magic:Array<Int>, items:Array<Int>, cards:Array<Int>}>):Void {

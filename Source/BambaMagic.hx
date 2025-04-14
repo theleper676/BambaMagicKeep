@@ -1,11 +1,31 @@
 package;
 
+import haxe.ds.Map;
 import openfl.display.*;
 import openfl.events.MouseEvent;
 import openfl.geom.ColorTransform;
 import general.Heb;
 
-class BambaMagic extends DisplayObject {
+typedef Magic = {
+	id:Float,
+	name:String,
+	desc:String,
+	graphicsname:String,
+	order:Int, 
+	firstcard:Int,
+	cost:Int,
+	minlevel:Int,
+	color:Int,
+	attackstring:String,
+	ponanimname:String,
+	magicanimname:String,
+	animlength:Float,
+	magicanimdepth:Float,
+	sound:String,
+	fixedlocation:String
+
+}
+class BambaMagic  {
 	public var attackString:String;
 
 	public var magicAnimDepth:Float;
@@ -28,7 +48,7 @@ class BambaMagic extends DisplayObject {
 
 	public var magicBookScreen:Dynamic;
 
-	public var fixedLocation:Array<Dynamic>;
+	public var fixedLocation:Array<String>;
 
 	public var isPicked:Bool;
 
@@ -48,45 +68,26 @@ class BambaMagic extends DisplayObject {
 
 	public var disabled:Bool;
 
-	public function new(param1:Xml) {
-		super();
+	public function new(magic:Magic) {
+			this.id = magic.id;
+			this.mName = magic.name;
+			this.mDesc = magic.desc;
+			this.graphicsName = magic.graphicsname;
+			this.order = magic.order;
+			this.firstCard = magic.firstcard;
+			this.cost = magic.cost;
+			this.minLevel = magic.minlevel;
+			this.attackString = magic.attackstring.toString();
+			this.color = magic.color;
+			this.ponAnimName = magic.ponanimname;
+			this.magicAnimName = magic.magicanimname;
+			this.animLength = magic.animlength;
+			this.animDelay = .0;
+			this.magicAnimDepth = magic.magicanimdepth;
+			this.sound = magic.sound;
 
-		for (node in param1.elements()) {
-			id = Std.parseFloat(node.elementsNamed("id").next()?.firstChild().nodeValue);
-			mName = node.elementsNamed("name").next()?.firstChild().nodeValue;
-			mDesc = node.elementsNamed("desc").next()?.firstChild().nodeValue;
-			graphicsName = node.elementsNamed("graphicsName").next()?.firstChild().nodeValue;
-			order = Std.parseFloat(node.elementsNamed("order").next()?.firstChild().nodeValue);
-			firstCard = Std.parseFloat(node.elementsNamed("firstCard").next()?.firstChild().nodeValue);
-			cost = Std.parseFloat(node.elementsNamed("cost").next()?.firstChild().nodeValue);
-			minLevel = Std.parseFloat(node.elementsNamed("minLevel").next()?.firstChild().nodeValue);
-			attackString = node.elementsNamed("attackString").next()?.firstChild().nodeValue;
-			color = Std.parseInt(node.elementsNamed("color").next()?.firstChild().nodeValue);
-			ponAnimName = node.elementsNamed("ponAnimName").next()?.firstChild().nodeValue;
-			magicAnimName = node.elementsNamed("magicAnimName").next()?.firstChild().nodeValue;
-			animLength = Std.parseFloat(node.elementsNamed("animLength").next()?.firstChild().nodeValue);
-			animDelay = Std.parseFloat(node.elementsNamed("animDelay").next()?.firstChild().nodeValue);
-			magicAnimDepth = Std.parseFloat(node.elementsNamed("magicAnimDepth").next()?.firstChild().nodeValue);
-			sound = node.elementsNamed("sound").next()?.firstChild().nodeValue;
-		}
-		//id = param1.id;
-		//mName = param1.name;
-		//mDesc = param1.desc;
-		// graphicsName = param1.graphicsName;
-		//order = param1.order;
-		//firstCard = param1.firstCard;
-		//cost = param1.cost;
-		//minLevel = param1.minLevel;
-		//attackString = param1.attackString;
-		//color = param1.color;
-		//ponAnimName = param1.ponAnimName;
-		//magicAnimName = param1.magicAnimName;
-		//animLength = param1.animLength;
-		//animDelay = param1.animDelay;
-		//magicAnimDepth = param1.magicAnimDepth;
-		//sound = param1.sound;
-		if (param1.exists("fixedLocation")) {
-			fixedLocation = param1.get("fixedLocation").split(",");
+		if (Reflect.hasField(magic, magic.fixedlocation)) {
+			fixedLocation = magic.fixedlocation.split(",");
 		} else {
 			fixedLocation = [];
 		}
