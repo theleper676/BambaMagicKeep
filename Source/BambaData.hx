@@ -40,7 +40,7 @@ class BambaData {
 
 	public var winAnimName:String;
 
-	public var playerLevelsCatalog:Array<BambaPlayerLevel> = [];
+	public var playerLevelsCatalog:Array<BambaPlayerLevel>;
 
 	public var mapTimes:Array<Dynamic>;
 
@@ -70,7 +70,7 @@ class BambaData {
 
 	public var dictionary:BambaDictionary;
 
-	public var helpCatalog:Array<Dynamic>;
+	public var helpCatalog:Array<BambaHelpPage>;
 
 	public var mapTrails:Array<Dynamic>;
 
@@ -195,8 +195,14 @@ class BambaData {
 	}
 
 	//TODO: RETURN TYPE BambaPlayerLevel
-	public function getCatalogPlayerLevel(param1:Dynamic):BambaPlayerLevel {
-		var _loc2_:Dynamic = null;
+	public function getCatalogPlayerLevel(playerLevelId:Float):BambaPlayerLevel {
+		for (playerLevel in playerLevelsCatalog) {
+			if(playerLevel.level == playerLevelId ) {
+				return playerLevel;
+			}
+		}
+		return null;
+		/* var _loc2_:Dynamic = null;
 		_loc2_ = 0;
 		while (_loc2_ < playerLevelsCatalog.length) {
 			if (playerLevelsCatalog[_loc2_].level == param1) {
@@ -204,7 +210,7 @@ class BambaData {
 			}
 			_loc2_++;
 		}
-		return null;
+		return null; */
 	}
 
 	function buildMagicCatalog(param1:Xml):Void {
@@ -296,8 +302,14 @@ class BambaData {
 	}
 
 	//TODO: return type BambaHelpPage
-	public function getCatalogHelpPage(param1:Dynamic):BambaHelpPage {
-		var _loc2_:Dynamic = null;
+	public function getCatalogHelpPage(helpPageId:Float):BambaHelpPage {
+		for (helpPage in helpCatalog) {
+			if(helpPage.id == helpPageId) {
+				return helpPage;
+			}
+		}
+		return null;
+		/* var _loc2_:Dynamic = null;
 		_loc2_ = 0;
 		while (_loc2_ < helpCatalog.length) {
 			if (helpCatalog[_loc2_].id == param1) {
@@ -305,7 +317,7 @@ class BambaData {
 			}
 			_loc2_++;
 		}
-		return null;
+		return null; */
 	}
 
 	//Rturn type BambaItemBase
@@ -387,7 +399,7 @@ class BambaData {
 	}
 
 	//Return Type BambaDungeonData
-	public function getCatalogDungeonData(dungeonDataId:Dynamic):Dynamic {
+	public function getCatalogDungeonData(dungeonDataId:Float):BambaDungeonData {
 
 		for (dungeonData in dungeonsDataCatalog) {
 			if (dungeonData.id == dungeonDataId) {

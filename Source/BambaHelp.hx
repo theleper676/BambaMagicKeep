@@ -2,7 +2,6 @@ package;
 
 import motion.Actuate;
 import haxe.Constraints.Function;
-import openfl.display.DisplayObject;
 import openfl.display.*;
 import openfl.events.MouseEvent;
 import openfl.net.SharedObject;
@@ -10,7 +9,7 @@ import openfl.net.URLRequest;
 import general.Heb;
 import general.MsgBox;
 
-class BambaHelp extends DisplayObject {
+class BambaHelp {
 	public var tutorialSharedObject:SharedObject;
 
 	public var doShowTutorial:Bool;
@@ -24,7 +23,6 @@ class BambaHelp extends DisplayObject {
 	public var currTutorialCode:Float;
 
 	public function new(game:BambaMain) {
-		super();
 		this.game = game;
 		tutorialSharedObject = SharedObject.getLocal("Bamba_Tutorial");
 		if (tutorialSharedObject.data.tutorial == null) {
