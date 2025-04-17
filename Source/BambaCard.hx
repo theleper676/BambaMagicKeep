@@ -6,6 +6,31 @@ import flash.geom.ColorTransform;
 import flash.text.TextFormat;
 import general.Heb;
 
+
+interface Card {
+	var upgradeto:Int;
+	var upgradelevel:String;
+	var upgradedesc:String;
+	var regenerateamount:Int; 
+	var ponanimname:String;
+	var name:String; 
+	var movedir:Int; 
+	var minlevel:Int;
+	var magicid:Int;
+	var ingredient4:Int; 
+	var ingredient3:Int;
+	var ingredient2:Int; 
+	var ingredient1:Int;
+	var id:Int;
+	var healamount:Int;
+	var graphicsname:String;
+	var desc:String;
+	var defenseamount:Int;
+	var damage:Int;
+	var cost:Int;
+	var animlength:Float;
+	var animdelay:Float;
+}
 class BambaCard {
 	public var ingredient1:Float;
 
@@ -67,7 +92,7 @@ class BambaCard {
 
 	public var healAmount:Float;
 
-	public var xmlData:Xml;
+	public var data:Card;
 
 	public var color:Int;
 
@@ -83,40 +108,67 @@ class BambaCard {
 
 	public var moveDir:Float;
 
-	public function new(card:{upgradeto:Int, upgradelevel:String, upgradedesc:String, regenerateamount:Int, ponanimname:String, name:String, movedir:Int, minlevel:Int, magicid:Int, ingredient4:Int, ingredient3:Int, ingredient2:Int, ingredient1:Int, id:Int, healamount:Int, graphicsname:String, desc:String, defenseamount:Int, damage:Int, cost:Int, animlength:Float, animdelay:Float}) {
-		xmlData = param1;
-		id = param1.id;
-		cName = param1.name;
-		upgradeLevel = param1.upgradeLevel;
-		graphicsName = param1.graphicsName;
-		cDesc = param1.desc;
-		cost = param1.cost;
-		damage = param1.damage;
-		moveDir = param1.moveDir;
-		attackString = param1.attackString;
-		defenseAmount = param1.defenseAmount;
-		regenerateAmount = param1.regenerateAmount;
-		healAmount = param1.healAmount;
-		magicId = param1.magicId;
-		color = param1.color;
-		ponAnimName = param1.ponAnimName;
-		magicAnimName = param1.magicAnimName;
-		animLength = param1.animLength;
-		animDelay = param1.animDelay;
-		magicAnimDepth = param1.magicAnimDepth;
-		sound = param1.sound;
-		if (param1.hasOwnProperty("fixedLocation")) {
+	public function new(card:Card) {
+		this.data = card;
+		this.id = card.id;
+		this.cName = card.name;
+		//cName = param1.name;
+		this.upgradeLevel = card.upgradelevel;
+		this.graphicsName = card.graphicsname;
+		//graphicsName = param1.graphicsName;
+		this.cDesc = card.desc;
+		this.cost = card.cost;
+		this.damage = card.damage;
+		this.moveDir = card.movedir;
+		this.attackString = "";
+		this.defenseAmount = card.defenseamount;
+		this.regenerateAmount = card.regenerateamount;
+		this.healAmount = card.healamount;
+		this.magicId = card.magicid;
+		this.color = 1;
+		this.ponAnimName = card.ponanimname;
+		this.magicAnimName = "";
+		this.animLength = card.animlength;
+		this.animDelay = card.animdelay;
+		this.magicAnimDepth = 1.0;
+		this.sound = "";
+		this.fixedLocation = [];
+		this.upgradeTo = card.upgradeto;
+		this.upgradeDesc = card.upgradedesc;
+		this.ingredient1 = card.ingredient1;
+		this.ingredient2 = card.ingredient2;
+		this.ingredient3 = card.ingredient3;
+		this.ingredient4 = card.ingredient4;
+		this.minLevel = 0;
+		//cDesc = param1.desc;
+		//cost = param1.cost;
+		
+		//damage = param1.damage;
+		//moveDir = param1.moveDir;
+		//attackString = param1.attackString;
+		//defenseAmount = param1.defenseAmount;
+		//regenerateAmount = param1.regenerateAmount;
+		//healAmount = param1.healAmount;
+		//magicId = param1.magicId;
+		//color = param1.color;
+		//ponAnimName = param1.ponAnimName;
+		//magicAnimName = param1.magicAnimName;
+		//animLength = param1.animLength;
+		//animDelay = param1.animDelay;
+		//magicAnimDepth = param1.magicAnimDepth;
+		//sound = param1.sound;
+		/* if (param1.hasOwnProperty("fixedLocation")) {
 			fixedLocation = Std.string(param1.fixedLocation).split(",");
 		} else {
 			fixedLocation = [];
-		}
-		upgradeTo = param1.upgradeTo;
-		upgradeDesc = param1.upgradeDesc;
+		} */
+		//upgradeTo = param1.upgradeTo;
+	/* 	upgradeDesc = param1.upgradeDesc;
 		ingredient1 = param1.ingredient1;
 		ingredient2 = param1.ingredient2;
 		ingredient3 = param1.ingredient3;
 		ingredient4 = param1.ingredient4;
-		minLevel = param1.minLevel;
+		minLevel = param1.minLevel; */
 	}
 
 	public function setCardforUpgrade(param1:BambaUpgradeSystem):Void {

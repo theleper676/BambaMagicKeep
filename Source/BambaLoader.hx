@@ -473,6 +473,7 @@ class BambaLoader extends EventDispatcher {
 		if (xmlFilesIndex < xmlFiles.length) {
 			currFileName = xmlFiles[xmlFilesIndex];
 			Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);
+			trace("building " + currLoadXMLFunctionName );
 			currLoadXMLFunctionName = xmlFunctionNames[xmlFilesIndex];
 			try {
 				currentXmlPath = Assets.getPath(currFileName);

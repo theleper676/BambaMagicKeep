@@ -1,5 +1,6 @@
 package;
 
+import BambaCard.Card;
 import BambaHelpPage.HelpPage;
 import sys.io.File;
 import haxe.Json;
@@ -51,7 +52,7 @@ class BambaData {
 
 	public var winAnimLength:Float;
 
-	public var dungeonsDataCatalog:Array<Dynamic>;
+	public var dungeonsDataCatalog:Array<BambaDungeonData>;
 
 	public var maxEnemyLevel:Float;
 
@@ -125,7 +126,7 @@ class BambaData {
 		return null;
 	}
 
-	function buildDungeonsDataCatalog(param1:Array<Xml>):Void {
+	function buildDungeonsDataCatalog(param1:Xml):Void {
 		var _loc2_:Xml = null;
 		var _loc3_:BambaDungeonData = null;
 		for (_loc2_ in param1) {
@@ -152,7 +153,7 @@ class BambaData {
 		return null;
 	}
 
-	function buildEnemiesCatalog(param1:Array<Xml>):Void {
+	function buildEnemiesCatalog(param1:Xml):Void {
 		var enemiesJson = JsonParser.load("Assets/json/enemies.json");
 		for (enemy in enemiesJson.enemies) {
 			var _enemy = new BambaEnemy(enemy);
@@ -215,7 +216,7 @@ class BambaData {
 		}
 	}
 
-	function buildHelpCatalog(param1:Array<Xml>):Void {
+	function buildHelpCatalog(param1:Xml):Void {
 		trace("building help catalog");
 		var helpData: {helps: Array<Any>} = JsonParser.load("Assets/json/help.json");
 		for (helpPage in helpData.helps) {
@@ -263,7 +264,7 @@ class BambaData {
 		return _loc4_;
 	}
 
-	function buildQuestsCatalog(param1:Array<Xml>):Void {
+	function buildQuestsCatalog(param1:Xml):Void {
 		trace("building quests catalog");
 		var questJson = JsonParser.load("Assets/json/quests.json");
 		for ( quest in questJson.quests) {
@@ -285,7 +286,7 @@ class BambaData {
 		return null;
 	}
 
-	function buildPrizesCatalog(param1:Array<Xml>):Void {
+	function buildPrizesCatalog(param1:Xml):Void {
 		var _loc2_:Xml = null;
 		var _loc3_:BambaPrize = null;
 		for (_loc2_ in param1) {
@@ -321,27 +322,33 @@ class BambaData {
 	}
 
 	//Retrun type BambaMagic
-	public function getCatalogMagic(param1:Dynamic):Dynamic {
-		var _loc2_:Dynamic = null;
-		_loc2_ = 0;
-		while (_loc2_ < magicCatalog.length) {
-			if (magicCatalog[_loc2_].id == param1) {
-				return magicCatalog[_loc2_];
+	public function getCatalogMagic(magicId:Float):BambaMagic {
+		var _currentMagic:BambaMagic = null;
+		
+		for (magic in magicCatalog) {
+			if (magic.id == magicId ) {
+				_currentMagic = magic;
 			}
-			_loc2_++;
 		}
-		return null;
+		return _currentMagic;
+
 	}
 
 	//Rreturn type BambaCard
 	public function getCatalogCard(cardId:Float):BambaCard {
-		var _currentCard: BambaCard = null;
+		for (card in cardsCatalog) {
+			if (card.id == cardId) {
+				return card;
+			}
+		}
+		return null;
+		/* var _currentCard: BambaCard = null;
 		for (card in cardsCatalog) {
 			if(card.id == cardId ) {
 				_currentCard = card;
 			}
 		}
-		return _currentCard;
+		return _currentCard; */
 		/* var _loc2_:Dynamic = null;
 		_loc2_ = 0;
 		while (_loc2_ < cardsCatalog.length) {
@@ -354,8 +361,16 @@ class BambaData {
 	}
 
 	//Rreturn type BambaCard
-	public function getNewCard(param1:Dynamic):Dynamic {
-		var _loc2_:Dynamic = null;
+	public function getNewCard(cardId:Float):BambaCard {
+		for (card in cardsCatalog) {
+			if (card.id == cardId) {
+				var _newCard = new BambaCard(card.data);
+				_newCard.init(game);
+				return _newCard;
+			}
+		}
+		return null;
+		/* var _loc2_:Dynamic = null;
 		var _loc3_:BambaCard = null;
 		var _loc4_:BambaCard = null;
 		_loc2_ = 0;
@@ -368,12 +383,19 @@ class BambaData {
 			}
 			_loc2_++;
 		}
-		return null;
+		return null; */
 	}
 
 	//Return Type BambaDungeonData
-	public function getCatalogDungeonData(param1:Dynamic):Dynamic {
-		var _loc2_:Null<Dynamic> = null;
+	public function getCatalogDungeonData(dungeonDataId:Dynamic):Dynamic {
+
+		for (dungeonData in dungeonsDataCatalog) {
+			if (dungeonData.id == dungeonDataId) {
+				return dungeonData;
+			}
+		}
+		return null;
+		/* var _loc2_:Null<Dynamic> = null;
 		_loc2_ = 0;
 		while (_loc2_ < dungeonsDataCatalog.length) {
 			if (dungeonsDataCatalog[_loc2_].id == param1) {
@@ -381,7 +403,7 @@ class BambaData {
 			}
 			_loc2_++;
 		}
-		return null;
+		return null; */
 	}
 
 	//TODO: Rerturn type BambaStoreItems
@@ -523,7 +545,7 @@ class BambaData {
 		
 	}
 
-	function buildSurprisesCatalog(param1:Array<Xml>):Void {
+	function buildSurprisesCatalog(param1:Xml):Void {
 		surprisesCatalog = [];
 		var suprisesJson = JsonParser.load("Assets/json/suprises.json");
 		for (data in suprisesJson.surprises) {
@@ -532,7 +554,7 @@ class BambaData {
 		}
 	}
 
-	function buildItemsBaseCatalog(param1:Array<Xml>):Void {
+	function buildItemsBaseCatalog(param1:Xml):Void {
 		var _loc2_:Xml = null;
 		var _loc3_:BambaItemBase = null;
 		for (_loc2_ in param1) {
@@ -554,7 +576,7 @@ class BambaData {
 		return null;
 	}
 
-	function buildItemsCatalog(param1:Array<Xml>):Void {
+	function buildItemsCatalog(param1:Xml):Void {
 		var _loc2_:Xml = null;
 		var _loc3_:BambaItem = null;
 		for (_loc2_ in param1) {
@@ -564,12 +586,12 @@ class BambaData {
 		}
 	}
 
-	function buildCardsCatalog(param1:Array<Xml>):Void {
+	function buildCardsCatalog(param1:Xml):Void {
 		trace("building cards catalog");
 		var cardsData = JsonParser.load("Assets/json/cards.json");
 		for (card in cardsData.cards) {
-			var _card = new BambaCard(card);
-
+			var _card = new BambaCard(cast(card, Card));
+			cardsCatalog.push(_card);
 		}
 		/* for (_loc2_ in param1) {
 			_loc3_ = new BambaCard(_loc2_);
@@ -706,7 +728,7 @@ class BambaData {
 		return null;
 	}
 
-	function buildStoreItemsCatalog(param1:Array<Xml>):Void {
+	function buildStoreItemsCatalog(param1:Xml):Void {
 		var _loc2_:Xml = null;
 		var _loc3_:BambaStoreItems = null;
 		for (_loc2_ in param1) {
