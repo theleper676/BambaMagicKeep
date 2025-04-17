@@ -1,5 +1,6 @@
 package;
 
+import BambaQuest.Quest;
 import sys.io.File;
 import haxe.Json;
 import BambaMagic.Magic;
@@ -7,9 +8,9 @@ import openfl.Assets;
 
 
 class BambaData {
-	public var questsCatalog:Array<Dynamic>;
+	public var questsCatalog:Array<BambaQuest>;
 
-	public var enemiesCatalog:Array<Dynamic>;
+	public var enemiesCatalog:Array<BambaEnemy>;
 
 	public var surprisesCatalog:Array<BambaSurprise>;
 
@@ -153,11 +154,10 @@ class BambaData {
 	}
 
 	function buildEnemiesCatalog(param1:Array<Xml>):Void {
-		var _loc2_:Xml = null;
-		var _loc3_:BambaEnemy = null;
-		for (_loc2_ in param1) {
-			_loc3_ = new BambaEnemy(_loc2_);
-			enemiesCatalog.push(_loc3_);
+		var enemiesJson = JsonParser.load("Assets/json/enemies.json");
+		for (enemy in enemiesJson.enemies) {
+			var _enemy = new BambaEnemy(enemy);
+			enemiesCatalog.push(_enemy);
 		}
 	}
 
@@ -267,11 +267,13 @@ class BambaData {
 	}
 
 	function buildQuestsCatalog(param1:Array<Xml>):Void {
-		var _loc2_:Xml = null;
-		var _loc3_:BambaQuest = null;
-		for (_loc2_ in param1) {
-			_loc3_ = new BambaQuest(_loc2_);
-			questsCatalog.push(_loc3_);
+		trace("building quests catalog");
+		questsCatalog = [];
+		var questJson:{quests:Array<Quest>} = JsonParser.load("Assets/json/quests.json");
+
+		for ( quest in questJson.quests) {
+			var _quest = new BambaQuest(quest);
+			questsCatalog.push(_quest);
 		}
 	}
 
@@ -396,7 +398,7 @@ class BambaData {
 	public function loadFightData(fightBoardXy: Array<String>,fightSmallBoardXy:Array<String>) {
 		var _fightBoardXYArray = [];
 		var _fightSmallBoardXYArray = [];
-
+		
 		for(boardString in fightBoardXy) {
 			var boardRows:Array<String> = boardString.split(":");
 			var processedBoard:Array<Array<String>> = [];
@@ -520,11 +522,11 @@ class BambaData {
 	}
 
 	function buildSurprisesCatalog(param1:Array<Xml>):Void {
-		var _loc2_:Xml = null;
-		var _loc3_:BambaSurprise = null;
-		for (_loc2_ in param1) {
-			_loc3_ = new BambaSurprise(_loc2_);
-			surprisesCatalog.push(_loc3_);
+		surprisesCatalog = [];
+		var suprisesJson = JsonParser.load("Assets/json/suprises.json");
+		for (data in suprisesJson.surprises) {
+			var suprise = new BambaSurprise(data);
+			surprisesCatalog.push(suprise);
 		}
 	}
 

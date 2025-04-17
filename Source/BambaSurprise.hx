@@ -13,18 +13,16 @@ class BambaSurprise  {
 
 	public var sName:String;
 
-	public function new(param1:Xml) {
-		
-		for (node in param1.elements()) {
-			id = Std.parseFloat(node.elementsNamed("id").next()?.firstChild().nodeValue);
-			sName = node.elementsNamed("name").next()?.firstChild().nodeValue;
-			sDesc = node.elementsNamed("desc").next()?.firstChild().nodeValue;
-			type = Std.parseFloat(node.elementsNamed("type").next()?.firstChild().nodeValue);
-		}
-		if (param1.exists("prizesIds")) {
-			prizesIds = param1.get("prizesIds").split(",");
+	public function new(data:{type:Int, name:String, id:Int, desc:String}) {
+		this.id = data.id;
+		this.sName = data.name;
+		this.sDesc = data.desc;
+		this.type = data.type;
+		this.prizesIds = [];
+	/* 	if (Reflect.hasField(data, "prizesIds")) {
+			this.prizesIds = data.prizeIds;
 		} else {
 			prizesIds = [];
-		}
+		} */
 	}
 }

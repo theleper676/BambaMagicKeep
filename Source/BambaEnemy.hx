@@ -2,8 +2,8 @@ package;
 
 import openfl.display.*;
 
-class BambaEnemy extends Sprite {
-	public var AIType:String;
+class BambaEnemy {
+	public var AIType:Int;
 
 	public var cards:Array<Dynamic>;
 
@@ -21,31 +21,18 @@ class BambaEnemy extends Sprite {
 
 	public var levelCards:Array<Dynamic>;
 
-	public function new(param1:Dynamic) {
-		var _loc2_:Dynamic = null;
-		var _loc3_:Dynamic = null;
-		var levelCardIter:Array<Dynamic> = cast(param1.levelCards.children(), Array<Dynamic>);
-		super();
-		id = param1.id;
-		type = param1.type;
-		eName = param1.name;
-		eDesc = param1.desc;
-		assetFileName = param1.assetFileName;
-		AIType = param1.AIType;
-		if (param1.hasOwnProperty("cards")) {
-			cards = param1.cards.split(",");
+	public function new(enemy:{type:Int, prizesids:Array<Int>, name:String, levelcards:Array<Array<Int>>, id:Int, desc:String, cards:Null<Array<Int>>, assetfilename:String, aitype:Int}) {
+		this.id = enemy.id;
+		this.type = enemy.type;
+		this.eName = enemy.name;
+		this.eDesc = enemy.desc;
+		this.assetFileName = enemy.assetfilename;
+		this.AIType = enemy.aitype;
+		if(Reflect.hasField(enemy, "cards")) {
+			this.cards = enemy.cards;
 		} else {
-			cards = [];
+			this.cards = [];
 		}
-		if (param1.hasOwnProperty("levelCards")) {
-			levelCards = [];
-			for (_loc2_ in levelCardIter ) {
-				_loc3_ = _loc2_.split(",");
-				levelCards.push(_loc3_);
-			}
-		} else {
-			levelCards = [];
-		}
-		prizesIds = param1.prizesIds.split(",");
+		this.prizesIds = enemy.prizesids;
 	}
 }
