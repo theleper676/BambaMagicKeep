@@ -29,7 +29,7 @@ class BambaData {
 
 	public var ordersStartDefs:Array<Dynamic>;
 
-	public var cardsCatalog:Array<Dynamic>;
+	public var cardsCatalog:Array<BambaCard>;
 
 	public var fightBoardXY:Array<Array<Array<String>>>;
 
@@ -334,8 +334,15 @@ class BambaData {
 	}
 
 	//Rreturn type BambaCard
-	public function getCatalogCard(param1:Dynamic):Dynamic {
-		var _loc2_:Dynamic = null;
+	public function getCatalogCard(cardId:Float):BambaCard {
+		var _currentCard: BambaCard = null;
+		for (card in cardsCatalog) {
+			if(card.id == cardId ) {
+				_currentCard = card;
+			}
+		}
+		return _currentCard;
+		/* var _loc2_:Dynamic = null;
 		_loc2_ = 0;
 		while (_loc2_ < cardsCatalog.length) {
 			if (cardsCatalog[_loc2_].id == param1) {
@@ -343,7 +350,7 @@ class BambaData {
 			}
 			_loc2_++;
 		}
-		return null;
+		return null; */
 	}
 
 	//Rreturn type BambaCard
@@ -463,7 +470,7 @@ class BambaData {
 	} */
 
 	//Return type: BambaItem
-	public function getCatalogItem(param1:Dynamic):Dynamic {
+	public function getCatalogItem(param1:Dynamic):BambaItem {
 		var _loc2_:Dynamic = null;
 		_loc2_ = 0;
 		while (_loc2_ < itemsCatalog.length) {
@@ -562,7 +569,7 @@ class BambaData {
 		var cardsData = JsonParser.load("Assets/json/cards.json");
 		for (card in cardsData.cards) {
 			var _card = new BambaCard(card);
-			
+
 		}
 		/* for (_loc2_ in param1) {
 			_loc3_ = new BambaCard(_loc2_);
