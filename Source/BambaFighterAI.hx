@@ -36,11 +36,11 @@ class BambaFighterAI extends DisplayObject {
 		fight = param1.fight;
 		trace("AIType:" + fight.enemyData.AIType);
 		switch (fight.enemyData.AIType) {
-			case "1":
+			case 1:
 				GOOD_ATTACK_CHANCE = 0.15;
-			case "2":
+			case 2:
 				GOOD_ATTACK_CHANCE = 0.25;
-			case "3":
+			case 3:
 				GOOD_ATTACK_CHANCE = 0.32;
 		}
 		possibleAttacks = [];
@@ -99,9 +99,9 @@ class BambaFighterAI extends DisplayObject {
 				break;
 			}
 			switch (fight.enemyData.AIType) {
-				case "1":
-				case "2":
-				case "3":
+				case 1:
+				case 2:
+				case 3:
 					_loc8_ = 0;
 					_loc9_ = 0;
 					_loc10_ = -1;

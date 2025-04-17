@@ -1,6 +1,6 @@
 package;
 
-import BambaQuest.Quest;
+import BambaHelpPage.HelpPage;
 import sys.io.File;
 import haxe.Json;
 import BambaMagic.Magic;
@@ -16,7 +16,7 @@ class BambaData {
 
 	public var beenHitAnimName:String;
 
-	public var enemiesLevelsCatalog:Array<Dynamic>;
+	public var enemiesLevelsCatalog:Array<BambaEnemyLevel>;
 
 	public var mapData:BambaMapData;
 	//TODO: public var mapData:BambaMapData;
@@ -24,7 +24,6 @@ class BambaData {
 	public var itemsBaseCatalog:Array<Dynamic>;
 
 	public var playerData:BambaPlayerData;
-
 
 	public var characterCustomDefs:Array<Dynamic>;
 
@@ -195,7 +194,7 @@ class BambaData {
 	}
 
 	//TODO: RETURN TYPE BambaPlayerLevel
-	public function getCatalogPlayerLevel(param1:Dynamic):Dynamic {
+	public function getCatalogPlayerLevel(param1:Dynamic):BambaPlayerLevel {
 		var _loc2_:Dynamic = null;
 		_loc2_ = 0;
 		while (_loc2_ < playerLevelsCatalog.length) {
@@ -208,24 +207,22 @@ class BambaData {
 	}
 
 	function buildMagicCatalog(param1:Xml):Void {
-		this.magicCatalog = [];
-		// Because we have mixed objects (some have properties that others dont), we load the json at runtime
-		var magicsJsonPath = Assets.getPath("magicBookJson");
-		var json:{magics:Array<Magic>} = Json.parse(File.getContent(magicsJsonPath));
-		for (magicData in json.magics) {
-			var bambaMagic = new BambaMagic(magicData);
-			magicCatalog.push(bambaMagic);
+		trace("building magic catalog");
+		var magicBookData= JsonParser.load("Assets/json/magicBook.json");
+		for (magic in magicBookData.magics) {
+			var _bambaMagic = new BambaMagic(magic);
+			magicCatalog.push(_bambaMagic);
 		}
 	}
 
 	function buildHelpCatalog(param1:Array<Xml>):Void {
-		var _loc2_:Xml = null;
-		var _loc3_:BambaHelpPage = null;
-		for (_loc2_ in param1) {
-			_loc3_ = new BambaHelpPage(_loc2_);
-			helpCatalog.push(_loc3_);
+		trace("building help catalog");
+		var helpData: {helps: Array<Any>} = JsonParser.load("Assets/json/help.json");
+		for (helpPage in helpData.helps) {
+			var _helpPage = new BambaHelpPage(helpPage);
+			helpCatalog.push(_helpPage);
 		}
-	}
+}
 
 	public function getSuitableItemId():Float {
 		var _loc1_:Float = Math.NaN;
@@ -268,9 +265,7 @@ class BambaData {
 
 	function buildQuestsCatalog(param1:Array<Xml>):Void {
 		trace("building quests catalog");
-		questsCatalog = [];
-		var questJson:{quests:Array<Quest>} = JsonParser.load("Assets/json/quests.json");
-
+		var questJson = JsonParser.load("Assets/json/quests.json");
 		for ( quest in questJson.quests) {
 			var _quest = new BambaQuest(quest);
 			questsCatalog.push(_quest);
@@ -564,6 +559,11 @@ class BambaData {
 
 	function buildCardsCatalog(param1:Array<Xml>):Void {
 		trace("building cards catalog");
+		var cardsData = JsonParser.load("Assets/json/cards.json");
+		for (card in cardsData.cards) {
+			var _card = new BambaCard(card);
+			
+		}
 		/* for (_loc2_ in param1) {
 			_loc3_ = new BambaCard(_loc2_);
 			_loc3_.init(game);

@@ -2,24 +2,37 @@ package;
 
 import openfl.display.DisplayObject;
 
-class BambaHelpPage extends DisplayObject {
-	public var texts:Array<Dynamic>;
 
-	public var pics:Array<Dynamic>;
+interface HelpPage  {
+    var id:Int;
+    var template:String;
+    var texts:Dynamic<String>;
+    var pics:Array<String>;
+    var links:Dynamic<Dynamic>;
+}
 
-	public var links:Array<Dynamic>;
+class BambaHelpPage implements HelpPage {
+	public var texts:Dynamic<String> ;
+
+	public var pics:Array<String>;
+
+	public var links:Dynamic<Dynamic>;
 
 	public var template:String;
 
-	public var id:Float;
+	public var id:Int;
 
-	public function new(param1:Dynamic) {
-		var _loc2_:Float = Math.NaN;
+	public function new(helpPageData:HelpPage) {
+		this.texts = helpPageData.texts;
+		this.pics = helpPageData.pics;
+		this.links = helpPageData.links;
+		this.template = helpPageData.template;
+		this.id = helpPageData.id;
+		/* var _loc2_:Float = Math.NaN;
 		var _loc3_:Array<Dynamic> = null;
 		var _loc4_:String = null;
 		var _loc5_:String = null;
 		var _loc6_:Array<Dynamic> = null;
-		super();
 		id = Std.parseFloat(param1.get("id"));
 		template = param1.get("template");
 		texts = [];
@@ -64,6 +77,6 @@ class BambaHelpPage extends DisplayObject {
 				links.push(_loc3_);
 			}
 			_loc2_++;
-		}
+		} */
 	}
 }

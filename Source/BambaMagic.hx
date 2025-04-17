@@ -48,7 +48,7 @@ class BambaMagic  {
 
 	public var magicBookScreen:Dynamic;
 
-	public var fixedLocation:Array<String>;
+	public var fixedLocation:Array<Int>;
 
 	public var isPicked:Bool;
 
@@ -68,7 +68,7 @@ class BambaMagic  {
 
 	public var disabled:Bool;
 
-	public function new(magic:Magic) {
+	public function new(magic:{sound:String, ponanimname:String, order:Int, name:String, minlevel:Int, magicanimname:String, magicanimdepth:Int, id:Int, graphicsname:String, fixedlocation:Array<Int>, firstcard:Int, desc:String, cost:Int, color:Int, attackstring:String, animlength:Float}) {
 			this.id = magic.id;
 			this.mName = magic.name;
 			this.mDesc = magic.desc;
@@ -86,8 +86,8 @@ class BambaMagic  {
 			this.magicAnimDepth = magic.magicanimdepth;
 			this.sound = magic.sound;
 
-		if (Reflect.hasField(magic, magic.fixedlocation)) {
-			fixedLocation = magic.fixedlocation.split(",");
+		if (Reflect.hasField(magic, "fixedlocation")) {
+			fixedLocation = magic.fixedlocation;
 		} else {
 			fixedLocation = [];
 		}

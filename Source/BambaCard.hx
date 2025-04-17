@@ -83,7 +83,7 @@ class BambaCard {
 
 	public var moveDir:Float;
 
-	public function new(param1:Dynamic) {
+	public function new(card:{upgradeto:Int, upgradelevel:String, upgradedesc:String, regenerateamount:Int, ponanimname:String, name:String, movedir:Int, minlevel:Int, magicid:Int, ingredient4:Int, ingredient3:Int, ingredient2:Int, ingredient1:Int, id:Int, healamount:Int, graphicsname:String, desc:String, defenseamount:Int, damage:Int, cost:Int, animlength:Float, animdelay:Float}) {
 		xmlData = param1;
 		id = param1.id;
 		cName = param1.name;

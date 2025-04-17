@@ -1,24 +1,5 @@
 package;
 
-import motion.easing.Quad;
-import openfl.utils.QName;
-
-typedef Quest = {
-	var id:Int;
-	var name:Dynamic; // Mostly String, but sometimes Int
-	var desc:String;
-	var type:Int;
-	var dungeonids:Array<Int>;
-	var dungeondifficulties:Array<Int>;
-	var enemiesids:Array<Int>;
-	var prizesids:Array<Int>;
-	var expoints:Int;
-	var minlevel:Int;
-	var qgraphics:Int;
-	var endmsg:String;
-	@:optional var tutorialcode:Int;
-	@:optional var text:String;
-  }
 
 class BambaQuest  {
 	public var tutorialCode:Float;
@@ -49,7 +30,7 @@ class BambaQuest  {
 
 	public var exPoints:Float;
 
-	public function new(questData:Quest) {
+	public function new(questData:{type:Int, tutorialcode:Int, qgraphics:Int, prizesids:Array<Int>, name:String, minlevel:Int, id:Int, expoints:Int, enemiesids:Array<Int>, endmsg:String, dungeonids:Array<Int>, dungeondifficulties:Array<Int>, desc:String}) {
 		this.id = questData.id;
 		this.qName = questData.name;
 		this.qDesc = questData.desc;
