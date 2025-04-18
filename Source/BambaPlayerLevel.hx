@@ -25,17 +25,17 @@ class BambaPlayerLevel {
 
 	public var roundRegeneration:Int;
 
-	public function new(treasuremoneyincreaseprc:Int, treasureingredientsincreaseprc:Int, roundregeneration:Int, nextlevelex:Int, missionmoneyincreaseprc:Float, missioningredientsincreaseprc:Int, missionexincreaseprc:Float, maxmagic:Int, maxlife:Int, level:Int, fightmoneyincreaseprc:Int, fightingredientsincreaseprc:Float) {
-		this.level = level;
-		this.nextLevelEx = nextlevelex;
-		this.maxLife = maxlife;
-		this.maxMagic = maxmagic;
-		this.roundRegeneration = roundregeneration;
-		this.missionExIncreasePrc = missionexincreaseprc;
-		this.missionMoneyIncreasePrc = missionmoneyincreaseprc;
-		this.fightMoneyIncreasePrc = fightmoneyincreaseprc;
-		this.missionIngredientsIncreasePrc = missioningredientsincreaseprc;
-		this.fightIngredientsIncreasePrc = fightingredientsincreaseprc;
-		this.treasureIngredientsIncreasePrc = treasureingredientsincreaseprc;
+	public function new(playerLevel:{treasuremoneyincreaseprc:Int, treasureingredientsincreaseprc:Int, roundregeneration:Int, nextlevelex:Int, missionmoneyincreaseprc:Float, missioningredientsincreaseprc:Int, missionexincreaseprc:Float, maxmagic:Int, maxlife:Int, level:Int, fightmoneyincreaseprc:Int, fightingredientsincreaseprc:Float}) {
+		this.level = playerLevel.level;
+		this.nextLevelEx = playerLevel.nextlevelex;
+		this.maxLife = playerLevel.maxlife;
+		this.maxMagic = playerLevel.maxmagic;
+		this.roundRegeneration = playerLevel.roundregeneration;
+		this.missionExIncreasePrc = playerLevel.missionexincreaseprc;
+		this.missionMoneyIncreasePrc = playerLevel.missionmoneyincreaseprc;
+		this.fightMoneyIncreasePrc = playerLevel.fightmoneyincreaseprc;
+		this.missionIngredientsIncreasePrc = playerLevel.missioningredientsincreaseprc;
+		this.fightIngredientsIncreasePrc = playerLevel.fightingredientsincreaseprc;
+		this.treasureIngredientsIncreasePrc = playerLevel.treasureingredientsincreaseprc;
 	}
 }

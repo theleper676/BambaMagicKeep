@@ -586,6 +586,7 @@ class BambaData {
 	}
 
 	function buildSurprisesCatalog(param1:Xml):Void {
+		trace("building suprises catalog");
 		var suprisesJson = JsonParser.load("Assets/json/suprises.json");
 		for (data in suprisesJson.surprises) {
 			var suprise = new BambaSurprise(data);
@@ -679,11 +680,6 @@ class BambaData {
 		} */
 	}
 
-
-	/**
-	 * Load general data (map data, board location etc)
-	 * @param xml 
-	 */
 	public function loadGeneralData():Void {
 		//Macro to parse generalData Json
 		var data = JsonParser.load("Assets/json/generalData.json");
@@ -795,24 +791,11 @@ class BambaData {
 
 	function buildPlayerLevelsCatalog(playerDataXml:Xml):Void {
 		trace("building players level catalog");
-		var json = JsonParser.load("Assets/json/playerLevels.json");
+		var playerLevelsData = JsonParser.load("Assets/json/playerLevels.json");
 		minLevel = 99;
 		maxLevel = -99;
-		for (playerLevel in json.playerlevels) {
-			var _playerLevel: BambaPlayerLevel = new BambaPlayerLevel(
-				playerLevel.treasuremoneyincreaseprc,
-				playerLevel.treasureingredientsincreaseprc,
-				playerLevel.roundregeneration,
-				playerLevel.nextlevelex,
-				playerLevel.missionmoneyincreaseprc,
-				playerLevel.missioningredientsincreaseprc,
-				playerLevel.missionexincreaseprc,
-				playerLevel.maxmagic,
-				playerLevel.maxlife,
-				playerLevel.level,
-				playerLevel.fightmoneyincreaseprc,
-				playerLevel.fightingredientsincreaseprc,
-			);
+		for (playerLevel in playerLevelsData) {
+			var _playerLevel = new BambaPlayerLevel(playerLevel);
 
 			if(minLevel > _playerLevel.level) {
 				minLevel = _playerLevel.level;
