@@ -34,7 +34,7 @@ class BambaData {
 
 	public var playerLevelsCatalog:Array<BambaPlayerLevel>;
 
-	public var mapTimes:Array<Dynamic>;
+	public var mapTimes:Map<String,Float>;
 
 	public var fightZsize:Array<Float>;
 
@@ -64,7 +64,7 @@ class BambaData {
 
 	public var helpCatalog:Array<BambaHelpPage>;
 
-	public var mapTrails:Array<Dynamic>;
+	public var mapTrails:Array<String>;
 
 	public var magicCatalog:Array<BambaMagic>;
 
@@ -279,8 +279,14 @@ class BambaData {
 	}
 
 	//TODO: ReturnType BambaEnemy
-	public function getCatalogEnemy(param1:Dynamic, param2:Dynamic):Dynamic {
-		var _loc3_:Dynamic = null;
+	public function getCatalogEnemy(id:Float, type:Float):BambaEnemy {
+		for (enemy in enemiesCatalog) {
+			if(enemy.id == id && enemy.type == type ) {
+				return enemy;
+			}
+		}
+		return null;
+		/* var _loc3_:Dynamic = null;
 		_loc3_ = 0;
 		while (_loc3_ < enemiesCatalog.length) {
 			if (enemiesCatalog[_loc3_].id == param1 && enemiesCatalog[_loc3_].type == param2) {
@@ -288,7 +294,7 @@ class BambaData {
 			}
 			_loc3_++;
 		}
-		return null;
+		return null; */
 	}
 
 	function buildPrizesCatalog(param1:Xml):Void {
@@ -345,15 +351,13 @@ class BambaData {
 	}
 
 	//Retrun type BambaMagic
-	public function getCatalogMagic(magicId:Float):BambaMagic {
-		var _currentMagic:BambaMagic = null;
-		
+	public function getCatalogMagic(id:Float):BambaMagic {
 		for (magic in magicCatalog) {
-			if (magic.id == magicId ) {
-				_currentMagic = magic;
+			if (magic.id == id ) {
+				return magic;
 			}
 		}
-		return _currentMagic;
+		return null;
 
 	}
 
@@ -411,7 +415,6 @@ class BambaData {
 
 	//Return Type BambaDungeonData
 	public function getCatalogDungeonData(dungeonDataId:Float):BambaDungeonData {
-
 		for (dungeonData in dungeonsDataCatalog) {
 			if (dungeonData.id == dungeonDataId) {
 				return dungeonData;
@@ -699,19 +702,29 @@ class BambaData {
 
 		//Load order start Definition
 		loadOrdersStartDef(data.generaldata.ordersstartdef.order);
-		
+		//Load character custom 
+		loadCharacterCustom(data.generaldata.charactercustom);
 
-		itemsLevels = data.generaldata.itemslevels;
-		defaultAnimLength = data.generaldata.defaultanimlength;
-		defaultDungeonAnimLength = data.generaldata.defaultdungeonanimlength;
-		winAnimLength = data.generaldata.winanimlength;
-		barAnimLength = data.generaldata.baranimlength;
-		winAnimName = data.generaldata.winanimname;
-		beenHitAnimName = data.generaldata.beenhitanimname;
-		loseAnimName = data.generaldata.loseanimname;
-		sharedOrder = data.generaldata.sharedorder;
-		fightZsize = data.generaldata.fightboard.fightzsize;
-		fightXoffset = data.generaldata.fightboard.fightxoffset;
+		this.mapTrails = data.generaldata.maptrails;
+		this.itemsLevels = data.generaldata.itemslevels;
+		this.defaultAnimLength = data.generaldata.defaultanimlength;
+		this.defaultDungeonAnimLength = data.generaldata.defaultdungeonanimlength;
+		this.winAnimLength = data.generaldata.winanimlength;
+		this.barAnimLength = data.generaldata.baranimlength;
+		this.winAnimName = data.generaldata.winanimname;
+		this.beenHitAnimName = data.generaldata.beenhitanimname;
+		this.loseAnimName = data.generaldata.loseanimname;
+		this.sharedOrder = data.generaldata.sharedorder;
+		this.fightZsize = data.generaldata.fightboard.fightzsize;
+		this.fightXoffset = data.generaldata.fightboard.fightxoffset;
+		this.mapTimeDef = data.generaldata.maptimedef;
+
+		//Set map times
+		mapTimes = new Map<String,Float>();
+		for (key in Reflect.fields(data.generaldata.maptimes)){
+			var value: Float = Reflect.field(data.generaldata.maptimes, key);
+			mapTimes.set(key, value);
+		}
 		
 	
 		//var data = JsonMacro.load("F:/Projects/BambaMagicKeep/Assets/json/generalData.json");
@@ -749,9 +762,9 @@ class BambaData {
 		//sharedOrder = param1.sharedOrder;
 		//mapData = new BambaMapData(param1.mainMap);
 		//loadOrdersStartDef(param1.ordersStartDef.children());
-		loadCharacterCustom(param1.characterCustom.children());
-		mapTrails = param1.mapTrails.split(",");
-		mapTimeDef = param1.mapTimeDef;
+		//loadCharacterCustom(param1.characterCustom.children());
+		//mapTrails = param1.mapTrails.split(",");
+		//mapTimeDef = param1.mapTimeDef;
 		mapTimes = [];
 		_loc7_ = param1.mapTimes.split(",");
 		_loc8_ = 0;
