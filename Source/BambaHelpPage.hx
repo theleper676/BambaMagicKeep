@@ -1,28 +1,17 @@
 package;
 
-import openfl.display.DisplayObject;
-
-
-interface HelpPage  {
-    var id:Int;
-    var template:String;
-    var texts:Dynamic<String>;
-    var pics:Array<String>;
-    var links:Dynamic<Dynamic>;
-}
-
-class BambaHelpPage implements HelpPage {
+class BambaHelpPage {
 	public var texts:Dynamic<String> ;
 
 	public var pics:Array<String>;
 
-	public var links:Dynamic<Dynamic>;
+	public var links:{l1:String};
 
 	public var template:String;
 
 	public var id:Int;
 
-	public function new(helpPageData:HelpPage) {
+	public function new(helpPageData:{texts:{p5:String, p4:String, p3:String, p2:String, p1:String}, template:String, pics:Array<String>, links:{l1:String}, id:Int}) {
 		this.texts = helpPageData.texts;
 		this.pics = helpPageData.pics;
 		this.links = helpPageData.links;

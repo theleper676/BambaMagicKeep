@@ -1,3598 +1,3596 @@
-{
-  "quests": [
-    {
-      "id": 1,
-      "name": "טוטוריאל רמה 1",
-      "type": 4,
-      "desc": "גולדי, ליצן החצר של המלך דניאל, מבקש שתמצא כמה פירות יער בשביל הבדיחה החדשה שלו.",
-      "dungeonids": [
-        1
-      ],
-      "dungeondifficulties": [
-        4
-      ],
-      "enemiesids": [],
-      "prizesids": [
-        1
-      ],
-      "expoints": 10,
-      "minlevel": 1,
-      "qgraphics": 1,
-      "endmsg": "כל הכבוד! מצאת את פירות היער שהליצן רצה. מעניין איזו בדיחה הוא הולך לעשות איתן?",
-      "tutorialcode": 3
-    },
-    {
-      "id": 2,
-      "name": "טוטוריאל רמה 2",
-      "type": 2,
-      "desc": "ניבגו הגיבן מספר לכולם על צמח טורף ענקי שמסתובב ביער הקרוב. מעניין על מה כל המהומה...",
-      "dungeonids": [
-        1
-      ],
-      "dungeondifficulties": [
-        4
-      ],
-      "enemiesids": [
-        2
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 2,
-      "qgraphics": 2,
-      "endmsg": "יש! ניצחת את הצמח הטורף, כל הכבוד!",
-      "tutorialcode": 14
-    },
-    {
-      "id": 10,
-      "name": "",
-      "type": 4,
-      "desc": "המלך ג'וט מחפש קוסם נועז שיחזיר לו את כתר הזהב שלו, שנפל לו ביער במהלך הציד.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "יש!!! מצאת את הכתר של המלך ג'וט. נקווה שהוא לא יאבד אותו שוב.",
-      "tutorialcode": null
-    },
-    {
-      "id": 11,
-      "name": "",
-      "type": 4,
-      "desc": "המלך בוב ישלם ביד רמה למי שיחזיר את מגפי ההליכה שלו, אותן שכח בעת טיולו האחרון.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 4,
-      "endmsg": "יש!! מצאת את מגפי ההליכה של המלך בוב! איך הוא הצליח לאבד אותם תוך כדי הליכה ?",
-      "tutorialcode": null
-    },
-    {
-      "id": 12,
-      "name": "",
-      "type": 4,
-      "desc": "עזור לדבי היפה, היא צריכה פרחים לזר החתונה שלה. מצא פרח נדיר הגדל בחורשה הקרובה.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "מצאת את הפרח הכי יפה בחורשה. עכשיו דבי היפה יכולה להתחתן! מזל טוב!",
-      "tutorialcode": null
-    },
-    {
-      "id": 13,
-      "name": "",
-      "type": 2,
-      "desc": "הנסיכה דיאנה מחפשת לוחם אמיץ שיתמודד מול הצמח הטורף שמאיים על הגינה שלה.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "הצלחת להציל את הגינה של הנסיכה דיאנה!  עכשיו היא יכולה לנוח בשלווה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 14,
-      "name": "",
-      "type": 2,
-      "desc": "מלך המפלצות מעוניין להתמודד מול קוסם רב עוצמה כדי להוכיח את כוחו. התמודד מולו.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "הרשמת את מלך המפלצות ביכולות שלך והוא הבטיח להתנהג יפה עד סוף שנה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 15,
-      "name": "",
-      "type": 2,
-      "desc": "מלך המפלצות החדש לא מוכן להתנהג כמו שצריך. דבר איתו ושנה את דעתו.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "יופי, המלך הבין שכדאי לו להתנהג כמו שצריך. כל הכבוד!",
-      "tutorialcode": null
-    },
-    {
-      "id": 16,
-      "name": "",
-      "type": 2,
-      "desc": "מנהיג המפלצות גנב את המזלג הכי אהוב של המלך! החזר אותו.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מצויין! מלך המפלצות הפיל את המזלג כשברח ממך תוך כדי בכי.",
-      "tutorialcode": null
-    },
-    {
-      "id": 17,
-      "name": "",
-      "type": 2,
-      "desc": "מנהיג המפלצות הרעות לא מוכן לדבר עם אף אחד עד שינצחו אותו. נסה את מזלך.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "כל הכבוד! עכשיו המלך מוכן לעשות כל מה שיגידו לו.",
-      "tutorialcode": null
-    },
-    {
-      "id": 18,
-      "name": "",
-      "type": 2,
-      "desc": "יש מנהיג חדש לחבורת המפלצות שגרה ליד! הזהר אותו שיתנהג יפה ולא יעשה צרות.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מעולה, מלך המפלצות מסכים לשמור על הסדר מעתה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 19,
-      "name": "",
-      "type": 2,
-      "desc": "הבוס הגדול של עולם המפלצות הגיע לביקור ורוצה להתמודד מולך. צא ותראה לו מי כאן הקוסם.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "הבוס הגדול נכנע לעיני כולם! זכית בכבוד גדול בממלכה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 20,
-      "name": "",
-      "type": 2,
-      "desc": "הצמח הטורף שוב חזר ליער! התמודד מולו אחת ולתמיד.",
-      "dungeonids": [
-        1,
-        6
-      ],
-      "dungeondifficulties": [
-        1
-      ],
-      "enemiesids": [
-        2
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 1,
-      "qgraphics": 3,
-      "endmsg": "מעולה, ניצחת את הצמח הטורף, והוא הבטיח להפוך לצמחוני.",
-      "tutorialcode": null
-    },
-    {
-      "id": 21,
-      "name": "",
-      "type": 2,
-      "desc": "למלך עץ מרושע נכנס קוץ בענף ועכשיו הוא עצבני ורוצה לריב. צא להרגיע אותו.",
-      "dungeonids": [
-        1,
-        6
-      ],
-      "dungeondifficulties": [
-        1
-      ],
-      "enemiesids": [
-        5
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 1,
-      "qgraphics": 3,
-      "endmsg": "ניצחת את המלך והוצאת לו את הקוץ מהענף, עכשיו הוא רגוע. כל הכבוד!",
-      "tutorialcode": null
-    },
-    {
-      "id": 22,
-      "name": "",
-      "type": 2,
-      "desc": "ליער הגיעה יתושה ענקית והיא עקצה את הפוני האהוב של הנסיכה הדס! צא להבריח אותה.",
-      "dungeonids": [
-        1,
-        6
-      ],
-      "dungeondifficulties": [
-        1
-      ],
-      "enemiesids": [
-        6
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 1,
-      "qgraphics": 3,
-      "endmsg": "מצויין! היתושה ברחה והנסיכה הדס רוכבת שנית על הפוני שלה!",
-      "tutorialcode": null
-    },
-    {
-      "id": 23,
-      "name": "",
-      "type": 2,
-      "desc": "קוף משוגע ברח מהקרקס והשתלט על חבורת קופים ביער הקרוב. צא להחזיר אותו.",
-      "dungeonids": [
-        1,
-        6
-      ],
-      "dungeondifficulties": [
-        1
-      ],
-      "enemiesids": [
-        20
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 1,
-      "qgraphics": 3,
-      "endmsg": "הקוף המשוגע הסכים לחזור לקרקס, כל הכבוד לך.",
-      "tutorialcode": null
-    },
-    {
-      "id": 24,
-      "name": "",
-      "type": 2,
-      "desc": "ייטי, איש השלג הנורא, התגלה בהרים הסמוכים. צא לבדוק על מה מדובר.",
-      "dungeonids": [
-        2,
-        7
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        3
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "יש! הברחת את הייטי בחזרה להרים הגבוהים.",
-      "tutorialcode": null
-    },
-    {
-      "id": 25,
-      "name": "",
-      "type": 2,
-      "desc": "צרה חדשה מאיימת על ממלכה - ביג פוט ענקי שעושה צרות ליושבי ההרים. צא לגרש אותו.",
-      "dungeonids": [
-        2,
-        7
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        18
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "כל הכבוד! ביג פוט לקח את רגליו הגדולות וברח אל הסלעים כמו שפן (סלעים).",
-      "tutorialcode": null
-    },
-    {
-      "id": 26,
-      "name": "",
-      "type": 2,
-      "desc": "טרול עשויי כולו קריסטלים מאיים לגרום למפולת הרים אם לא יקבל יהלום ענקי. טפל בו.",
-      "dungeonids": [
-        2,
-        7
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        15
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "הראית לטרול מה זה! זה ילמד אותו שלא סוחטים את הממלכה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 27,
-      "name": "",
-      "type": 2,
-      "desc": "מלך קיקלופ יושב על גבעה וזורק אבנים על עוברים ושבים. צא ולמד אותו נימוסים.",
-      "dungeonids": [
-        2,
-        7
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        19
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מלך קיקלופ הבטיח שעינו לא תתקרב יותר לאזור. עבודה טובה!",
-      "tutorialcode": null
-    },
-    {
-      "id": 28,
-      "name": "",
-      "type": 2,
-      "desc": "עקרב ענקי הופיע במדבר הקרוב ולא נותן לאף אחד לעבור! גרש אותו.",
-      "dungeonids": [
-        4,
-        9
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        10
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "ניצחת את העקרב, והוא ברח הרחק לעומק המדבר.",
-      "tutorialcode": null
-    },
-    {
-      "id": 29,
-      "name": "",
-      "type": 2,
-      "desc": "מומיה של מלך עתיק קמה לתחייה ומפחידה את הגמלים שגרים במדבר. טפל בה.",
-      "dungeonids": [
-        4,
-        9
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        13
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מעולה! ניצחת את המומיה, הגמלים חזרו לשלוותם.",
-      "tutorialcode": null
-    },
-    {
-      "id": 30,
-      "name": "",
-      "type": 2,
-      "desc": "מלך הקקטוסים הגיח מהמדבר ולא נותן לאיש לעבור. התמודד איתו.",
-      "dungeonids": [
-        4,
-        9
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        12
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "יש!!! מלך הקקטוסים ברח בבושת פנים ובבושת קוצים.",
-      "tutorialcode": null
-    },
-    {
-      "id": 31,
-      "name": "",
-      "type": 2,
-      "desc": "ג'יני מרושע ברח מהמנורה שלו ומפחיד את תושבי המדבר. צא להחזיר אותו למנורה.",
-      "dungeonids": [
-        4,
-        9
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        16
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מצויין, הג'יני חזר למנורה שלו, ואת המנורה קברו עמוק בחול.",
-      "tutorialcode": null
-    },
-    {
-      "id": 32,
-      "name": "",
-      "type": 2,
-      "desc": "מלך חדש למפלצות המוזרות הגרות באזור האגם! צא לבדוק במה מדובר.",
-      "dungeonids": [
-        8,
-        3
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        11
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מלך המפלצות ברח על רגלי התרנגולת שלו כל עוד נפשו בו.",
-      "tutorialcode": null
-    },
-    {
-      "id": 33,
-      "name": "",
-      "type": 2,
-      "desc": "דחליל ישן שהושאר באזור האגמים קם לתחיה ומסתובב חופשי. צא להתמודד מולו.",
-      "dungeonids": [
-        8,
-        3
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        4
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "הדחליל הענקי הסכים להשאר במקום אחד, מצויין.",
-      "tutorialcode": null
-    },
-    {
-      "id": 34,
-      "name": "",
-      "type": 2,
-      "desc": "טרול האבן הגדול ביותר שקיים זורע הרס באזור האגמים. צא להרגיע אותו.",
-      "dungeonids": [
-        8,
-        3
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "כל הכבוד, הטרול הוציא את כל העצבים שלו ונרגע.",
-      "tutorialcode": null
-    },
-    {
-      "id": 35,
-      "name": "",
-      "type": 2,
-      "desc": "מלך הדרקונים התיישב באזור האגם ודורש 1000 כבשים. מישהו צריך לטפל בו.",
-      "dungeonids": [
-        8,
-        3
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        7
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מעולה! הדרקון למד לא להתעסק עם הממלכה שלנו. לכבשים שלום.",
-      "tutorialcode": null
-    },
-    {
-      "id": 36,
-      "name": "",
-      "type": 2,
-      "desc": "מלך רוח רפאים מפחיד את הגרים בביצות הקרובות. צא להתמודד מולו.",
-      "dungeonids": [
-        5,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        8
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "יש! הברחת את מלך רוח רפאים והביצה שוב שקטה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 37,
-      "name": "",
-      "type": 2,
-      "desc": "מלך אנשי הרפש יצא מהביצה ומפיץ ריח רע בכל האזור. צא לטפל בבעיה.",
-      "dungeonids": [
-        5,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        9
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מעולה, הברחת את המלך המסריח בחזרה לביצה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 38,
-      "name": "",
-      "type": 2,
-      "desc": "מכת עטלפים ערפדיים מאיימת על התושבים. צא להתמודד מול המנהיג שלהם.",
-      "dungeonids": [
-        5,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        17
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מנהיג העטלפים נכנע והבטיח לאכול רק פירות. כל הכבוד.",
-      "tutorialcode": null
-    },
-    {
-      "id": 39,
-      "name": "",
-      "type": 2,
-      "desc": "מלאך המוות האפל עלה מן הביצה וזורע אימה בכל הסובבים. טפל בו.",
-      "dungeonids": [
-        5,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        14
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "יש!! ניצחת את מלאך המוות האפל, עכשיו הביצה רגועה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 50,
-      "name": "להציל את ונדי",
-      "type": 3,
-      "desc": "מפלצות רעות פלשו לאזור בו המלך אוהב לבלות את זמנו. הפטר מכל האוייבים וממנהיגם המרושע",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "כל הכבוד, המפלצות ברחו מהר מהר והמלך יכול שוב לטייל",
-      "tutorialcode": null
-    },
-    {
-      "id": 51,
-      "name": "בעיית מזיקים",
-      "type": 3,
-      "desc": "דוכס האלי פוטל מתלונן על קולות שהוא שומע מהדשא שמאחורי ביתו. נקה את הדשא של הדוכס מכל המזיקים.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "כל הכבוד לך, ניקית את הדשא של האלי פוטל.",
-      "tutorialcode": null
-    },
-    {
-      "id": 52,
-      "name": "בעיית מזיקים",
-      "type": 3,
-      "desc": "ברחבי הממלכה מדברים על חבורת מפלצות שמסתובבת בשעת השקיעה ומפריעה לאנשים לעבור. טפל בהם.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "עבודה טובה , סוף סוף הערבים חזרו להיות שלווים.",
-      "tutorialcode": null
-    },
-    {
-      "id": 53,
-      "name": "בעיית מזיקים",
-      "type": 3,
-      "desc": "אוג המהיר והאיום וחבורת הבריונים שלו מטילים אימה על תושבי הכפרים, המבקשים את עזרתו של קוסם מנוסה.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "ניצחון! לפי המהירות בה אוג המהיר ברח, אפשר להבין מאיפה הוא קיבל את שמו.",
-      "tutorialcode": null
-    },
-    {
-      "id": 60,
-      "name": "2",
-      "type": 1,
-      "desc": "אחד העצים המרושעים שגדלים ביער הקרוב זורק אצטרובלים על העוברים ושבים. עצור אותו.",
-      "dungeonids": [
-        1,
-        6
-      ],
-      "dungeondifficulties": [
-        1
-      ],
-      "enemiesids": [
-        5
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 1,
-      "qgraphics": 2,
-      "endmsg": "ניצחת את העץ המרושע ולקחת את כל האצטרובלים שלו, כל הכבוד.",
-      "tutorialcode": null
-    },
-    {
-      "id": 61,
-      "name": "2",
-      "type": 1,
-      "desc": "אחד הצמחים הטורפים שביער הקרוב בלע את המפתח לשער הארמון של המלך. צא להחזיר אותו.",
-      "dungeonids": [
-        1,
-        6
-      ],
-      "dungeondifficulties": [
-        1
-      ],
-      "enemiesids": [
-        2
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 1,
-      "qgraphics": 2,
-      "endmsg": "מצויין! לא היה קל, אבל הצלת את המפתח מהצמח הטורף.",
-      "tutorialcode": null
-    },
-    {
-      "id": 62,
-      "name": "2",
-      "type": 1,
-      "desc": "אחת היתושות הענקיות רבה עם חברה שלה ומבקשת את עזרתך. צא לסדר את העניינים.",
-      "dungeonids": [
-        1,
-        6
-      ],
-      "dungeondifficulties": [
-        1
-      ],
-      "enemiesids": [
-        6
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 1,
-      "qgraphics": 2,
-      "endmsg": "מסתבר שקצת זמן ביחד איתך יכול לפתור גם בעיות של יתושים. יפה מאוד!",
-      "tutorialcode": null
-    },
-    {
-      "id": 63,
-      "name": "2",
-      "type": 1,
-      "desc": "אחד הקופים המשוגעים גנב את האופניים של הנסיך הצעיר אלעד השלישי. החזר לו אותם.",
-      "dungeonids": [
-        1,
-        6
-      ],
-      "dungeondifficulties": [
-        1
-      ],
-      "enemiesids": [
-        20
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 1,
-      "qgraphics": 2,
-      "endmsg": "כל הכבוד! החזרת את האופניים לנסיך הצעיר. בינתיים הוא התחיל לנסוע על סקטים",
-      "tutorialcode": null
-    },
-    {
-      "id": 64,
-      "name": "2",
-      "type": 1,
-      "desc": "אחד מהייטים גנב את בובת איש השלג האהובה של הדוכסית. צא להחזיר אותו.",
-      "dungeonids": [
-        2,
-        7
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        3
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "מצויין! מצאת את הבובה  הגנובה והחזרת אותו לדוכסית.",
-      "tutorialcode": null
-    },
-    {
-      "id": 65,
-      "name": "2",
-      "type": 1,
-      "desc": "מישהו מכנופיית הביג פוטים גנב את הנעליים של הנסיכה ורדית. התמודד מול הגנב.",
-      "dungeonids": [
-        2,
-        7
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        18
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "מצאת את הנעליים של הנסיכה (והם מידה 54)",
-      "tutorialcode": null
-    },
-    {
-      "id": 66,
-      "name": "2",
-      "type": 1,
-      "desc": "אחד מטרולי ההרים לא מוכן לשמוע למנהיג הכנופייה, והמנהיג מבקש שתטפל בו.",
-      "dungeonids": [
-        2,
-        7
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        15
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "החזרת את הטרול המורד למקומו, כל הכבוד.",
-      "tutorialcode": null
-    },
-    {
-      "id": 67,
-      "name": "2",
-      "type": 1,
-      "desc": "לאזור הקיקלופים הגיע קיקלופ חדש שעושה צרות. צא להתמודד מולו.",
-      "dungeonids": [
-        2,
-        7
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        19
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "לימדת את הקיקלופ החדש שבממלכה שלנו יש לשמור על החוקים.",
-      "tutorialcode": null
-    },
-    {
-      "id": 68,
-      "name": "2",
-      "type": 1,
-      "desc": "אחד העקרבים הענקיים מאיים לעקוץ את הגמל האהוב של המלך. גרש אותו.",
-      "dungeonids": [
-        4,
-        9
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        10
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "כל הכבוד, גירשת את העקרב המאיים.",
-      "tutorialcode": null
-    },
-    {
-      "id": 69,
-      "name": "2",
-      "type": 1,
-      "desc": "אחת המומיות ברחה מהפירמידה שלה ומסתובבת במדבר. גרש אותה.",
-      "dungeonids": [
-        4,
-        9
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        13
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "מצויין! החזרת את המומיה לפירמידה שלה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 70,
-      "name": "2",
-      "type": 1,
-      "desc": "אחד הקקטוסים במדבר קם לתחיה ויורה קוצים לכל עבר. האם אתה מוכן לעזור להפטר ממנו?",
-      "dungeonids": [
-        4,
-        9
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        12
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "הקקטוס המורד חזר להיות צמח פשוט ושקט. מה היינו עושים בלי קוסם בממלכה?",
-      "tutorialcode": null
-    },
-    {
-      "id": 71,
-      "name": "2",
-      "type": 1,
-      "desc": "אחד הג'ינים הקסומים לא מוכן להקשיב להורים שלו והם מבקשים את עזרתך.",
-      "dungeonids": [
-        4,
-        9
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        16
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "הג'יני הסכים להקשיב להורים שלו. יופי! זה באמת עוזר להקשיב להורים.",
-      "tutorialcode": null
-    },
-    {
-      "id": 72,
-      "name": "2",
-      "type": 1,
-      "desc": "קוקיגולת קסומה יצאה מאזורי האגם ולא מוצאת את דרכה הביתה. צא לעזור לה.",
-      "dungeonids": [
-        3,
-        8
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        11
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "זו הייתה מלכודת! מזל שעמדת על המישמר.",
-      "tutorialcode": null
-    },
-    {
-      "id": 73,
-      "name": "2",
-      "type": 1,
-      "desc": "אחד הדחלילים רוצה לאמן את העורב החדש שלו מול קוסם גדול. לך לעזור לו.",
-      "dungeonids": [
-        3,
-        8
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        4
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "מעולה! העורב של הדחליל ממש מיומן עכשיו.",
-      "tutorialcode": null
-    },
-    {
-      "id": 74,
-      "name": "2",
-      "type": 1,
-      "desc": "טרול אבן מרושע לא מוכן לחזור למערה שלו. המלך של הטרולים מבקש את עזרתך.",
-      "dungeonids": [
-        3,
-        8
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "לימדת את הטרול שיעור בהתנהגות, המלך מרוצה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 75,
-      "name": "2",
-      "type": 1,
-      "desc": "דרקון צעיר לא מוכן להקשיב למנהיג הדרקונים ועושה צרות. דרושה עזרה מקוסם אמיתי.",
-      "dungeonids": [
-        3,
-        8
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        7
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "הדרקון הצעיר נשבע שיתנהג מעכשיו כמו יונת שלום.",
-      "tutorialcode": null
-    },
-    {
-      "id": 76,
-      "name": "2",
-      "type": 1,
-      "desc": "אחת הרוחות רפאים צועקת בלילות ולא נותנת לתושבי הביצה לישון. טפל בה.",
-      "dungeonids": [
-        5,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        8
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "כל הכבוד, הברחת את רוח הרפאים הרעה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 77,
-      "name": "2",
-      "type": 1,
-      "desc": "איש רפש תחמן גנב את הברווזון האהוב של מפקד הצבא. החזר אותו.",
-      "dungeonids": [
-        5,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        9
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "מעולה! הצלת את הברווזון מאיש הרפש המצחין.",
-      "tutorialcode": null
-    },
-    {
-      "id": 78,
-      "name": "2",
-      "type": 1,
-      "desc": "עטלף ערפדי נכנס בלילה לחדר של המלכה! המלכה דורשת דו קרב מול קוסם גיבור.",
-      "dungeonids": [
-        5,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        17
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "ניצחת את העטלף וזכית בהוקרת המלכה, כל הכבוד.",
-      "tutorialcode": null
-    },
-    {
-      "id": 79,
-      "name": "2",
-      "type": 1,
-      "desc": "אחד הבנים של מלאך המוות רוצה למרוד ולפתוח מקום משלו. עצור אותו.",
-      "dungeonids": [
-        5,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        14
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "יפה מאוד, לימדת את הבן של מלאך המוות שמרדנות לא מביאה לתוצאות.",
-      "tutorialcode": null
-    },
-    {
-      "id": 100,
-      "name": "2",
-      "type": 1,
-      "desc": "אחד מהמפלצות גנב את השרביט של המלך - החזר אותו",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "מצאת את השרביט. המלך אמר שהוא ישמור עליו טוב יותר.",
-      "tutorialcode": null
-    },
-    {
-      "id": 101,
-      "name": "2",
-      "type": 1,
-      "desc": "צחי השתקן צורח בקולי קולות על שגנבו לו את הסוס האהוב. מצא את הגנב והחזר לצחי השתקן את סוסו.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "יופי! מצאת את הסוס הגנוס. צחי השתקן רוכב שנית!",
-      "tutorialcode": null
-    },
-    {
-      "id": 102,
-      "name": "2",
-      "type": 1,
-      "desc": "הנזירה גליה מחפשת גיבור שיגן על שמה הטוב מול מפלצת שפגעה בכבודה. הגן על שמה הטוב של גליה הנזירה.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "מעולה! גרמת למפלצת לשלוח מכתב התנצלות רישמי, הנזירה שמחה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 103,
-      "name": "2",
-      "type": 1,
-      "desc": "בשביל שאינו רחוק מהמגדל שלך מסתובבת מפלצת ועושה רעש שמפריע לך לישון. צא לרדוף אחריה.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        5
-      ],
-      "expoints": 20,
-      "minlevel": 4,
-      "qgraphics": 2,
-      "endmsg": "כל הכבוד! המפלצת ברחה ועכשיו אתה יכול לישון בשקט.",
-      "tutorialcode": null
-    },
-    {
-      "id": 110,
-      "name": "3",
-      "type": 3,
-      "desc": "ביער הקרוב התרבו העצים המרושעים והם מאיימים על התושבים. טפל בהם.",
-      "dungeonids": [
-        1,
-        6
-      ],
-      "dungeondifficulties": [
-        1
-      ],
-      "enemiesids": [
-        5
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 1,
-      "qgraphics": 1,
-      "endmsg": "כל הכבוד, ניקית את היער מהעצים הרעים.",
-      "tutorialcode": null
-    },
-    {
-      "id": 111,
-      "name": "3",
-      "type": 3,
-      "desc": "צמחים טורפים מילאו את היער והם מסכנים את החיות ואת החרקים. הצל את חבריך.",
-      "dungeonids": [
-        1,
-        6
-      ],
-      "dungeondifficulties": [
-        1
-      ],
-      "enemiesids": [
-        2
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 1,
-      "qgraphics": 1,
-      "endmsg": "מעולה! מזמן לא נראו צמחים טורפים שרצים כה מהר.",
-      "tutorialcode": null
-    },
-    {
-      "id": 112,
-      "name": "3",
-      "type": 3,
-      "desc": "היער התמלא ביתושי ענק שעושים רעש נוראי. הגיע הזמן להפטר מהם.",
-      "dungeonids": [
-        1,
-        6
-      ],
-      "dungeondifficulties": [
-        1
-      ],
-      "enemiesids": [
-        6
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 1,
-      "qgraphics": 1,
-      "endmsg": "יש! אין יותר יתושים והיער שוב שקט.",
-      "tutorialcode": null
-    },
-    {
-      "id": 113,
-      "name": "3",
-      "type": 3,
-      "desc": "חבורה של קופים משוגעים השתלטו על היער ועושים בלגאן נוראי. גרש אותם.",
-      "dungeonids": [
-        1,
-        6
-      ],
-      "dungeondifficulties": [
-        1
-      ],
-      "enemiesids": [
-        20
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 1,
-      "qgraphics": 1,
-      "endmsg": "מצויין, גירשת את כל הקופים מהיער. כלומר, את אלה שעושים צרות.",
-      "tutorialcode": null
-    },
-    {
-      "id": 114,
-      "name": "3",
-      "type": 3,
-      "desc": "כנופייה של ייטים ירדה מההרים ומאיימת לא לתת לאיש לעבור שם. סלק אותם.",
-      "dungeonids": [
-        2,
-        7
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        3
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "כל הכבוד, עכשיו אפשר לטייל שוב בהרים.",
-      "tutorialcode": null
-    },
-    {
-      "id": 115,
-      "name": "3",
-      "type": 3,
-      "desc": "צבא שלם של ביג פוטים התגלה בהרים. חייבים להרחיק אותם מכאן, שלא ידרסו את הפרחים.",
-      "dungeonids": [
-        2,
-        7
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        18
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "מעולה, כל הביג פוטים ברחו ולפרחים שלום.",
-      "tutorialcode": null
-    },
-    {
-      "id": 116,
-      "name": "3",
-      "type": 3,
-      "desc": "להרים פלשה משפחה של טרולים עשויים קריסטל, הידועים במזג רע. צא ללמיד אותם נימוסים.",
-      "dungeonids": [
-        2,
-        7
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        15
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "הטרולים הבטיחו להתנהג יפה, עבודה טובה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 117,
-      "name": "3",
-      "type": 3,
-      "desc": "חבורת קיקלופים השתלטו על פסגת ההר הגבוה של המלך. צא להחזיר את הפסגה.",
-      "dungeonids": [
-        2,
-        7
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        19
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "מצויין! כל הקיקלופים גורשו.",
-      "tutorialcode": null
-    },
-    {
-      "id": 118,
-      "name": "3",
-      "type": 3,
-      "desc": "נחיל עקרבים ענקיים מתפרע ללא שליטה במדבר הקרוב. צא לטפל בבעיית המזיקים הזאת.",
-      "dungeonids": [
-        4,
-        9
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        10
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "כל הכבוד, כל העקרבים ברחו.",
-      "tutorialcode": null
-    },
-    {
-      "id": 119,
-      "name": "3",
-      "type": 3,
-      "desc": "מלך המומיות מוביל צבא שלם להשתלט על הממלכה. צא להתמודד מולו.",
-      "dungeonids": [
-        4,
-        9
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        13
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "יש!!! ניצחת את כל המומיות ואת המלך שלהם.",
-      "tutorialcode": null
-    },
-    {
-      "id": 120,
-      "name": "3",
-      "type": 3,
-      "desc": "חבורת קקטוסים ענקיים מפרים את החיים השלווים של תושבי המדבר. צא לטפל בבעיה.",
-      "dungeonids": [
-        4,
-        9
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        12
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "מצויין, גירשת את כל הקקטוסים מהאזור.",
-      "tutorialcode": null
-    },
-    {
-      "id": 121,
-      "name": "3",
-      "type": 3,
-      "desc": "ג'יני סולטן אסף את כל החברים שלו ויצא להשתלט על כל אזורי המדבר. התמודד מולם.",
-      "dungeonids": [
-        4,
-        9
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        16
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "מעולה, כל הג'ינים ברחו למנורות שלהם.",
-      "tutorialcode": null
-    },
-    {
-      "id": 122,
-      "name": "3",
-      "type": 3,
-      "desc": "כנופיית קוקיגולות ברחה מהאזור הקסום של האגמים והשתלטה על הכפר הקרוב. הצל את תושבי הכפר.",
-      "dungeonids": [
-        3,
-        8
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        11
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "כל הכבוד, שחררת את הכפר מאיום הקוקיגולות.",
-      "tutorialcode": null
-    },
-    {
-      "id": 123,
-      "name": "3",
-      "type": 3,
-      "desc": "חבורת דחלילים מפחידים מאיימת על החיים  השלווים שמסביב לאגם. חייבים לטפל בהם.",
-      "dungeonids": [
-        3,
-        8
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        4
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "מצויין, כל הדחלילים ברחו מהאגם.",
-      "tutorialcode": null
-    },
-    {
-      "id": 124,
-      "name": "3",
-      "type": 3,
-      "desc": "המוני טרולים עשויים אבן חסמו את האגם האהוב של המלכה. צא וגרש אותם.",
-      "dungeonids": [
-        3,
-        8
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "מעולה, עכשיו המלכה שוב יכולה לטייל באגם.",
-      "tutorialcode": null
-    },
-    {
-      "id": 125,
-      "name": "3",
-      "type": 3,
-      "desc": "דרקונים!!! דרקונים בשמי הממלכה! חייבם לגרש אותם לפני שיעשו נזק.",
-      "dungeonids": [
-        3,
-        8
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        7
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "גירשת את כל הדרקונים! השמיים שוב בטוחים!",
-      "tutorialcode": null
-    },
-    {
-      "id": 126,
-      "name": "3",
-      "type": 3,
-      "desc": "המוני רוחות רפאים מסתובבים בביצה ועושים קולות מפחידים. לך לביצה וטפל בהם.",
-      "dungeonids": [
-        5,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        8
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "יפה מאוד, שוב אפשר להנות מהשקט שבביצה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 127,
-      "name": "3",
-      "type": 3,
-      "desc": "מנהיג אנשי הרפש אסף צבא ענקי ודורש כופר או שיפלוש לממלכה. צא להתמודד מול האיום.",
-      "dungeonids": [
-        5,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        9
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "זה ידוע שאנשי רפש סופם להכשל. עבודה טובה!",
-      "tutorialcode": null
-    },
-    {
-      "id": 128,
-      "name": "3",
-      "type": 3,
-      "desc": "להקת עטלפים ערפדיים חדרו לממלכה ומסתבכים בשיער של האנשים. חייבים לגרש אותם.",
-      "dungeonids": [
-        5,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        17
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "מעולה, גירשת את כל העטלפים. בני הממלכה הסירו את הכובעים.",
-      "tutorialcode": null
-    },
-    {
-      "id": 129,
-      "name": "3",
-      "type": 3,
-      "desc": "כנופייה של מלאכי המוות עלו מהביצה ולא מוכנים לחזור אליה. צא ולמד אותם לקח.",
-      "dungeonids": [
-        5,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        14
-      ],
-      "prizesids": [
-        7
-      ],
-      "expoints": 40,
-      "minlevel": 4,
-      "qgraphics": 1,
-      "endmsg": "מצויין, טיפלת בכל מלאכי המוות. יקח זמן עד שנשמע מהם שוב...",
-      "tutorialcode": null
-    },
-    {
-      "id": 150,
-      "name": "3",
-      "type": 4,
-      "desc": "ליצן החצר סיפר לך על אוצר ובו כתר יפייפה. מצא את הכתר החבוי בתוך תיבה.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "יש!!! מצאת את הכתר.",
-      "tutorialcode": null
-    },
-    {
-      "id": 151,
-      "name": "3",
-      "type": 4,
-      "desc": "עוזי הקבצן מבקש שתמצא לו בגד חם לחורף. שמעת שיש בגד זרוק בסביבה. מצא אותו.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מצויין! מצאת מעיל מרופט, אבל מחמם. עוזי יהיה מאוד מרוצה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 152,
-      "name": "3",
-      "type": 4,
-      "desc": "גילגי מוכרת הספרים איבדה את הסימניה האהובה אליה. מצא את הסימניה.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "יש! מצאת את הסימניה של גילגי בזמן, האצבע שלה כבר נהייתה אדומה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 153,
-      "name": "3",
-      "type": 4,
-      "desc": "קונגו מלך הקופים סיים את מלאי הבננות שלו. צא למצוא לו בננות חדשות.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מצאת ערימה ענקית של בננות ואפילו תפוח לעצמך! איזה יום מוצלח.",
-      "tutorialcode": null
-    },
-    {
-      "id": 160,
-      "name": "3",
-      "type": 4,
-      "desc": "גיזמו הגיזבר מבקש ממך להחזיר את רשימת המיסים שלו שאיבד לפני יומיים. מצא אותה.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "כל הכבוד, מצאת את רשימת המיסים של גיזמו הגיזבר. כדאי להמשיך לזוז לפני שיתחיל לדבר עליה",
-      "tutorialcode": null
-    },
-    {
-      "id": 161,
-      "name": "3",
-      "type": 4,
-      "desc": "דולצ'ה הדוכס איבד את החרב האהובה אליו. מצא את החרב והחזרת לו אותה.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מצאת פגיון קטנטן עם שמו של דולצ'ה עליו. והוא קורא לזה חרב...",
-      "tutorialcode": null
-    },
-    {
-      "id": 162,
-      "name": "3",
-      "type": 4,
-      "desc": "השודד הכי מפורסם בממלכה הפיל את תיבת האוצר שלו במהלך הבריחה. מצא את האוצר.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "כן, כן, מצאת את האוצר של השודד. ",
-      "tutorialcode": null
-    },
-    {
-      "id": 163,
-      "name": "3",
-      "type": 4,
-      "desc": "כיפה ירוקה איבדה את סל הקניות שלה במהלך הטיול ליד המגדל שלך. מצא אותו.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "איזה כיף , מצאת את סל הקניות של כיפה ירוקה. היא פצתה אותך בפטריות שליקטה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 164,
-      "name": "3",
-      "type": 4,
-      "desc": "הודעה חשובה ! כל המוצא את שעון הקוקיה שלי ייקבל תגמול הולם. על החתום - המלך.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מצויין , מצאת את שעון הקוקיה של המלך וקיבלת פרס.",
-      "tutorialcode": null
-    },
-    {
-      "id": 165,
-      "name": "3",
-      "type": 4,
-      "desc": "הנסיכה רוצה מתנה חדשה. צא לחפש משהו שיעניין את הנסיכה.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מצאת פנינה השחורה הכי גדולה שראית. הנסיכה בטח תהיה מרוצה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 166,
-      "name": "3",
-      "type": 4,
-      "desc": "דני השכחן שכח משהו בעת טיולו האחרון והוא אפילו לא זוכר מה זה. עזור לדני השכחן",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מצאת את השיקוי נגד שכחה של דני השכחן. עכשיו הוא יזכור את הכל.",
-      "tutorialcode": null
-    },
-    {
-      "id": 167,
-      "name": "3",
-      "type": 4,
-      "desc": "משעמם לך במגדל. צא לחפש משהו מעניין בחוץ, אולי אחר-כך תוכל למכור אותו.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מצאת כמה אבנים יקרות. איזה יום מוצלח.",
-      "tutorialcode": null
-    },
-    {
-      "id": 168,
-      "name": "3",
-      "type": 4,
-      "desc": "המורה שלך לשעבר איבד את המשקפיים שלו במהלך טיול לילי. מצא את המשקפיים.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מצאת את המשקפיים, אבל הם שבורות. טוב שלמורה יש עוד זוג.",
-      "tutorialcode": null
-    },
-    {
-      "id": 169,
-      "name": "3",
-      "type": 4,
-      "desc": "הדגלן של המלך איבד את הדגל! מצא את הדגל לפני שהמלך יגלה  ויתרגז על הדגלן.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "יש!! מצאת את הדגל והחזרת אותו לדגלן  10 דקות לפני המצעד.",
-      "tutorialcode": null
-    },
-    {
-      "id": 170,
-      "name": "3",
-      "type": 4,
-      "desc": "יוצר התיבות הכי מפורסם בממלכה איבד את תיבת העץ המגולפת שהכין. מצא אותה.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מצאת את התיבה בתוך תיבה אחרת! איזה מזל...",
-      "tutorialcode": null
-    },
-    {
-      "id": 171,
-      "name": "3",
-      "type": 4,
-      "desc": "לקרן החד-קרן נפלה הקרן. עזור למצוא את הקרן של קרן החד-קרן.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        4
-      ],
-      "expoints": 10,
-      "minlevel": 4,
-      "qgraphics": 3,
-      "endmsg": "מצאת את הקרן של קרן החד-קרן. כל הכבוד לך.",
-      "tutorialcode": null
-    },
-    {
-      "id": 200,
-      "name": "4",
-      "type": 2,
-      "desc": "מפלצות מרושעות שוב פלשו לממלכה. תתמודד מול המנהיג שלהם ותראה להם מי כאן הגיבור.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 4,
-      "endmsg": "מעולה!! למנהיג של המפלצות לא היה שום סיכוי מול מגן הממלכה.",
-      "tutorialcode": null
-    },
-    {
-      "id": 220,
-      "name": "4",
-      "type": 2,
-      "desc": "מנהיג של חבורת המפלצות מהממלכה השכנה פלש לממלכה שלנו ומפחיד את המקומיות. גרש אותו.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 4,
-      "endmsg": "הצלחת לגרש את מנהיג המפלצות בחזרה לממלכה הרחוקה. המפלצות שלנו הבטיחו בתמורה יומיים של שקט",
-      "tutorialcode": null
-    },
-    {
-      "id": 221,
-      "name": "4",
-      "type": 2,
-      "desc": "למפלצות מתחשק לעשות מעשים טובים, אבל המלך שלהם לא נותן להם. צא להתעמת מול המלך.",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 4,
-      "endmsg": "המלך של המפלצות הבין את טעותו ואפילו החליט לעשות מעשה טוב אחד בעצמו. מעולה!",
-      "tutorialcode": null
-    },
-    {
-      "id": 222,
-      "name": "4",
-      "type": 2,
-      "desc": "מלך המפלצות קורא עליך תיגר. האם תעמוד באתגר?",
-      "dungeonids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "dungeondifficulties": [
-        1,
-        2,
-        3
-      ],
-      "enemiesids": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "prizesids": [
-        6
-      ],
-      "expoints": 30,
-      "minlevel": 4,
-      "qgraphics": 4,
-      "endmsg": "שוב הוכחת לכולם מי כאן הקוסם האמיתי.",
-      "tutorialcode": null
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "טוטוריאל רמה 1",
+    "type": 4,
+    "desc": "גולדי, ליצן החצר של המלך דניאל, מבקש שתמצא כמה פירות יער בשביל הבדיחה החדשה שלו.",
+    "dungeonids": [
+      1
+    ],
+    "dungeondifficulties": [
+      4
+    ],
+    "enemiesids": [],
+    "prizesids": [
+      1
+    ],
+    "expoints": 10,
+    "minlevel": 1,
+    "qgraphics": 1,
+    "endmsg": "כל הכבוד! מצאת את פירות היער שהליצן רצה. מעניין איזו בדיחה הוא הולך לעשות איתן?",
+    "tutorialcode": 3
+  },
+  {
+    "id": 2,
+    "name": "טוטוריאל רמה 2",
+    "type": 2,
+    "desc": "ניבגו הגיבן מספר לכולם על צמח טורף ענקי שמסתובב ביער הקרוב. מעניין על מה כל המהומה...",
+    "dungeonids": [
+      1
+    ],
+    "dungeondifficulties": [
+      4
+    ],
+    "enemiesids": [
+      2
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 2,
+    "qgraphics": 2,
+    "endmsg": "יש! ניצחת את הצמח הטורף, כל הכבוד!",
+    "tutorialcode": 14
+  },
+  {
+    "id": 10,
+    "name": "",
+    "type": 4,
+    "desc": "המלך ג'וט מחפש קוסם נועז שיחזיר לו את כתר הזהב שלו, שנפל לו ביער במהלך הציד.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "יש!!! מצאת את הכתר של המלך ג'וט. נקווה שהוא לא יאבד אותו שוב.",
+    "tutorialcode": null
+  },
+  {
+    "id": 11,
+    "name": "",
+    "type": 4,
+    "desc": "המלך בוב ישלם ביד רמה למי שיחזיר את מגפי ההליכה שלו, אותן שכח בעת טיולו האחרון.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 4,
+    "endmsg": "יש!! מצאת את מגפי ההליכה של המלך בוב! איך הוא הצליח לאבד אותם תוך כדי הליכה ?",
+    "tutorialcode": null
+  },
+  {
+    "id": 12,
+    "name": "",
+    "type": 4,
+    "desc": "עזור לדבי היפה, היא צריכה פרחים לזר החתונה שלה. מצא פרח נדיר הגדל בחורשה הקרובה.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "מצאת את הפרח הכי יפה בחורשה. עכשיו דבי היפה יכולה להתחתן! מזל טוב!",
+    "tutorialcode": null
+  },
+  {
+    "id": 13,
+    "name": "",
+    "type": 2,
+    "desc": "הנסיכה דיאנה מחפשת לוחם אמיץ שיתמודד מול הצמח הטורף שמאיים על הגינה שלה.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "הצלחת להציל את הגינה של הנסיכה דיאנה!  עכשיו היא יכולה לנוח בשלווה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 14,
+    "name": "",
+    "type": 2,
+    "desc": "מלך המפלצות מעוניין להתמודד מול קוסם רב עוצמה כדי להוכיח את כוחו. התמודד מולו.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "הרשמת את מלך המפלצות ביכולות שלך והוא הבטיח להתנהג יפה עד סוף שנה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 15,
+    "name": "",
+    "type": 2,
+    "desc": "מלך המפלצות החדש לא מוכן להתנהג כמו שצריך. דבר איתו ושנה את דעתו.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "יופי, המלך הבין שכדאי לו להתנהג כמו שצריך. כל הכבוד!",
+    "tutorialcode": null
+  },
+  {
+    "id": 16,
+    "name": "",
+    "type": 2,
+    "desc": "מנהיג המפלצות גנב את המזלג הכי אהוב של המלך! החזר אותו.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מצויין! מלך המפלצות הפיל את המזלג כשברח ממך תוך כדי בכי.",
+    "tutorialcode": null
+  },
+  {
+    "id": 17,
+    "name": "",
+    "type": 2,
+    "desc": "מנהיג המפלצות הרעות לא מוכן לדבר עם אף אחד עד שינצחו אותו. נסה את מזלך.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "כל הכבוד! עכשיו המלך מוכן לעשות כל מה שיגידו לו.",
+    "tutorialcode": null
+  },
+  {
+    "id": 18,
+    "name": "",
+    "type": 2,
+    "desc": "יש מנהיג חדש לחבורת המפלצות שגרה ליד! הזהר אותו שיתנהג יפה ולא יעשה צרות.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מעולה, מלך המפלצות מסכים לשמור על הסדר מעתה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 19,
+    "name": "",
+    "type": 2,
+    "desc": "הבוס הגדול של עולם המפלצות הגיע לביקור ורוצה להתמודד מולך. צא ותראה לו מי כאן הקוסם.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "הבוס הגדול נכנע לעיני כולם! זכית בכבוד גדול בממלכה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 20,
+    "name": "",
+    "type": 2,
+    "desc": "הצמח הטורף שוב חזר ליער! התמודד מולו אחת ולתמיד.",
+    "dungeonids": [
+      1,
+      6
+    ],
+    "dungeondifficulties": [
+      1
+    ],
+    "enemiesids": [
+      2
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 1,
+    "qgraphics": 3,
+    "endmsg": "מעולה, ניצחת את הצמח הטורף, והוא הבטיח להפוך לצמחוני.",
+    "tutorialcode": null
+  },
+  {
+    "id": 21,
+    "name": "",
+    "type": 2,
+    "desc": "למלך עץ מרושע נכנס קוץ בענף ועכשיו הוא עצבני ורוצה לריב. צא להרגיע אותו.",
+    "dungeonids": [
+      1,
+      6
+    ],
+    "dungeondifficulties": [
+      1
+    ],
+    "enemiesids": [
+      5
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 1,
+    "qgraphics": 3,
+    "endmsg": "ניצחת את המלך והוצאת לו את הקוץ מהענף, עכשיו הוא רגוע. כל הכבוד!",
+    "tutorialcode": null
+  },
+  {
+    "id": 22,
+    "name": "",
+    "type": 2,
+    "desc": "ליער הגיעה יתושה ענקית והיא עקצה את הפוני האהוב של הנסיכה הדס! צא להבריח אותה.",
+    "dungeonids": [
+      1,
+      6
+    ],
+    "dungeondifficulties": [
+      1
+    ],
+    "enemiesids": [
+      6
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 1,
+    "qgraphics": 3,
+    "endmsg": "מצויין! היתושה ברחה והנסיכה הדס רוכבת שנית על הפוני שלה!",
+    "tutorialcode": null
+  },
+  {
+    "id": 23,
+    "name": "",
+    "type": 2,
+    "desc": "קוף משוגע ברח מהקרקס והשתלט על חבורת קופים ביער הקרוב. צא להחזיר אותו.",
+    "dungeonids": [
+      1,
+      6
+    ],
+    "dungeondifficulties": [
+      1
+    ],
+    "enemiesids": [
+      20
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 1,
+    "qgraphics": 3,
+    "endmsg": "הקוף המשוגע הסכים לחזור לקרקס, כל הכבוד לך.",
+    "tutorialcode": null
+  },
+  {
+    "id": 24,
+    "name": "",
+    "type": 2,
+    "desc": "ייטי, איש השלג הנורא, התגלה בהרים הסמוכים. צא לבדוק על מה מדובר.",
+    "dungeonids": [
+      2,
+      7
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      3
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "יש! הברחת את הייטי בחזרה להרים הגבוהים.",
+    "tutorialcode": null
+  },
+  {
+    "id": 25,
+    "name": "",
+    "type": 2,
+    "desc": "צרה חדשה מאיימת על ממלכה - ביג פוט ענקי שעושה צרות ליושבי ההרים. צא לגרש אותו.",
+    "dungeonids": [
+      2,
+      7
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      18
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "כל הכבוד! ביג פוט לקח את רגליו הגדולות וברח אל הסלעים כמו שפן (סלעים).",
+    "tutorialcode": null
+  },
+  {
+    "id": 26,
+    "name": "",
+    "type": 2,
+    "desc": "טרול עשויי כולו קריסטלים מאיים לגרום למפולת הרים אם לא יקבל יהלום ענקי. טפל בו.",
+    "dungeonids": [
+      2,
+      7
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      15
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "הראית לטרול מה זה! זה ילמד אותו שלא סוחטים את הממלכה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 27,
+    "name": "",
+    "type": 2,
+    "desc": "מלך קיקלופ יושב על גבעה וזורק אבנים על עוברים ושבים. צא ולמד אותו נימוסים.",
+    "dungeonids": [
+      2,
+      7
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      19
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מלך קיקלופ הבטיח שעינו לא תתקרב יותר לאזור. עבודה טובה!",
+    "tutorialcode": null
+  },
+  {
+    "id": 28,
+    "name": "",
+    "type": 2,
+    "desc": "עקרב ענקי הופיע במדבר הקרוב ולא נותן לאף אחד לעבור! גרש אותו.",
+    "dungeonids": [
+      4,
+      9
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      10
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "ניצחת את העקרב, והוא ברח הרחק לעומק המדבר.",
+    "tutorialcode": null
+  },
+  {
+    "id": 29,
+    "name": "",
+    "type": 2,
+    "desc": "מומיה של מלך עתיק קמה לתחייה ומפחידה את הגמלים שגרים במדבר. טפל בה.",
+    "dungeonids": [
+      4,
+      9
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      13
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מעולה! ניצחת את המומיה, הגמלים חזרו לשלוותם.",
+    "tutorialcode": null
+  },
+  {
+    "id": 30,
+    "name": "",
+    "type": 2,
+    "desc": "מלך הקקטוסים הגיח מהמדבר ולא נותן לאיש לעבור. התמודד איתו.",
+    "dungeonids": [
+      4,
+      9
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      12
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "יש!!! מלך הקקטוסים ברח בבושת פנים ובבושת קוצים.",
+    "tutorialcode": null
+  },
+  {
+    "id": 31,
+    "name": "",
+    "type": 2,
+    "desc": "ג'יני מרושע ברח מהמנורה שלו ומפחיד את תושבי המדבר. צא להחזיר אותו למנורה.",
+    "dungeonids": [
+      4,
+      9
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      16
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מצויין, הג'יני חזר למנורה שלו, ואת המנורה קברו עמוק בחול.",
+    "tutorialcode": null
+  },
+  {
+    "id": 32,
+    "name": "",
+    "type": 2,
+    "desc": "מלך חדש למפלצות המוזרות הגרות באזור האגם! צא לבדוק במה מדובר.",
+    "dungeonids": [
+      8,
+      3
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      11
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מלך המפלצות ברח על רגלי התרנגולת שלו כל עוד נפשו בו.",
+    "tutorialcode": null
+  },
+  {
+    "id": 33,
+    "name": "",
+    "type": 2,
+    "desc": "דחליל ישן שהושאר באזור האגמים קם לתחיה ומסתובב חופשי. צא להתמודד מולו.",
+    "dungeonids": [
+      8,
+      3
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      4
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "הדחליל הענקי הסכים להשאר במקום אחד, מצויין.",
+    "tutorialcode": null
+  },
+  {
+    "id": 34,
+    "name": "",
+    "type": 2,
+    "desc": "טרול האבן הגדול ביותר שקיים זורע הרס באזור האגמים. צא להרגיע אותו.",
+    "dungeonids": [
+      8,
+      3
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "כל הכבוד, הטרול הוציא את כל העצבים שלו ונרגע.",
+    "tutorialcode": null
+  },
+  {
+    "id": 35,
+    "name": "",
+    "type": 2,
+    "desc": "מלך הדרקונים התיישב באזור האגם ודורש 1000 כבשים. מישהו צריך לטפל בו.",
+    "dungeonids": [
+      8,
+      3
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      7
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מעולה! הדרקון למד לא להתעסק עם הממלכה שלנו. לכבשים שלום.",
+    "tutorialcode": null
+  },
+  {
+    "id": 36,
+    "name": "",
+    "type": 2,
+    "desc": "מלך רוח רפאים מפחיד את הגרים בביצות הקרובות. צא להתמודד מולו.",
+    "dungeonids": [
+      5,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      8
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "יש! הברחת את מלך רוח רפאים והביצה שוב שקטה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 37,
+    "name": "",
+    "type": 2,
+    "desc": "מלך אנשי הרפש יצא מהביצה ומפיץ ריח רע בכל האזור. צא לטפל בבעיה.",
+    "dungeonids": [
+      5,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      9
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מעולה, הברחת את המלך המסריח בחזרה לביצה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 38,
+    "name": "",
+    "type": 2,
+    "desc": "מכת עטלפים ערפדיים מאיימת על התושבים. צא להתמודד מול המנהיג שלהם.",
+    "dungeonids": [
+      5,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      17
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מנהיג העטלפים נכנע והבטיח לאכול רק פירות. כל הכבוד.",
+    "tutorialcode": null
+  },
+  {
+    "id": 39,
+    "name": "",
+    "type": 2,
+    "desc": "מלאך המוות האפל עלה מן הביצה וזורע אימה בכל הסובבים. טפל בו.",
+    "dungeonids": [
+      5,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      14
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "יש!! ניצחת את מלאך המוות האפל, עכשיו הביצה רגועה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 50,
+    "name": "להציל את ונדי",
+    "type": 3,
+    "desc": "מפלצות רעות פלשו לאזור בו המלך אוהב לבלות את זמנו. הפטר מכל האוייבים וממנהיגם המרושע",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "כל הכבוד, המפלצות ברחו מהר מהר והמלך יכול שוב לטייל",
+    "tutorialcode": null
+  },
+  {
+    "id": 51,
+    "name": "בעיית מזיקים",
+    "type": 3,
+    "desc": "דוכס האלי פוטל מתלונן על קולות שהוא שומע מהדשא שמאחורי ביתו. נקה את הדשא של הדוכס מכל המזיקים.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "כל הכבוד לך, ניקית את הדשא של האלי פוטל.",
+    "tutorialcode": null
+  },
+  {
+    "id": 52,
+    "name": "בעיית מזיקים",
+    "type": 3,
+    "desc": "ברחבי הממלכה מדברים על חבורת מפלצות שמסתובבת בשעת השקיעה ומפריעה לאנשים לעבור. טפל בהם.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "עבודה טובה , סוף סוף הערבים חזרו להיות שלווים.",
+    "tutorialcode": null
+  },
+  {
+    "id": 53,
+    "name": "בעיית מזיקים",
+    "type": 3,
+    "desc": "אוג המהיר והאיום וחבורת הבריונים שלו מטילים אימה על תושבי הכפרים, המבקשים את עזרתו של קוסם מנוסה.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "ניצחון! לפי המהירות בה אוג המהיר ברח, אפשר להבין מאיפה הוא קיבל את שמו.",
+    "tutorialcode": null
+  },
+  {
+    "id": 60,
+    "name": "2",
+    "type": 1,
+    "desc": "אחד העצים המרושעים שגדלים ביער הקרוב זורק אצטרובלים על העוברים ושבים. עצור אותו.",
+    "dungeonids": [
+      1,
+      6
+    ],
+    "dungeondifficulties": [
+      1
+    ],
+    "enemiesids": [
+      5
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 1,
+    "qgraphics": 2,
+    "endmsg": "ניצחת את העץ המרושע ולקחת את כל האצטרובלים שלו, כל הכבוד.",
+    "tutorialcode": null
+  },
+  {
+    "id": 61,
+    "name": "2",
+    "type": 1,
+    "desc": "אחד הצמחים הטורפים שביער הקרוב בלע את המפתח לשער הארמון של המלך. צא להחזיר אותו.",
+    "dungeonids": [
+      1,
+      6
+    ],
+    "dungeondifficulties": [
+      1
+    ],
+    "enemiesids": [
+      2
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 1,
+    "qgraphics": 2,
+    "endmsg": "מצויין! לא היה קל, אבל הצלת את המפתח מהצמח הטורף.",
+    "tutorialcode": null
+  },
+  {
+    "id": 62,
+    "name": "2",
+    "type": 1,
+    "desc": "אחת היתושות הענקיות רבה עם חברה שלה ומבקשת את עזרתך. צא לסדר את העניינים.",
+    "dungeonids": [
+      1,
+      6
+    ],
+    "dungeondifficulties": [
+      1
+    ],
+    "enemiesids": [
+      6
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 1,
+    "qgraphics": 2,
+    "endmsg": "מסתבר שקצת זמן ביחד איתך יכול לפתור גם בעיות של יתושים. יפה מאוד!",
+    "tutorialcode": null
+  },
+  {
+    "id": 63,
+    "name": "2",
+    "type": 1,
+    "desc": "אחד הקופים המשוגעים גנב את האופניים של הנסיך הצעיר אלעד השלישי. החזר לו אותם.",
+    "dungeonids": [
+      1,
+      6
+    ],
+    "dungeondifficulties": [
+      1
+    ],
+    "enemiesids": [
+      20
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 1,
+    "qgraphics": 2,
+    "endmsg": "כל הכבוד! החזרת את האופניים לנסיך הצעיר. בינתיים הוא התחיל לנסוע על סקטים",
+    "tutorialcode": null
+  },
+  {
+    "id": 64,
+    "name": "2",
+    "type": 1,
+    "desc": "אחד מהייטים גנב את בובת איש השלג האהובה של הדוכסית. צא להחזיר אותו.",
+    "dungeonids": [
+      2,
+      7
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      3
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "מצויין! מצאת את הבובה  הגנובה והחזרת אותו לדוכסית.",
+    "tutorialcode": null
+  },
+  {
+    "id": 65,
+    "name": "2",
+    "type": 1,
+    "desc": "מישהו מכנופיית הביג פוטים גנב את הנעליים של הנסיכה ורדית. התמודד מול הגנב.",
+    "dungeonids": [
+      2,
+      7
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      18
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "מצאת את הנעליים של הנסיכה (והם מידה 54)",
+    "tutorialcode": null
+  },
+  {
+    "id": 66,
+    "name": "2",
+    "type": 1,
+    "desc": "אחד מטרולי ההרים לא מוכן לשמוע למנהיג הכנופייה, והמנהיג מבקש שתטפל בו.",
+    "dungeonids": [
+      2,
+      7
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      15
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "החזרת את הטרול המורד למקומו, כל הכבוד.",
+    "tutorialcode": null
+  },
+  {
+    "id": 67,
+    "name": "2",
+    "type": 1,
+    "desc": "לאזור הקיקלופים הגיע קיקלופ חדש שעושה צרות. צא להתמודד מולו.",
+    "dungeonids": [
+      2,
+      7
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      19
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "לימדת את הקיקלופ החדש שבממלכה שלנו יש לשמור על החוקים.",
+    "tutorialcode": null
+  },
+  {
+    "id": 68,
+    "name": "2",
+    "type": 1,
+    "desc": "אחד העקרבים הענקיים מאיים לעקוץ את הגמל האהוב של המלך. גרש אותו.",
+    "dungeonids": [
+      4,
+      9
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      10
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "כל הכבוד, גירשת את העקרב המאיים.",
+    "tutorialcode": null
+  },
+  {
+    "id": 69,
+    "name": "2",
+    "type": 1,
+    "desc": "אחת המומיות ברחה מהפירמידה שלה ומסתובבת במדבר. גרש אותה.",
+    "dungeonids": [
+      4,
+      9
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      13
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "מצויין! החזרת את המומיה לפירמידה שלה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 70,
+    "name": "2",
+    "type": 1,
+    "desc": "אחד הקקטוסים במדבר קם לתחיה ויורה קוצים לכל עבר. האם אתה מוכן לעזור להפטר ממנו?",
+    "dungeonids": [
+      4,
+      9
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      12
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "הקקטוס המורד חזר להיות צמח פשוט ושקט. מה היינו עושים בלי קוסם בממלכה?",
+    "tutorialcode": null
+  },
+  {
+    "id": 71,
+    "name": "2",
+    "type": 1,
+    "desc": "אחד הג'ינים הקסומים לא מוכן להקשיב להורים שלו והם מבקשים את עזרתך.",
+    "dungeonids": [
+      4,
+      9
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      16
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "הג'יני הסכים להקשיב להורים שלו. יופי! זה באמת עוזר להקשיב להורים.",
+    "tutorialcode": null
+  },
+  {
+    "id": 72,
+    "name": "2",
+    "type": 1,
+    "desc": "קוקיגולת קסומה יצאה מאזורי האגם ולא מוצאת את דרכה הביתה. צא לעזור לה.",
+    "dungeonids": [
+      3,
+      8
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      11
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "זו הייתה מלכודת! מזל שעמדת על המישמר.",
+    "tutorialcode": null
+  },
+  {
+    "id": 73,
+    "name": "2",
+    "type": 1,
+    "desc": "אחד הדחלילים רוצה לאמן את העורב החדש שלו מול קוסם גדול. לך לעזור לו.",
+    "dungeonids": [
+      3,
+      8
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      4
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "מעולה! העורב של הדחליל ממש מיומן עכשיו.",
+    "tutorialcode": null
+  },
+  {
+    "id": 74,
+    "name": "2",
+    "type": 1,
+    "desc": "טרול אבן מרושע לא מוכן לחזור למערה שלו. המלך של הטרולים מבקש את עזרתך.",
+    "dungeonids": [
+      3,
+      8
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "לימדת את הטרול שיעור בהתנהגות, המלך מרוצה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 75,
+    "name": "2",
+    "type": 1,
+    "desc": "דרקון צעיר לא מוכן להקשיב למנהיג הדרקונים ועושה צרות. דרושה עזרה מקוסם אמיתי.",
+    "dungeonids": [
+      3,
+      8
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      7
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "הדרקון הצעיר נשבע שיתנהג מעכשיו כמו יונת שלום.",
+    "tutorialcode": null
+  },
+  {
+    "id": 76,
+    "name": "2",
+    "type": 1,
+    "desc": "אחת הרוחות רפאים צועקת בלילות ולא נותנת לתושבי הביצה לישון. טפל בה.",
+    "dungeonids": [
+      5,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      8
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "כל הכבוד, הברחת את רוח הרפאים הרעה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 77,
+    "name": "2",
+    "type": 1,
+    "desc": "איש רפש תחמן גנב את הברווזון האהוב של מפקד הצבא. החזר אותו.",
+    "dungeonids": [
+      5,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      9
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "מעולה! הצלת את הברווזון מאיש הרפש המצחין.",
+    "tutorialcode": null
+  },
+  {
+    "id": 78,
+    "name": "2",
+    "type": 1,
+    "desc": "עטלף ערפדי נכנס בלילה לחדר של המלכה! המלכה דורשת דו קרב מול קוסם גיבור.",
+    "dungeonids": [
+      5,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      17
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "ניצחת את העטלף וזכית בהוקרת המלכה, כל הכבוד.",
+    "tutorialcode": null
+  },
+  {
+    "id": 79,
+    "name": "2",
+    "type": 1,
+    "desc": "אחד הבנים של מלאך המוות רוצה למרוד ולפתוח מקום משלו. עצור אותו.",
+    "dungeonids": [
+      5,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      14
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "יפה מאוד, לימדת את הבן של מלאך המוות שמרדנות לא מביאה לתוצאות.",
+    "tutorialcode": null
+  },
+  {
+    "id": 100,
+    "name": "2",
+    "type": 1,
+    "desc": "אחד מהמפלצות גנב את השרביט של המלך - החזר אותו",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "מצאת את השרביט. המלך אמר שהוא ישמור עליו טוב יותר.",
+    "tutorialcode": null
+  },
+  {
+    "id": 101,
+    "name": "2",
+    "type": 1,
+    "desc": "צחי השתקן צורח בקולי קולות על שגנבו לו את הסוס האהוב. מצא את הגנב והחזר לצחי השתקן את סוסו.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "יופי! מצאת את הסוס הגנוס. צחי השתקן רוכב שנית!",
+    "tutorialcode": null
+  },
+  {
+    "id": 102,
+    "name": "2",
+    "type": 1,
+    "desc": "הנזירה גליה מחפשת גיבור שיגן על שמה הטוב מול מפלצת שפגעה בכבודה. הגן על שמה הטוב של גליה הנזירה.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "מעולה! גרמת למפלצת לשלוח מכתב התנצלות רישמי, הנזירה שמחה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 103,
+    "name": "2",
+    "type": 1,
+    "desc": "בשביל שאינו רחוק מהמגדל שלך מסתובבת מפלצת ועושה רעש שמפריע לך לישון. צא לרדוף אחריה.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      5
+    ],
+    "expoints": 20,
+    "minlevel": 4,
+    "qgraphics": 2,
+    "endmsg": "כל הכבוד! המפלצת ברחה ועכשיו אתה יכול לישון בשקט.",
+    "tutorialcode": null
+  },
+  {
+    "id": 110,
+    "name": "3",
+    "type": 3,
+    "desc": "ביער הקרוב התרבו העצים המרושעים והם מאיימים על התושבים. טפל בהם.",
+    "dungeonids": [
+      1,
+      6
+    ],
+    "dungeondifficulties": [
+      1
+    ],
+    "enemiesids": [
+      5
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 1,
+    "qgraphics": 1,
+    "endmsg": "כל הכבוד, ניקית את היער מהעצים הרעים.",
+    "tutorialcode": null
+  },
+  {
+    "id": 111,
+    "name": "3",
+    "type": 3,
+    "desc": "צמחים טורפים מילאו את היער והם מסכנים את החיות ואת החרקים. הצל את חבריך.",
+    "dungeonids": [
+      1,
+      6
+    ],
+    "dungeondifficulties": [
+      1
+    ],
+    "enemiesids": [
+      2
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 1,
+    "qgraphics": 1,
+    "endmsg": "מעולה! מזמן לא נראו צמחים טורפים שרצים כה מהר.",
+    "tutorialcode": null
+  },
+  {
+    "id": 112,
+    "name": "3",
+    "type": 3,
+    "desc": "היער התמלא ביתושי ענק שעושים רעש נוראי. הגיע הזמן להפטר מהם.",
+    "dungeonids": [
+      1,
+      6
+    ],
+    "dungeondifficulties": [
+      1
+    ],
+    "enemiesids": [
+      6
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 1,
+    "qgraphics": 1,
+    "endmsg": "יש! אין יותר יתושים והיער שוב שקט.",
+    "tutorialcode": null
+  },
+  {
+    "id": 113,
+    "name": "3",
+    "type": 3,
+    "desc": "חבורה של קופים משוגעים השתלטו על היער ועושים בלגאן נוראי. גרש אותם.",
+    "dungeonids": [
+      1,
+      6
+    ],
+    "dungeondifficulties": [
+      1
+    ],
+    "enemiesids": [
+      20
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 1,
+    "qgraphics": 1,
+    "endmsg": "מצויין, גירשת את כל הקופים מהיער. כלומר, את אלה שעושים צרות.",
+    "tutorialcode": null
+  },
+  {
+    "id": 114,
+    "name": "3",
+    "type": 3,
+    "desc": "כנופייה של ייטים ירדה מההרים ומאיימת לא לתת לאיש לעבור שם. סלק אותם.",
+    "dungeonids": [
+      2,
+      7
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      3
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "כל הכבוד, עכשיו אפשר לטייל שוב בהרים.",
+    "tutorialcode": null
+  },
+  {
+    "id": 115,
+    "name": "3",
+    "type": 3,
+    "desc": "צבא שלם של ביג פוטים התגלה בהרים. חייבים להרחיק אותם מכאן, שלא ידרסו את הפרחים.",
+    "dungeonids": [
+      2,
+      7
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      18
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "מעולה, כל הביג פוטים ברחו ולפרחים שלום.",
+    "tutorialcode": null
+  },
+  {
+    "id": 116,
+    "name": "3",
+    "type": 3,
+    "desc": "להרים פלשה משפחה של טרולים עשויים קריסטל, הידועים במזג רע. צא ללמיד אותם נימוסים.",
+    "dungeonids": [
+      2,
+      7
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      15
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "הטרולים הבטיחו להתנהג יפה, עבודה טובה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 117,
+    "name": "3",
+    "type": 3,
+    "desc": "חבורת קיקלופים השתלטו על פסגת ההר הגבוה של המלך. צא להחזיר את הפסגה.",
+    "dungeonids": [
+      2,
+      7
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      19
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "מצויין! כל הקיקלופים גורשו.",
+    "tutorialcode": null
+  },
+  {
+    "id": 118,
+    "name": "3",
+    "type": 3,
+    "desc": "נחיל עקרבים ענקיים מתפרע ללא שליטה במדבר הקרוב. צא לטפל בבעיית המזיקים הזאת.",
+    "dungeonids": [
+      4,
+      9
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      10
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "כל הכבוד, כל העקרבים ברחו.",
+    "tutorialcode": null
+  },
+  {
+    "id": 119,
+    "name": "3",
+    "type": 3,
+    "desc": "מלך המומיות מוביל צבא שלם להשתלט על הממלכה. צא להתמודד מולו.",
+    "dungeonids": [
+      4,
+      9
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      13
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "יש!!! ניצחת את כל המומיות ואת המלך שלהם.",
+    "tutorialcode": null
+  },
+  {
+    "id": 120,
+    "name": "3",
+    "type": 3,
+    "desc": "חבורת קקטוסים ענקיים מפרים את החיים השלווים של תושבי המדבר. צא לטפל בבעיה.",
+    "dungeonids": [
+      4,
+      9
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      12
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "מצויין, גירשת את כל הקקטוסים מהאזור.",
+    "tutorialcode": null
+  },
+  {
+    "id": 121,
+    "name": "3",
+    "type": 3,
+    "desc": "ג'יני סולטן אסף את כל החברים שלו ויצא להשתלט על כל אזורי המדבר. התמודד מולם.",
+    "dungeonids": [
+      4,
+      9
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      16
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "מעולה, כל הג'ינים ברחו למנורות שלהם.",
+    "tutorialcode": null
+  },
+  {
+    "id": 122,
+    "name": "3",
+    "type": 3,
+    "desc": "כנופיית קוקיגולות ברחה מהאזור הקסום של האגמים והשתלטה על הכפר הקרוב. הצל את תושבי הכפר.",
+    "dungeonids": [
+      3,
+      8
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      11
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "כל הכבוד, שחררת את הכפר מאיום הקוקיגולות.",
+    "tutorialcode": null
+  },
+  {
+    "id": 123,
+    "name": "3",
+    "type": 3,
+    "desc": "חבורת דחלילים מפחידים מאיימת על החיים  השלווים שמסביב לאגם. חייבים לטפל בהם.",
+    "dungeonids": [
+      3,
+      8
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      4
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "מצויין, כל הדחלילים ברחו מהאגם.",
+    "tutorialcode": null
+  },
+  {
+    "id": 124,
+    "name": "3",
+    "type": 3,
+    "desc": "המוני טרולים עשויים אבן חסמו את האגם האהוב של המלכה. צא וגרש אותם.",
+    "dungeonids": [
+      3,
+      8
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "מעולה, עכשיו המלכה שוב יכולה לטייל באגם.",
+    "tutorialcode": null
+  },
+  {
+    "id": 125,
+    "name": "3",
+    "type": 3,
+    "desc": "דרקונים!!! דרקונים בשמי הממלכה! חייבם לגרש אותם לפני שיעשו נזק.",
+    "dungeonids": [
+      3,
+      8
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      7
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "גירשת את כל הדרקונים! השמיים שוב בטוחים!",
+    "tutorialcode": null
+  },
+  {
+    "id": 126,
+    "name": "3",
+    "type": 3,
+    "desc": "המוני רוחות רפאים מסתובבים בביצה ועושים קולות מפחידים. לך לביצה וטפל בהם.",
+    "dungeonids": [
+      5,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      8
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "יפה מאוד, שוב אפשר להנות מהשקט שבביצה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 127,
+    "name": "3",
+    "type": 3,
+    "desc": "מנהיג אנשי הרפש אסף צבא ענקי ודורש כופר או שיפלוש לממלכה. צא להתמודד מול האיום.",
+    "dungeonids": [
+      5,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      9
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "זה ידוע שאנשי רפש סופם להכשל. עבודה טובה!",
+    "tutorialcode": null
+  },
+  {
+    "id": 128,
+    "name": "3",
+    "type": 3,
+    "desc": "להקת עטלפים ערפדיים חדרו לממלכה ומסתבכים בשיער של האנשים. חייבים לגרש אותם.",
+    "dungeonids": [
+      5,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      17
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "מעולה, גירשת את כל העטלפים. בני הממלכה הסירו את הכובעים.",
+    "tutorialcode": null
+  },
+  {
+    "id": 129,
+    "name": "3",
+    "type": 3,
+    "desc": "כנופייה של מלאכי המוות עלו מהביצה ולא מוכנים לחזור אליה. צא ולמד אותם לקח.",
+    "dungeonids": [
+      5,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      14
+    ],
+    "prizesids": [
+      7
+    ],
+    "expoints": 40,
+    "minlevel": 4,
+    "qgraphics": 1,
+    "endmsg": "מצויין, טיפלת בכל מלאכי המוות. יקח זמן עד שנשמע מהם שוב...",
+    "tutorialcode": null
+  },
+  {
+    "id": 150,
+    "name": "3",
+    "type": 4,
+    "desc": "ליצן החצר סיפר לך על אוצר ובו כתר יפייפה. מצא את הכתר החבוי בתוך תיבה.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "יש!!! מצאת את הכתר.",
+    "tutorialcode": null
+  },
+  {
+    "id": 151,
+    "name": "3",
+    "type": 4,
+    "desc": "עוזי הקבצן מבקש שתמצא לו בגד חם לחורף. שמעת שיש בגד זרוק בסביבה. מצא אותו.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מצויין! מצאת מעיל מרופט, אבל מחמם. עוזי יהיה מאוד מרוצה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 152,
+    "name": "3",
+    "type": 4,
+    "desc": "גילגי מוכרת הספרים איבדה את הסימניה האהובה אליה. מצא את הסימניה.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "יש! מצאת את הסימניה של גילגי בזמן, האצבע שלה כבר נהייתה אדומה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 153,
+    "name": "3",
+    "type": 4,
+    "desc": "קונגו מלך הקופים סיים את מלאי הבננות שלו. צא למצוא לו בננות חדשות.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מצאת ערימה ענקית של בננות ואפילו תפוח לעצמך! איזה יום מוצלח.",
+    "tutorialcode": null
+  },
+  {
+    "id": 160,
+    "name": "3",
+    "type": 4,
+    "desc": "גיזמו הגיזבר מבקש ממך להחזיר את רשימת המיסים שלו שאיבד לפני יומיים. מצא אותה.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "כל הכבוד, מצאת את רשימת המיסים של גיזמו הגיזבר. כדאי להמשיך לזוז לפני שיתחיל לדבר עליה",
+    "tutorialcode": null
+  },
+  {
+    "id": 161,
+    "name": "3",
+    "type": 4,
+    "desc": "דולצ'ה הדוכס איבד את החרב האהובה אליו. מצא את החרב והחזרת לו אותה.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מצאת פגיון קטנטן עם שמו של דולצ'ה עליו. והוא קורא לזה חרב...",
+    "tutorialcode": null
+  },
+  {
+    "id": 162,
+    "name": "3",
+    "type": 4,
+    "desc": "השודד הכי מפורסם בממלכה הפיל את תיבת האוצר שלו במהלך הבריחה. מצא את האוצר.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "כן, כן, מצאת את האוצר של השודד. ",
+    "tutorialcode": null
+  },
+  {
+    "id": 163,
+    "name": "3",
+    "type": 4,
+    "desc": "כיפה ירוקה איבדה את סל הקניות שלה במהלך הטיול ליד המגדל שלך. מצא אותו.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "איזה כיף , מצאת את סל הקניות של כיפה ירוקה. היא פצתה אותך בפטריות שליקטה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 164,
+    "name": "3",
+    "type": 4,
+    "desc": "הודעה חשובה ! כל המוצא את שעון הקוקיה שלי ייקבל תגמול הולם. על החתום - המלך.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מצויין , מצאת את שעון הקוקיה של המלך וקיבלת פרס.",
+    "tutorialcode": null
+  },
+  {
+    "id": 165,
+    "name": "3",
+    "type": 4,
+    "desc": "הנסיכה רוצה מתנה חדשה. צא לחפש משהו שיעניין את הנסיכה.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מצאת פנינה השחורה הכי גדולה שראית. הנסיכה בטח תהיה מרוצה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 166,
+    "name": "3",
+    "type": 4,
+    "desc": "דני השכחן שכח משהו בעת טיולו האחרון והוא אפילו לא זוכר מה זה. עזור לדני השכחן",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מצאת את השיקוי נגד שכחה של דני השכחן. עכשיו הוא יזכור את הכל.",
+    "tutorialcode": null
+  },
+  {
+    "id": 167,
+    "name": "3",
+    "type": 4,
+    "desc": "משעמם לך במגדל. צא לחפש משהו מעניין בחוץ, אולי אחר-כך תוכל למכור אותו.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מצאת כמה אבנים יקרות. איזה יום מוצלח.",
+    "tutorialcode": null
+  },
+  {
+    "id": 168,
+    "name": "3",
+    "type": 4,
+    "desc": "המורה שלך לשעבר איבד את המשקפיים שלו במהלך טיול לילי. מצא את המשקפיים.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מצאת את המשקפיים, אבל הם שבורות. טוב שלמורה יש עוד זוג.",
+    "tutorialcode": null
+  },
+  {
+    "id": 169,
+    "name": "3",
+    "type": 4,
+    "desc": "הדגלן של המלך איבד את הדגל! מצא את הדגל לפני שהמלך יגלה  ויתרגז על הדגלן.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "יש!! מצאת את הדגל והחזרת אותו לדגלן  10 דקות לפני המצעד.",
+    "tutorialcode": null
+  },
+  {
+    "id": 170,
+    "name": "3",
+    "type": 4,
+    "desc": "יוצר התיבות הכי מפורסם בממלכה איבד את תיבת העץ המגולפת שהכין. מצא אותה.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מצאת את התיבה בתוך תיבה אחרת! איזה מזל...",
+    "tutorialcode": null
+  },
+  {
+    "id": 171,
+    "name": "3",
+    "type": 4,
+    "desc": "לקרן החד-קרן נפלה הקרן. עזור למצוא את הקרן של קרן החד-קרן.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      4
+    ],
+    "expoints": 10,
+    "minlevel": 4,
+    "qgraphics": 3,
+    "endmsg": "מצאת את הקרן של קרן החד-קרן. כל הכבוד לך.",
+    "tutorialcode": null
+  },
+  {
+    "id": 200,
+    "name": "4",
+    "type": 2,
+    "desc": "מפלצות מרושעות שוב פלשו לממלכה. תתמודד מול המנהיג שלהם ותראה להם מי כאן הגיבור.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 4,
+    "endmsg": "מעולה!! למנהיג של המפלצות לא היה שום סיכוי מול מגן הממלכה.",
+    "tutorialcode": null
+  },
+  {
+    "id": 220,
+    "name": "4",
+    "type": 2,
+    "desc": "מנהיג של חבורת המפלצות מהממלכה השכנה פלש לממלכה שלנו ומפחיד את המקומיות. גרש אותו.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 4,
+    "endmsg": "הצלחת לגרש את מנהיג המפלצות בחזרה לממלכה הרחוקה. המפלצות שלנו הבטיחו בתמורה יומיים של שקט",
+    "tutorialcode": null
+  },
+  {
+    "id": 221,
+    "name": "4",
+    "type": 2,
+    "desc": "למפלצות מתחשק לעשות מעשים טובים, אבל המלך שלהם לא נותן להם. צא להתעמת מול המלך.",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 4,
+    "endmsg": "המלך של המפלצות הבין את טעותו ואפילו החליט לעשות מעשה טוב אחד בעצמו. מעולה!",
+    "tutorialcode": null
+  },
+  {
+    "id": 222,
+    "name": "4",
+    "type": 2,
+    "desc": "מלך המפלצות קורא עליך תיגר. האם תעמוד באתגר?",
+    "dungeonids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dungeondifficulties": [
+      1,
+      2,
+      3
+    ],
+    "enemiesids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "prizesids": [
+      6
+    ],
+    "expoints": 30,
+    "minlevel": 4,
+    "qgraphics": 4,
+    "endmsg": "שוב הוכחת לכולם מי כאן הקוסם האמיתי.",
+    "tutorialcode": null
+  }
+]

@@ -119,6 +119,7 @@ class BambaData {
 	}
 
 	function buildDungeonsDataCatalog(param1:Xml):Void {
+		trace("building dungeon data catalog");
 		var dungeonsData = JsonParser.load("Assets/json/dungeonsData.json");
 		for (data in dungeonsData.dungeonsDatas) {
 			var _dungeonData = new BambaDungeonData(data);
@@ -222,8 +223,8 @@ class BambaData {
 
 	function buildHelpCatalog(param1:Xml):Void {
 		trace("building help catalog");
-		var helpData: {helps: Array<Any>} = JsonParser.load("Assets/json/help.json");
-		for (helpPage in helpData.helps) {
+		var helpData = JsonParser.load("Assets/json/help.json");
+		for (helpPage in helpData) {
 			var _helpPage = new BambaHelpPage(helpPage);
 			helpCatalog.push(_helpPage);
 		}
@@ -270,8 +271,8 @@ class BambaData {
 
 	function buildQuestsCatalog(param1:Xml):Void {
 		trace("building quests catalog");
-		var questJson = JsonParser.load("Assets/json/quests.json");
-		for ( quest in questJson.quests) {
+		var questData = JsonParser.load("Assets/json/quests.json");
+		for ( quest in questData) {
 			var _quest = new BambaQuest(quest);
 			questsCatalog.push(_quest);
 		}
@@ -292,6 +293,11 @@ class BambaData {
 
 	function buildPrizesCatalog(param1:Xml):Void {
 		trace("building prizes catalog");
+		var prizesData = JsonParser.load("Assets/json/prizes.json");
+		for (prize in prizesData) {
+			var _prize = new BambaPrize(prize);
+			prizesCatalog.push(_prize);
+		}
 		/* var _loc2_:Xml = null;
 		var _loc3_:BambaPrize = null;
 		for (_loc2_ in param1) {
@@ -580,7 +586,6 @@ class BambaData {
 	}
 
 	function buildSurprisesCatalog(param1:Xml):Void {
-		surprisesCatalog = [];
 		var suprisesJson = JsonParser.load("Assets/json/suprises.json");
 		for (data in suprisesJson.surprises) {
 			var suprise = new BambaSurprise(data);
@@ -775,12 +780,17 @@ class BambaData {
 	}
 
 	function buildStoreItemsCatalog(param1:Xml):Void {
-		var _loc2_:Xml = null;
+		var storeItemsData = JsonParser.load("Assets/json/storeItems.json");
+		for (storeItem in storeItemsData) {
+			var _storeItem = new BambaStoreItems(storeItem);
+			storeItemsCatalog.push(_storeItem);
+		}
+		/* var _loc2_:Xml = null;
 		var _loc3_:BambaStoreItems = null;
 		for (_loc2_ in param1) {
 			_loc3_ = new BambaStoreItems(_loc2_);
 			storeItemsCatalog.push(_loc3_);
-		}
+		} */
 	}
 
 	function buildPlayerLevelsCatalog(playerDataXml:Xml):Void {
