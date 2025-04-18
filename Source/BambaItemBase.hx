@@ -21,16 +21,16 @@ class BambaItemBase {
 
 	public var addRoundRegeneration:Float;
 
-	public function new(param1:Dynamic) {
-		id = param1.id;
-		iName = param1.name;
-		iDesc = param1.desc;
-		iType = param1.type;
-		buyPrice = param1.buyPrice;
-		sellPrice = param1.sellPrice;
-		minLevel = param1.minLevel;
-		addLife = param1.addLife;
-		addMagic = param1.addMagic;
-		addRoundRegeneration = param1.addRoundRegeneration;
+	public function new(itemBase:{type:Int, sellprice:Int, name:String, minlevel:Int, id:Int, desc:String, buyprice:Int, addroundregeneration:Int, addmagic:Int, addlife:Int}) {
+		this.id = itemBase.id;
+		this.iName = itemBase.name;
+		this.iDesc = itemBase.desc;
+		this.iType = itemBase.type;
+		this.buyPrice = itemBase.buyprice;
+		this.sellPrice = itemBase.sellprice;
+		this.minLevel = itemBase.minlevel;
+		this.addLife = itemBase.addlife;
+		this.addMagic =itemBase.addmagic;
+		this.addRoundRegeneration = itemBase.addroundregeneration;
 	}
 }

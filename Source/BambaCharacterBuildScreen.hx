@@ -177,7 +177,7 @@ class BambaCharacterBuildScreen extends DisplayObject {
 			_loc3_ = 0;
 			_loc4_ = 0;
 			while (_loc4_ < _loc2_.length) {
-				_loc5_ = new BambaItem(game.gameData.getCatalogItem(_loc2_[_loc4_]).xmlData);
+				_loc5_ = new BambaItem(game.gameData.getCatalogItem(_loc2_[_loc4_]).data);
 				_loc5_.init(game);
 				if (_loc5_ != null) {
 					_loc5_.generateMC();
@@ -484,7 +484,7 @@ class BambaCharacterBuildScreen extends DisplayObject {
 		}
 		_loc6_ = 0;
 		while (_loc6_ < _loc3_.length) {
-			_loc8_ = new BambaItem(game.gameData.getCatalogItem(_loc3_[_loc6_]).xmlData);
+			_loc8_ = new BambaItem(game.gameData.getCatalogItem(_loc3_[_loc6_]).data);
 			_loc8_.init(game);
 			if (_loc8_ != null) {
 				_loc8_.generateMC();

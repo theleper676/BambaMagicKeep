@@ -1,0 +1,2112 @@
+[
+  {
+    "id": 100,
+    "base": 100,
+    "name": "קסדה פשוטה",
+    "graphicsname": "hat1"
+  },
+  {
+    "id": 101,
+    "base": 100,
+    "name": "קסדה פשוטה",
+    "graphicsname": "hat2"
+  },
+  {
+    "id": 102,
+    "base": 100,
+    "name": "קסדה פשוטה",
+    "graphicsname": "hat3"
+  },
+  {
+    "id": 103,
+    "base": 100,
+    "name": "קסדה פשוטה",
+    "graphicsname": "hat4"
+  },
+  {
+    "id": 104,
+    "base": 100,
+    "name": "קסדה פשוטה",
+    "graphicsname": "hat5"
+  },
+  {
+    "id": 105,
+    "base": 100,
+    "name": "קסדה פשוטה",
+    "graphicsname": "hat6"
+  },
+  {
+    "id": 110,
+    "base": 110,
+    "name": "קסדה ויקינגית",
+    "graphicsname": "hat11"
+  },
+  {
+    "id": 111,
+    "base": 110,
+    "name": "קסדה ויקינגית",
+    "graphicsname": "hat12"
+  },
+  {
+    "id": 112,
+    "base": 110,
+    "name": "קסדה ויקינגית",
+    "graphicsname": "hat13"
+  },
+  {
+    "id": 113,
+    "base": 110,
+    "name": "קסדה ויקינגית",
+    "graphicsname": "hat14"
+  },
+  {
+    "id": 114,
+    "base": 110,
+    "name": "קסדה ויקינגית",
+    "graphicsname": "hat15"
+  },
+  {
+    "id": 115,
+    "base": 110,
+    "name": "קסדה ויקינגית",
+    "graphicsname": "hat16"
+  },
+  {
+    "id": 120,
+    "base": 120,
+    "name": "כובע מכשפה",
+    "graphicsname": "hat21"
+  },
+  {
+    "id": 121,
+    "base": 120,
+    "name": "כובע מכשפה",
+    "graphicsname": "hat22"
+  },
+  {
+    "id": 122,
+    "base": 120,
+    "name": "כובע מכשפה",
+    "graphicsname": "hat23"
+  },
+  {
+    "id": 123,
+    "base": 120,
+    "name": "כובע מכשפה",
+    "graphicsname": "hat24"
+  },
+  {
+    "id": 124,
+    "base": 120,
+    "name": "כובע מכשפה",
+    "graphicsname": "hat25"
+  },
+  {
+    "id": 125,
+    "base": 120,
+    "name": "כובע מכשפה",
+    "graphicsname": "hat26"
+  },
+  {
+    "id": 130,
+    "base": 130,
+    "name": "כובע קוסם",
+    "graphicsname": "hat31"
+  },
+  {
+    "id": 131,
+    "base": 130,
+    "name": "כובע קוסם",
+    "graphicsname": "hat32"
+  },
+  {
+    "id": 132,
+    "base": 130,
+    "name": "כובע קוסם",
+    "graphicsname": "hat33"
+  },
+  {
+    "id": 133,
+    "base": 130,
+    "name": "כובע קוסם",
+    "graphicsname": "hat34"
+  },
+  {
+    "id": 134,
+    "base": 130,
+    "name": "כובע קוסם",
+    "graphicsname": "hat35"
+  },
+  {
+    "id": 135,
+    "base": 130,
+    "name": "כובע קוסם",
+    "graphicsname": "hat36"
+  },
+  {
+    "id": 140,
+    "base": 140,
+    "name": "כובע סייף",
+    "desc": "פרט לבוש בסיסי",
+    "graphicsname": "hat41"
+  },
+  {
+    "id": 141,
+    "base": 140,
+    "name": "כובע סייף",
+    "graphicsname": "hat42"
+  },
+  {
+    "id": 142,
+    "base": 140,
+    "name": "כובע סייף",
+    "graphicsname": "hat43"
+  },
+  {
+    "id": 143,
+    "base": 140,
+    "name": "כובע סייף",
+    "graphicsname": "hat44"
+  },
+  {
+    "id": 144,
+    "base": 140,
+    "name": "כובע סייף",
+    "graphicsname": "hat45"
+  },
+  {
+    "id": 145,
+    "base": 140,
+    "name": "כובע סייף",
+    "graphicsname": "hat46"
+  },
+  {
+    "id": 150,
+    "base": 150,
+    "name": "כובע אציל",
+    "desc": "פרט לבוש בסיסי",
+    "graphicsname": "hat51"
+  },
+  {
+    "id": 151,
+    "base": 150,
+    "name": "כובע אציל",
+    "graphicsname": "hat52"
+  },
+  {
+    "id": 152,
+    "base": 150,
+    "name": "כובע אציל",
+    "graphicsname": "hat53"
+  },
+  {
+    "id": 153,
+    "base": 150,
+    "name": "כובע אציל",
+    "graphicsname": "hat54"
+  },
+  {
+    "id": 154,
+    "base": 150,
+    "name": "כובע אציל",
+    "graphicsname": "hat55"
+  },
+  {
+    "id": 155,
+    "base": 150,
+    "name": "כובע אציל",
+    "graphicsname": "hat56"
+  },
+  {
+    "id": 160,
+    "base": 160,
+    "name": "כובע ליצן",
+    "desc": "פרט לבוש בסיסי",
+    "graphicsname": "hat61"
+  },
+  {
+    "id": 161,
+    "base": 160,
+    "name": "כובע ליצן",
+    "graphicsname": "hat62"
+  },
+  {
+    "id": 162,
+    "base": 160,
+    "name": "כובע ליצן",
+    "graphicsname": "hat63"
+  },
+  {
+    "id": 163,
+    "base": 160,
+    "name": "כובע ליצן",
+    "graphicsname": "hat64"
+  },
+  {
+    "id": 164,
+    "base": 160,
+    "name": "כובע ליצן",
+    "graphicsname": "hat65"
+  },
+  {
+    "id": 165,
+    "base": 160,
+    "name": "כובע ליצן",
+    "graphicsname": "hat66"
+  },
+  {
+    "id": 170,
+    "base": 170,
+    "name": "כובע שודד ים",
+    "desc": "פרט לבוש בסיסי",
+    "graphicsname": "hat71"
+  },
+  {
+    "id": 171,
+    "base": 170,
+    "name": "כובע שודד ים",
+    "graphicsname": "hat72"
+  },
+  {
+    "id": 172,
+    "base": 170,
+    "name": "כובע שודד ים",
+    "graphicsname": "hat73"
+  },
+  {
+    "id": 173,
+    "base": 170,
+    "name": "כובע שודד ים",
+    "graphicsname": "hat74"
+  },
+  {
+    "id": 174,
+    "base": 170,
+    "name": "כובע שודד ים",
+    "graphicsname": "hat75"
+  },
+  {
+    "id": 175,
+    "base": 170,
+    "name": "כובע שודד ים",
+    "graphicsname": "hat76"
+  },
+  {
+    "id": 180,
+    "base": 180,
+    "name": "כובע אינדי",
+    "desc": "פרט לבוש בסיסי",
+    "graphicsname": "hat81"
+  },
+  {
+    "id": 181,
+    "base": 180,
+    "name": "כובע אינדי",
+    "graphicsname": "hat82"
+  },
+  {
+    "id": 182,
+    "base": 180,
+    "name": "כובע אינדי",
+    "graphicsname": "hat83"
+  },
+  {
+    "id": 183,
+    "base": 180,
+    "name": "כובע אינדי",
+    "graphicsname": "hat84"
+  },
+  {
+    "id": 184,
+    "base": 180,
+    "name": "כובע אינדי",
+    "graphicsname": "hat85"
+  },
+  {
+    "id": 185,
+    "base": 180,
+    "name": "כובע אינדי",
+    "graphicsname": "hat86"
+  },
+  {
+    "id": 190,
+    "base": 190,
+    "name": "כובע מכשף",
+    "desc": "פרט לבוש בסיסי",
+    "graphicsname": "hat91"
+  },
+  {
+    "id": 191,
+    "base": 190,
+    "name": "כובע מכשף",
+    "graphicsname": "hat92"
+  },
+  {
+    "id": 192,
+    "base": 190,
+    "name": "כובע מכשף",
+    "graphicsname": "hat93"
+  },
+  {
+    "id": 193,
+    "base": 190,
+    "name": "כובע מכשף",
+    "graphicsname": "hat94"
+  },
+  {
+    "id": 194,
+    "base": 190,
+    "name": "כובע מכשף",
+    "graphicsname": "hat95"
+  },
+  {
+    "id": 195,
+    "base": 190,
+    "name": "כובע מכשף",
+    "graphicsname": "hat96"
+  },
+  {
+    "id": 200,
+    "base": 200,
+    "name": "גלימת בד",
+    "desc": "פרט לבוש בסיסי",
+    "type": 2,
+    "graphicsname": "cape1"
+  },
+  {
+    "id": 201,
+    "base": 200,
+    "name": "גלימת בד",
+    "graphicsname": "cape2"
+  },
+  {
+    "id": 202,
+    "base": 200,
+    "name": "גלימת בד",
+    "graphicsname": "cape3"
+  },
+  {
+    "id": 203,
+    "base": 200,
+    "name": "גלימת בד",
+    "desc": "פרט לבוש בסיסי",
+    "type": 2,
+    "graphicsname": "cape4"
+  },
+  {
+    "id": 204,
+    "base": 200,
+    "name": "גלימת בד",
+    "graphicsname": "cape5"
+  },
+  {
+    "id": 205,
+    "base": 200,
+    "name": "גלימת בד",
+    "graphicsname": "cape6"
+  },
+  {
+    "id": 210,
+    "base": 210,
+    "name": "גלימה רקומה",
+    "graphicsname": "cape11"
+  },
+  {
+    "id": 211,
+    "base": 210,
+    "name": "גלימה רקומה",
+    "graphicsname": "cape12"
+  },
+  {
+    "id": 212,
+    "base": 210,
+    "name": "גלימה רקומה",
+    "graphicsname": "cape13"
+  },
+  {
+    "id": 213,
+    "base": 210,
+    "name": "גלימה רקומה",
+    "graphicsname": "cape14"
+  },
+  {
+    "id": 214,
+    "base": 210,
+    "name": "גלימה רקומה",
+    "graphicsname": "cape15"
+  },
+  {
+    "id": 215,
+    "base": 210,
+    "name": "גלימה רקומה",
+    "graphicsname": "cape16"
+  },
+  {
+    "id": 220,
+    "base": 220,
+    "name": "גלימת ערפד",
+    "graphicsname": "cape21"
+  },
+  {
+    "id": 221,
+    "base": 220,
+    "name": "גלימת ערפד",
+    "graphicsname": "cape22"
+  },
+  {
+    "id": 222,
+    "base": 220,
+    "name": "גלימת ערפד",
+    "graphicsname": "cape23"
+  },
+  {
+    "id": 223,
+    "base": 220,
+    "name": "גלימת ערפד",
+    "graphicsname": "cape24"
+  },
+  {
+    "id": 224,
+    "base": 220,
+    "name": "גלימת ערפד",
+    "graphicsname": "cape25"
+  },
+  {
+    "id": 225,
+    "base": 220,
+    "name": "גלימת ערפד",
+    "graphicsname": "cape26"
+  },
+  {
+    "id": 230,
+    "base": 230,
+    "name": "גלימת כוכבים",
+    "graphicsname": "cape31"
+  },
+  {
+    "id": 231,
+    "base": 230,
+    "name": "גלימת כוכבים",
+    "graphicsname": "cape32"
+  },
+  {
+    "id": 232,
+    "base": 230,
+    "name": "גלימת כוכבים",
+    "graphicsname": "cape33"
+  },
+  {
+    "id": 233,
+    "base": 230,
+    "name": "גלימת כוכבים",
+    "graphicsname": "cape34"
+  },
+  {
+    "id": 234,
+    "base": 230,
+    "name": "גלימת כוכבים",
+    "graphicsname": "cape35"
+  },
+  {
+    "id": 235,
+    "base": 230,
+    "name": "גלימת כוכבים",
+    "graphicsname": "cape36"
+  },
+  {
+    "id": 240,
+    "base": 240,
+    "name": "גלימת עוף השמיים",
+    "graphicsname": "cape41"
+  },
+  {
+    "id": 241,
+    "base": 240,
+    "name": "גלימת עוף השמיים",
+    "graphicsname": "cape42"
+  },
+  {
+    "id": 242,
+    "base": 240,
+    "name": "גלימת עוף השמיים",
+    "graphicsname": "cape43"
+  },
+  {
+    "id": 243,
+    "base": 240,
+    "name": "גלימת עוף השמיים",
+    "graphicsname": "cape44"
+  },
+  {
+    "id": 244,
+    "base": 240,
+    "name": "גלימת עוף השמיים",
+    "graphicsname": "cape45"
+  },
+  {
+    "id": 245,
+    "base": 240,
+    "name": "גלימת עוף השמיים",
+    "graphicsname": "cape46"
+  },
+  {
+    "id": 250,
+    "base": 250,
+    "name": "גלימת כנפי עטלף",
+    "graphicsname": "cape51"
+  },
+  {
+    "id": 251,
+    "base": 250,
+    "name": "גלימת כנפי עטלף",
+    "graphicsname": "cape52"
+  },
+  {
+    "id": 252,
+    "base": 250,
+    "name": "גלימת כנפי עטלף",
+    "graphicsname": "cape53"
+  },
+  {
+    "id": 253,
+    "base": 250,
+    "name": "גלימת כנפי עטלף",
+    "graphicsname": "cape54"
+  },
+  {
+    "id": 254,
+    "base": 250,
+    "name": "גלימת כנפי עטלף",
+    "graphicsname": "cape55"
+  },
+  {
+    "id": 255,
+    "base": 250,
+    "name": "גלימת כנפי עטלף",
+    "graphicsname": "cape56"
+  },
+  {
+    "id": 260,
+    "base": 260,
+    "name": "גלימה מלאה",
+    "graphicsname": "cape61"
+  },
+  {
+    "id": 261,
+    "base": 260,
+    "name": "גלימה מלאה",
+    "graphicsname": "cape62"
+  },
+  {
+    "id": 262,
+    "base": 260,
+    "name": "גלימה מלאה",
+    "graphicsname": "cape63"
+  },
+  {
+    "id": 263,
+    "base": 260,
+    "name": "גלימה מלאה",
+    "graphicsname": "cape64"
+  },
+  {
+    "id": 264,
+    "base": 260,
+    "name": "גלימה מלאה",
+    "graphicsname": "cape65"
+  },
+  {
+    "id": 265,
+    "base": 260,
+    "name": "גלימה מלאה",
+    "graphicsname": "cape66"
+  },
+  {
+    "id": 270,
+    "base": 270,
+    "name": "גלימת ברדס",
+    "graphicsname": "cape71"
+  },
+  {
+    "id": 271,
+    "base": 270,
+    "name": "גלימת ברדס",
+    "graphicsname": "cape72"
+  },
+  {
+    "id": 272,
+    "base": 270,
+    "name": "גלימת ברדס",
+    "graphicsname": "cape73"
+  },
+  {
+    "id": 273,
+    "base": 270,
+    "name": "גלימת ברדס",
+    "graphicsname": "cape74"
+  },
+  {
+    "id": 274,
+    "base": 270,
+    "name": "גלימת ברדס",
+    "graphicsname": "cape75"
+  },
+  {
+    "id": 275,
+    "base": 270,
+    "name": "גלימת ברדס",
+    "graphicsname": "cape76"
+  },
+  {
+    "id": 280,
+    "base": 280,
+    "name": "גלימת קוסם",
+    "graphicsname": "cape81"
+  },
+  {
+    "id": 281,
+    "base": 280,
+    "name": "גלימת קוסם",
+    "graphicsname": "cape82"
+  },
+  {
+    "id": 282,
+    "base": 280,
+    "name": "גלימת קוסם",
+    "graphicsname": "cape83"
+  },
+  {
+    "id": 283,
+    "base": 280,
+    "name": "גלימת קוסם",
+    "graphicsname": "cape84"
+  },
+  {
+    "id": 284,
+    "base": 280,
+    "name": "גלימת קוסם",
+    "graphicsname": "cape85"
+  },
+  {
+    "id": 285,
+    "base": 280,
+    "name": "גלימת קוסם",
+    "graphicsname": "cape86"
+  },
+  {
+    "id": 290,
+    "base": 290,
+    "name": "גלימת מכשף",
+    "graphicsname": "cape91"
+  },
+  {
+    "id": 291,
+    "base": 290,
+    "name": "גלימת מכשף",
+    "graphicsname": "cape92"
+  },
+  {
+    "id": 292,
+    "base": 290,
+    "name": "גלימת מכשף",
+    "graphicsname": "cape93"
+  },
+  {
+    "id": 293,
+    "base": 290,
+    "name": "גלימת מכשף",
+    "graphicsname": "cape94"
+  },
+  {
+    "id": 294,
+    "base": 290,
+    "name": "גלימת מכשף",
+    "graphicsname": "cape95"
+  },
+  {
+    "id": 295,
+    "base": 290,
+    "name": "גלימת מכשף",
+    "graphicsname": "cape96"
+  },
+  {
+    "id": 300,
+    "base": 300,
+    "name": "חגורת אבזם",
+    "graphicsname": "belt1"
+  },
+  {
+    "id": 301,
+    "base": 300,
+    "name": "חגורת אבזם",
+    "graphicsname": "belt2"
+  },
+  {
+    "id": 302,
+    "base": 300,
+    "name": "חגורת אבזם",
+    "graphicsname": "belt3"
+  },
+  {
+    "id": 303,
+    "base": 300,
+    "name": "חגורת אבזם",
+    "graphicsname": "belt4"
+  },
+  {
+    "id": 304,
+    "base": 300,
+    "name": "חגורת אבזם",
+    "graphicsname": "belt5"
+  },
+  {
+    "id": 305,
+    "base": 300,
+    "name": "חגורת אבזם",
+    "graphicsname": "belt6"
+  },
+  {
+    "id": 310,
+    "base": 310,
+    "name": "חגורת אבן חן",
+    "graphicsname": "belt11"
+  },
+  {
+    "id": 311,
+    "base": 310,
+    "name": "חגורת אבן חן",
+    "graphicsname": "belt12"
+  },
+  {
+    "id": 312,
+    "base": 310,
+    "name": "חגורת אבן חן",
+    "graphicsname": "belt13"
+  },
+  {
+    "id": 313,
+    "base": 310,
+    "name": "חגורת אבן חן",
+    "graphicsname": "belt14"
+  },
+  {
+    "id": 314,
+    "base": 310,
+    "name": "חגורת אבן חן",
+    "graphicsname": "belt15"
+  },
+  {
+    "id": 315,
+    "base": 310,
+    "name": "חגורת אבן חן",
+    "graphicsname": "belt16"
+  },
+  {
+    "id": 320,
+    "base": 320,
+    "name": "חגורת ברזל",
+    "graphicsname": "belt21"
+  },
+  {
+    "id": 321,
+    "base": 320,
+    "name": "חגורת ברזל",
+    "graphicsname": "belt22"
+  },
+  {
+    "id": 322,
+    "base": 320,
+    "name": "חגורת ברזל",
+    "graphicsname": "belt23"
+  },
+  {
+    "id": 323,
+    "base": 320,
+    "name": "חגורת ברזל",
+    "graphicsname": "belt24"
+  },
+  {
+    "id": 324,
+    "base": 320,
+    "name": "חגורת ברזל",
+    "graphicsname": "belt25"
+  },
+  {
+    "id": 325,
+    "base": 320,
+    "name": "חגורת ברזל",
+    "graphicsname": "belt26"
+  },
+  {
+    "id": 330,
+    "base": 330,
+    "name": "חגורת בד",
+    "graphicsname": "belt31"
+  },
+  {
+    "id": 331,
+    "base": 330,
+    "name": "חגורת בד",
+    "graphicsname": "belt32"
+  },
+  {
+    "id": 332,
+    "base": 330,
+    "name": "חגורת בד",
+    "graphicsname": "belt33"
+  },
+  {
+    "id": 333,
+    "base": 330,
+    "name": "חגורת בד",
+    "graphicsname": "belt34"
+  },
+  {
+    "id": 334,
+    "base": 330,
+    "name": "חגורת בד",
+    "graphicsname": "belt35"
+  },
+  {
+    "id": 335,
+    "base": 330,
+    "name": "חגורת בד",
+    "graphicsname": "belt36"
+  },
+  {
+    "id": 340,
+    "base": 340,
+    "name": "חבל נזיר",
+    "graphicsname": "belt41"
+  },
+  {
+    "id": 341,
+    "base": 340,
+    "name": "חבל נזיר",
+    "graphicsname": "belt42"
+  },
+  {
+    "id": 342,
+    "base": 340,
+    "name": "חבל נזיר",
+    "graphicsname": "belt43"
+  },
+  {
+    "id": 343,
+    "base": 340,
+    "name": "חבל נזיר",
+    "graphicsname": "belt44"
+  },
+  {
+    "id": 344,
+    "base": 340,
+    "name": "חבל נזיר",
+    "graphicsname": "belt45"
+  },
+  {
+    "id": 345,
+    "base": 340,
+    "name": "חבל נזיר",
+    "graphicsname": "belt46"
+  },
+  {
+    "id": 350,
+    "base": 350,
+    "name": "חגורת פרשים",
+    "graphicsname": "belt51"
+  },
+  {
+    "id": 351,
+    "base": 350,
+    "name": "חגורת פרשים",
+    "graphicsname": "belt52"
+  },
+  {
+    "id": 352,
+    "base": 350,
+    "name": "חגורת פרשים",
+    "graphicsname": "belt53"
+  },
+  {
+    "id": 353,
+    "base": 350,
+    "name": "חגורת פרשים",
+    "graphicsname": "belt54"
+  },
+  {
+    "id": 354,
+    "base": 350,
+    "name": "חגורת פרשים",
+    "graphicsname": "belt55"
+  },
+  {
+    "id": 355,
+    "base": 350,
+    "name": "חגורת פרשים",
+    "graphicsname": "belt56"
+  },
+  {
+    "id": 360,
+    "base": 360,
+    "name": "חגורת סרט",
+    "graphicsname": "belt61"
+  },
+  {
+    "id": 361,
+    "base": 360,
+    "name": "חגורת סרט",
+    "graphicsname": "belt62"
+  },
+  {
+    "id": 362,
+    "base": 360,
+    "name": "חגורת סרט",
+    "graphicsname": "belt63"
+  },
+  {
+    "id": 363,
+    "base": 360,
+    "name": "חגורת סרט",
+    "graphicsname": "belt64"
+  },
+  {
+    "id": 364,
+    "base": 360,
+    "name": "חגורת סרט",
+    "graphicsname": "belt65"
+  },
+  {
+    "id": 365,
+    "base": 360,
+    "name": "חגורת סרט",
+    "graphicsname": "belt66"
+  },
+  {
+    "id": 370,
+    "base": 370,
+    "name": "חגורת סארונג",
+    "graphicsname": "belt71"
+  },
+  {
+    "id": 371,
+    "base": 370,
+    "name": "חגורת סארונג",
+    "graphicsname": "belt72"
+  },
+  {
+    "id": 372,
+    "base": 370,
+    "name": "חגורת סארונג",
+    "graphicsname": "belt73"
+  },
+  {
+    "id": 373,
+    "base": 370,
+    "name": "חגורת סארונג",
+    "graphicsname": "belt74"
+  },
+  {
+    "id": 374,
+    "base": 370,
+    "name": "חגורת סארונג",
+    "graphicsname": "belt75"
+  },
+  {
+    "id": 375,
+    "base": 370,
+    "name": "חגורת סארונג",
+    "graphicsname": "belt76"
+  },
+  {
+    "id": 380,
+    "base": 380,
+    "name": "חגורה יוונית",
+    "graphicsname": "belt81"
+  },
+  {
+    "id": 381,
+    "base": 380,
+    "name": "חגורה יוונית",
+    "graphicsname": "belt82"
+  },
+  {
+    "id": 382,
+    "base": 380,
+    "name": "חגורה יוונית",
+    "graphicsname": "belt83"
+  },
+  {
+    "id": 383,
+    "base": 380,
+    "name": "חגורה יוונית",
+    "graphicsname": "belt84"
+  },
+  {
+    "id": 384,
+    "base": 380,
+    "name": "חגורה יוונית",
+    "graphicsname": "belt85"
+  },
+  {
+    "id": 385,
+    "base": 380,
+    "name": "חגורה יוונית",
+    "graphicsname": "belt86"
+  },
+  {
+    "id": 390,
+    "base": 390,
+    "name": "חגורת עוף השמיים",
+    "graphicsname": "belt91"
+  },
+  {
+    "id": 391,
+    "base": 390,
+    "name": "חגורת עוף השמיים",
+    "graphicsname": "belt92"
+  },
+  {
+    "id": 392,
+    "base": 390,
+    "name": "חגורת עוף השמיים",
+    "graphicsname": "belt93"
+  },
+  {
+    "id": 393,
+    "base": 390,
+    "name": "חגורת עוף השמיים",
+    "graphicsname": "belt94"
+  },
+  {
+    "id": 394,
+    "base": 390,
+    "name": "חגורת עוף השמיים",
+    "graphicsname": "belt95"
+  },
+  {
+    "id": 395,
+    "base": 390,
+    "name": "חגורת עוף השמיים",
+    "graphicsname": "belt96"
+  },
+  {
+    "id": 400,
+    "base": 400,
+    "name": "נעליים פשוטות",
+    "graphicsname": "shoe1"
+  },
+  {
+    "id": 401,
+    "base": 400,
+    "name": "נעליים פשוטות",
+    "graphicsname": "shoe2"
+  },
+  {
+    "id": 402,
+    "base": 400,
+    "name": "נעליים פשוטות",
+    "graphicsname": "shoe3"
+  },
+  {
+    "id": 403,
+    "base": 400,
+    "name": "נעליים פשוטות",
+    "graphicsname": "shoe4"
+  },
+  {
+    "id": 404,
+    "base": 400,
+    "name": "נעליים פשוטות",
+    "graphicsname": "shoe5"
+  },
+  {
+    "id": 405,
+    "base": 400,
+    "name": "נעליים פשוטות",
+    "graphicsname": "shoe6"
+  },
+  {
+    "id": 410,
+    "base": 410,
+    "name": "מגפי ברזל",
+    "graphicsname": "shoe11"
+  },
+  {
+    "id": 411,
+    "base": 410,
+    "name": "מגפי ברזל",
+    "graphicsname": "shoe12"
+  },
+  {
+    "id": 412,
+    "base": 410,
+    "name": "מגפי ברזל",
+    "graphicsname": "shoe13"
+  },
+  {
+    "id": 413,
+    "base": 410,
+    "name": "מגפי ברזל",
+    "graphicsname": "shoe14"
+  },
+  {
+    "id": 414,
+    "base": 410,
+    "name": "מגפי ברזל",
+    "graphicsname": "shoe15"
+  },
+  {
+    "id": 415,
+    "base": 410,
+    "name": "מגפי ברזל",
+    "graphicsname": "shoe16"
+  },
+  {
+    "id": 420,
+    "base": 420,
+    "name": "נעלי מוקסינים",
+    "graphicsname": "shoe21"
+  },
+  {
+    "id": 421,
+    "base": 420,
+    "name": "נעלי מוקסינים",
+    "graphicsname": "shoe22"
+  },
+  {
+    "id": 422,
+    "base": 420,
+    "name": "נעלי מוקסינים",
+    "graphicsname": "shoe23"
+  },
+  {
+    "id": 423,
+    "base": 420,
+    "name": "נעלי מוקסינים",
+    "graphicsname": "shoe24"
+  },
+  {
+    "id": 424,
+    "base": 420,
+    "name": "נעלי מוקסינים",
+    "graphicsname": "shoe25"
+  },
+  {
+    "id": 425,
+    "base": 420,
+    "name": "נעלי מוקסינים",
+    "graphicsname": "shoe26"
+  },
+  {
+    "id": 430,
+    "base": 430,
+    "name": "נעל אינדיאנית",
+    "graphicsname": "shoe31"
+  },
+  {
+    "id": 431,
+    "base": 430,
+    "name": "נעל אינדיאנית",
+    "graphicsname": "shoe32"
+  },
+  {
+    "id": 432,
+    "base": 430,
+    "name": "נעל אינדיאנית",
+    "graphicsname": "shoe33"
+  },
+  {
+    "id": 433,
+    "base": 430,
+    "name": "נעל אינדיאנית",
+    "graphicsname": "shoe34"
+  },
+  {
+    "id": 434,
+    "base": 430,
+    "name": "נעל אינדיאנית",
+    "graphicsname": "shoe35"
+  },
+  {
+    "id": 435,
+    "base": 430,
+    "name": "נעל אינדיאנית",
+    "graphicsname": "shoe36"
+  },
+  {
+    "id": 440,
+    "base": 440,
+    "name": "נעל יוונית",
+    "graphicsname": "shoe41"
+  },
+  {
+    "id": 441,
+    "base": 440,
+    "name": "נעל יוונית",
+    "graphicsname": "shoe42"
+  },
+  {
+    "id": 442,
+    "base": 440,
+    "name": "נעל יוונית",
+    "graphicsname": "shoe43"
+  },
+  {
+    "id": 443,
+    "base": 440,
+    "name": "נעל יוונית",
+    "graphicsname": "shoe44"
+  },
+  {
+    "id": 444,
+    "base": 440,
+    "name": "נעל יוונית",
+    "graphicsname": "shoe45"
+  },
+  {
+    "id": 445,
+    "base": 440,
+    "name": "נעל יוונית",
+    "graphicsname": "shoe46"
+  },
+  {
+    "id": 450,
+    "base": 450,
+    "name": "מגפי אבירים",
+    "graphicsname": "shoe51"
+  },
+  {
+    "id": 451,
+    "base": 450,
+    "name": "מגפי אבירים",
+    "graphicsname": "shoe52"
+  },
+  {
+    "id": 452,
+    "base": 450,
+    "name": "מגפי אבירים",
+    "graphicsname": "shoe53"
+  },
+  {
+    "id": 453,
+    "base": 450,
+    "name": "מגפי אבירים",
+    "graphicsname": "shoe54"
+  },
+  {
+    "id": 454,
+    "base": 450,
+    "name": "מגפי אבירים",
+    "graphicsname": "shoe55"
+  },
+  {
+    "id": 455,
+    "base": 450,
+    "name": "מגפי אבירים",
+    "graphicsname": "shoe56"
+  },
+  {
+    "id": 460,
+    "base": 460,
+    "name": "סנדלי ברזל",
+    "graphicsname": "shoe61"
+  },
+  {
+    "id": 461,
+    "base": 460,
+    "name": "סנדלי ברזל",
+    "graphicsname": "shoe62"
+  },
+  {
+    "id": 462,
+    "base": 460,
+    "name": "סנדלי ברזל",
+    "graphicsname": "shoe63"
+  },
+  {
+    "id": 463,
+    "base": 460,
+    "name": "סנדלי ברזל",
+    "graphicsname": "shoe64"
+  },
+  {
+    "id": 464,
+    "base": 460,
+    "name": "סנדלי ברזל",
+    "graphicsname": "shoe65"
+  },
+  {
+    "id": 465,
+    "base": 460,
+    "name": "סנדלי ברזל",
+    "graphicsname": "shoe66"
+  },
+  {
+    "id": 470,
+    "base": 470,
+    "name": "סנדלי עץ",
+    "graphicsname": "shoe71"
+  },
+  {
+    "id": 471,
+    "base": 470,
+    "name": "סנדלי עץ",
+    "graphicsname": "shoe72"
+  },
+  {
+    "id": 472,
+    "base": 470,
+    "name": "סנדלי עץ",
+    "graphicsname": "shoe73"
+  },
+  {
+    "id": 473,
+    "base": 470,
+    "name": "סנדלי עץ",
+    "graphicsname": "shoe74"
+  },
+  {
+    "id": 474,
+    "base": 470,
+    "name": "סנדלי עץ",
+    "graphicsname": "shoe75"
+  },
+  {
+    "id": 475,
+    "base": 470,
+    "name": "סנדלי עץ",
+    "graphicsname": "shoe76"
+  },
+  {
+    "id": 480,
+    "base": 480,
+    "name": "מגפי קוסם",
+    "graphicsname": "shoe81"
+  },
+  {
+    "id": 481,
+    "base": 480,
+    "name": "מגפי קוסם",
+    "graphicsname": "shoe82"
+  },
+  {
+    "id": 482,
+    "base": 480,
+    "name": "מגפי קוסם",
+    "graphicsname": "shoe83"
+  },
+  {
+    "id": 483,
+    "base": 480,
+    "name": "מגפי קוסם",
+    "graphicsname": "shoe84"
+  },
+  {
+    "id": 484,
+    "base": 480,
+    "name": "מגפי קוסם",
+    "graphicsname": "shoe85"
+  },
+  {
+    "id": 485,
+    "base": 480,
+    "name": "מגפי קוסם",
+    "graphicsname": "shoe86"
+  },
+  {
+    "id": 490,
+    "base": 490,
+    "name": "מגפי פרשים",
+    "graphicsname": "shoe91"
+  },
+  {
+    "id": 491,
+    "base": 490,
+    "name": "מגפי פרשים",
+    "graphicsname": "shoe92"
+  },
+  {
+    "id": 492,
+    "base": 490,
+    "name": "מגפי פרשים",
+    "graphicsname": "shoe93"
+  },
+  {
+    "id": 493,
+    "base": 490,
+    "name": "מגפי פרשים",
+    "graphicsname": "shoe94"
+  },
+  {
+    "id": 494,
+    "base": 490,
+    "name": "מגפי פרשים",
+    "graphicsname": "shoe95"
+  },
+  {
+    "id": 495,
+    "base": 490,
+    "name": "מגפי פרשים",
+    "graphicsname": "shoe96"
+  },
+  {
+    "id": 500,
+    "base": 500,
+    "name": "מטה פשוט",
+    "graphicsname": "stick1"
+  },
+  {
+    "id": 501,
+    "base": 500,
+    "name": "מטה פשוט",
+    "graphicsname": "stick2"
+  },
+  {
+    "id": 502,
+    "base": 500,
+    "name": "מטה פשוט",
+    "graphicsname": "stick3"
+  },
+  {
+    "id": 503,
+    "base": 500,
+    "name": "מטה פשוט",
+    "graphicsname": "stick4"
+  },
+  {
+    "id": 504,
+    "base": 500,
+    "name": "מטה פשוט",
+    "graphicsname": "stick5"
+  },
+  {
+    "id": 505,
+    "base": 500,
+    "name": "מטה פשוט",
+    "graphicsname": "stick6"
+  },
+  {
+    "id": 510,
+    "base": 510,
+    "name": "מטה כסוף",
+    "graphicsname": "stick11"
+  },
+  {
+    "id": 511,
+    "base": 510,
+    "name": "מטה כסוף",
+    "graphicsname": "stick12"
+  },
+  {
+    "id": 512,
+    "base": 510,
+    "name": "מטה כסוף",
+    "graphicsname": "stick13"
+  },
+  {
+    "id": 513,
+    "base": 510,
+    "name": "מטה כסוף",
+    "graphicsname": "stick14"
+  },
+  {
+    "id": 514,
+    "base": 510,
+    "name": "מטה כסוף",
+    "graphicsname": "stick15"
+  },
+  {
+    "id": 515,
+    "base": 510,
+    "name": "מטה כסוף",
+    "graphicsname": "stick16"
+  },
+  {
+    "id": 520,
+    "base": 520,
+    "name": "מטה נחש הקוברה",
+    "graphicsname": "stick21"
+  },
+  {
+    "id": 521,
+    "base": 520,
+    "name": "מטה נחש הקוברה",
+    "graphicsname": "stick22"
+  },
+  {
+    "id": 522,
+    "base": 520,
+    "name": "מטה נחש הקוברה",
+    "graphicsname": "stick23"
+  },
+  {
+    "id": 523,
+    "base": 520,
+    "name": "מטה נחש הקוברה",
+    "graphicsname": "stick24"
+  },
+  {
+    "id": 524,
+    "base": 520,
+    "name": "מטה נחש הקוברה",
+    "graphicsname": "stick25"
+  },
+  {
+    "id": 525,
+    "base": 520,
+    "name": "מטה נחש הקוברה",
+    "graphicsname": "stick26"
+  },
+  {
+    "id": 530,
+    "base": 530,
+    "name": "מטה כוכב",
+    "graphicsname": "stick31"
+  },
+  {
+    "id": 531,
+    "base": 530,
+    "name": "מטה כוכב",
+    "graphicsname": "stick32"
+  },
+  {
+    "id": 532,
+    "base": 530,
+    "name": "מטה כוכב",
+    "graphicsname": "stick33"
+  },
+  {
+    "id": 533,
+    "base": 530,
+    "name": "מטה כוכב",
+    "graphicsname": "stick34"
+  },
+  {
+    "id": 534,
+    "base": 530,
+    "name": "מטה כוכב",
+    "graphicsname": "stick35"
+  },
+  {
+    "id": 535,
+    "base": 530,
+    "name": "מטה כוכב",
+    "graphicsname": "stick36"
+  },
+  {
+    "id": 540,
+    "base": 540,
+    "name": "מטה ורד",
+    "graphicsname": "stick41"
+  },
+  {
+    "id": 541,
+    "base": 540,
+    "name": "מטה ורד",
+    "graphicsname": "stick42"
+  },
+  {
+    "id": 542,
+    "base": 540,
+    "name": "מטה ורד",
+    "graphicsname": "stick43"
+  },
+  {
+    "id": 543,
+    "base": 540,
+    "name": "מטה ורד",
+    "graphicsname": "stick44"
+  },
+  {
+    "id": 544,
+    "base": 540,
+    "name": "מטה ורד",
+    "graphicsname": "stick45"
+  },
+  {
+    "id": 545,
+    "base": 540,
+    "name": "מטה ורד",
+    "graphicsname": "stick46"
+  },
+  {
+    "id": 550,
+    "base": 550,
+    "name": "מטה שאמאן",
+    "graphicsname": "stick51"
+  },
+  {
+    "id": 551,
+    "base": 550,
+    "name": "מטה שאמאן",
+    "graphicsname": "stick52"
+  },
+  {
+    "id": 552,
+    "base": 550,
+    "name": "מטה שאמאן",
+    "graphicsname": "stick53"
+  },
+  {
+    "id": 553,
+    "base": 550,
+    "name": "מטה שאמאן",
+    "graphicsname": "stick54"
+  },
+  {
+    "id": 554,
+    "base": 550,
+    "name": "מטה שאמאן",
+    "graphicsname": "stick55"
+  },
+  {
+    "id": 555,
+    "base": 550,
+    "name": "מטה שאמאן",
+    "graphicsname": "stick56"
+  },
+  {
+    "id": 560,
+    "base": 560,
+    "name": "מטה שמש",
+    "graphicsname": "stick61"
+  },
+  {
+    "id": 561,
+    "base": 560,
+    "name": "מטה שמש",
+    "graphicsname": "stick62"
+  },
+  {
+    "id": 562,
+    "base": 560,
+    "name": "מטה שמש",
+    "graphicsname": "stick63"
+  },
+  {
+    "id": 563,
+    "base": 560,
+    "name": "מטה שמש",
+    "graphicsname": "stick64"
+  },
+  {
+    "id": 564,
+    "base": 560,
+    "name": "מטה שמש",
+    "graphicsname": "stick65"
+  },
+  {
+    "id": 565,
+    "base": 560,
+    "name": "מטה שמש",
+    "graphicsname": "stick66"
+  },
+  {
+    "id": 570,
+    "base": 570,
+    "name": "מטה ירח",
+    "graphicsname": "stick71"
+  },
+  {
+    "id": 571,
+    "base": 570,
+    "name": "מטה ירח",
+    "graphicsname": "stick72"
+  },
+  {
+    "id": 572,
+    "base": 570,
+    "name": "מטה ירח",
+    "graphicsname": "stick73"
+  },
+  {
+    "id": 573,
+    "base": 570,
+    "name": "מטה ירח",
+    "graphicsname": "stick74"
+  },
+  {
+    "id": 574,
+    "base": 570,
+    "name": "מטה ירח",
+    "graphicsname": "stick75"
+  },
+  {
+    "id": 575,
+    "base": 570,
+    "name": "מטה ירח",
+    "graphicsname": "stick76"
+  },
+  {
+    "id": 580,
+    "base": 580,
+    "name": "מטה נובה",
+    "graphicsname": "stick81"
+  },
+  {
+    "id": 581,
+    "base": 580,
+    "name": "מטה נובה",
+    "graphicsname": "stick82"
+  },
+  {
+    "id": 582,
+    "base": 580,
+    "name": "מטה נובה",
+    "graphicsname": "stick83"
+  },
+  {
+    "id": 583,
+    "base": 580,
+    "name": "מטה נובה",
+    "graphicsname": "stick84"
+  },
+  {
+    "id": 584,
+    "base": 580,
+    "name": "מטה נובה",
+    "graphicsname": "stick85"
+  },
+  {
+    "id": 585,
+    "base": 580,
+    "name": "מטה נובה",
+    "graphicsname": "stick86"
+  },
+  {
+    "id": 590,
+    "base": 590,
+    "name": "מטה קוסם",
+    "graphicsname": "stick91"
+  },
+  {
+    "id": 591,
+    "base": 590,
+    "name": "מטה קוסם",
+    "graphicsname": "stick92"
+  },
+  {
+    "id": 592,
+    "base": 590,
+    "name": "מטה קוסם",
+    "graphicsname": "stick93"
+  },
+  {
+    "id": 593,
+    "base": 590,
+    "name": "מטה קוסם",
+    "graphicsname": "stick94"
+  },
+  {
+    "id": 594,
+    "base": 590,
+    "name": "מטה קוסם",
+    "graphicsname": "stick95"
+  },
+  {
+    "id": 595,
+    "base": 590,
+    "name": "מטה קוסם",
+    "graphicsname": "stick96"
+  },
+  {
+    "id": 600,
+    "base": 600,
+    "graphicsname": "hair1"
+  },
+  {
+    "id": 601,
+    "base": 600,
+    "graphicsname": "hair2"
+  },
+  {
+    "id": 602,
+    "base": 600,
+    "graphicsname": "hair3"
+  },
+  {
+    "id": 603,
+    "base": 600,
+    "graphicsname": "hair4"
+  },
+  {
+    "id": 604,
+    "base": 600,
+    "graphicsname": "hair5"
+  },
+  {
+    "id": 605,
+    "base": 600,
+    "graphicsname": "hair6"
+  },
+  {
+    "id": 610,
+    "base": 610,
+    "graphicsname": "hair11"
+  },
+  {
+    "id": 611,
+    "base": 610,
+    "graphicsname": "hair12"
+  },
+  {
+    "id": 612,
+    "base": 610,
+    "graphicsname": "hair13"
+  },
+  {
+    "id": 613,
+    "base": 610,
+    "graphicsname": "hair14"
+  },
+  {
+    "id": 614,
+    "base": 610,
+    "graphicsname": "hair15"
+  },
+  {
+    "id": 615,
+    "base": 610,
+    "graphicsname": "hair16"
+  },
+  {
+    "id": 620,
+    "base": 620,
+    "graphicsname": "hair21"
+  },
+  {
+    "id": 621,
+    "base": 620,
+    "graphicsname": "hair22"
+  },
+  {
+    "id": 622,
+    "base": 620,
+    "graphicsname": "hair23"
+  },
+  {
+    "id": 623,
+    "base": 620,
+    "graphicsname": "hair24"
+  },
+  {
+    "id": 624,
+    "base": 620,
+    "graphicsname": "hair25"
+  },
+  {
+    "id": 625,
+    "base": 620,
+    "graphicsname": "hair26"
+  },
+  {
+    "id": 630,
+    "base": 630,
+    "graphicsname": "hair31"
+  },
+  {
+    "id": 631,
+    "base": 630,
+    "graphicsname": "hair32"
+  },
+  {
+    "id": 632,
+    "base": 630,
+    "graphicsname": "hair33"
+  },
+  {
+    "id": 633,
+    "base": 630,
+    "graphicsname": "hair34"
+  },
+  {
+    "id": 634,
+    "base": 630,
+    "graphicsname": "hair35"
+  },
+  {
+    "id": 635,
+    "base": 630,
+    "graphicsname": "hair36"
+  },
+  {
+    "id": 640,
+    "base": 640,
+    "graphicsname": "hair41"
+  },
+  {
+    "id": 641,
+    "base": 640,
+    "graphicsname": "hair42"
+  },
+  {
+    "id": 642,
+    "base": 640,
+    "graphicsname": "hair43"
+  },
+  {
+    "id": 643,
+    "base": 640,
+    "graphicsname": "hair44"
+  },
+  {
+    "id": 644,
+    "base": 640,
+    "graphicsname": "hair45"
+  },
+  {
+    "id": 645,
+    "base": 640,
+    "graphicsname": "hair46"
+  },
+  {
+    "id": 650,
+    "base": 650,
+    "graphicsname": "hair51"
+  },
+  {
+    "id": 651,
+    "base": 650,
+    "graphicsname": "hair52"
+  },
+  {
+    "id": 652,
+    "base": 650,
+    "graphicsname": "hair53"
+  },
+  {
+    "id": 653,
+    "base": 650,
+    "graphicsname": "hair54"
+  },
+  {
+    "id": 654,
+    "base": 650,
+    "graphicsname": "hair55"
+  },
+  {
+    "id": 655,
+    "base": 650,
+    "graphicsname": "hair56"
+  },
+  {
+    "id": 660,
+    "base": 660,
+    "graphicsname": "hair61"
+  },
+  {
+    "id": 661,
+    "base": 660,
+    "graphicsname": "hair62"
+  },
+  {
+    "id": 662,
+    "base": 660,
+    "graphicsname": "hair63"
+  },
+  {
+    "id": 663,
+    "base": 660,
+    "graphicsname": "hair64"
+  },
+  {
+    "id": 664,
+    "base": 660,
+    "graphicsname": "hair65"
+  },
+  {
+    "id": 665,
+    "base": 660,
+    "graphicsname": "hair66"
+  },
+  {
+    "id": 670,
+    "base": 670,
+    "graphicsname": "hair71"
+  },
+  {
+    "id": 671,
+    "base": 670,
+    "graphicsname": "hair72"
+  },
+  {
+    "id": 672,
+    "base": 670,
+    "graphicsname": "hair73"
+  },
+  {
+    "id": 673,
+    "base": 670,
+    "graphicsname": "hair74"
+  },
+  {
+    "id": 674,
+    "base": 670,
+    "graphicsname": "hair75"
+  },
+  {
+    "id": 675,
+    "base": 670,
+    "graphicsname": "hair76"
+  },
+  {
+    "id": 700,
+    "base": 700,
+    "graphicsname": "eyes1"
+  },
+  {
+    "id": 701,
+    "base": 700,
+    "graphicsname": "eyes2"
+  },
+  {
+    "id": 702,
+    "base": 700,
+    "graphicsname": "eyes3"
+  },
+  {
+    "id": 703,
+    "base": 700,
+    "graphicsname": "eyes4"
+  },
+  {
+    "id": 704,
+    "base": 700,
+    "graphicsname": "eyes5"
+  },
+  {
+    "id": 705,
+    "base": 700,
+    "graphicsname": "eyes6"
+  },
+  {
+    "id": 800,
+    "base": 800,
+    "graphicsname": "diaper1"
+  },
+  {
+    "id": 801,
+    "base": 800,
+    "graphicsname": "diaper2"
+  },
+  {
+    "id": 802,
+    "base": 800,
+    "graphicsname": "diaper3"
+  },
+  {
+    "id": 803,
+    "base": 800,
+    "graphicsname": "diaper4"
+  },
+  {
+    "id": 804,
+    "base": 800,
+    "graphicsname": "diaper5"
+  },
+  {
+    "id": 805,
+    "base": 800,
+    "graphicsname": "diaper6"
+  }
+]

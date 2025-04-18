@@ -14,7 +14,7 @@ class BambaData {
 	public var mapData:BambaMapData;
 	//TODO: public var mapData:BambaMapData;
 
-	public var itemsBaseCatalog:Array<Dynamic>;
+	public var itemsBaseCatalog:Array<BambaItemBase>;
 
 	public var playerData:BambaPlayerData;
 
@@ -320,8 +320,14 @@ class BambaData {
 	}
 
 	//Rturn type BambaItemBase
-	public function getCatalogItemBase(param1:Dynamic):Dynamic {
-		var _loc2_:Dynamic = null;
+	public function getCatalogItemBase(id:Dynamic):BambaItemBase {
+		for (itemBase in itemsBaseCatalog) {
+			if(itemBase.id == id) {
+				return itemBase;
+			}
+		}
+		return null;
+		/* var _loc2_:Dynamic = null;
 		_loc2_ = 0;
 		while (_loc2_ < itemsBaseCatalog.length) {
 			if (itemsBaseCatalog[_loc2_].id == param1) {
@@ -329,7 +335,7 @@ class BambaData {
 			}
 			_loc2_++;
 		}
-		return null;
+		return null; */
 	}
 
 	//Retrun type BambaMagic
@@ -503,8 +509,14 @@ class BambaData {
 	} */
 
 	//Return type: BambaItem
-	public function getCatalogItem(param1:Dynamic):BambaItem {
-		var _loc2_:Dynamic = null;
+	public function getCatalogItem(id:Float):BambaItem {
+		for (item in itemsCatalog) {
+			if (item.id == id) {
+				return item;
+			}
+		}
+		return null;
+		/* var _loc2_:Dynamic = null;
 		_loc2_ = 0;
 		while (_loc2_ < itemsCatalog.length) {
 			if (itemsCatalog[_loc2_].id == param1) {
@@ -512,7 +524,7 @@ class BambaData {
 			}
 			_loc2_++;
 		}
-		return null;
+		return null; */
 	}
 
 	public function loadDungeonDifficulties(dungeonDifficulties:Array<{prizeprc:Float, enemylevels:Array<Int>, bosslevels:Array<Int>}>):Void {
@@ -534,13 +546,24 @@ class BambaData {
 		playerData.updatePlayerData(param1);
 	}
 
-	function buildEnemiesLevelsCatalog(param1:Dynamic):Void {
-		var _loc2_:Xml = null;
-		var _loc3_:BambaEnemyLevel = null;
+	function buildEnemiesLevelsCatalog(param1:Xml):Void {
+		trace("building enemy levels catalog");
+		var enemyLevelsData = JsonParser.load("Assets/json/enemyLevels.json");
 		minEnemyLevel = 99;
 		maxEnemyLevel = -99;
 
-		if(param1 != null) {
+		for (enemyLevel in enemyLevelsData.enemyLevels) {
+			var _enemyLevel = new BambaEnemyLevel(enemyLevel);
+			enemiesLevelsCatalog.push(_enemyLevel);
+			if(minEnemyLevel > _enemyLevel.level) {
+				minEnemyLevel = _enemyLevel.level;
+			}
+
+			if (maxEnemyLevel < _enemyLevel.level) {
+				maxEnemyLevel = _enemyLevel.level;
+			}
+		}
+		/* if(param1 != null) {
 			var iterable:Array<Dynamic> = cast(param1, Array<Dynamic>);
 			for (_loc2_ in iterable) {
 				_loc3_ = new BambaEnemyLevel(_loc2_);
@@ -552,7 +575,7 @@ class BambaData {
 					maxEnemyLevel = _loc3_.level;
 				}
 			}
-		}
+		} */
 		
 	}
 
@@ -566,12 +589,18 @@ class BambaData {
 	}
 
 	function buildItemsBaseCatalog(param1:Xml):Void {
-		var _loc2_:Xml = null;
+		trace("buildimg items base catalog");
+		var itemBaseData = JsonParser.load("Assets/json/itemsBase.json");
+		for (itemBase in itemBaseData.itemsBases) {
+			var _itemBase = new BambaItemBase(itemBase);
+			itemsBaseCatalog.push(_itemBase);
+		}
+		/* var _loc2_:Xml = null;
 		var _loc3_:BambaItemBase = null;
 		for (_loc2_ in param1) {
 			_loc3_ = new BambaItemBase(_loc2_);
 			itemsBaseCatalog.push(_loc3_);
-		}
+		} */
 	}
 
 	//TODO: RETURN TYPE BambaQuest
@@ -588,13 +617,19 @@ class BambaData {
 	}
 
 	function buildItemsCatalog(param1:Xml):Void {
-		var _loc2_:Xml = null;
+		var itemsData = JsonParser.load("Assets/json/items.json");
+		for (item in itemsData) {
+			var _item = new BambaItem(item);
+			_item.init(game);
+			itemsCatalog.push(_item);
+		}
+		/* var _loc2_:Xml = null;
 		var _loc3_:BambaItem = null;
 		for (_loc2_ in param1) {
 			_loc3_ = new BambaItem(_loc2_);
 			_loc3_.init(game);
 			itemsCatalog.push(_loc3_);
-		}
+		} */
 	}
 
 	function buildCardsCatalog(param1:Xml):Void {

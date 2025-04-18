@@ -1,0 +1,324 @@
+{
+  "enemyLevels": [
+    {
+      "level": 1,
+      "type": 1,
+      "maxlife": 25,
+      "maxmagic": 80,
+      "roundregeneration": 10,
+      "expoints": 3
+    },
+    {
+      "level": 1,
+      "type": 2,
+      "maxlife": 35,
+      "maxmagic": 80,
+      "roundregeneration": 10,
+      "expoints": 7
+    },
+    {
+      "level": 2,
+      "type": 1,
+      "maxlife": 40,
+      "maxmagic": 90,
+      "roundregeneration": 10,
+      "expoints": 5
+    },
+    {
+      "level": 2,
+      "type": 2,
+      "maxlife": 50,
+      "maxmagic": 100,
+      "roundregeneration": 10,
+      "expoints": 15
+    },
+    {
+      "level": 3,
+      "type": 1,
+      "maxlife": 45,
+      "maxmagic": 100,
+      "roundregeneration": 15,
+      "expoints": 10
+    },
+    {
+      "level": 3,
+      "type": 2,
+      "maxlife": 60,
+      "maxmagic": 110,
+      "roundregeneration": 15,
+      "expoints": 20
+    },
+    {
+      "level": 4,
+      "type": 1,
+      "maxlife": 55,
+      "maxmagic": 110,
+      "roundregeneration": 15,
+      "expoints": 15
+    },
+    {
+      "level": 4,
+      "type": 2,
+      "maxlife": 70,
+      "maxmagic": 120,
+      "roundregeneration": 15,
+      "expoints": 35
+    },
+    {
+      "level": 5,
+      "type": 1,
+      "maxlife": 65,
+      "maxmagic": 120,
+      "roundregeneration": 15,
+      "expoints": 30
+    },
+    {
+      "level": 5,
+      "type": 2,
+      "maxlife": 80,
+      "maxmagic": 130,
+      "roundregeneration": 15,
+      "expoints": 55
+    },
+    {
+      "level": 6,
+      "type": 1,
+      "maxlife": 75,
+      "maxmagic": 125,
+      "roundregeneration": 20,
+      "expoints": 50
+    },
+    {
+      "level": 6,
+      "type": 2,
+      "maxlife": 90,
+      "maxmagic": 135,
+      "roundregeneration": 20,
+      "expoints": 80
+    },
+    {
+      "level": 7,
+      "type": 1,
+      "maxlife": 80,
+      "maxmagic": 130,
+      "roundregeneration": 20,
+      "expoints": 75
+    },
+    {
+      "level": 7,
+      "type": 2,
+      "maxlife": 95,
+      "maxmagic": 140,
+      "roundregeneration": 20,
+      "expoints": 100
+    },
+    {
+      "level": 8,
+      "type": 1,
+      "maxlife": 85,
+      "maxmagic": 140,
+      "roundregeneration": 20,
+      "expoints": 90
+    },
+    {
+      "level": 8,
+      "type": 2,
+      "maxlife": 105,
+      "maxmagic": 150,
+      "roundregeneration": 20,
+      "expoints": 120
+    },
+    {
+      "level": 9,
+      "type": 1,
+      "maxlife": 95,
+      "maxmagic": 145,
+      "roundregeneration": 20,
+      "expoints": 110
+    },
+    {
+      "level": 9,
+      "type": 2,
+      "maxlife": 115,
+      "maxmagic": 155,
+      "roundregeneration": 20,
+      "expoints": 140
+    },
+    {
+      "level": 10,
+      "type": 1,
+      "maxlife": 105,
+      "maxmagic": 150,
+      "roundregeneration": 20,
+      "expoints": 130
+    },
+    {
+      "level": 10,
+      "type": 2,
+      "maxlife": 130,
+      "maxmagic": 160,
+      "roundregeneration": 20,
+      "expoints": 160
+    },
+    {
+      "level": 11,
+      "type": 1,
+      "maxlife": 120,
+      "maxmagic": 160,
+      "roundregeneration": 20,
+      "expoints": 150
+    },
+    {
+      "level": 11,
+      "type": 2,
+      "maxlife": 140,
+      "maxmagic": 170,
+      "roundregeneration": 20,
+      "expoints": 180
+    },
+    {
+      "level": 12,
+      "type": 1,
+      "maxlife": 135,
+      "maxmagic": 165,
+      "roundregeneration": 25,
+      "expoints": 170
+    },
+    {
+      "level": 12,
+      "type": 2,
+      "maxlife": 160,
+      "maxmagic": 175,
+      "roundregeneration": 25,
+      "expoints": 210
+    },
+    {
+      "level": 13,
+      "type": 1,
+      "maxlife": 150,
+      "maxmagic": 170,
+      "roundregeneration": 25,
+      "expoints": 190
+    },
+    {
+      "level": 13,
+      "type": 2,
+      "maxlife": 170,
+      "maxmagic": 180,
+      "roundregeneration": 25,
+      "expoints": 225
+    },
+    {
+      "level": 14,
+      "type": 1,
+      "maxlife": 165,
+      "maxmagic": 180,
+      "roundregeneration": 25,
+      "expoints": 210
+    },
+    {
+      "level": 14,
+      "type": 2,
+      "maxlife": 180,
+      "maxmagic": 190,
+      "roundregeneration": 25,
+      "expoints": 245
+    },
+    {
+      "level": 15,
+      "type": 1,
+      "maxlife": 175,
+      "maxmagic": 185,
+      "roundregeneration": 25,
+      "expoints": 230
+    },
+    {
+      "level": 15,
+      "type": 2,
+      "maxlife": 190,
+      "maxmagic": 195,
+      "roundregeneration": 25,
+      "expoints": 270
+    },
+    {
+      "level": 16,
+      "type": 1,
+      "maxlife": 185,
+      "maxmagic": 190,
+      "roundregeneration": 25,
+      "expoints": 250
+    },
+    {
+      "level": 16,
+      "type": 2,
+      "maxlife": 200,
+      "maxmagic": 200,
+      "roundregeneration": 25,
+      "expoints": 300
+    },
+    {
+      "level": 17,
+      "type": 1,
+      "maxlife": 200,
+      "maxmagic": 200,
+      "roundregeneration": 25,
+      "expoints": 280
+    },
+    {
+      "level": 17,
+      "type": 2,
+      "maxlife": 215,
+      "maxmagic": 215,
+      "roundregeneration": 25,
+      "expoints": 320
+    },
+    {
+      "level": 18,
+      "type": 1,
+      "maxlife": 215,
+      "maxmagic": 205,
+      "roundregeneration": 30,
+      "expoints": 310
+    },
+    {
+      "level": 18,
+      "type": 2,
+      "maxlife": 235,
+      "maxmagic": 220,
+      "roundregeneration": 30,
+      "expoints": 360
+    },
+    {
+      "level": 19,
+      "type": 1,
+      "maxlife": 225,
+      "maxmagic": 210,
+      "roundregeneration": 30,
+      "expoints": 340
+    },
+    {
+      "level": 19,
+      "type": 2,
+      "maxlife": 245,
+      "maxmagic": 225,
+      "roundregeneration": 30,
+      "expoints": 385
+    },
+    {
+      "level": 20,
+      "type": 1,
+      "maxlife": 250,
+      "maxmagic": 225,
+      "roundregeneration": 30,
+      "expoints": 370
+    },
+    {
+      "level": 20,
+      "type": 2,
+      "maxlife": 275,
+      "maxmagic": 250,
+      "roundregeneration": 30,
+      "expoints": 400
+    }
+  ]
+}

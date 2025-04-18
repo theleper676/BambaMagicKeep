@@ -179,7 +179,7 @@ class BambaStore extends DisplayObject {
 		_loc2_ = 0;
 		_loc3_ = 0;
 		while (_loc3_ < _loc1_.items.length) {
-			_loc4_ = new BambaItem(game.gameData.getCatalogItem(_loc1_.items[_loc3_]).xmlData);
+			_loc4_ = new BambaItem(game.gameData.getCatalogItem(_loc1_.items[_loc3_]).data);
 			_loc4_.init(game);
 			if (_loc4_ != null) {
 				_loc4_.generateMC();

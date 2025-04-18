@@ -62,7 +62,7 @@ class PlayerDataUpdater {
 			_loc6_ = game.gameData.getCatalogItem(_loc5_[_loc3_]);
 			if (_loc6_ != null) {
 				if (_loc6_.iType < 6) {
-					_loc7_ = new BambaItem(_loc6_.xmlData);
+					_loc7_ = new BambaItem(_loc6_.data);
 					if (_loc6_ != null) {
 						_loc6_.generateMC();
 						_loc6_.addClickEventOnBaby(param2);
@@ -104,7 +104,7 @@ class PlayerDataUpdater {
 		_loc9_ = 0;
 		_loc5_ = 0;
 		while (_loc5_ < _loc7_.length) {
-			_loc11_ = new BambaItem(game.gameData.getCatalogItem(_loc7_[_loc5_]).xmlData);
+			_loc11_ = new BambaItem(game.gameData.getCatalogItem(_loc7_[_loc5_]).data);
 			_loc11_.init(game);
 			if (_loc11_ != null) {
 				_loc11_.generateMC();

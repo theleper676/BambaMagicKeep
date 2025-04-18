@@ -15,15 +15,21 @@ class BambaEnemyLevel {
 
 	public var type:Float;
 
-	public function new(param1:Xml) {
-      for (node in param1.elements()) {
+	public function new(enemyLevel:{type:Int, roundregeneration:Int, maxmagic:Int, maxlife:Int, level:Int, expoints:Int}) {
+		this.level = enemyLevel.level;
+		this.type = enemyLevel.type;
+		this.maxLife = enemyLevel.maxlife;
+		this.maxMagic = enemyLevel.maxmagic;
+		this.roundRegeneration = enemyLevel.roundregeneration;
+		this.exPoints = enemyLevel.expoints;
+      /* for (node in param1.elements()) {
 			level = Std.parseFloat(node.elementsNamed("level").next()?.firstChild().nodeValue);
          type = Std.parseFloat(node.elementsNamed("type").next()?.firstChild().nodeValue);
 			maxLife = Std.parseFloat(node.elementsNamed("maxLife").next()?.firstChild().nodeValue);
 			maxMagic = Std.parseFloat(node.elementsNamed("maxMagic").next()?.firstChild().nodeValue);
          roundRegeneration = Std.parseFloat(node.elementsNamed("roundRegeneration").next()?.firstChild().nodeValue);
          exPoints = Std.parseFloat(node.elementsNamed("exPoints").next()?.firstChild().nodeValue);
-		}
+		} */
 		//level = param1.level;
 		//type = param1.type;
 		//maxLife = param1.maxLife;

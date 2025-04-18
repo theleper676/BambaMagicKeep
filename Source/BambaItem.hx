@@ -36,7 +36,7 @@ class BambaItem {
 
 	public var minLevel:Float;
 
-	public var xmlData:Dynamic;
+	public var data:{id:Int, graphicsname:String, base:Int};
 
 	public var buyPrice:Float;
 
@@ -48,20 +48,20 @@ class BambaItem {
 
 	public var screen:Dynamic;
 
-	public function new(param1:Dynamic) {
-		xmlData = param1;
-		id = param1.id;
-		base = param1.base;
-		iName = param1.name;
-		iDesc = param1.desc;
-		iType = param1.type;
-		buyPrice = param1.buyPrice;
-		sellPrice = param1.sellPrice;
-		minLevel = param1.minLevel;
-		addLife = param1.addLife;
-		addMagic = param1.addMagic;
-		addRoundRegeneration = param1.addRoundRegeneration;
-		graphicsName = param1.graphicsName;
+	public function new(item:{id:Int, graphicsname:String, base:Int}) {
+		data = item;
+		this.id = item.id;
+		this.base = item.base;
+		this.iName = "";
+		this.iDesc = "";
+		this.iType = 0;
+		this.buyPrice = 0;
+		this.sellPrice = 0;
+		this.minLevel = 0;
+		this.addLife = 0;
+		this.addMagic = 0;
+		this.addRoundRegeneration = 0;
+		this.graphicsName = item.graphicsname;
 	}
 
 	function itemClickedOnBaby(param1:MouseEvent):Void {
@@ -70,12 +70,11 @@ class BambaItem {
 		}
 	}
 
-	public function init(param1:Dynamic):Void {
-		var _loc2_:Dynamic = null;
-		game = param1;
+	public function init(game:BambaMain):Void {
+		this.game = game;
 		if (base != 0) {
-			_loc2_ = game.gameData.getCatalogItemBase(base);
-			setItemBaseData(_loc2_);
+			var _itemBase = game.gameData.getCatalogItemBase(base);
+			setItemBaseData(_itemBase);
 		}
 	}
 
@@ -146,33 +145,33 @@ class BambaItem {
 		}
 	}
 
-	function setItemBaseData(param1:BambaItemBase):Void {
+	function setItemBaseData(itemBase:BambaItemBase):Void {
 		if (iName == "") {
-			iName = param1.iName;
+			iName = itemBase.iName;
 		}
 		if (iDesc == "") {
-			iDesc = param1.iDesc;
+			iDesc = itemBase.iDesc;
 		}
 		if (iType == 0) {
-			iType = param1.iType;
+			iType = itemBase.iType;
 		}
 		if (buyPrice == 0) {
-			buyPrice = param1.buyPrice;
+			buyPrice = itemBase.buyPrice;
 		}
 		if (sellPrice == 0) {
-			sellPrice = param1.sellPrice;
+			sellPrice = itemBase.sellPrice;
 		}
 		if (minLevel == 0) {
-			minLevel = param1.minLevel;
+			minLevel = itemBase.minLevel;
 		}
 		if (addLife == 0) {
-			addLife = param1.addLife;
+			addLife = itemBase.addLife;
 		}
 		if (addMagic == 0) {
-			addMagic = param1.addMagic;
+			addMagic = itemBase.addMagic;
 		}
 		if (addRoundRegeneration == 0) {
-			addRoundRegeneration = param1.addRoundRegeneration;
+			addRoundRegeneration = itemBase.addRoundRegeneration;
 		}
 	}
 
