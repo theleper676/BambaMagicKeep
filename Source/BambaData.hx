@@ -1,13 +1,5 @@
 package;
 
-import BambaCard.Card;
-import BambaHelpPage.HelpPage;
-import sys.io.File;
-import haxe.Json;
-import BambaMagic.Magic;
-import openfl.Assets;
-
-
 class BambaData {
 	public var questsCatalog:Array<BambaQuest>;
 
@@ -127,13 +119,18 @@ class BambaData {
 	}
 
 	function buildDungeonsDataCatalog(param1:Xml):Void {
-		var _loc2_:Xml = null;
+		var dungeonsData = JsonParser.load("Assets/json/dungeonsData.json");
+		for (data in dungeonsData.dungeonsDatas) {
+			var _dungeonData = new BambaDungeonData(data);
+			_dungeonData.setMinLevel(mapData.areas);
+		}
+		/* var _loc2_:Xml = null;
 		var _loc3_:BambaDungeonData = null;
 		for (_loc2_ in param1) {
 			_loc3_ = new BambaDungeonData(_loc2_);
 			_loc3_.setMinLevel(mapData.areas);
 			dungeonsDataCatalog.push(_loc3_);
-		}
+		} */
 	}
 
 	public function loadDictionary(dictionaryXml:Xml):Void {
@@ -154,6 +151,7 @@ class BambaData {
 	}
 
 	function buildEnemiesCatalog(param1:Xml):Void {
+		trace("building enemies Catalog");
 		var enemiesJson = JsonParser.load("Assets/json/enemies.json");
 		for (enemy in enemiesJson.enemies) {
 			var _enemy = new BambaEnemy(enemy);
@@ -293,12 +291,13 @@ class BambaData {
 	}
 
 	function buildPrizesCatalog(param1:Xml):Void {
-		var _loc2_:Xml = null;
+		trace("building prizes catalog");
+		/* var _loc2_:Xml = null;
 		var _loc3_:BambaPrize = null;
 		for (_loc2_ in param1) {
 			_loc3_ = new BambaPrize(_loc2_);
 			prizesCatalog.push(_loc3_);
-		}
+		} */
 	}
 
 	//TODO: return type BambaHelpPage
@@ -602,7 +601,7 @@ class BambaData {
 		trace("building cards catalog");
 		var cardsData = JsonParser.load("Assets/json/cards.json");
 		for (card in cardsData.cards) {
-			var _card = new BambaCard(cast(card, Card));
+			var _card = new BambaCard(card);
 			cardsCatalog.push(_card);
 		}
 		/* for (_loc2_ in param1) {
@@ -750,6 +749,7 @@ class BambaData {
 	}
 
 	function buildPlayerLevelsCatalog(playerDataXml:Xml):Void {
+		trace("building players level catalog");
 		var json = JsonParser.load("Assets/json/playerLevels.json");
 		minLevel = 99;
 		maxLevel = -99;

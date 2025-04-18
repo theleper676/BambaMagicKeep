@@ -4,7 +4,7 @@ import openfl.events.EventDispatcher;
 import openfl.display.DisplayObject;
 
 class BambaDungeonTile  {
-	public var links:Array<Dynamic>;
+	public var links:Array<String>;
 
 	public var level:Float;
 
@@ -22,7 +22,7 @@ class BambaDungeonTile  {
 		this.y = y;
 		this.links = links.split(",");
 		this.jump = jump;
-		level = 1;
+		this.level = 1;
     }
 
 }

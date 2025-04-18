@@ -17,6 +17,8 @@
 	<assets path="assets/xmls/params.xml" embed="false" id="params" />
 	<assets path="assets/xmls/dictionary.xml" embed="false" id="dictionary" />
 	<assets path="assets/xmls/generalData.xml" embed="false" id="generalData" />
+	<assets path="assets/xmls/cards.xml" embed="false" id="cards" />
+	<assets path="assets/xmls/enemies.xml" embed="false" id="enemies" />
 	<assets path="assets/json/generalData.json" embed="false" id="generalDataJson" />
 	<assets path="assets/xmls/playerLevels.xml" embed="false" id="playerLevels" />
 	<assets path="assets/xmls/magicBook.xml" embed="false" id="magicBook" />

@@ -6,7 +6,7 @@ import flash.text.TextField;
 import flash.text.TextFieldAutoSize;
 import flash.text.TextFormat;
 
-class BambaDungeonData extends EventDispatcher {
+class BambaDungeonData {
 	public var anims:Array<Dynamic>;
 
 	public var currDungeonDifficulty:Float;
@@ -43,8 +43,61 @@ class BambaDungeonData extends EventDispatcher {
 
 	public var bossTile:Float;
 
-	public function new(param1:Dynamic) {
-		var _loc2_:Null<Dynamic> = null;
+	public function new(data:{upertiles:Array<Int>, tiles:Array<String>, starttile:Int, name:String, music:String, id:Int, fightmusic:String, enemiesids:Array<Int>, difficulties:Array<{possibletreasuresprizesids:Int, possiblesurprisesids:Array<Int>, numoftreasures:Int, numofsurprises:Int, numofenemies:Int}>, desc:String, bosstile:Int, assetfilename:String, areacode:Int, anims:Array<{tileid:Int, babyshowframe:Int, babyhideframe:Int, animname:String}>}) {
+		this.id = data.id;
+		this.dName = data.name;
+		this.dDesc = data.desc;
+		this.areaCode = data.areacode;
+		this.music = data.music;
+		this.fightMusic = data.fightmusic;
+		this.assetFileName = data.assetfilename;
+		this.startTile = data.starttile;
+		this.bossTile = data.bosstile;
+		this.enemiesIds = data.enemiesids;
+		this.dungeonIconsGib = [];
+		this.currEnemyId = 0;
+		this.currDungeonDifficulty = 0;
+		//Bamba Doungeon Tiles Conversion
+		this.tiles = [];
+		for (tilesStr in data.tiles) {
+			var parts = tilesStr.split(":");
+			// You need to parse them floats
+			var tile = new BambaDungeonTile(Std.parseFloat(parts[0]), Std.parseFloat(parts[1]), Std.parseFloat(parts[2]), parts[3], Std.parseFloat(parts[4]));
+			this.tiles.push(tile);
+
+			// for all the uppertiles if the current tile is 2, break the loop
+			for (id in data.upertiles) {
+				if (tile.id == id)
+					tile.level = 2;
+					break;
+			}
+		}
+
+		//Animation Handling
+		this.anims = [];
+		for (anim in data.anims) {
+			this.anims.push([
+				anim.tileid,
+				anim.animname,
+				anim.babyhideframe,
+				anim.babyshowframe
+			]);
+		}
+
+		//Handle Diifculty
+		this.difficultiesData = [];
+		for (difficulty in data.difficulties) {
+			difficultiesData.push([
+				difficulty.numofenemies,
+				difficulty.numoftreasures,
+				difficulty.numofsurprises,
+				difficulty.possibletreasuresprizesids,
+				difficulty.possiblesurprisesids,
+			]);
+		}
+	
+
+	/* 	var _loc2_:Null<Dynamic> = null;
 		var _loc3_:Null<Dynamic> = null;
 		var _loc4_:Array<Dynamic> = null;
 		var _loc5_:BambaDungeonTile = null;
@@ -62,7 +115,6 @@ class BambaDungeonData extends EventDispatcher {
 		var _loc17_:Null<Dynamic> = null;
 		var _loc18_:Null<Dynamic> = null;
 		var _loc19_:Null<Dynamic> = null;
-		super();
 		var uperTilesNode = param1.firstElement().elementsNamed("upertiles").next();
 		var uperTilesString = uperTilesNode.firstChild().nodeValue;
 		var tilesNode = param1.firstElement().elementsNamed("tiles").next();
@@ -127,7 +179,7 @@ class BambaDungeonData extends EventDispatcher {
 		}
 		dungeonIconsGib = [];
 		currEnemyId = 0;
-		currDungeonDifficulty = 0;
+		currDungeonDifficulty = 0; */
 	}
 
 	public function saveDungeonIconsGib(param1:Array<Dynamic>, param2:Float, param3:Float):Void {

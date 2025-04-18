@@ -7,30 +7,6 @@ import flash.text.TextFormat;
 import general.Heb;
 
 
-interface Card {
-	var upgradeto:Int;
-	var upgradelevel:String;
-	var upgradedesc:String;
-	var regenerateamount:Int; 
-	var ponanimname:String;
-	var name:String; 
-	var movedir:Int; 
-	var minlevel:Int;
-	var magicid:Int;
-	var ingredient4:Int; 
-	var ingredient3:Int;
-	var ingredient2:Int; 
-	var ingredient1:Int;
-	var id:Int;
-	var healamount:Int;
-	var graphicsname:String;
-	var desc:String;
-	var defenseamount:Int;
-	var damage:Int;
-	var cost:Int;
-	var animlength:Float;
-	var animdelay:Float;
-}
 class BambaCard {
 	public var ingredient1:Float;
 
@@ -92,7 +68,7 @@ class BambaCard {
 
 	public var healAmount:Float;
 
-	public var data:Card;
+	public var data:{upgradeto:Int, upgradelevel:String, upgradedesc:String, regenerateamount:Int, ponanimname:String, name:String, movedir:Int, minlevel:Int, magicid:Int, ingredient4:Int, ingredient3:Int, ingredient2:Int, ingredient1:Int, id:Int, healamount:Int, graphicsname:String, desc:String, defenseamount:Int, damage:Int, cost:Int, animlength:Float, animdelay:Float};
 
 	public var color:Int;
 
@@ -108,7 +84,7 @@ class BambaCard {
 
 	public var moveDir:Float;
 
-	public function new(card:Card) {
+	public function new(card:{upgradeto:Int, upgradelevel:String, upgradedesc:String, regenerateamount:Int, ponanimname:String, name:String, movedir:Int, minlevel:Int, magicid:Int, ingredient4:Int, ingredient3:Int, ingredient2:Int, ingredient1:Int, id:Int, healamount:Int, graphicsname:String, desc:String, defenseamount:Int, damage:Int, cost:Int, animlength:Float, animdelay:Float}) {
 		this.data = card;
 		this.id = card.id;
 		this.cName = card.name;

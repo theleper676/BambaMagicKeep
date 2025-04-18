@@ -323,8 +323,8 @@ class BambaLoader extends EventDispatcher {
 		//local vars
 		_playerLevelsFileName = "playerLevels";
 		_magicBookFileName = "magicBook";
-		_cardsFileName = node.cardsfilename.innerData;
-		_enemiesFileName = node.enemiesfilename.innerData;
+		_cardsFileName = "cards";
+		_enemiesFileName = "enemies";
 		_enemiesLevelsFileName = node.enemieslevelsfilename.innerData;
 		_itemsBaseFileName = node.itemsbasefilename.innerData;
 		_itemsFileName = node.itemsfilename.innerData;
@@ -473,13 +473,14 @@ class BambaLoader extends EventDispatcher {
 		if (xmlFilesIndex < xmlFiles.length) {
 			currFileName = xmlFiles[xmlFilesIndex];
 			Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);
-			trace("building " + currLoadXMLFunctionName );
 			currLoadXMLFunctionName = xmlFunctionNames[xmlFilesIndex];
+			trace("calling " + currLoadXMLFunctionName);
 			try {
 				currentXmlPath = Assets.getPath(currFileName);
 				var xml = Xml.parse(currentXmlPath);
 				loadXMLComplete(xml);
 			} catch (error:Dynamic) {
+				trace(error);
 				trace("XML load error: " + error.message);
 				//game.errorDT.text = error.errorID + ":" + error.name + ":" + error.message;
 			}
