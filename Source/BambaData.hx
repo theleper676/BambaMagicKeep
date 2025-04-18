@@ -26,7 +26,7 @@ class BambaData {
 
 	public var fightBoardXY:Array<Array<Array<String>>>;
 
-	public var prizesCatalog:Array<Dynamic>;
+	public var prizesCatalog:Array<BambaPrize>;
 
 	public var itemsCatalog:Array<Dynamic>;
 
@@ -118,7 +118,7 @@ class BambaData {
 		return null;
 	}
 
-	function buildDungeonsDataCatalog(param1:Xml):Void {
+	function buildDungeonsDataCatalog():Void {
 		trace("building dungeon data catalog");
 		var dungeonsData = JsonParser.load("Assets/json/dungeonsData.json");
 		for (data in dungeonsData.dungeonsDatas) {
@@ -151,7 +151,7 @@ class BambaData {
 		return null;
 	}
 
-	function buildEnemiesCatalog(param1:Xml):Void {
+	function buildEnemiesCatalog():Void {
 		trace("building enemies Catalog");
 		var enemiesJson = JsonParser.load("Assets/json/enemies.json");
 		for (enemy in enemiesJson.enemies) {
@@ -160,8 +160,16 @@ class BambaData {
 		}
 	}
 
-	public function loadCharacterCustom(param1:Dynamic):Void {
-		var _loc2_:Null<Dynamic> = null;
+	// TODO:FIX!
+	public function loadCharacterCustom(tab:Array<{line2dep:Int, line2:Array<Int>, line1:Array<Int>}>):Void {
+		/* for (entry in tab) {
+			var _list:Array<Dynamic> = [entry.line1];
+
+			if(entry.line2dep == 0) {
+				_list.push(entry.line2);
+			}
+		} */
+		/* var _loc2_:Null<Dynamic> = null;
 		var _loc3_:Null<Dynamic> = null;
 		var _loc4_:Null<Dynamic> = null;
 		var _loc5_:Null<Dynamic> = null;
@@ -190,7 +198,7 @@ class BambaData {
 				}
 			}
 			characterCustomDefs.push(_loc3_);
-		}
+		} */
 	}
 
 	//TODO: RETURN TYPE BambaPlayerLevel
@@ -212,7 +220,7 @@ class BambaData {
 		return null; */
 	}
 
-	function buildMagicCatalog(param1:Xml):Void {
+	function buildMagicCatalog():Void {
 		trace("building magic catalog");
 		var magicBookData= JsonParser.load("Assets/json/magicBook.json");
 		for (magic in magicBookData.magics) {
@@ -221,7 +229,7 @@ class BambaData {
 		}
 	}
 
-	function buildHelpCatalog(param1:Xml):Void {
+	function buildHelpCatalog():Void {
 		trace("building help catalog");
 		var helpData = JsonParser.load("Assets/json/help.json");
 		for (helpPage in helpData) {
@@ -269,7 +277,7 @@ class BambaData {
 		return _loc4_;
 	}
 
-	function buildQuestsCatalog(param1:Xml):Void {
+	function buildQuestsCatalog():Void {
 		trace("building quests catalog");
 		var questData = JsonParser.load("Assets/json/quests.json");
 		for ( quest in questData) {
@@ -297,7 +305,7 @@ class BambaData {
 		return null; */
 	}
 
-	function buildPrizesCatalog(param1:Xml):Void {
+	function buildPrizesCatalog():Void {
 		trace("building prizes catalog");
 		var prizesData = JsonParser.load("Assets/json/prizes.json");
 		for (prize in prizesData) {
@@ -555,7 +563,7 @@ class BambaData {
 		playerData.updatePlayerData(param1);
 	}
 
-	function buildEnemiesLevelsCatalog(param1:Xml):Void {
+	function buildEnemiesLevelsCatalog():Void {
 		trace("building enemy levels catalog");
 		var enemyLevelsData = JsonParser.load("Assets/json/enemyLevels.json");
 		minEnemyLevel = 99;
@@ -588,7 +596,7 @@ class BambaData {
 		
 	}
 
-	function buildSurprisesCatalog(param1:Xml):Void {
+	function buildSurprisesCatalog():Void {
 		trace("building suprises catalog");
 		var suprisesJson = JsonParser.load("Assets/json/suprises.json");
 		for (data in suprisesJson.surprises) {
@@ -597,7 +605,7 @@ class BambaData {
 		}
 	}
 
-	function buildItemsBaseCatalog(param1:Xml):Void {
+	function buildItemsBaseCatalog():Void {
 		trace("buildimg items base catalog");
 		var itemBaseData = JsonParser.load("Assets/json/itemsBase.json");
 		for (itemBase in itemBaseData.itemsBases) {
@@ -625,7 +633,8 @@ class BambaData {
 		return null;
 	}
 
-	function buildItemsCatalog(param1:Xml):Void {
+	function buildItemsCatalog():Void {
+		trace("building items catalog");
 		var itemsData = JsonParser.load("Assets/json/items.json");
 		for (item in itemsData) {
 			var _item = new BambaItem(item);
@@ -641,7 +650,7 @@ class BambaData {
 		} */
 	}
 
-	function buildCardsCatalog(param1:Xml):Void {
+	function buildCardsCatalog():Void {
 		trace("building cards catalog");
 		var cardsData = JsonParser.load("Assets/json/cards.json");
 		for (card in cardsData.cards) {
@@ -703,7 +712,8 @@ class BambaData {
 		//Load order start Definition
 		loadOrdersStartDef(data.generaldata.ordersstartdef.order);
 		//Load character custom 
-		loadCharacterCustom(data.generaldata.charactercustom);
+		
+		loadCharacterCustom(data.generaldata.charactercustom.tab);
 
 		this.mapTrails = data.generaldata.maptrails;
 		this.itemsLevels = data.generaldata.itemslevels;
@@ -776,8 +786,14 @@ class BambaData {
 	}
 
 	//TODO: type should be BambaPrize
-	public function getCatalogPrize(param1:Dynamic):Dynamic {
-		var _loc2_:Null<Dynamic> = null;
+	public function getCatalogPrize(prizeId: Float):BambaPrize {
+		for (prize in prizesCatalog) {
+			if (prize.id == prizeId ) {
+				return prize;
+			}
+		}
+		return null;
+		/* var _loc2_:Null<Dynamic> = null;
 		_loc2_ = 0;
 		while (_loc2_ < prizesCatalog.length) {
 			if (prizesCatalog[_loc2_].id == param1) {
@@ -785,10 +801,11 @@ class BambaData {
 			}
 			_loc2_++;
 		}
-		return null;
+		return null; */
 	}
 
-	function buildStoreItemsCatalog(param1:Xml):Void {
+	function buildStoreItemsCatalog():Void {
+		trace("building store items catalog");
 		var storeItemsData = JsonParser.load("Assets/json/storeItems.json");
 		for (storeItem in storeItemsData) {
 			var _storeItem = new BambaStoreItems(storeItem);
@@ -802,7 +819,7 @@ class BambaData {
 		} */
 	}
 
-	function buildPlayerLevelsCatalog(playerDataXml:Xml):Void {
+	function buildPlayerLevelsCatalog():Void {
 		trace("building players level catalog");
 		var playerLevelsData = JsonParser.load("Assets/json/playerLevels.json");
 		minLevel = 99;

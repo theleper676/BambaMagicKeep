@@ -124,12 +124,6 @@ class BambaLoader extends EventDispatcher {
 		if (assetsIndex < assets.length) {
 			tempCurrAssetString = assets[assetsIndex];
 			currAsset = tempCurrAssetString.split(",");
-			try {
-				ExternalInterface.call("console.log", {
-					"fb_msgCounter": msgCounter,
-					"fb_currAsset": currAsset[0]
-				});
-			} catch (error:Dynamic) {}
 			Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);
 			loader = new Loader();
 			request = new URLRequest(assetsPath + "/" + currAsset[0]);
@@ -325,15 +319,15 @@ class BambaLoader extends EventDispatcher {
 		_magicBookFileName = "magicBook";
 		_cardsFileName = "cards";
 		_enemiesFileName = "enemies";
-		_enemiesLevelsFileName = node.enemieslevelsfilename.innerData;
-		_itemsBaseFileName = node.itemsbasefilename.innerData;
-		_itemsFileName = node.itemsfilename.innerData;
-		_storeItemsFileName = node.storeitemsfilename.innerData;
-		_prizesFileName = node.prizesfilename.innerData;
-		_surprisesFileName = node.surprisesfilename.innerData;
-		_dungeonsDataFileName = node.dungeonsdatafilename.innerData;
-		_questsFileName = node.questsfilename.innerData;
-		_helpFileName = node.helpfilename.innerData;
+		_enemiesLevelsFileName = "enemiesLevels";
+		_itemsBaseFileName = "itemsBase";
+		_itemsFileName = "items";
+		_storeItemsFileName = "storeItems";
+		_prizesFileName = "prizes";
+		_surprisesFileName = "suprises";
+		_dungeonsDataFileName = "dungeonsData";
+		_questsFileName = "quests";
+		_helpFileName = "help";
 
 		dictionaryFileName = node.dictionaryfilename.innerData;
 		generalDataFileName = node.generaldatafilename.innerData;
@@ -474,11 +468,10 @@ class BambaLoader extends EventDispatcher {
 			currFileName = xmlFiles[xmlFilesIndex];
 			Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);
 			currLoadXMLFunctionName = xmlFunctionNames[xmlFilesIndex];
-			trace("calling " + currLoadXMLFunctionName);
 			try {
-				currentXmlPath = Assets.getPath(currFileName);
-				var xml = Xml.parse(currentXmlPath);
-				loadXMLComplete(xml);
+				//currentXmlPath = Assets.getPath(currFileName);
+				//var xml = Xml.parse(currentXmlPath);
+				loadXMLComplete();
 			} catch (error:Dynamic) {
 				trace(error);
 				trace("XML load error: " + error.message);
@@ -620,13 +613,13 @@ class BambaLoader extends EventDispatcher {
 		}
 	}
 
-	function loadXMLComplete(xml:Xml):Void {
+	function loadXMLComplete():Void {
 		var gameDataAccessFunction:Function = Reflect.field(game.gameData,currLoadXMLFunctionName);
 		++loadingCounter;
 		currBytes += Std.parseFloat(fileSizes[msgCounter]);
 		setLoaderGraphics(currBytes / totalBytes);
 		++msgCounter;
-		gameDataAccessFunction(xml);
+		gameDataAccessFunction();
 		++xmlFilesIndex;
 		loadXMLFile();
 	}

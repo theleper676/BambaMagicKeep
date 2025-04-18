@@ -18,7 +18,17 @@
 	<assets path="assets/xmls/dictionary.xml" embed="false" id="dictionary" />
 	<assets path="assets/xmls/generalData.xml" embed="false" id="generalData" />
 	<assets path="assets/xmls/cards.xml" embed="false" id="cards" />
+	<assets path="assets/xmls/enemies.xml" embed="false" id="suprises" /> <!-- This is not a fluke I dont know WTF is wrong with the XML-->
 	<assets path="assets/xmls/enemies.xml" embed="false" id="enemies" />
+	<assets path="assets/xmls/dungeonsData.xml" embed="false" id="dungeonsData" />
+	<assets path="assets/xmls/help.xml" embed="false" id="help" />
+	<assets path="assets/xmls/quests.xml" embed="false" id="quests" />
+	<assets path="assets/xmls/enemiesLevels.xml" embed="false" id="enemiesLevel" />
+	<assets path="assets/xmls/itemsBase.xml" embed="false" id="items" />
+	<assets path="assets/xmls/storeItems.xml" embed="false" id="storeItems" />
+	<assets path="assets/xmls/items.xml" embed="false" id="itemsBase" />
+	<assets path="assets/xmls/prizes.xml" embed="false" id="prizes" />
+	<assets path="assets/xmls/enemiesLevels.xml" embed="false" id="enemiesLevels" />
 	<assets path="assets/json/generalData.json" embed="false" id="generalDataJson" />
 	<assets path="assets/xmls/playerLevels.xml" embed="false" id="playerLevels" />
 	<assets path="assets/xmls/magicBook.xml" embed="false" id="magicBook" />

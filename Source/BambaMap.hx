@@ -212,8 +212,12 @@ class BambaMap extends DisplayObject {
 		setMap();
 	}
 
-	function getAnimTime(param1:String):Float {
-		var _loc2_:Null<Dynamic> = null;
+	function getAnimTime(animTimeId:String):Float {
+		final defaultAnimTime = game.gameData.mapTimeDef * 1000;
+		final animTime = game.gameData.mapTimes.get(animTimeId);
+
+		return animTime != null ? animTime * 1000: defaultAnimTime;
+		/* var _loc2_:Null<Dynamic> = null;
 		var _loc3_:Null<Dynamic> = null;
 		_loc2_ = game.gameData.mapTimeDef * 1000;
 		_loc3_ = 0;
@@ -224,7 +228,7 @@ class BambaMap extends DisplayObject {
 			}
 			_loc3_++;
 		}
-		return _loc2_;
+		return _loc2_; */
 	}
 
 	public function setBabyAtTower():Void {
