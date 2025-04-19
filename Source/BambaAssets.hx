@@ -1,7 +1,8 @@
 package;
 
 
-import general_assets.MsgBox;
+import general_assets.QuestBox;
+import general_assets.*;
 import haxe.Exception;
 import openfl.display.MovieClip;
 
@@ -29,7 +30,7 @@ class BambaAssets {
 
 	public static var enemyBoss:Any;
 
-	public static var waitBox:MsgBox;
+	public static var waitBox:WaitBox;
 
 	public static var fightBack:Dynamic;
 
@@ -55,7 +56,7 @@ class BambaAssets {
 
 	public static var dungeonMap:Dynamic;
 
-	public static var winBox:MsgBox;
+	public static var winBox:WinBox;
 
 	public static var dungeonIcon:Dynamic;
 
@@ -83,7 +84,7 @@ class BambaAssets {
 
 	public static var enemyAttacks:Dynamic;
 
-	public static var questBox:Dynamic;
+	public static var questBox:QuestBox;
 
 	public static var msgBox:general_assets.MsgBox;
 
@@ -95,9 +96,9 @@ class BambaAssets {
 
 	public static var fightScreen:Dynamic;
 
-	public static var yesNoBox:Dynamic;
+	public static var yesNoBox:YesNoBox;
 
-	public static var levelBox:Dynamic;
+	public static var levelBox:LevelBox;
 
 	public static var capeMC:MovieClip;
 
@@ -184,8 +185,8 @@ class BambaAssets {
 		//help07 = cast(param1, BambaHelp);
 	}
 
-	function define_questBox(param1:Dynamic):Void  {
-		questBox = param1;
+	function define_questBox():Void  {
+		questBox = new QuestBox();
 		// questBox = cast(param1, BambaQuest);
 	}
 
@@ -207,9 +208,7 @@ class BambaAssets {
 	}
 
 	function define_waitBox():Void  {
-		//waitBox = new WaitBox();
-		//trace("hello" + waitBox);
-		//waitBox = cast(param1, Dynamic);
+		waitBox = new WaitBox();
 	}
 
 	function define_mapIcon(param1:Dynamic):Void  {
@@ -282,8 +281,8 @@ class BambaAssets {
 		//storeScreen = cast(param1, Dynamic);
 	}
 
-	function define_levelBox(param1:Dynamic):Void  {
-		levelBox = param1;
+	function define_levelBox():Void  {
+		levelBox = new LevelBox();
 		// levelBox = cast(param1, Dynamic);
 	}
 
@@ -292,8 +291,8 @@ class BambaAssets {
 		//capeMC = cast(param1,MovieClip);
 	}
 
-	function define_yesNoBox(param1:Dynamic):Void  {
-		yesNoBox = param1;
+	function define_yesNoBox():Void  {
+		yesNoBox = new YesNoBox();
 		//yesNoBox = cast(param1, Dynamic);
 	}
 
@@ -362,8 +361,8 @@ class BambaAssets {
 		//fighterIcon = cast(param1, Dynamic);
 	}
 
-	function define_winBox(param1:Dynamic):Void  {
-		winBox = param1;
+	function define_winBox():Void  {
+		winBox = new WinBox();
 		// winBox = cast(param1, Dynamic);
 	}
 

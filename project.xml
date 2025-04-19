@@ -37,4 +37,5 @@
 	<assets path="assets/fonts/Arial.ttf" id="Arial" embed="true" />
 	<assets path="assets/fonts/Choco.ttf" id="Choco" embed="true" />
 	<assets path="assets/fonts/Choco_Bold.ttf" id="Choco Bold" embed="true" />
+	<assets path="assets/fonts/Footlight_MT_Light.ttf" id="Footlight MT Light" embed="true" />
 </project>

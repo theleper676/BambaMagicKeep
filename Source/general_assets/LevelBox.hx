@@ -1,4 +1,4 @@
-package ;
+package general_assets ;
 
 @:access(swf.exporters.animate)
 
@@ -11,7 +11,7 @@ class LevelBox extends #if flash flash.display.MovieClip.MovieClip2 #else openfl
 	@:keep @:noCompletion @:dox(hide) public var magicDT(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var regenerationDT(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var levelDT(default, null):openfl.text.TextField;
-	@:keep @:noCompletion @:dox(hide) public var exitButton(default, null):general_fla.Button_small_35;
+	@:keep @:noCompletion @:dox(hide) public var exitButton(default, null):Button_small_35;
 	@:keep @:noCompletion @:dox(hide) public var dt(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var headDT(default, null):openfl.text.TextField;
 	

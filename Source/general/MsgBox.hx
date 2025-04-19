@@ -1,5 +1,10 @@
 package general;
 
+import general_assets.WinBox;
+import general_assets.LevelBox;
+import general_assets.QuestBox;
+import general_assets.PrizeIcon;
+import general_assets.YesNoBox;
 import openfl.display.*;
 import openfl.events.MouseEvent;
 
@@ -12,11 +17,11 @@ class MsgBox extends DisplayObject  {
 
 	static var needToShowLevelBox:Bool;
 
-	static var yesNoConfirmFunction:Null<Dynamic>;
+	static var yesNoConfirmFunction:Dynamic;
 
 	static var yesNoCancelFunction:Null<Dynamic>;
 
-	static var game:Null<Dynamic>;
+	static var game:BambaMain;
 
 	static var waitBoxLink:Null<Dynamic>;
 
@@ -31,59 +36,51 @@ class MsgBox extends DisplayObject  {
 		needToShowLevelBox = false;
 	}
 
-	public static function showYesNoBox(param1:String, param2:Dynamic = null, param3:Dynamic = null, param4:Float = -1):Void {
-		var _loc5_:Dynamic = null;
-		var _loc6_:Dynamic = null;
-		_loc5_ = BambaAssets.yesNoBox();
-		yesNoBoxLink = _loc5_;
-		yesNoConfirmFunction = param2;
-		yesNoCancelFunction = param3;
-		game.addChild(_loc5_);
+	public static function showYesNoBox(yesNoBoxText:String, _yesNoConfirmFunction:Dynamic, _yesNoCancelFunction:Dynamic = null, yesNoBoxText:String = null):Void {
+		var _yesNoBox = new YesNoBox();
+		yesNoBoxLink = _yesNoBox;
+		yesNoConfirmFunction = _yesNoConfirmFunction;
+		yesNoCancelFunction = _yesNoCancelFunction;
+		game.addChild(_yesNoBox);
 		game.msgShown = true;
-		game.centerScreen(_loc5_);
-		ButtonUpdater.setButton(_loc5_.confirmButton, yesNoConfirm);
-		ButtonUpdater.setButton(_loc5_.cancelButton, yesNoCancel);
-		Heb.setText(_loc5_.dt, param1);
-		if (param4 >= 0) {
-			_loc6_ = BambaAssets.prizeIcon();
-			_loc5_.addChild(_loc6_);
-			_loc6_.iconMC.gotoAndStop(1);
-			_loc6_.DT.text = param4;
-			_loc6_.x = 115;
-			_loc6_.y = 95;
-			_loc6_.scaleX = 1.5;
-			_loc6_.scaleY = 1.5;
+		game.centerScreen(_yesNoBox);
+		ButtonUpdater.setButton(_yesNoBox.confirmButton, yesNoConfirm);
+		ButtonUpdater.setButton(_yesNoBox.cancelButton, yesNoCancel);
+		Heb.setText(_yesNoBox.dt, yesNoBoxText);
+		if (yesNoBoxText != null) {
+			var _prizeIcon = new PrizeIcon();
+			_yesNoBox.addChild(_prizeIcon);
+			_prizeIcon.iconMC.gotoAndStop(1);
+			_prizeIcon.DT.text = yesNoBoxText;
+			_prizeIcon.x = 115;
+			_prizeIcon.y = 95;
+			_prizeIcon.scaleX = 1.5;
+			_prizeIcon.scaleY = 1.5;
 		}
 	}
 
 	public static function showLevelBox():Void {
-		var _loc1_:Dynamic = null;
-		var _loc2_:Dynamic = null;
-		var _loc3_:Dynamic = null;
-		var _loc4_:Dynamic = null;
-		var _loc5_:Dynamic = null;
-		var _loc6_:Dynamic = null;
 		needToShowLevelBox = false;
-		_loc1_ = BambaAssets.levelBox();
-		msgBoxMCLink = _loc1_;
-		game.addChild(_loc1_);
+		var _levelBox = new LevelBox();
+		msgBoxMCLink = _levelBox;
+		game.addChild(_levelBox);
 		game.msgShown = true;
-		game.centerScreen(_loc1_);
-		ButtonUpdater.setButton(_loc1_.exitButton, closeMsgBox);
-		Heb.setText(_loc1_.headDT, game.gameData.dictionary.LEVEL_UP_MSG_HEAD);
-		Heb.setText(_loc1_.dt, game.gameData.dictionary.LEVEL_UP_MSG);
-		_loc1_.levelDT.text = game.gameData.playerData.level;
-		Heb.setText(_loc1_.LIFE, game.gameData.dictionary.LIFE);
-		Heb.setText(_loc1_.MAGIC, game.gameData.dictionary.MAGIC);
-		Heb.setText(_loc1_.REGENERATION, game.gameData.dictionary.REGENERATION);
-		_loc2_ = game.gameData.playerData.level - 1;
-		_loc3_ = game.gameData.playerData.level;
-		_loc4_ = game.gameData.getCatalogPlayerLevel(_loc3_).maxLife - game.gameData.getCatalogPlayerLevel(_loc2_).maxLife;
-		_loc5_ = game.gameData.getCatalogPlayerLevel(_loc3_).maxMagic - game.gameData.getCatalogPlayerLevel(_loc2_).maxMagic;
-		_loc6_ = game.gameData.getCatalogPlayerLevel(_loc3_).roundRegeneration - game.gameData.getCatalogPlayerLevel(_loc2_).roundRegeneration;
-		_loc1_.lifeDT.text = "+" + _loc4_;
-		_loc1_.magicDT.text = "+" + _loc5_;
-		_loc1_.regenerationDT.text = "+" + _loc6_;
+		game.centerScreen(_levelBox);
+		ButtonUpdater.setButton(_levelBox.exitButton, closeMsgBox);
+		Heb.setText(_levelBox.headDT, game.gameData.dictionary.LEVEL_UP_MSG_HEAD);
+		Heb.setText(_levelBox.dt, game.gameData.dictionary.LEVEL_UP_MSG);
+		_levelBox.levelDT.text = Std.string(game.gameData.playerData.level);
+		Heb.setText(_levelBox.LIFE, game.gameData.dictionary.LIFE);
+		Heb.setText(_levelBox.MAGIC, game.gameData.dictionary.MAGIC);
+		Heb.setText(_levelBox.REGENERATION, game.gameData.dictionary.REGENERATION);
+		var _playerLevelIdMinusOne = game.gameData.playerData.level - 1;
+		var _playerLevelId = game.gameData.playerData.level;
+		var _maxLifeDelta = game.gameData.getCatalogPlayerLevel(_playerLevelIdMinusOne).maxLife - game.gameData.getCatalogPlayerLevel(_playerLevelIdMinusOne).maxLife;
+		var _maxMagicDelta = game.gameData.getCatalogPlayerLevel(_playerLevelId).maxMagic - game.gameData.getCatalogPlayerLevel(_playerLevelIdMinusOne).maxMagic;
+		var _regenerationDTDelta = game.gameData.getCatalogPlayerLevel(_playerLevelId).roundRegeneration - game.gameData.getCatalogPlayerLevel(_playerLevelIdMinusOne).roundRegeneration;
+		_levelBox.lifeDT.text = "+" + _maxLifeDelta;
+		_levelBox.magicDT.text = "+" + _maxMagicDelta;
+		_levelBox.regenerationDT.text = "+" + _regenerationDTDelta;
 		game.sound.playEffect("GENERAL_LEVEL_UP");
 	}
 
@@ -123,104 +120,97 @@ class MsgBox extends DisplayObject  {
 		Heb.setText(waitBoxLink.dt, param1);
 	}
 
-	public static function showWin(param1:String, param2:Array<Dynamic>, param3:Dynamic = null, param4:Float = 1):Void {
-		var _loc5_:Null<Dynamic> = null;
-		var _loc6_:Null<Dynamic> = null;
-		var _loc7_:Null<Dynamic> = null;
-		var _loc8_:Null<Dynamic> = null;
-		var _loc9_:Null<Dynamic> = null;
-		var _loc10_:Null<Dynamic> = null;
-		_loc5_ = BambaAssets.winBox;
-		msgBoxMCLink = _loc5_;
-		msgBoxCloseFunction = param3;
-		game.addChild(_loc5_);
+	public static function showWin(winBoxText:String, param2:Array<Dynamic>, _msgBoxCloseFunction:Dynamic = null, iconMCMarker:Float = 1):Void {
+		var _winBox = new WinBox();
+		var _winMsg:String = "";
+		var _expPointMsg: String = "";
+		msgBoxMCLink = _winBox;
+		msgBoxCloseFunction = _msgBoxCloseFunction;
+		game.addChild(_winBox);
 		game.msgShown = true;
-		game.centerScreen(_loc5_);
-		ButtonUpdater.setButton(_loc5_.exitButton, closeMsgBox);
+		game.centerScreen(_winBox);
+		ButtonUpdater.setButton(_winBox.exitButton, closeMsgBox);
 		if (param2[0] != 0) {
-			_loc8_ = game.gameData.dictionary.MSG_WIN1;
-			_loc9_ = param2[0] + " " + game.gameData.dictionary.EXPOINTS;
+			_winMsg = game.gameData.dictionary.MSG_WIN1;
+			_expPointMsg = param2[0] + " " + game.gameData.dictionary.EXPOINTS;
 			if (param2[1] > 0) {
 				needToShowLevelBox = true;
 			}
-		} else {
-			_loc8_ = "";
-			_loc9_ = "";
 		}
-		Heb.setText(_loc5_.headDT, param1);
-		Heb.setText(_loc5_.dt1, _loc8_);
-		Heb.setText(_loc5_.dt2, _loc9_);
-		_loc5_.iconMC.gotoAndStop(param4);
+		Heb.setText(_winBox.headDT, winBoxText);
+		Heb.setText(_winBox.dt1, _winMsg);
+		Heb.setText(_winBox.dt2, _expPointMsg);
+		_winBox.iconMC.gotoAndStop(iconMCMarker);
 		if (param2[2] != null) {
-			_loc6_ = 0;
+			var _loc6_ = 0;
 			while (_loc6_ < param2[2].length) {
-				_loc10_ = new BambaItem(game.gameData.getCatalogItem(param2[2][_loc6_]).xmlData);
-				_loc10_.init(game);
-				_loc10_.generateMC();
-				_loc10_.addPopupInMsg(msgBoxMCLink);
-				_loc5_.prizesMC.addChild(_loc10_.mc);
+				var _bambaItem = new BambaItem(game.gameData.getCatalogItem(param2[2][_loc6_]).data);
+				_bambaItem.init(game);
+				_bambaItem.generateMC();
+				_bambaItem.addPopupInMsg(msgBoxMCLink);
+				_winBox.prizesMC.addChild(_bambaItem.mc);
 				_loc6_++;
 			}
 		}
 		if (param2[3] != null) {
 			if (param2[3] > 0) {
-				_loc7_ = BambaAssets.prizeIcon();
-				_loc5_.prizesMC.addChild(_loc7_);
-				_loc7_.iconMC.gotoAndStop(1);
-				_loc7_.DT.text = param2[3];
+				var _prizeIcon = new PrizeIcon();
+				_winBox.prizesMC.addChild(_prizeIcon);
+				_prizeIcon.iconMC.gotoAndStop(1);
+				_prizeIcon.DT.text = param2[3];
 			}
 		}
-		switch (_loc5_.prizesMC.numChildren) {
+		switch (_winBox.prizesMC.numChildren) {
 			case 1:
-				_loc5_.prizesMC.getChildAt(0).x = 60;
-				_loc5_.prizesMC.getChildAt(0).y = 0;
-				_loc5_.prizesMC.getChildAt(0).scaleX = 1.5;
-				_loc5_.prizesMC.getChildAt(0).scaleY = 1.5;
+				_winBox.prizesMC.getChildAt(0).x = 60;
+				_winBox.prizesMC.getChildAt(0).y = 0;
+				_winBox.prizesMC.getChildAt(0).scaleX = 1.5;
+				_winBox.prizesMC.getChildAt(0).scaleY = 1.5;
 			case 2:
-				_loc5_.prizesMC.getChildAt(1).x = 0;
-				_loc5_.prizesMC.getChildAt(1).y = 0;
-				_loc5_.prizesMC.getChildAt(1).scaleX = 1.5;
-				_loc5_.prizesMC.getChildAt(1).scaleY = 1.5;
-				_loc5_.prizesMC.getChildAt(0).x = 120;
-				_loc5_.prizesMC.getChildAt(0).y = 0;
-				_loc5_.prizesMC.getChildAt(0).scaleX = 1.5;
-				_loc5_.prizesMC.getChildAt(0).scaleY = 1.5;
+				_winBox.prizesMC.getChildAt(1).x = 0;
+				_winBox.prizesMC.getChildAt(1).y = 0;
+				_winBox.prizesMC.getChildAt(1).scaleX = 1.5;
+				_winBox.prizesMC.getChildAt(1).scaleY = 1.5;
+				_winBox.prizesMC.getChildAt(0).x = 120;
+				_winBox.prizesMC.getChildAt(0).y = 0;
+				_winBox.prizesMC.getChildAt(0).scaleX = 1.5;
+				_winBox.prizesMC.getChildAt(0).scaleY = 1.5;
 		}
-		_loc6_ = 0;
+		var _loc6_ = 0;
 		while (_loc6_ < param2.length - 4) {
 			if (param2[_loc6_ + 4] > 0) {
-				_loc7_ = BambaAssets.prizeIcon();
-				_loc5_.ingredientsMC.addChild(_loc7_);
-				_loc7_.iconMC.gotoAndStop(_loc6_ + 2);
-				_loc7_.DT.text = param2[_loc6_ + 4];
+				var _prizeIcon = new PrizeIcon();
+				_winBox.ingredientsMC.addChild(_prizeIcon);
+				_prizeIcon.iconMC.gotoAndStop(_loc6_ + 2);
+				_prizeIcon.DT.text = param2[_loc6_ + 4];
 			}
 			_loc6_++;
 		}
-		switch (_loc5_.ingredientsMC.numChildren) {
+		switch (_winBox.ingredientsMC.numChildren) {
 			case 1:
-				_loc5_.ingredientsMC.getChildAt(0).x = 80;
-				_loc5_.ingredientsMC.getChildAt(0).y = 20;
+				_winBox.ingredientsMC.getChildAt(0).x = 80;
+				_winBox.ingredientsMC.getChildAt(0).y = 20;
 			case 2:
-				_loc5_.ingredientsMC.getChildAt(1).x = 40;
-				_loc5_.ingredientsMC.getChildAt(1).y = 20;
-				_loc5_.ingredientsMC.getChildAt(0).x = 120;
-				_loc5_.ingredientsMC.getChildAt(0).y = 20;
+				_winBox.ingredientsMC.getChildAt(1).x = 40;
+				_winBox.ingredientsMC.getChildAt(1).y = 20;
+				_winBox.ingredientsMC.getChildAt(0).x = 120;
+				_winBox.ingredientsMC.getChildAt(0).y = 20;
 			case 3:
-				_loc5_.ingredientsMC.getChildAt(2).x = 80;
-				_loc5_.ingredientsMC.getChildAt(2).y = 45;
-				_loc5_.ingredientsMC.getChildAt(1).x = 40;
-				_loc5_.ingredientsMC.getChildAt(1).y = 0;
-				_loc5_.ingredientsMC.getChildAt(0).x = 120;
-				_loc5_.ingredientsMC.getChildAt(0).y = 0;
+				_winBox.ingredientsMC.getChildAt(2).x = 80;
+				_winBox.ingredientsMC.getChildAt(2).y = 45;
+				_winBox.ingredientsMC.getChildAt(1).x = 40;
+				_winBox.ingredientsMC.getChildAt(1).y = 0;
+				_winBox.ingredientsMC.getChildAt(0).x = 120;
+				_winBox.ingredientsMC.getChildAt(0).y = 0;
 			case 4:
-				_loc5_.ingredientsMC.getChildAt(3).x = 40;
-				_loc5_.ingredientsMC.getChildAt(3).y = 45;
-				_loc5_.ingredientsMC.getChildAt(2).x = 120;
-				_loc5_.ingredientsMC.getChildAt(2).y = 45;
-				_loc5_.ingredientsMC.getChildAt(1).x = 40;
-				_loc5_.ingredientsMC.getChildAt(1).y = 0;
-				_loc5_.ingredientsMC.getChildAt(0).x = 120;
-				_loc5_.ingredientsMC.getChildAt(0).y = 0;
+				_winBox.ingredientsMC.getChildAt(3).x = 40;
+				_winBox.ingredientsMC.getChildAt(3).y = 45;
+				_winBox.ingredientsMC.getChildAt(2).x = 120;
+				_winBox.ingredientsMC.getChildAt(2).y = 45;
+				_winBox.ingredientsMC.getChildAt(1).x = 40;
+				_winBox.ingredientsMC.getChildAt(1).y = 0;
+				_winBox.ingredientsMC.getChildAt(0).x = 120;
+				_winBox.ingredientsMC.getChildAt(0).y = 0;
 		}
 	}
 
@@ -237,25 +227,24 @@ class MsgBox extends DisplayObject  {
 		}
 	}
 
-	public static function showQuestBox(param1:String, param2:Float, param3:Array<Dynamic>, param4:Dynamic = null):Void {
-		var _loc5_:Null<Dynamic> = null;
-		_loc5_ = BambaAssets.questBox();
-		msgBoxMCLink = _loc5_;
-		msgBoxCloseFunction = param4;
-		game.addChild(_loc5_);
+	public static function showQuestBox(questBoxText:String, questIconMCMarker:Float, param3:Array<Dynamic>, _msgBoxCloseFunction:Dynamic = null):Void {
+		var _questBox = new QuestBox();
+		msgBoxMCLink = _questBox;
+		msgBoxCloseFunction = _msgBoxCloseFunction;
+		game.addChild(_questBox);
 		game.msgShown = true;
-		game.centerScreen(_loc5_);
-		ButtonUpdater.setButton(_loc5_.exitButton, closeMsgBox);
+		game.centerScreen(_questBox);
+		ButtonUpdater.setButton(_questBox.exitButton, closeMsgBox);
 		if (param3[1] > 0) {
 			needToShowLevelBox = true;
 		}
-		Heb.setText(_loc5_.headDT, game.gameData.dictionary.QUEST_MSG_HEAD);
-		Heb.setText(_loc5_.dt, param1);
-		Heb.setText(_loc5_.EXPOINTS, game.gameData.dictionary.EXPOINTS);
-		_loc5_.exPointsDT.text = param3[0];
-		_loc5_.prizeMC.DT.text = param3[3];
-		_loc5_.questIconMC.gotoAndStop(param2);
-		_loc5_.prizeMC.prizeIconMC.gotoAndStop(1);
+		Heb.setText(_questBox.headDT, game.gameData.dictionary.QUEST_MSG_HEAD);
+		Heb.setText(_questBox.dt, questBoxText);
+		Heb.setText(_questBox.EXPOINTS, game.gameData.dictionary.EXPOINTS);
+		_questBox.exPointsDT.text = param3[0];
+		_questBox.prizeMC.DT.text = param3[3];
+		_questBox.questIconMC.gotoAndStop(questIconMCMarker);
+		_questBox.prizeMC.prizeIconMC.gotoAndStop(1);
 		game.sound.playEffect("MAZE_QUEST_WIN");
 	}
 
