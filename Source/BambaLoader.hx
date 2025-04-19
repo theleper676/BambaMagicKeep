@@ -61,7 +61,7 @@ class BambaLoader extends EventDispatcher {
 
 	var currFileName:String;
 
-	var assets:Array<Dynamic>;
+	var assets:Array<Array<String>>;
 
 	var totalBytes:Float;
 
@@ -81,7 +81,7 @@ class BambaLoader extends EventDispatcher {
 
 	private var dictionaryFileName:String;
 
-	var currAsset:Array<Dynamic>;
+	var currAsset:Array<String>;
 
 	var currLoadXMLFunctionName:String;
 
@@ -116,7 +116,30 @@ class BambaLoader extends EventDispatcher {
 	}
 	
 	function loadAssets():Void {
-		var tempCurrAssetString:Null<Dynamic>;
+		trace("loading assets");
+		currFunctionName = "loadAssets";
+		++loadingCounter;
+		if(assetsIndex < assets.length) {
+			currAsset = assets[assetsIndex];
+			var _currAssetSwf = currAsset[0];
+			var _assetPath = Assets.getPath(_currAssetSwf);
+			//currAsset = _currAssetString.split(",");
+			Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);
+			AnimateLibrary.loadFromFile(_assetPath)
+			.onProgress((bytesLoaded, bytesTotal) -> {
+				loadAssetsProgress(bytesLoaded, bytesTotal);
+			})
+			.onError((error) -> {
+				showIOError(error);
+			})
+			.onComplete((library) -> {
+				trace(library);
+				loadAssetsComplete();
+			});
+		} else {
+			loadSoundsData();
+		}
+		/* var tempCurrAssetString:Null<Dynamic>;
 		var loader:Loader;
 		var request:URLRequest;
 		currFunctionName = "loadAssets";
@@ -139,7 +162,7 @@ class BambaLoader extends EventDispatcher {
 			}
 		} else {
 			loadSoundsData();
-		}
+		} */
 	}
 
 	function loadPlayerDataComplete(param1:Event):Void {
@@ -184,7 +207,7 @@ class BambaLoader extends EventDispatcher {
 		AnimateLibrary.loadFromFile(libraryPath).onComplete((_)-> {
 			for (i in 1...openingAssets.length) {
 				var assetName = openingAssets[i];
-				game.gameAssets.defineAsset(assetName, OpeningScreen);
+				game.gameAssets.defineAsset(assetName);
 			}
 			game.showOpeningScreen();  
 			loadDictionary();
@@ -239,13 +262,13 @@ class BambaLoader extends EventDispatcher {
 		loadXMLFile();
 	}
 
-	function loadAssetsProgress(param1:ProgressEvent):Void {
-		var _loc2_:Float = Math.NaN;
-		var _loc3_:Float = Math.NaN;
-		_loc2_ = param1.bytesLoaded / param1.bytesTotal;
-		_loc3_ = Math.floor(_loc2_ * 100);
-		Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter] + " %" + _loc3_);
-		setLoaderGraphics((currBytes + _loc2_ * Std.parseFloat(fileSizes[msgCounter])) / totalBytes);
+	function loadAssetsProgress(bytesLoaded:Int, bytesTotal:Int):Void {
+		var _bytes:Float;
+		var _precent:Float;
+		_bytes = bytesLoaded / bytesTotal;
+		_precent = Math.floor(_bytes * 100);
+		Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter] + " %" + _precent);
+		setLoaderGraphics((currBytes + _bytes * Std.parseFloat(fileSizes[msgCounter])) / totalBytes);
 		++loadingCounter;
 	}
 
@@ -268,8 +291,29 @@ class BambaLoader extends EventDispatcher {
 		loadEnemyAsset();
 	}
 
-	function loadAssetsComplete(param1:Event):Void {
-		var _loc2_:Null<Dynamic> = null;
+	function loadAssetsComplete():Void {
+		trace("loading asset complete");
+		++loadingCounter;
+		currBytes += Std.parseFloat(fileSizes[msgCounter]);
+		setLoaderGraphics(currBytes / totalBytes);
+		++msgCounter;
+		for (i in 1...currAsset.length) {
+			var _assetToDefine = currAsset[i];
+			game.gameAssets.defineAsset(_assetToDefine);
+		}
+		++assetsIndex;
+		loadAssets();
+		/* var _assetToDefine = currAsset[_assetCounter];
+		trace(_assetToDefine); */
+		/* while (_assetCounter < currAsset.length) {
+			var _assetToDefine = currAsset[_assetCounter];
+			trace(_assetToDefine);
+			game.gameAssets.defineAsset(_assetToDefine, BambaMain);
+			_assetCounter++;
+		}
+		++assetsIndex;
+		loadAssets(); */
+		/* var _loc2_:Null<Dynamic> = null;
 		var _loc3_:Null<Dynamic> = null;
 		++loadingCounter;
 		currBytes += Std.parseFloat(fileSizes[msgCounter]);
@@ -281,8 +325,8 @@ class BambaLoader extends EventDispatcher {
 			game.gameAssets.defineAsset(_loc3_, BambaMain);
 			_loc2_++;
 		}
-		++assetsIndex;
-		loadAssets();
+		++assetsIndex; */
+		//loadAssets();
 	}
 
 	function loadParamsComplete(paramXml:Xml):Void {
@@ -637,7 +681,7 @@ class BambaLoader extends EventDispatcher {
 		_loc3_ = 0;
 		while (_loc3_ < _loc2_.length) {
 			_loc4_ = _loc2_[_loc3_];
-			game.gameAssets.defineAsset(_loc4_, BambaMain);
+			game.gameAssets.defineAsset(_loc4_);
 			_loc3_++;
 		}
 		finishContinueLoading();
@@ -715,8 +759,8 @@ class BambaLoader extends EventDispatcher {
 		}
 	}
 
-	function showIOError(error:IOErrorEvent):Void {
-		trace("IO Error:" + error.target.toString());
+	function showIOError(error:Dynamic):Void {
+		trace("IO Error:" + error);
 		//game.errorDT.text = "IOErrorEvent";
 	}
 
@@ -746,7 +790,7 @@ class BambaLoader extends EventDispatcher {
 		_loc3_ = 0;
 		while (_loc3_ < _loc2_.length) {
 			_loc4_ = _loc2_[_loc3_];
-			game.gameAssets.defineAsset(_loc4_, BambaMain);
+			game.gameAssets.defineAsset(_loc4_);
 			_loc3_++;
 		}
 		game.finishDungeonAssetLoad();

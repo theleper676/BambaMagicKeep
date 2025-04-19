@@ -14,6 +14,7 @@
 	<assets path="assets/swf/IntroBamba.swf" embed="false" id="IntroBamba" />
 	<assets path="assets/swf/OpeningAssets.swf" preload="true" generate="true"  />
 	<assets path="assets/openingAssets/openingAssets.zip" preload="true" id="openingAssets"/> 
+	<assets path="assets/game_assets/general.zip" generate="true" id="general.swf"/>
 	<assets path="assets/xmls/params.xml" embed="false" id="params" />
 	<assets path="assets/xmls/dictionary.xml" embed="false" id="dictionary" />
 	<assets path="assets/xmls/generalData.xml" embed="false" id="generalData" />

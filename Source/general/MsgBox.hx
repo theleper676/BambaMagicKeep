@@ -269,16 +269,15 @@ class MsgBox extends DisplayObject  {
 	}
 
 	public static function show(param1:String, param2:Dynamic = null, param3:Float = 4):Void {
-		var _loc4_:Null<Dynamic> = null;
-		_loc4_ = BambaAssets.msgBox;
-		msgBoxMCLink = _loc4_;
+		var _msgBox = BambaAssets.msgBox;
+		msgBoxMCLink = _msgBox;
 		msgBoxCloseFunction = param2;
-		game.addChild(_loc4_);
+		game.addChild(_msgBox);
 		game.msgShown = true;
-		game.centerScreen(_loc4_);
-		ButtonUpdater.setButton(_loc4_.exitButton, closeMsgBox);
-		Heb.setText(_loc4_.dt, param1);
-		_loc4_.iconMC.gotoAndStop(param3);
+		game.centerScreen(_msgBox);
+		ButtonUpdater.setButton(_msgBox.exitButton, closeMsgBox);
+		Heb.setText(_msgBox.dt, param1);
+		_msgBox.iconMC.gotoAndStop(param3);
 	}
 
 	public static function closeWaitBox():Void {

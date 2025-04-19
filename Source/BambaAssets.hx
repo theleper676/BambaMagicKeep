@@ -1,12 +1,8 @@
 package;
 
 
-import openfl.events.Event;
-import openfl.utils.Assets;
-import swf.exporters.animate.AnimateLibrary;
+import general_assets.MsgBox;
 import haxe.Exception;
-import openfl.events.EventDispatcher;
-import general.MsgBox;
 import openfl.display.MovieClip;
 
 @:access(swf.exporters.animate)
@@ -89,7 +85,7 @@ class BambaAssets {
 
 	public static var questBox:Dynamic;
 
-	public static var msgBox:MsgBox;
+	public static var msgBox:general_assets.MsgBox;
 
 	public static var skipButton:Dynamic;
 
@@ -193,9 +189,11 @@ class BambaAssets {
 		// questBox = cast(param1, BambaQuest);
 	}
 
-	function define_msgBox(param1:Dynamic):Void  {
-		msgBox = param1;
-		msgBox = cast(param1, MsgBox);
+	function define_msgBox():Void  {
+		msgBox = cast(new MsgBox(), MsgBox);
+		//msgBox = new MsgBox();
+		/* msgBox = param1;
+		msgBox = cast(param1, MsgBox); */
 	}
 
 	function define_help04(param1:Dynamic):Void  {
@@ -208,8 +206,9 @@ class BambaAssets {
 		//enemyBoss = cast(param1, Dynamic);
 	}
 
-	function define_waitBox(param1:Dynamic):Void  {
-		waitBox = param1;
+	function define_waitBox():Void  {
+		//waitBox = new WaitBox();
+		//trace("hello" + waitBox);
 		//waitBox = cast(param1, Dynamic);
 	}
 
@@ -378,7 +377,7 @@ class BambaAssets {
 		// hitPoints = cast(param1, Dynamic);
 	}
 
-	function define_openingScreen(openingScreenInstance:Dynamic):Void  {
+	function define_openingScreen():Void  {
 		openingScreen = new OpeningScreen();
 		/* var libraryPath = Assets.getPath("openingAssets");
 		AnimateLibrary.loadFromFile(libraryPath); */
@@ -425,15 +424,17 @@ class BambaAssets {
 	 * @param instace 
 	 * @param instanceClass  
 	 */
-	public function defineAsset<T>(instance:String, instanceClass:T):Void {
+	public function defineAsset<T>(instance:String):Void {
 		var functionName:String = "define_" + instance;
 		var method = Reflect.field(this, functionName);
 
-		if(method != null && Reflect.isFunction(method)) {
-			Reflect.callMethod(this,method, []);
-			//Reflect.callMethod(this, method, [param2]);
-		} else {
-			throw new Exception("define asset error" + functionName + "method not found in instance" + instance);
+		try {
+			if(method != null && Reflect.isFunction(method)) {
+				Reflect.callMethod(this,method, []);
+				//Reflect.callMethod(this, method, [param2]);
+			}
+		} catch(error) {
+			trace("function define error" + error);
 		}
 	}
 
