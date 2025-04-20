@@ -1,6 +1,7 @@
 package;
 
 
+import new_player.NewPlayerScreen;
 import general_assets.QuestBox;
 import general_assets.*;
 import haxe.Exception;
@@ -68,7 +69,7 @@ class BambaAssets {
 
 	public static var generalFrame:GeneralFrame;
 
-	public static var newPlayerScreen:Dynamic;
+	public static var newPlayerScreen:NewPlayerScreen;
 
 	public static var hatMC:MovieClip;
 
@@ -92,7 +93,7 @@ class BambaAssets {
 
 	public static var dungeonMain:Dynamic;
 
-	public static var characterBuildScreen:Dynamic;
+	public static var characterBuildScreen:CharacterBuildScreen;
 
 	public static var fightScreen:Dynamic;
 
@@ -392,8 +393,8 @@ class BambaAssets {
 		// possibleMove = cast(param1, Dynamic);
 	}
 
-	function define_newPlayerScreen(param1:Dynamic):Void  {
-		newPlayerScreen = param1;
+	function define_newPlayerScreen():Void  {
+		newPlayerScreen = new NewPlayerScreen();
 		// newPlayerScreen = cast(param1, MovieClip);
 	}
 

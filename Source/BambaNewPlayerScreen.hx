@@ -1,5 +1,6 @@
 package;
 
+import new_player.NewPlayerScreen;
 import haxe.Timer;
 import openfl.display.*;
 import openfl.events.KeyboardEvent;
@@ -13,12 +14,12 @@ typedef Mc = {
 	screenMC: Dynamic
 } 
 
-class BambaNewPlayerScreen extends DisplayObject {
+class BambaNewPlayerScreen extends Sprite {
 	var isIn:Bool;
 
 	var game:BambaMain;
 
-	public var mc:Dynamic;
+	public var mc:NewPlayerScreen;
 
 	var clickCountIntervalTimer: Timer = null;
 	var clickContInterval:Float;
@@ -26,7 +27,7 @@ class BambaNewPlayerScreen extends DisplayObject {
 	public function new(mainGame:BambaMain) {
 		super();
 		game = mainGame;
-		mc = BambaAssets.newPlayerScreen;
+		mc = new NewPlayerScreen();
 		ButtonUpdater.setButton(mc.screenMC.enterMC, enterClicked);
 		ButtonUpdater.setButton(mc.screenMC.backMC, backClicked);
 		mc.screenMC.passIT.displayAsPassword = true;
@@ -105,7 +106,8 @@ class BambaNewPlayerScreen extends DisplayObject {
 				return;
 			}
 			game.opening.saveUserPass(mc.screenMC.userIT.text, mc.screenMC.passIT.text);
-			_loc1_ = mc.screenMC.yearCB.selectedLabel + mc.screenMC.monthCB.selectedLabel + mc.screenMC.dayCB.selectedLabel;
+			_loc1_ = "";
+			//_loc1_ = mc.screenMC.yearCB.selectedLabel + mc.screenMC.monthCB.selectedLabel + mc.screenMC.dayCB.selectedLabel;
 			game.gameLoader.sendNewPlayerData(mc.screenMC.userIT.text, mc.screenMC.passIT.text, mc.screenMC.mailIT.text, _loc1_);
 		}
 	}
