@@ -1,5 +1,6 @@
 package;
 
+import general_assets.GeneralFrame;
 import haxe.Timer;
 import erate.ERate;
 import openfl.display.*;
@@ -75,7 +76,7 @@ class BambaMain extends Sprite{
 
 	var eventTypeCodes:Array<Int>;
 
-	public var frameMC:Null<Dynamic>;
+	public var frameMC:GeneralFrame;
 
 	var dungeonMC:MovieClip;
 
@@ -500,7 +501,7 @@ class BambaMain extends Sprite{
 
 	function addFrame():Void {
 		if (frameMC == null) {
-			frameMC = BambaAssets.generalFrame();
+			frameMC = new GeneralFrame();
 			ButtonUpdater.setButton(frameMC.helpMC, openHelp);
 			ButtonUpdater.setButton(frameMC.mainMenuMC, mainMenuClicked);
 			sound.setMusicVolumeBar(frameMC.musicVolumeMC);

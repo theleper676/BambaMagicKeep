@@ -1,5 +1,6 @@
 package;
 
+import general_assets.VolumeBar_8;
 import haxe.macro.Expr.Field;
 import haxe.Timer;
 import openfl.display.*;
@@ -135,7 +136,7 @@ class BambaSoundManager extends DisplayObject {
 
 	public var DUNGEON04_MUSIC:Sound;
 
-	var musicVolumeBarMC:MusicMC;
+	var musicVolumeBarMC:VolumeBar_8;
 
 	public var MAZE_ROLL_ONE_MORE:Sound;
 
@@ -301,7 +302,7 @@ class BambaSoundManager extends DisplayObject {
 
 	var soundsFiles:Array<Dynamic>;
 
-	var effectsVolumeBarMC:MusicMC;
+	var effectsVolumeBarMC:VolumeBar_8;
 
 
 	var currDungeonMusicFiles:Array<Dynamic>;
@@ -421,8 +422,8 @@ class BambaSoundManager extends DisplayObject {
 		loadDungeonMusic();
 	}
 
-	public function setEffectsVolumeBar(param1:Dynamic):Void {
-		effectsVolumeBarMC = param1;
+	public function setEffectsVolumeBar(sfxVolumeBar:VolumeBar_8):Void {
+		effectsVolumeBarMC = sfxVolumeBar;
 		draggingEffectsVol = false;
 		effectsVolumeBarMC.sliderMC.x = effectsTransform.volume * (effectsVolumeBarMC.backMC.width - effectsVolumeBarMC.sliderMC.width);
 		effectsVolumeBarMC.maskMC.width = effectsVolumeBarMC.sliderMC.x + effectsVolumeBarMC.sliderMC.width;
@@ -568,8 +569,8 @@ class BambaSoundManager extends DisplayObject {
 		}
 	}
 
-	public function setMusicVolumeBar(param1:Dynamic):Void {
-		musicVolumeBarMC = param1;
+	public function setMusicVolumeBar(volumeBar:VolumeBar_8):Void {
+		musicVolumeBarMC = volumeBar;
 		draggingMusicVol = false;
 		musicVolumeBarMC.sliderMC.x = musicTransform.volume * (musicVolumeBarMC.backMC.width - musicVolumeBarMC.sliderMC.width);
 		musicVolumeBarMC.maskMC.width = musicVolumeBarMC.sliderMC.x + musicVolumeBarMC.sliderMC.width;

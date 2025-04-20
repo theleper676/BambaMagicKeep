@@ -116,14 +116,14 @@ class BambaLoader extends EventDispatcher {
 	}
 	
 	function loadAssets():Void {
-		trace("loading assets");
+		
 		currFunctionName = "loadAssets";
 		++loadingCounter;
 		if(assetsIndex < assets.length) {
 			currAsset = assets[assetsIndex];
 			var _currAssetSwf = currAsset[0];
 			var _assetPath = Assets.getPath(_currAssetSwf);
-			//currAsset = _currAssetString.split(",");
+			trace("loading assets of " + _currAssetSwf);
 			Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);
 			AnimateLibrary.loadFromFile(_assetPath)
 			.onProgress((bytesLoaded, bytesTotal) -> {

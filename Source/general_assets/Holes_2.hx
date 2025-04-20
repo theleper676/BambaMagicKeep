@@ -1,5 +1,4 @@
-package general_fla;
-
+package general_assets;
 @:access(swf.exporters.animate)
 
 class Holes_2 extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.display.MovieClip #end

@@ -66,7 +66,7 @@ class BambaAssets {
 
 	public static var daiperMC:MovieClip;
 
-	public static var generalFrame:Dynamic;
+	public static var generalFrame:GeneralFrame;
 
 	public static var newPlayerScreen:Dynamic;
 
@@ -76,7 +76,7 @@ class BambaAssets {
 
 	public static var eyesMC:Dynamic;
 
-	public static var questIcon:Dynamic;
+	public static var questIcon:QuestIcon;
 
 	public static var cardPopup:Dynamic;
 
@@ -88,7 +88,7 @@ class BambaAssets {
 
 	public static var msgBox:general_assets.MsgBox;
 
-	public static var skipButton:Dynamic;
+	public static var skipButton:SkipButton;
 
 	public static var dungeonMain:Dynamic;
 
@@ -102,7 +102,7 @@ class BambaAssets {
 
 	public static var capeMC:MovieClip;
 
-	public static var prizeIcon:Dynamic;
+	public static var prizeIcon:PrizeIcon;
 
 	public static var storeScreen:Dynamic;
 
@@ -222,7 +222,7 @@ class BambaAssets {
 	}
 
 	function define_skipButton(param1:Dynamic):Void  {
-		skipButton = param1;
+		skipButton = new SkipButton();
 		//skipButton = cast(param1, Dynamic);
 	}
 
@@ -271,8 +271,8 @@ class BambaAssets {
 		//kingdomMap = cast(param1, Dynamic);
 	}
 
-	function define_prizeIcon(param1:Dynamic):Void  {
-		prizeIcon = param1;
+	function define_prizeIcon():Void  {
+		prizeIcon = new PrizeIcon();
 		//prizeIcon = cast(param1, Dynamic);
 	}
 
@@ -407,8 +407,8 @@ class BambaAssets {
 		// hatMC = cast(param1, MovieClip);
 	}
 
-	function define_generalFrame(param1:Dynamic):Void  {
-		generalFrame = param1;
+	function define_generalFrame():Void  {
+		generalFrame = new GeneralFrame();
 		// generalFrame = cast(param1, Dynamic);
 	}
 
@@ -443,8 +443,8 @@ class BambaAssets {
 		this[_loc3_](param2);
 	} */
 
-	function define_questIcon(param1:Dynamic):Void  {
-		questIcon = param1;
+	function define_questIcon():Void  {
+		questIcon = new QuestIcon();
 		//questIcon = cast(param1, MovieClip);
 	}
 

@@ -1,5 +1,7 @@
 package;
 
+import general_assets.QuestIcon;
+import general_assets.QuestBox;
 import motion.Actuate;
 import openfl.events.EventDispatcher;
 import openfl.display.*;
@@ -371,10 +373,9 @@ class BambaQuestManager extends EventDispatcher {
 	}
 
 	function showQuestIcon():Void {
-		var _loc1_:Null<Dynamic> = null;
 		hideQuestIcon();
-		_loc1_ = BambaAssets.questIcon();
-		_loc1_.gotoAndStop(tempQuest.qGraphics);
-		mc.questMC.questIconMC.addChild(_loc1_);
+		var _questIcon = new QuestIcon();
+		_questIcon.gotoAndStop(tempQuest.qGraphics);
+		mc.questMC.questIconMC.addChild(_questIcon);
 	}
 }

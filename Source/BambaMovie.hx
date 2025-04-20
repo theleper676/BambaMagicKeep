@@ -1,5 +1,6 @@
 package;
 
+import general_assets.SkipButton;
 import haxe.Timer;
 import openfl.display.*;
 import openfl.events.*;
@@ -13,7 +14,7 @@ class BambaMovie {
 	var continueLoadingIntervalTimer: Timer = null;
 	var movieMC:Dynamic;
 	//var continueLoadingInterval:Dynamic;	
-	var skipButton:MovieClip;
+	var skipButton:SkipButton;
 
 	
 	var loader:Loader;
@@ -64,7 +65,7 @@ class BambaMovie {
 	function loadAndShowComplete(param1:Event):Void {
 		finishContinueLoading();
 		MsgBox.closeWaitBox();
-		skipButton = BambaAssets.skipButton();
+		skipButton = new SkipButton();
 		skipButton.x = 380;
 		skipButton.y = 480;
 		movieMC.addChild(skipButton);
