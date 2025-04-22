@@ -1,10 +1,10 @@
-package newPlayer_fla;
+package new_player;
 
 @:access(swf.exporters.animate)
 
 class Tab2_14 extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.display.MovieClip #end
 {
-	@:keep @:noCompletion @:dox(hide) public var tabNameMC(default, null):newPlayer_fla.Tab_name_mc_13;
+	@:keep @:noCompletion @:dox(hide) public var tabNameMC(default, null): Tab_name_mc_13;
 	
 
 	public function new()

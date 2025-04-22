@@ -1,5 +1,6 @@
 package;
 
+import cards.CardBase;
 import flash.display.*;
 import flash.events.MouseEvent;
 import flash.geom.ColorTransform;
@@ -32,9 +33,9 @@ class BambaCard {
 
 	public var id:Float;
 
-	public var mc:Dynamic;
+	public var mc:CardBase;
 
-	public var game:Dynamic;
+	public var game:BambaMain;
 
 	public var regenerateAmount:Float;
 
@@ -236,10 +237,10 @@ class BambaCard {
 		var _loc6_:Int = 0;
 		var _loc7_:Dynamic = null;
 		if (mc == null) {
-			mc = BambaAssets.cardBase();
+			mc = new CardBase();
 			Heb.setText(mc.frontMC.nameDT, cName);
-			mc.frontMC.damageDT.text = damage;
-			mc.frontMC.costDT.text = cost;
+			mc.frontMC.damageDT.text = Std.string(damage);
+			mc.frontMC.costDT.text = Std.string(cost);
 			if (damage == 0 && healAmount > 0) {
 				mc.frontMC.damageDT.text = "-" + healAmount;
 			}
@@ -261,7 +262,7 @@ class BambaCard {
 			while (_loc6_ < attackString.length) {
 				if (attackString.charAt(_loc6_) == "1") {
 					_loc7_ = "cube" + Std.string(_loc6_ + 1);
-					mc.frontMC.shapeMC[_loc7_].transform.colorTransform = _loc4_;
+					Reflect.getProperty(mc.frontMC.shapeMC, _loc7_).transform.colorTransform = _loc4_;
 				}
 				_loc6_++;
 			}

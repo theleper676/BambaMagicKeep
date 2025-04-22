@@ -1,5 +1,6 @@
 package;
 
+import menu.MenuScreen;
 import haxe.Timer;
 import openfl.display.*;
 import openfl.events.MouseEvent;
@@ -12,14 +13,14 @@ class BambaMenuScreen extends Sprite {
    var clickContIntervalTimer: Timer = null;
 	var babyGraphics:MovieClip;
 
-	public var mc:Dynamic;
+	public var mc:MenuScreen;
 
 	var game:BambaMain;
 
 	public function new(mainGame:BambaMain) {
 		super();
 		game = mainGame;
-		mc = BambaAssets.menuScreen;
+		mc = new MenuScreen();
 		babyGraphics = BambaAssets.babyMain;
 		babyGraphics.stop();
 		mc.babyMC.addChild(babyGraphics);

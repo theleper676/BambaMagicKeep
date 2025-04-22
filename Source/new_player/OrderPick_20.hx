@@ -1,4 +1,4 @@
-package newPlayer_fla;
+package new_player;
 
 @:access(swf.exporters.animate)
 
@@ -6,11 +6,11 @@ class OrderPick_20 extends #if flash flash.display.MovieClip.MovieClip2 #else op
 {
 	@:keep @:noCompletion @:dox(hide) public var CH_B_TITLE(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var CH_B_TEXT(default, null):openfl.text.TextField;
-	@:keep @:noCompletion @:dox(hide) public var order1(default, null):newPlayer_fla.OrderMC_21;
-	@:keep @:noCompletion @:dox(hide) public var order2(default, null):newPlayer_fla.OrderMC_21;
-	@:keep @:noCompletion @:dox(hide) public var order3(default, null):newPlayer_fla.OrderMC_21;
-	@:keep @:noCompletion @:dox(hide) public var continueMC(default, null):newPlayer_fla.Continuebutton_10;
-	@:keep @:noCompletion @:dox(hide) public var backMC(default, null):newPlayer_fla.Backbutton_7;
+	@:keep @:noCompletion @:dox(hide) public var order1(default, null):OrderMC_21;
+	@:keep @:noCompletion @:dox(hide) public var order2(default, null):OrderMC_21;
+	@:keep @:noCompletion @:dox(hide) public var order3(default, null):OrderMC_21;
+	@:keep @:noCompletion @:dox(hide) public var continueMC(default, null):Continuebutton_10;
+	@:keep @:noCompletion @:dox(hide) public var backMC(default, null):Backbutton_7;
 	
 
 	public function new()

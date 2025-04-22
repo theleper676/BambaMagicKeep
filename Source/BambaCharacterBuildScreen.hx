@@ -1,5 +1,6 @@
 package;
 
+import new_player.CharacterBuildScreen;
 import haxe.Timer;
 import openfl.display.DisplayObject;
 import openfl.display.*;
@@ -44,7 +45,7 @@ class BambaCharacterBuildScreen extends DisplayObject {
 		var _loc7_:Null<Dynamic> = null;
 		var _loc8_:Null<Dynamic> = null;
 		game = mainGame;
-		mc = BambaAssets.characterBuildScreen();
+		mc = new CharacterBuildScreen();
 		mc.stop();
 		game.gameData.playerData.resetPlayerData();
 		babyGraphics = BambaAssets.babyMain();

@@ -1,4 +1,4 @@
-package newPlayer_fla;
+package new_player;
 
 @:access(swf.exporters.animate)
 

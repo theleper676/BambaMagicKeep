@@ -1,5 +1,7 @@
 package new_player;
 
+import haxe.ui.components.DropDown;
+
 @:access(swf.exporters.animate)
 
 class NewPlayerScreen_27 extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.display.MovieClip #end
@@ -10,9 +12,9 @@ class NewPlayerScreen_27 extends #if flash flash.display.MovieClip.MovieClip2 #e
 	@:keep @:noCompletion @:dox(hide) public var confirmPassIT(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var mailIT(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var userIT(default, null):openfl.text.TextField;
-	@:keep @:noCompletion @:dox(hide) public var dayCB(default, null):ComboBox;
-	@:keep @:noCompletion @:dox(hide) public var monthCB(default, null):ComboBox;
-	@:keep @:noCompletion @:dox(hide) public var yearCB(default, null): ComboBox;
+	@:keep @:noCompletion @:dox(hide) public var dayCB(default, null):DropDown;
+	@:keep @:noCompletion @:dox(hide) public var monthCB(default, null):DropDown;
+	@:keep @:noCompletion @:dox(hide) public var yearCB(default, null): DropDown;
 	
 
 	public function new()

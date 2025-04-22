@@ -1,6 +1,9 @@
 package;
 
 
+import cards.CardBase;
+import menu.MenuScreen;
+import new_player.CharacterBuildScreen;
 import new_player.NewPlayerScreen;
 import general_assets.QuestBox;
 import general_assets.*;
@@ -9,7 +12,7 @@ import openfl.display.MovieClip;
 
 @:access(swf.exporters.animate)
 class BambaAssets {
-	public static var cardBase:Dynamic;
+	public static var cardBase:CardBase;
 
 	public static var help02:Dynamic;
 
@@ -109,7 +112,7 @@ class BambaAssets {
 
 	public static var babyMain:Dynamic;
 
-	public static var menuScreen:Dynamic;
+	public static var menuScreen:MenuScreen;
 
 	public static var questManagerScreen:Dynamic;
 
@@ -151,8 +154,8 @@ class BambaAssets {
 		//hairMC = cast(param1, MovieClip);
 	}
 
-	function define_cardBase(param1:Dynamic):Void  {
-		cardBase = param1;
+	function define_cardBase():Void  {
+		cardBase = new CardBase();
 		//cardBase = cast(param1, BambaCard);
 	}
 
@@ -192,7 +195,7 @@ class BambaAssets {
 	}
 
 	function define_msgBox():Void  {
-		msgBox = cast(new MsgBox(), MsgBox);
+		msgBox = new MsgBox();
 		//msgBox = new MsgBox();
 		/* msgBox = param1;
 		msgBox = cast(param1, MsgBox); */
@@ -242,8 +245,8 @@ class BambaAssets {
 		//magicBase = cast(param1, BambaItem);
 	}
 
-	function define_characterBuildScreen(param1:Dynamic):Void {
-		characterBuildScreen = param1;
+	function define_characterBuildScreen():Void {
+		characterBuildScreen = new CharacterBuildScreen();
 		//characterBuildScreen = cast(param1, Dynamic);
 	}
 
@@ -297,8 +300,8 @@ class BambaAssets {
 		//yesNoBox = cast(param1, Dynamic);
 	}
 
-	function define_menuScreen(param1:Dynamic):Void  {
-		menuScreen = param1;
+	function define_menuScreen():Void  {
+		menuScreen = new MenuScreen();
 		// menuScreen = cast(param1, Dynamic);
 	}
 

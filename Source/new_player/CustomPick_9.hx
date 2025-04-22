@@ -5,13 +5,13 @@ package new_player;
 class CustomPick_9 extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.display.MovieClip #end
 {
 	@:keep @:noCompletion @:dox(hide) public var continueMC(default, null): Continuebutton_10;
-	@:keep @:noCompletion @:dox(hide) public var backMC(default, null):newPlayer_fla.Backbutton_7;
-	@:keep @:noCompletion @:dox(hide) public var tab1(default, null):newPlayer_fla.Tab1_12;
-	@:keep @:noCompletion @:dox(hide) public var tab2(default, null):newPlayer_fla.Tab2_14;
-	@:keep @:noCompletion @:dox(hide) public var tab3(default, null):newPlayer_fla.Tab3_15;
-	@:keep @:noCompletion @:dox(hide) public var tab4(default, null):newPlayer_fla.Tab4_16;
-	@:keep @:noCompletion @:dox(hide) public var tab5(default, null):newPlayer_fla.Tab5_17;
-	@:keep @:noCompletion @:dox(hide) public var tab6(default, null):newPlayer_fla.Tab6_18;
+	@:keep @:noCompletion @:dox(hide) public var backMC(default, null):Backbutton_7;
+	@:keep @:noCompletion @:dox(hide) public var tab1(default, null):Tab1_12;
+	@:keep @:noCompletion @:dox(hide) public var tab2(default, null):Tab2_14;
+	@:keep @:noCompletion @:dox(hide) public var tab3(default, null):Tab3_15;
+	@:keep @:noCompletion @:dox(hide) public var tab4(default, null):Tab4_16;
+	@:keep @:noCompletion @:dox(hide) public var tab5(default, null):Tab5_17;
+	@:keep @:noCompletion @:dox(hide) public var tab6(default, null):Tab6_18;
 	@:keep @:noCompletion @:dox(hide) public var CH_B_FIRST_LINE(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var CH_B_SECOND_LINE(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var firstLineMC(default, null):openfl.display.MovieClip;

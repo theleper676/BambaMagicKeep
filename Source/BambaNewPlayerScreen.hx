@@ -107,7 +107,7 @@ class BambaNewPlayerScreen extends Sprite {
 			}
 			game.opening.saveUserPass(mc.screenMC.userIT.text, mc.screenMC.passIT.text);
 			_loc1_ = "";
-			//_loc1_ = mc.screenMC.yearCB.selectedLabel + mc.screenMC.monthCB.selectedLabel + mc.screenMC.dayCB.selectedLabel;
+			_loc1_ = mc.screenMC.yearCB.selectedItem.text + mc.screenMC.monthCB.selectedItem.text + mc.screenMC.dayCB.selectedItem.text;
 			game.gameLoader.sendNewPlayerData(mc.screenMC.userIT.text, mc.screenMC.passIT.text, mc.screenMC.mailIT.text, _loc1_);
 		}
 	}

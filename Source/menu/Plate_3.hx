@@ -1,8 +1,8 @@
-package new_player;
+package menu;
 
 @:access(swf.exporters.animate)
 
-class Plate_24 extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.display.MovieClip #end
+class Plate_3 extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.display.MovieClip #end
 {
 	@:keep @:noCompletion @:dox(hide) public var nameDT(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var orderDT(default, null):openfl.text.TextField;
@@ -11,8 +11,8 @@ class Plate_24 extends #if flash flash.display.MovieClip.MovieClip2 #else openfl
 
 	public function new()
 	{
-		var library = swf.exporters.animate.AnimateLibrary.get("ID11jSMEMP2dDrzhS39l");
-		var symbol = library.symbols.get(178);
+		var library = swf.exporters.animate.AnimateLibrary.get("UdDnTkufe3o6suuTH71R");
+		var symbol = library.symbols.get(10);
 		symbol.__init(library);
 
 		super();
