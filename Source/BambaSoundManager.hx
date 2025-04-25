@@ -258,7 +258,7 @@ class BambaSoundManager extends DisplayObject {
 
 	public var ENEMY16_MAGIC2:Sound;
 
-	public var effectsArray:Array<Dynamic>;
+	public var effectsArray:Array<SoundChannel>;
 
 	public var loopEffectsArray:Array<Dynamic>;
 
@@ -384,14 +384,14 @@ class BambaSoundManager extends DisplayObject {
 		loadDungeonMusic();
 	}
 
-	public function playEffect(param1:String):Void {
-		var _loc2_:SoundChannel = null;
-		if (param1 != "") {
-			var sound = Reflect.field(this, param1);
+	public function playEffect(effect:String):Void {
+		var _soundChannel:SoundChannel = null;
+		if (effect != "") {
+			var sound = Reflect.field(this, effect);
 			if (sound != null) {
-				_loc2_ = sound.play(25, 0, effectsTransform);
-				_loc2_.addEventListener(Event.SOUND_COMPLETE, effectCompleted, false, 0, true);
-				effectsArray.push(_loc2_);
+				_soundChannel = sound.play(25, 0, effectsTransform);
+				_soundChannel.addEventListener(Event.SOUND_COMPLETE, effectCompleted, false, 0, true);
+				effectsArray.push(_soundChannel);
 			}
 		}
 	}

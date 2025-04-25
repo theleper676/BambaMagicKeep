@@ -598,17 +598,17 @@ class BambaFighter extends DisplayObject {
 		return _loc2_;
 	}
 
-	function heal(param1:Dynamic):Void {
-		if (Math.isNaN(param1)) {
+	function heal(amount:Float):Void {
+		if (Math.isNaN(amount)) {
          return;
 			//lifePower = lifePower;
 		} else {
-			if (lifePower + param1 > maxLife) {
+			if (lifePower + amount > maxLife) {
 				lifePower = maxLife;
 			} else {
-				lifePower += param1;
+				lifePower += amount;
 			}
-			if (param1 > 0) {
+			if (amount > 0) {
 				fight.game.sound.playEffect("BATTLE_REGEN");
 			}
 		}
