@@ -1,4 +1,4 @@
-package ;
+package general_assets;
 
 @:access(swf.exporters.animate)
 

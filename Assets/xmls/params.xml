@@ -80,7 +80,7 @@
         <asset>babyAttacks</asset>
     </babyassets>
 
-    <enemiesassets>
+   <!--  <enemiesassets>
         <asset>enemies2.swf</asset>
         <asset>enemy01</asset>
         <asset>enemy01b</asset>
@@ -97,7 +97,7 @@
         <asset>enemy03a</asset>
         <asset>enemy04a</asset>
         <asset>enemy05a</asset>
-    </enemiesassets>
+    </enemiesassets> -->
 
     <fightgraphicsassets>
         <asset>fightGraphics.swf</asset>

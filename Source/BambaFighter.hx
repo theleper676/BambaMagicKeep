@@ -1,5 +1,8 @@
 package;
 
+import fight_graphics.HitPoints;
+import fight_graphics.FighterIcon;
+import baby.BabyAttacks;
 import baby.BabyMain;
 import baby.BabyMain;
 import haxe.Timer;
@@ -10,7 +13,7 @@ import motion.Actuate;
 class BambaFighter extends DisplayObject {
 	public var maxLife:Float;
 
-	var hitPointsGraphics:Dynamic;
+	var hitPointsGraphics:HitPoints;
 
 	public var dir:Float;
 
@@ -26,7 +29,7 @@ class BambaFighter extends DisplayObject {
 
 	public var yPos:Int;
 
-	public var iconGraphics:MovieClip;
+	public var iconGraphics:FighterIcon;
 
 	public var movedBecauseOfOtherPlayer:Bool;
 
@@ -45,7 +48,7 @@ class BambaFighter extends DisplayObject {
 
 	public var otherPlayerCard:BambaCard;
 
-	public var attacksGraphics:Dynamic;
+	public var attacksGraphics:BabyAttacks;
 
 	var animLength:Float;
 
@@ -67,18 +70,18 @@ class BambaFighter extends DisplayObject {
 
 	public var ponGraphics:BabyMain;
 
-	public function new(param1:BambaFight, param2:Dynamic) {
+	public function new(fight:BambaFight, isMe:Bool) {
 		var _loc3_:Null<Dynamic> = null;
 		var _loc4_:Null<Dynamic> = null;
 		super();
-		fight = param1;
-		isMe = param2;
-		iconGraphics = BambaAssets.fighterIcon();
+		this.fight = fight;
+		this.isMe = isMe;
+		iconGraphics = new FighterIcon();
 		fight.MC.cardPickMC.smallBoardMC.addChild(iconGraphics);
-		hitPointsGraphics = BambaAssets.hitPoints();
+		hitPointsGraphics = new HitPoints();
 		if (isMe) {
 			ponGraphics = new BabyMain();
-			attacksGraphics = BambaAssets.babyAttacks();
+			attacksGraphics = new BabyAttacks();
 			fight.MC.boardMC.addChild(ponGraphics);
 			fight.MC.boardMC.addChild(attacksGraphics);
 			fight.game.gameData.playerData.updateBabysLook(ponGraphics);
@@ -96,12 +99,16 @@ class BambaFighter extends DisplayObject {
 			iconGraphics.gotoAndStop("enemy");
 			AI = new BambaFighterAI(this);
 		}
-		_loc3_ = 0;
+		for (i in 0...attacksGraphics.numChildren){
+			var _attackGraphics = attacksGraphics.getChildAt(i);
+			_attackGraphics.visible = false;
+		}
+		/* _loc3_ = 0;
 		while (_loc3_ < attacksGraphics.numChildren) {
 			_loc4_ = attacksGraphics.getChildAt(_loc3_);
 			_loc4_.stop();
 			_loc3_++;
-		}
+		} */
 		attackMatrix = [[0, -1], [1, -1], [2, -1], [0, 0], [1, 0], [2, 0], [0, 1], [1, 1], [2, 1]];
 	}
 
@@ -147,7 +154,6 @@ class BambaFighter extends DisplayObject {
 
 	function playBeenHitAnim(param1:Dynamic):Void {
       beenHitInternalTimer.stop();
-		// clearInterval(beenHitInterval);
 		hitPointsGraphics.dtMC.DT.text = param1;
 		fight.MC.boardMC.addChild(hitPointsGraphics);
 		hitPointsGraphics.gotoAndPlay(2);

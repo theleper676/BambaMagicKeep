@@ -1,27 +1,14 @@
 package;
 
 
-import baby.BabyMain;
-import items.ItemPopup;
-import items.ItemFrame;
-import items.HairMC;
-import items.BeltMC;
-import items.ShoesMC;
-import items.EyesMC;
-import items.DaiperMC;
-import items.CapeMC;
-import items.HatMC;
-import items.StickMC;
-import cards.CardBase;
-import cards.MagicBase;
+import fight_graphics.*;
+import baby.*;
+import items.*;
+import cards.*;
 import menu.MenuScreen;
-import cards.CardPopup;
-import new_player.CharacterBuildScreen;
-import new_player.NewPlayerScreen;
-import general_assets.QuestBox;
+import new_player.*;
 import general_assets.*;
 import haxe.Exception;
-import openfl.display.MovieClip;
 
 @:access(swf.exporters.animate)
 class BambaAssets {
@@ -65,11 +52,11 @@ class BambaAssets {
 
 	public static var help09:Dynamic;
 
-	public static var hitMatrix:Any;
+	public static var hitMatrix:HitMatrix;
 
 	public static var magicBookScreen:Dynamic;
 
-	public static var hitAnim:Dynamic;
+	public static var hitAnim:HitAnim;
 
 	public static var dungeonMap:Dynamic;
 
@@ -77,7 +64,7 @@ class BambaAssets {
 
 	public static var dungeonIcon:Dynamic;
 
-	public static var hitPoints:Dynamic;
+	public static var hitPoints:HitPoints;
 
 	public static var itemPopup:ItemPopup;
 
@@ -89,7 +76,7 @@ class BambaAssets {
 
 	public static var hatMC:HatMC;
 
-	public static var babyAttacks:Dynamic;
+	public static var babyAttacks:BabyAttacks;
 
 	public static var eyesMC:EyesMC;
 
@@ -111,7 +98,7 @@ class BambaAssets {
 
 	public static var characterBuildScreen:CharacterBuildScreen;
 
-	public static var fightScreen:Dynamic;
+	public static var fightScreen:FightScreen;
 
 	public static var yesNoBox:YesNoBox;
 
@@ -131,7 +118,7 @@ class BambaAssets {
 
 	public static var towerScreen:Dynamic;
 
-	public static var fighterIcon:Dynamic;
+	public static var fighterIcon:FighterIcon;
 
 	public static var beltMC:BeltMC;
 
@@ -248,8 +235,8 @@ class BambaAssets {
 		// itemFrame = cast(param1, Dynamic);
 	}
 
-	function define_fightScreen(param1:Dynamic):Void  {
-		fightScreen = param1;
+	function define_fightScreen():Void  {
+		fightScreen =  new FightScreen();
 		//fightScreen = cast(param1, Dynamic);
 	}
 
@@ -318,8 +305,8 @@ class BambaAssets {
 		// menuScreen = cast(param1, Dynamic);
 	}
 
-	function define_hitMatrix(param1:Dynamic):Void  {
-		hitMatrix = param1;
+	function define_hitMatrix():Void  {
+		hitMatrix = new HitMatrix();
 		//hitMatrix = cast(param1, Dynamic);
 	}
 
@@ -353,8 +340,8 @@ class BambaAssets {
 		//magicBookScreen = cast(param1, Dynamic);
 	}
 
-	function define_hitAnim(param1:Dynamic):Void  {
-		hitAnim = param1;
+	function define_hitAnim():Void  {
+		hitAnim = new HitAnim();
 		//hitAnim = cast(param1, Dynamic);
 	}
 
@@ -373,8 +360,8 @@ class BambaAssets {
 		// towerScreen = cast(param1, Dynamic);
 	}
 
-	function define_fighterIcon(param1:Dynamic):Void  {
-		fighterIcon = param1;
+	function define_fighterIcon():Void  {
+		fighterIcon = new FighterIcon();
 		//fighterIcon = cast(param1, Dynamic);
 	}
 
@@ -388,8 +375,8 @@ class BambaAssets {
 		// itemPopup = cast(param1, Dynamic);
 	}
 
-	function define_hitPoints(param1:Dynamic):Void  {
-		hitPoints = param1;
+	function define_hitPoints():Void  {
+		hitPoints = new HitPoints();
 		// hitPoints = cast(param1, Dynamic);
 	}
 
@@ -429,8 +416,8 @@ class BambaAssets {
 		// generalFrame = cast(param1, Dynamic);
 	}
 
-	function define_babyAttacks(param1:Dynamic):Void  {
-		babyAttacks = param1;
+	function define_babyAttacks():Void  {
+		babyAttacks = new BabyAttacks();
 		// babyAttacks = cast(param1, Dynamic);
 	}
 

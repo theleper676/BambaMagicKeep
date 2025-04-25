@@ -139,14 +139,11 @@ class BambaData {
 	}
 
 	//TODO: RETURN TYPE SHOULD BE BambaEnemyLevel
-	public function getCatalogEnemyLevel(param1:Dynamic, param2:Dynamic):BambaEnemyLevel {
-		var _loc3_:Null<Dynamic> = null;
-		_loc3_ = 0;
-		while (_loc3_ < enemiesLevelsCatalog.length) {
-			if (enemiesLevelsCatalog[_loc3_].level == param1 && enemiesLevelsCatalog[_loc3_].type == param2) {
-				return enemiesLevelsCatalog[_loc3_];
+	public function getCatalogEnemyLevel(level:Int, type:Int):BambaEnemyLevel {
+		for (enemyLevel in enemiesLevelsCatalog) {
+			if(enemyLevel.level == level && enemyLevel.type == type) {
+				return enemyLevel;
 			}
-			_loc3_++;
 		}
 		return null;
 	}
@@ -201,7 +198,6 @@ class BambaData {
 		} */
 	}
 
-	//TODO: RETURN TYPE BambaPlayerLevel
 	public function getCatalogPlayerLevel(playerLevelId:Float):BambaPlayerLevel {
 		for (playerLevel in playerLevelsCatalog) {
 			if(playerLevel.level == playerLevelId ) {

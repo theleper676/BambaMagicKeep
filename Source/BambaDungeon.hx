@@ -1,5 +1,6 @@
 package;
 
+import fight_graphics.FightScreen;
 import openfl.display.*;
 import openfl.events.Event;
 import openfl.events.MouseEvent;
@@ -45,7 +46,7 @@ class BambaDungeon extends DisplayObject {
 
 	var dungeonId:Float;
 
-	var dungeonIcons:Array<Dynamic>;
+	var dungeonIcons:Array<BambaDungeonIcon>;
 
 	public var dungeonData:BambaDungeonData;
 
@@ -57,7 +58,7 @@ class BambaDungeon extends DisplayObject {
 
 	var dontSoundRoll:Bool;
 
-	public var fightScreen:Dynamic;
+	public var fightScreen:FightScreen;
 
 	var possibleWaysToMove:Array<Dynamic>;
 
@@ -703,7 +704,7 @@ class BambaDungeon extends DisplayObject {
 	public function checkTile():Void {
 		var _loc1_:Bool;
 		var _loc2_:Int;
-		var _loc3_:Float = Math.NaN;
+		var _enemyType:Int = 0;
 		var _loc4_:Float = Math.NaN;
 		var _loc5_:Float = Math.NaN;
 		var _loc6_:Array<Dynamic> = null;
@@ -714,22 +715,23 @@ class BambaDungeon extends DisplayObject {
 		var _loc11_:Null<Dynamic> = null;
 		var _loc12_:Null<Dynamic> = null;
 		_loc1_ = true;
-		_loc2_ = 0;
-		for (_loc2_ in 0...dungeonIcons.length) {
-			if (me.currTileId != dungeonIcons[_loc2_].currTileId) {
+		//_loc2_ = 0;
+
+		for (i in 0...dungeonIcons.length) {
+			if (me.currTileId != dungeonIcons[i].currTileId) {
 				continue;
 			}
-			currIcon = dungeonIcons[_loc2_];
-			switch (dungeonIcons[_loc2_].type) {
+			currIcon = dungeonIcons[i];
+			switch (dungeonIcons[i].type) {
 				case 2:
 					_loc1_ = false;
-					_loc3_ = 1;
-					setFight(enemyId, _loc3_, dungeonIcons[_loc2_].enemyLevel);
+					_enemyType = 1;
+					setFight(enemyId,  _enemyType, dungeonIcons[i].enemyLevel);
 					break;
 				case 3:
 					_loc1_ = false;
-					_loc3_ = 2;
-					setFight(enemyId, _loc3_, dungeonIcons[_loc2_].enemyLevel);
+					_enemyType = 2;
+					setFight(enemyId, _enemyType, dungeonIcons[i].enemyLevel);
 					break;
 				case 4:
 					_loc1_ = false;
@@ -783,13 +785,13 @@ class BambaDungeon extends DisplayObject {
 		}
 	}
 
-	function setFight(param1:Dynamic, param2:Dynamic, param3:Dynamic):Void {
-		fightScreen = BambaAssets.fightScreen();
+	function setFight(enemyId:Float, enemyType:Int, enemyLevel:Dynamic):Void {
+		fightScreen = new FightScreen();
 		MC.addChild(fightScreen);
 		fightScreen.cardPickMC.visible = true;
 		fightScreen.boardMC.visible = false;
 		clearFight();
-		aFight = new BambaFight(game, fightScreen, param1, param2, param3);
+		aFight = new BambaFight(game, fightScreen, enemyId, enemyType, enemyLevel);
 		game.sound.playEffect("MAZE_BATTLE");
 		game.sound.stopMusic();
 	}

@@ -1,5 +1,7 @@
 package;
 
+import fight_graphics.HitMatrix;
+import fight_graphics.FightScreen;
 import motion.Actuate;
 import haxe.Timer;
 import openfl.display.*;
@@ -20,7 +22,7 @@ class BambaFight extends DisplayObject {
 	var nextStepContinueIntervalTimer: Timer;
 	//var nextStepContinueInterval:Dynamic;
 
-	public var MC:Dynamic;
+	public var MC:FightScreen;
 
 	var cardPicksLocation:Array<Array<Int>>;
 
@@ -36,7 +38,7 @@ class BambaFight extends DisplayObject {
 
 	public var enemyLevelData:BambaEnemyLevel;
 
-	var hitMatrix:Dynamic;
+	var hitMatrix:HitMatrix;
 
 	var animCardIntervalTimer:Timer;
 	// var animCardInterval:Dynamic;
@@ -75,7 +77,7 @@ class BambaFight extends DisplayObject {
 	var winAnimIntervalTimer:Timer;
 	//var winAnimInterval:Dynamic;
 
-	public function new(game:BambaMain, param2:Dynamic, param3:Dynamic, param4:Dynamic, param5:Dynamic) {
+	public function new(game:BambaMain, fightScreen:FightScreen, enemyId:Float, enemyType:Dynamic, enemyLevel:Int) {
 		var _loc6_:Null<Dynamic> = null;
 		cardPicksLocation = [[140, 0], [70, 0], [0, 0]];
 		cardUnPicksMoveLocation = [[513, 0], [427.5, 0], [342, 0], [256.5, 0], [171, 0], [85.5, 0], [0, 0]];
@@ -101,10 +103,10 @@ class BambaFight extends DisplayObject {
 		];
 		super();
 		this.game = game;
-		MC = param2;
-		enemyId = param3;
-		enemyType = param4;
-		enemyLevel = param5;
+		MC = fightScreen;
+		this.enemyId = enemyId;
+		this.enemyType = enemyType;
+		this.enemyLevel = enemyLevel;
 		enemyData = game.gameData.getCatalogEnemy(enemyId, enemyType);
 		enemyLevelData = game.gameData.getCatalogEnemyLevel(enemyLevel, enemyType);
 		ButtonUpdater.setButton(MC.cardPickMC.fightButton, fightButtonClicked);
@@ -341,10 +343,10 @@ class BambaFight extends DisplayObject {
 	public function showHitMatrix(param1:Dynamic, param2:Int):Void {
 		var _loc3_:Null<Dynamic> = null;
 		var _loc4_:Null<Dynamic> = null;
-		var _loc5_:Null<Dynamic> = null;
+		var _loc5_:String = null;
 		var _loc6_:ColorTransform = null;
 		var _loc7_:Null<Dynamic> = null;
-		hitMatrix = BambaAssets.hitMatrix;
+		hitMatrix = new HitMatrix();
 		MC.boardMC.backMC.addChild(hitMatrix);
 		hitMatrix.y = 260;
 		_loc6_ = new ColorTransform();
@@ -356,7 +358,9 @@ class BambaFight extends DisplayObject {
 			_loc4_ = 0;
 			while (_loc4_ < 3) {
 				_loc5_ = "x" + _loc3_ + "y" + _loc4_;
-				hitMatrix[_loc5_].gotoAndStop("hide");
+				var _crrentIndicator:MovieClip = Reflect.getProperty(hitMatrix, _loc5_);
+				_crrentIndicator.gotoAndStop("hide");
+				//hitMatrix[_loc5_].gotoAndStop("hide");
 				_loc4_++;
 			}
 			_loc3_++;
@@ -364,7 +368,9 @@ class BambaFight extends DisplayObject {
 		_loc3_ = 0;
 		while (_loc3_ < param1.length) {
 			_loc5_ = "x" + param1[_loc3_][0] + "y" + param1[_loc3_][1];
-			hitMatrix[_loc5_].gotoAndStop("show");
+			var _crrentIndicator:MovieClip = Reflect.getProperty(hitMatrix, _loc5_);
+			_crrentIndicator.gotoAndStop("show");
+			//hitMatrix[_loc5_].gotoAndStop("show");
 			_loc3_++;
 		}
 	}
