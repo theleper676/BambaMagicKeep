@@ -19,6 +19,7 @@
 	<assets path="assets/game_assets/newPlayer.zip" generate="true" id="newPlayer.swf"/>
 	<assets path="assets/game_assets/menu.zip" generate="true" id="menu.swf"/>
 	<assets path="assets/game_assets/cards.zip" generate="true" id="cards.swf"/>
+	<assets path="assets/game_assets/items.zip" generate="true" id="items.swf"/>
 	<assets path="assets/xmls/params.xml" embed="false" id="params" />
 	<assets path="assets/xmls/dictionary.xml" embed="false" id="dictionary" />
 	<assets path="assets/xmls/generalData.xml" embed="false" id="generalData" />

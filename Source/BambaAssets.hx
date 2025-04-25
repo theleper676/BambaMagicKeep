@@ -1,6 +1,15 @@
 package;
 
 
+import items.ItemFrame;
+import items.HairMC;
+import items.BeltMC;
+import items.ShoesMC;
+import items.EyesMC;
+import items.DaiperMC;
+import items.CapeMC;
+import items.HatMC;
+import items.StickMC;
 import cards.CardBase;
 import cards.MagicBase;
 import menu.MenuScreen;
@@ -42,13 +51,13 @@ class BambaAssets {
 
 	public static var help08:Dynamic;
 
-	public static var itemFrame:MovieClip;
+	public static var itemFrame:ItemFrame;
 
 	public static var magicBase:MagicBase;
 
 	public static var help10:Dynamic;
 
-	public static var stickMC:MovieClip;
+	public static var stickMC:StickMC;
 
 	public static var help05:Dynamic;
 
@@ -70,23 +79,23 @@ class BambaAssets {
 
 	public static var itemPopup:Dynamic;
 
-	public static var daiperMC:MovieClip;
+	public static var daiperMC:DaiperMC;
 
 	public static var generalFrame:GeneralFrame;
 
 	public static var newPlayerScreen:NewPlayerScreen;
 
-	public static var hatMC:MovieClip;
+	public static var hatMC:HatMC;
 
 	public static var babyAttacks:Dynamic;
 
-	public static var eyesMC:Dynamic;
+	public static var eyesMC:EyesMC;
 
 	public static var questIcon:QuestIcon;
 
 	public static var cardPopup:CardPopup;
 
-	public static var shoesMC:Dynamic;
+	public static var shoesMC:ShoesMC;
 
 	public static var enemyAttacks:Dynamic;
 
@@ -106,7 +115,7 @@ class BambaAssets {
 
 	public static var levelBox:LevelBox;
 
-	public static var capeMC:MovieClip;
+	public static var capeMC:CapeMC;
 
 	public static var prizeIcon:PrizeIcon;
 
@@ -122,7 +131,7 @@ class BambaAssets {
 
 	public static var fighterIcon:Dynamic;
 
-	public static var beltMC:MovieClip;
+	public static var beltMC:BeltMC;
 
 	public static var openingScreen:OpeningScreen;
 
@@ -134,7 +143,7 @@ class BambaAssets {
 
 	public static var characterScreen:Dynamic;
 
-	public static var hairMC:MovieClip;
+	public static var hairMC:HairMC;
 
 	public static var emptyCard:Dynamic;
 
@@ -151,8 +160,8 @@ class BambaAssets {
 		characterScreen = cast(param1, BambaCharacterScreen); */
 	}
 
-	function define_hairMC(param1:Dynamic):Void {
-		hairMC = param1;
+	function define_hairMC():Void {
+		hairMC = new HairMC();
 		//hairMC = cast(param1, MovieClip);
 	}
 
@@ -227,13 +236,13 @@ class BambaAssets {
 		//help08 = cast(param1, BambaHelp);
 	}
 
-	function define_skipButton(param1:Dynamic):Void  {
+	function define_skipButton():Void  {
 		skipButton = new SkipButton();
 		//skipButton = cast(param1, Dynamic);
 	}
 
-	function define_itemFrame(param1:Dynamic):Void  {
-		itemFrame = param1;
+	function define_itemFrame():Void  {
+		itemFrame = new ItemFrame();
 		// itemFrame = cast(param1, Dynamic);
 	}
 
@@ -267,8 +276,8 @@ class BambaAssets {
 		// help02 = cast(param1, Dynamic);
 	}
 
-	function define_stickMC(param1:Dynamic):Void  {
-		stickMC = param1;
+	function define_stickMC():Void  {
+		stickMC = new StickMC();
 		//stickMC = cast(param1, Dynamic);
 	}
 
@@ -292,8 +301,8 @@ class BambaAssets {
 		// levelBox = cast(param1, Dynamic);
 	}
 
-	function define_capeMC(param1:Dynamic):Void {
-		capeMC = param1;
+	function define_capeMC():Void {
+		capeMC = new CapeMC();
 		//capeMC = cast(param1,MovieClip);
 	}
 
@@ -388,8 +397,8 @@ class BambaAssets {
 		AnimateLibrary.loadFromFile(libraryPath); */
 	}
 
-	function define_beltMC(param1:Dynamic):Void {
-		beltMC = param1;
+	function define_beltMC():Void {
+		beltMC = new BeltMC();
 		// beltMC = cast(param1, MovieClip);
 	}
 
@@ -403,13 +412,13 @@ class BambaAssets {
 		// newPlayerScreen = cast(param1, MovieClip);
 	}
 
-	function define_daiperMC(param1:Dynamic):Void  {
-		daiperMC = param1;
+	function define_daiperMC():Void  {
+		daiperMC = new DaiperMC();
 		//daiperMC = cast(param1, Dynamic);
 	}
 
-	function define_hatMC(param1:Dynamic):Void {
-		hatMC = param1;
+	function define_hatMC():Void {
+		hatMC = new HatMC();
 		// hatMC = cast(param1, MovieClip);
 	}
 
@@ -443,12 +452,6 @@ class BambaAssets {
 		}
 	}
 
-	/* function defineAsset(param1:String, param2:Dynamic):Void  {
-		var _loc3_:Null<Dynamic>  = null ;
-		_loc3_ = "define_" + param1;
-		this[_loc3_](param2);
-	} */
-
 	function define_questIcon():Void  {
 		questIcon = new QuestIcon();
 		//questIcon = cast(param1, MovieClip);
@@ -464,13 +467,13 @@ class BambaAssets {
 		// emptyCard = cast(param1, BambaCard);
 	}
 
-	function define_shoesMC(param1:Dynamic):Void  {
-		shoesMC = param1;
+	function define_shoesMC():Void  {
+		shoesMC = new ShoesMC();
 		// shoesMC = cast(param1, MovieClip);
 	}
 
-	function define_eyesMC(param1:Dynamic):Void  {
-		eyesMC = param1;
+	function define_eyesMC():Void  {
+		eyesMC = new EyesMC();
 		// eyesMC = cast(param1, MovieClip);
 	}
 

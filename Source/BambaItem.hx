@@ -1,8 +1,10 @@
 package;
 
-import flash.display.*;
-import flash.events.MouseEvent;
-import flash.text.TextFormat;
+import items.*;
+import openfl.display.MovieClip;
+import items.StickMC;
+import openfl.events.MouseEvent;
+import openfl.text.TextFormat;
 import general.Heb;
 
 class BambaItem {
@@ -10,7 +12,7 @@ class BambaItem {
 
 	public var iName:String;
 
-	public var mc:Dynamic;
+	public var mc:MovieClip;
 
 	public var sellPrice:Float;
 
@@ -28,7 +30,7 @@ class BambaItem {
 
 	public var popupMC:Dynamic;
 
-	public var frameMC:Dynamic;
+	public var frameMC:ItemFrame;
 
 	public var screenType:Float;
 
@@ -42,7 +44,7 @@ class BambaItem {
 
 	public var indexInScreen:Dynamic;
 
-	public var game:Dynamic;
+	public var game:BambaMain;
 
 	public var line:Dynamic;
 
@@ -120,25 +122,25 @@ class BambaItem {
 		if (mc == null) {
 			switch (iType) {
 				case 1:
-					mc = BambaAssets.hatMC;
+					mc = new HatMC();
 				case 2:
-					mc = BambaAssets.capeMC;
+					mc = new CapeMC();
 				case 3:
-					mc = BambaAssets.beltMC;
+					mc = new BeltMC();
 				case 4:
-					mc = BambaAssets.shoesMC;
+					mc = new ShoesMC();
 				case 5:
-					mc = BambaAssets.stickMC;
+					mc = new StickMC();
 				case 6:
-					mc = BambaAssets.hairMC;
+					mc = new HairMC();
 				case 7:
-					mc = BambaAssets.eyesMC;
+					mc = new EyesMC();
 				case 8:
-					mc = BambaAssets.daiperMC;
+					mc = new DaiperMC();
 			}
 			mc.gotoAndStop(graphicsName);
-			frameMC = BambaAssets.itemFrame;
-			mc.itemId = id;
+			frameMC = new ItemFrame();
+			mc.name = Std.string(id);
 			mc.addChild(frameMC);
 			mc.setChildIndex(frameMC, 0);
 			popupMC = BambaAssets.itemPopup();
@@ -175,13 +177,13 @@ class BambaItem {
 		}
 	}
 
-	public function addCharecterBuildClickEvent(param1:Dynamic, param2:Dynamic, param3:Dynamic):Void {
+	public function addCharecterBuildClickEvent(screen:Dynamic, line:Int, tabIndex:Int):Void {
 		mc.addEventListener(MouseEvent.CLICK, charecterBuildClicked);
 		mc.buttonMode = true;
 		mc.tabEnabled = false;
-		screen = param1;
-		indexInScreen = param3;
-		line = param2;
+		this.screen = screen;
+		indexInScreen = tabIndex;
+		this.line = line;
 		frameMC.gotoAndStop("reg");
 	}
 
@@ -194,11 +196,11 @@ class BambaItem {
 		if (minLevel <= screen.game.gameData.playerData.level) {
 			frameMC.gotoAndStop("reg");
 			frameMC.backMC.gotoAndStop(2);
-			mc.disabled = false;
+			mc.mouseEnabled = false;
 		} else {
 			frameMC.gotoAndStop("disable");
 			frameMC.backMC.gotoAndStop(2);
-			mc.disabled = true;
+			mc.mouseEnabled = true;
 		}
 		mc.addEventListener(MouseEvent.ROLL_OVER, itemStoreRolledOver);
 		mc.addEventListener(MouseEvent.ROLL_OUT, itemRolledOut);
@@ -242,7 +244,8 @@ class BambaItem {
 		_loc3_ = game.gameData.playerData.itemsInUse[iType - 1];
 		var iter = Reflect.field(this, param2);
 		if (_loc3_ > 0) {
-			_loc4_ = game.gameData.getCatalogItem(_loc3_)[param2];
+			// TODO: FIX this
+			//_loc4_ = game.gameData.getCatalogItem(_loc3_)[param2];
 		} else {
 			_loc4_ = 0;
 		}
@@ -292,10 +295,10 @@ class BambaItem {
 		indexInScreen = param2;
 		if (minLevel <= screen.game.gameData.playerData.level) {
 			frameMC.gotoAndStop("reg");
-			mc.disabled = false;
+			mc.mouseEnabled = false;
 		} else {
 			frameMC.gotoAndStop("disable");
-			mc.disabled = true;
+			mc.mouseEnabled = true;
 		}
 		mc.addEventListener(MouseEvent.ROLL_OVER, itemRolledOver);
 		mc.addEventListener(MouseEvent.ROLL_OUT, itemRolledOut);

@@ -1,5 +1,6 @@
 package;
 
+import items.ItemFrame;
 import new_player.CharacterBuildScreen;
 import haxe.Timer;
 import openfl.display.DisplayObject;
@@ -455,48 +456,59 @@ class BambaCharacterBuildScreen extends DisplayObject {
 	}
 
 	function setTabData():Void {
-		var _loc1_:Null<Dynamic> = null;
-		var _loc2_:Null<Dynamic> = null;
-		var _loc3_:Null<Dynamic> = null;
-		var _loc4_:Null<Dynamic> = null;
-		var _loc5_:Null<Dynamic> = null;
+		final ITEM_X_LOCATION = 350;
+		//var _loc1_:Null<Dynamic> = null;
+		//var _loc2_:Null<Dynamic> = null;
+		//var _loc3_:Null<Dynamic> = null;
+		//var _loc4_:Null<Dynamic> = null;
+		//var _loc5_:Null<Dynamic> = null;
 		var _loc6_:Null<Dynamic> = null;
-		var _loc7_:Null<Dynamic> = null;
-		var _loc8_:BambaItem = null;
-		_loc1_ = game.gameData.dictionary.CH_B_FIRST_LINE.split(",")[currTabIndex];
-		_loc2_ = game.gameData.dictionary.CH_B_SECOND_LINE.split(",")[currTabIndex];
-		Heb.setText(mc.customMC.CH_B_FIRST_LINE, _loc1_);
-		Heb.setText(mc.customMC.CH_B_SECOND_LINE, _loc2_);
-		_loc3_ = game.gameData.characterCustomDefs[currTabIndex][0];
+		//var _loc7_:Null<Dynamic> = null;
+		var _item:Null<BambaItem> = null;
+		var _chBFirstLine = game.gameData.dictionary.CH_B_FIRST_LINE.split(",")[currTabIndex];
+		var _chBSecondLine = game.gameData.dictionary.CH_B_SECOND_LINE.split(",")[currTabIndex];
+		Heb.setText(mc.customMC.CH_B_FIRST_LINE, _chBFirstLine);
+		Heb.setText(mc.customMC.CH_B_SECOND_LINE, _chBSecondLine);
+		var _currentCustomDef:Array<Dynamic> = game.gameData.characterCustomDefs[currTabIndex][0];
 		while (mc.customMC.firstLineMC.numChildren > 0) {
 			mc.customMC.firstLineMC.removeChildAt(0);
 		}
-		_loc4_ = 0;
-		_loc5_ = 340;
+		var _tabIndex:Int = 0;
 		if (currTabType == 2) {
-			_loc7_ = BambaAssets.itemFrame;
-			mc.customMC.firstLineMC.addChild(_loc7_);
-			_loc7_.x = _loc5_;
-			_loc7_.addEventListener(MouseEvent.CLICK, emptyFrameClicked);
-			_loc7_.buttonMode = true;
-			_loc7_.tabEnabled = false;
-			_loc7_.gotoAndStop("empty-pick");
-			_loc4_++;
+			var _itemFrame = new ItemFrame();
+			mc.customMC.firstLineMC.addChild(_itemFrame);
+			_itemFrame.x = ITEM_X_LOCATION;
+			_itemFrame.addEventListener(MouseEvent.CLICK, emptyFrameClicked);
+			_itemFrame.buttonMode = true;
+			_itemFrame.tabEnabled = false;
+			_itemFrame.gotoAndStop("empty-pick");
+			_tabIndex++;
 		}
 		_loc6_ = 0;
-		while (_loc6_ < _loc3_.length) {
+		for (i in 0..._currentCustomDef.length) {
+			_item = new BambaItem(game.gameData.getCatalogItem(_currentCustomDef[i]).data);
+			_item.init(game);
+			if (_item != null) {
+				_item.generateMC();
+				mc.customMC.firstLineMC.addChild(_item.mc);
+				_item.mc.x = ITEM_X_LOCATION - _tabIndex * 85;
+				_item.addCharecterBuildClickEvent(this, 1, _tabIndex);
+				_tabIndex++;
+			}
+		}
+		/* while (_loc6_ < _loc3_.length) {
 			_loc8_ = new BambaItem(game.gameData.getCatalogItem(_loc3_[_loc6_]).data);
 			_loc8_.init(game);
 			if (_loc8_ != null) {
 				_loc8_.generateMC();
 				mc.customMC.firstLineMC.addChild(_loc8_.mc);
-				_loc8_.mc.x = _loc5_ - _loc4_ * 85;
+				_loc8_.mc.x = ITEM_X_LOCATION - _loc4_ * 85;
 				_loc8_.addCharecterBuildClickEvent(this, 1, _loc4_);
 				_loc4_++;
 			}
 			_loc6_++;
-		}
-		itemClicked(_loc8_.id, 1, line1Picks[currTabIndex]);
+		} */
+		itemClicked(_item.id, 1, line1Picks[currTabIndex]);
 		if (currTabType == 2) {
 			if (line1Picks[currTabIndex] == 0) {
 				emptyFramePicked();
