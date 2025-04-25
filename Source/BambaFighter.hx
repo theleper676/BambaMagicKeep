@@ -1,5 +1,7 @@
 package;
 
+import baby.BabyMain;
+import baby.BabyMain;
 import haxe.Timer;
 import openfl.display.*;
 import motion.Actuate;
@@ -63,7 +65,7 @@ class BambaFighter extends DisplayObject {
    var animIntervalTimer:Timer;
 	//var animInterval:Float;
 
-	public var ponGraphics:Dynamic;
+	public var ponGraphics:BabyMain;
 
 	public function new(param1:BambaFight, param2:Dynamic) {
 		var _loc3_:Null<Dynamic> = null;
@@ -75,7 +77,7 @@ class BambaFighter extends DisplayObject {
 		fight.MC.cardPickMC.smallBoardMC.addChild(iconGraphics);
 		hitPointsGraphics = BambaAssets.hitPoints();
 		if (isMe) {
-			ponGraphics = BambaAssets.babyMain();
+			ponGraphics = new BabyMain();
 			attacksGraphics = BambaAssets.babyAttacks();
 			fight.MC.boardMC.addChild(ponGraphics);
 			fight.MC.boardMC.addChild(attacksGraphics);
@@ -108,7 +110,7 @@ class BambaFighter extends DisplayObject {
 		yPos = param2;
 		dir = param3;
 		ponGraphics.x = Std.parseFloat(fight.game.gameData.fightBoardXY[yPos][xPos][0]) - dir * fight.game.gameData.fightXoffset[yPos];
-		ponGraphics.y = fight.game.gameData.fightBoardXY[yPos][xPos][1];
+		ponGraphics.y = Std.parseFloat(fight.game.gameData.fightBoardXY[yPos][xPos][1]);
 		ponGraphics.scaleX = fight.game.gameData.fightZsize[yPos] * dir;
 		ponGraphics.scaleY =fight.game.gameData.fightZsize[yPos];
 		updateAttacksGraphics();

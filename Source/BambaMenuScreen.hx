@@ -1,5 +1,6 @@
 package;
 
+import baby.BabyMain;
 import menu.MenuScreen;
 import haxe.Timer;
 import openfl.display.*;
@@ -11,7 +12,7 @@ import general.MsgBox;
 
 class BambaMenuScreen extends Sprite {
    var clickContIntervalTimer: Timer = null;
-	var babyGraphics:MovieClip;
+	var babyGraphics:BabyMain;
 
 	public var mc:MenuScreen;
 
@@ -21,7 +22,7 @@ class BambaMenuScreen extends Sprite {
 		super();
 		game = mainGame;
 		mc = new MenuScreen();
-		babyGraphics = BambaAssets.babyMain;
+		babyGraphics = new BabyMain();
 		babyGraphics.stop();
 		mc.babyMC.addChild(babyGraphics);
 		babyGraphics.scaleX = 1.8;

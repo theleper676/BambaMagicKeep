@@ -28,7 +28,7 @@ class BambaItem {
 
 	public var addLife:Float;
 
-	public var popupMC:Dynamic;
+	public var popupMC:ItemPopup;
 
 	public var frameMC:ItemFrame;
 
@@ -143,7 +143,7 @@ class BambaItem {
 			mc.name = Std.string(id);
 			mc.addChild(frameMC);
 			mc.setChildIndex(frameMC, 0);
-			popupMC = BambaAssets.itemPopup();
+			popupMC = new ItemPopup();
 		}
 	}
 
@@ -214,7 +214,7 @@ class BambaItem {
 				popupMC.priceDT.text = "";
 			} else {
 				Heb.setText(popupMC.PRICE, game.gameData.dictionary.PRICE_SELL + ":");
-				popupMC.priceDT.text = sellPrice;
+				popupMC.priceDT.text = Std.string(sellPrice);
 			}
 			popupMC.x = screen.mc.itemsSP.x + mc.x + frameMC.width;
 			popupMC.y = screen.mc.itemsSP.y + mc.y + frameMC.height / 2 - screen.mc.itemsSP.verticalScrollPosition;
@@ -276,7 +276,7 @@ class BambaItem {
 		setColorAndText(popupMC.lifeDT, "addLife");
 		setColorAndText(popupMC.magicDT, "addMagic");
 		setColorAndText(popupMC.regenerationDT, "addRoundRegeneration");
-		popupMC.minLevelDT.text = minLevel;
+		popupMC.minLevelDT.text = Std.string(minLevel);
 		if (minLevel > game.gameData.playerData.level) {
 			_loc1_ = new TextFormat();
 			_loc1_.color = 0xF35454;
@@ -322,7 +322,7 @@ class BambaItem {
 		if (!game.msgShown) {
 			setBasicPopupText();
 			Heb.setText(popupMC.PRICE, game.gameData.dictionary.PRICE + ":");
-			popupMC.priceDT.text = buyPrice;
+			popupMC.priceDT.text = Std.string(buyPrice);
 			popupMC.x = screen.mc.storeItemsSP.x + mc.x + frameMC.width;
 			popupMC.y = screen.mc.storeItemsSP.y + mc.y + frameMC.height / 2 - screen.mc.storeItemsSP.verticalScrollPosition;
 			screen.mc.addChild(popupMC);

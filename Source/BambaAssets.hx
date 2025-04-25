@@ -1,6 +1,8 @@
 package;
 
 
+import baby.BabyMain;
+import items.ItemPopup;
 import items.ItemFrame;
 import items.HairMC;
 import items.BeltMC;
@@ -77,7 +79,7 @@ class BambaAssets {
 
 	public static var hitPoints:Dynamic;
 
-	public static var itemPopup:Dynamic;
+	public static var itemPopup:ItemPopup;
 
 	public static var daiperMC:DaiperMC;
 
@@ -121,7 +123,7 @@ class BambaAssets {
 
 	public static var storeScreen:Dynamic;
 
-	public static var babyMain:Dynamic;
+	public static var babyMain:BabyMain;
 
 	public static var menuScreen:MenuScreen;
 
@@ -321,8 +323,8 @@ class BambaAssets {
 		//hitMatrix = cast(param1, Dynamic);
 	}
 
-	function define_babyMain(param1:Dynamic):Void  {
-		babyMain= param1;
+	function define_babyMain():Void  {
+		babyMain= new BabyMain();
 		//babyMain = cast(param1, Dynamic);
 	}
 
@@ -381,8 +383,8 @@ class BambaAssets {
 		// winBox = cast(param1, Dynamic);
 	}
 
-	function define_itemPopup(param1:Dynamic):Void  {
-		itemPopup = param1;
+	function define_itemPopup():Void  {
+		itemPopup = new ItemPopup();
 		// itemPopup = cast(param1, Dynamic);
 	}
 

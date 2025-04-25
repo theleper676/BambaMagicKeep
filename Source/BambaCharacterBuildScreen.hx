@@ -1,5 +1,6 @@
 package;
 
+import baby.BabyMain;
 import items.ItemFrame;
 import new_player.CharacterBuildScreen;
 import haxe.Timer;
@@ -13,7 +14,7 @@ import general.Heb;
 import general.MsgBox;
 
 class BambaCharacterBuildScreen extends DisplayObject {
-	var babyGraphics:MovieClip;
+	var babyGraphics:BabyMain;
 
 	var line2Picks:Array<Dynamic>;
 
@@ -49,7 +50,7 @@ class BambaCharacterBuildScreen extends DisplayObject {
 		mc = new CharacterBuildScreen();
 		mc.stop();
 		game.gameData.playerData.resetPlayerData();
-		babyGraphics = BambaAssets.babyMain();
+		babyGraphics = new BabyMain();
 		mc.babyMC.addChild(babyGraphics);
 		babyGraphics.scaleX = 1.8;
 		babyGraphics.scaleY = 1.8;
