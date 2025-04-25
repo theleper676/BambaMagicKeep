@@ -1,6 +1,6 @@
 package;
 
-import cards.CardBase;
+import cards.*;
 import flash.display.*;
 import flash.events.MouseEvent;
 import flash.geom.ColorTransform;
@@ -55,11 +55,11 @@ class BambaCard {
 
 	public var upgradeLevel:String;
 
-	public var fixedLocation:Array<Dynamic>;
+	public var fixedLocation:Array<Int>;
 
 	public var cost:Float;
 
-	public var popupMC:Dynamic;
+	public var popupMC:CardPopup;
 
 	public var minLevel:Float;
 
@@ -77,7 +77,7 @@ class BambaCard {
 
 	public var animDelay:Float;
 
-	public var screen:Dynamic;
+	public var screen:BambaUpgradeSystem;
 
 	public var orgX:Float;
 
@@ -148,8 +148,8 @@ class BambaCard {
 		minLevel = param1.minLevel; */
 	}
 
-	public function setCardforUpgrade(param1:BambaUpgradeSystem):Void {
-		screen = param1;
+	public function setCardforUpgrade(upgradeScreen:BambaUpgradeSystem):Void {
+		screen = upgradeScreen;
 		mc.addEventListener(MouseEvent.CLICK, cardUpgradeClick);
 		mc.buttonMode = true;
 		mc.tabEnabled = false;
@@ -161,6 +161,8 @@ class BambaCard {
 		mc.addEventListener(MouseEvent.ROLL_OUT, cardRolledOut);
 	}
 
+
+
 	function cardUpgradeClick(param1:MouseEvent):Void {
 		if (!game.msgShown) {
 			screen.cardRollOver(id);
@@ -168,8 +170,8 @@ class BambaCard {
 		}
 	}
 
-	public function setCardDir(param1:Int):Void {
-		mc.frontMC.shapeMC.scaleX = -param1;
+	public function setCardDir(direction:Float):Void {
+		mc.frontMC.shapeMC.scaleX = -direction;
 	}
 
 	function cardRolledOut(param1:MouseEvent):Void {
@@ -229,6 +231,41 @@ class BambaCard {
 		screen.mc.addChild(popupMC);
 	}
 
+	public function generateMC(direction:Float = 1):Void {
+		if (mc == null) {
+			mc = new CardBase();
+			Heb.setText(mc.frontMC.nameDT, cName);
+			mc.frontMC.damageDT.text = Std.string(damage);
+			mc.frontMC.costDT.text = Std.string(cost);
+			if (damage == 0 && healAmount > 0) {
+				mc.frontMC.damageDT.text = "-" + healAmount;
+			}
+			var _textFormat = new TextFormat();
+			var _colorTransform = new ColorTransform();
+			var _colors:Array<Int> = game.gameData.dictionary.COLORS.split(",").map(color -> Std.parseInt(color));
+			_textFormat.color = _colors[color - 1];
+			_colorTransform.color = _colors[color - 1];
+			mc.frontMC.nameDT.setTextFormat(_textFormat);
+			mc.frontMC.damageDT.setTextFormat(_textFormat);
+			mc.frontMC.costDT.setTextFormat(_textFormat);
+			mc.frontMC.picMC.gotoAndStop(graphicsName);
+			if (upgradeLevel == "") {
+				mc.frontMC.upgradeMC.gotoAndStop(1);
+			} else {
+				mc.frontMC.upgradeMC.gotoAndStop(upgradeLevel);
+			}
+			for (i in 0...attackString.length) {
+				if (attackString.charAt(i) == "1") {
+					var _cubeString = "cube" + Std.string(i + 1);
+					mc.frontMC.shapeMC.getChildByName(_cubeString).transform.colorTransform = _colorTransform;
+				}
+			}
+			setCardDir(direction);
+		}
+		popupMC = new CardPopup();
+	}
+		
+
 	function cardPickMC(param1:Int = 1):Void {
 		var _loc2_:Dynamic = null;
 		var _loc3_:TextFormat = null;
@@ -268,7 +305,7 @@ class BambaCard {
 			}
 			setCardDir(param1);
 		}
-		popupMC = BambaAssets.cardPopup();
+		popupMC = new CardPopup();
 	}
 
 	function pickCard(param1:MouseEvent):Void {

@@ -112,26 +112,25 @@ class BambaUpgradeSystem extends DisplayObject {
 		}
 	}
 
-	function cardRollOver(param1:Dynamic): Void {
-		var _loc2_:Null<Dynamic> = null;
-		var _loc3_:Null<Dynamic> = null;
-		_loc2_ = game.gameData.getCatalogCard(param1);
-		if (_loc2_.upgradeTo != 0) {
+	public function cardRollOver(id:Float): Void {
+		var _currentCard = game.gameData.getCatalogCard(id);
+		if (_currentCard.upgradeTo != 0) {
 			mc.detailsMC.visible = true;
-			_loc3_ = game.gameData.getCatalogCard(_loc2_.upgradeTo);
-			Heb.setText(mc.detailsMC.nameDT, _loc3_.cName);
-			Heb.setText(mc.detailsMC.descDT, _loc2_.upgradeDesc);
-			mc.detailsMC.minLevelDT.text = _loc3_.minLevel;
-			mc.detailsMC.ingredient1DT.text = _loc2_.ingredient1;
-			mc.detailsMC.ingredient2DT.text = _loc2_.ingredient2;
-			mc.detailsMC.ingredient3DT.text = _loc2_.ingredient3;
-			mc.detailsMC.ingredient4DT.text = _loc2_.ingredient4;
+			var _upgradeToCard = game.gameData.getCatalogCard(_currentCard.upgradeTo);
+			Heb.setText(mc.detailsMC.nameDT, _upgradeToCard.cName);
+			Heb.setText(mc.detailsMC.descDT, _currentCard.upgradeDesc);
+			mc.detailsMC.minLevelDT.text = _upgradeToCard.minLevel;
+			mc.detailsMC.ingredient1DT.text = _currentCard.ingredient1;
+			mc.detailsMC.ingredient2DT.text = _currentCard.ingredient2;
+			mc.detailsMC.ingredient3DT.text = _currentCard.ingredient3;
+			mc.detailsMC.ingredient4DT.text = _currentCard.ingredient4;
 			while (mc.detailsMC.newCardMC.numChildren > 0) {
 				mc.detailsMC.newCardMC.removeChildAt(0);
 			}
-			_loc3_.generateMC(-1);
-			_loc3_.mc.gotoAndStop(1);
-			mc.detailsMC.newCardMC.addChild(_loc3_.mc);
+			trace("not generating card mc, needs to fix");
+			_upgradeToCard.generateMC(-1);
+			_upgradeToCard.mc.gotoAndStop(1);
+			mc.detailsMC.newCardMC.addChild(_upgradeToCard.mc);
 		} else {
 			clearDetails();
 		}
@@ -141,7 +140,7 @@ class BambaUpgradeSystem extends DisplayObject {
 		mc.detailsMC.visible = false;
 	}
 
-	function cardClicked(param1:Dynamic):Void {
+	public function cardClicked(param1:Dynamic):Void {
 		var _loc2_:Null<Dynamic> = null;
 		_loc2_ = 0;
 		while (_loc2_ < cardsArray.length) {

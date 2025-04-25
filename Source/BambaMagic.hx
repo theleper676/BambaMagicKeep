@@ -5,7 +5,7 @@ import openfl.display.*;
 import openfl.events.MouseEvent;
 import openfl.geom.ColorTransform;
 import general.Heb;
-
+import cards.MagicBase;
 typedef Magic = {
 	id:Float,
 	name:String,
@@ -32,7 +32,7 @@ class BambaMagic  {
 
 	public var magicAnimName:String;
 
-	public var mc:Dynamic;
+	public var mc:MagicBase;
 
 	public var mName:String;
 
@@ -157,20 +157,19 @@ class BambaMagic  {
 	}
 
 	function generateMC():Void {
-		var _loc1_:BambaCard;
 		var _loc2_:ColorTransform;
 		var _loc3_:Dynamic;
 		var _loc4_:Int;
 		var _loc5_:String;
 		if (mc == null) {
-			mc = BambaAssets.magicBase();
+			mc = new MagicBase();
 			Heb.setText(mc.textMC.nameDT, mName);
 			Heb.setText(mc.textMC.descDT, mDesc);
-			mc.textMC.priceDT.text = cost;
-			mc.textMC.minLevelDT.text = minLevel;
-			_loc1_ = magicBookScreen.game.gameData.getCatalogCard(firstCard);
-			mc.textMC.magicDT.text = _loc1_.cost;
-			mc.textMC.damageDT.text = _loc1_.damage;
+			mc.textMC.priceDT.text = Std.string(cost);
+			mc.textMC.minLevelDT.text = Std.string(minLevel);
+			var _currentCard = magicBookScreen.game.gameData.getCatalogCard(firstCard);
+			mc.textMC.magicDT.text = Std.string(_currentCard.cost);
+			mc.textMC.damageDT.text = Std.string(_currentCard.damage);
 			if (graphicsName != "") {
 				mc.picMC.gotoAndStop(graphicsName);
 			} else {
@@ -180,8 +179,8 @@ class BambaMagic  {
 			_loc3_ = magicBookScreen.game.gameData.dictionary.COLORS.split(",");
 			_loc2_.color = _loc3_[color - 1];
 			_loc4_ = 0;
-			while (_loc4_ < _loc1_.attackString.length) {
-				if (_loc1_.attackString.charAt(_loc4_) == "1") {
+			while (_loc4_ < _currentCard.attackString.length) {
+				if (_currentCard.attackString.charAt(_loc4_) == "1") {
 					_loc5_ = "cube" + Std.string(_loc4_ + 1);
 					var shapeMc:MovieClip = Reflect.getProperty(mc, _loc5_);
 					shapeMc.transform.colorTransform = _loc2_;

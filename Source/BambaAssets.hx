@@ -2,7 +2,9 @@ package;
 
 
 import cards.CardBase;
+import cards.MagicBase;
 import menu.MenuScreen;
+import cards.CardPopup;
 import new_player.CharacterBuildScreen;
 import new_player.NewPlayerScreen;
 import general_assets.QuestBox;
@@ -42,7 +44,7 @@ class BambaAssets {
 
 	public static var itemFrame:MovieClip;
 
-	public static var magicBase:Dynamic;
+	public static var magicBase:MagicBase;
 
 	public static var help10:Dynamic;
 
@@ -82,7 +84,7 @@ class BambaAssets {
 
 	public static var questIcon:QuestIcon;
 
-	public static var cardPopup:Dynamic;
+	public static var cardPopup:CardPopup;
 
 	public static var shoesMC:Dynamic;
 
@@ -240,8 +242,8 @@ class BambaAssets {
 		//fightScreen = cast(param1, Dynamic);
 	}
 
-	function define_magicBase(param1:Dynamic):Void  {
-		magicBase = param1;
+	function define_magicBase():Void  {
+		magicBase = new MagicBase();
 		//magicBase = cast(param1, BambaItem);
 	}
 
@@ -452,8 +454,8 @@ class BambaAssets {
 		//questIcon = cast(param1, MovieClip);
 	}
 
-	function define_cardPopup(param1:Dynamic):Void  {
-		cardPopup = param1;
+	function define_cardPopup():Void  {
+		cardPopup = new CardPopup();
 		// cardPopup = cast(param1, MovieClip);
 	}
 
