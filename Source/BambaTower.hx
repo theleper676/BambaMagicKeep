@@ -1,5 +1,6 @@
 package;
 
+import tower_screens.TowerScreen;
 import openfl.display.*;
 import openfl.events.Event;
 import openfl.events.MouseEvent;
@@ -16,7 +17,7 @@ class BambaTower extends Sprite {
 
 	var layer2movment:Dynamic = 4.8;
 
-	public var mc:Dynamic;
+	public var mc:TowerScreen;
 
 	var layer4movment:Dynamic = 3.5;
 
@@ -39,7 +40,7 @@ class BambaTower extends Sprite {
 		layer4movment = 3.5;
 		super();
 		game = mainGame;
-		mc = BambaAssets.towerScreen();
+		mc = new TowerScreen();
 		mc.rightArrowMC.gotoAndStop(1);
 		mc.leftArrowMC.gotoAndStop(1);
 		ButtonUpdater.setButton(mc.exitMC, exitClicked);

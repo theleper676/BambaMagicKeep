@@ -1,6 +1,7 @@
 package;
 
 
+import tower_screens.*;
 import dungeon_graphics.*;
 import fight_graphics.*;
 import baby.*;
@@ -55,7 +56,7 @@ class BambaAssets {
 
 	public static var hitMatrix:HitMatrix;
 
-	public static var magicBookScreen:Dynamic;
+	public static var magicBookScreen:MagicBookScreen;
 
 	public static var hitAnim:HitAnim;
 
@@ -115,9 +116,9 @@ class BambaAssets {
 
 	public static var menuScreen:MenuScreen;
 
-	public static var questManagerScreen:Dynamic;
+	public static var questManagerScreen:QuestManagerScreen;
 
-	public static var towerScreen:Dynamic;
+	public static var towerScreen:TowerScreen;
 
 	public static var fighterIcon:FighterIcon;
 
@@ -326,8 +327,8 @@ class BambaAssets {
 		// fightBack = cast(param1, Dynamic);
 	}
 
-	function define_questManagerScreen(param1:Dynamic):Void  {
-		questManagerScreen = param1;
+	function define_questManagerScreen():Void  {
+		questManagerScreen = new QuestManagerScreen();
 		//questManagerScreen = cast(param1, Dynamic);
 	}
 
@@ -336,8 +337,8 @@ class BambaAssets {
 		//help10 = cast(param1, Dynamic);
 	}
 
-	function define_magicBookScreen(param1:Dynamic):Void  {
-		magicBookScreen = param1;
+	function define_magicBookScreen():Void  {
+		magicBookScreen = new MagicBookScreen();
 		//magicBookScreen = cast(param1, Dynamic);
 	}
 
@@ -356,8 +357,8 @@ class BambaAssets {
 		//dungeonIcon = cast(param1, Dynamic);
 	}
 
-	function define_towerScreen(param1:Dynamic):Void  {
-		towerScreen = param1;
+	function define_towerScreen():Void  {
+		towerScreen = new TowerScreen();
 		// towerScreen = cast(param1, Dynamic);
 	}
 

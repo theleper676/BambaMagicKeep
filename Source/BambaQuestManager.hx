@@ -1,5 +1,6 @@
 package;
 
+import tower_screens.QuestManagerScreen;
 import general_assets.QuestIcon;
 import general_assets.QuestBox;
 import motion.Actuate;
@@ -17,7 +18,7 @@ class BambaQuestManager extends EventDispatcher {
 
 	public var currQuestId:Float;
 
-	public var mc:Dynamic;
+	public var mc:QuestManagerScreen;
 
 	public var currSpecialEnemy:Bool;
 
@@ -56,9 +57,9 @@ class BambaQuestManager extends EventDispatcher {
 	public function new(mainGame:BambaMain) {
 		super();
 		game = mainGame;
-		mc = BambaAssets.questManagerScreen();
-		mc.orgWidth = mc.width;
-		mc.orgHeight = mc.height;
+		mc = new QuestManagerScreen();
+		//mc.orgWidth = mc.width;
+		//mc.orgHeight = mc.height;
 		mc.questMC.visible = false;
 		ButtonUpdater.setButton(mc.findQuestMC, generateNewQuestClicked);
 		ButtonUpdater.setButton(mc.goQuestMC, goQuestClicked);

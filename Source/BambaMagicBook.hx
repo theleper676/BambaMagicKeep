@@ -1,5 +1,6 @@
 package;
 
+import tower_screens.MagicBookScreen;
 import openfl.display.DisplayObject;
 import opefl.display.*;
 import openfl.events.MouseEvent;
@@ -8,20 +9,18 @@ import general.MsgBox;
 import general.PlayerDataUpdater;
 
 class BambaMagicBook extends DisplayObject {
-	var magicBookArray:Array<Dynamic>;
+	var magicBookArray:Array<BambaMagic>;
 
 	var game:BambaMain;
 
 	var currMagicId:Float;
 
-	public var mc:Dynamic;
+	public var mc:MagicBookScreen;
 
 	public function new(mainGame:BambaMain) {
 		super();
 		game = mainGame;
-		mc = BambaAssets.magicBookScreen();
-		mc.orgWidth = mc.width;
-		mc.orgHeight = mc.height;
+		mc = new MagicBookScreen();
 		ButtonUpdater.setButton(mc.buyMC, buyClicked);
 		ButtonUpdater.setButton(mc.exitMC, exitClicked);
 		currMagicId = 0;
@@ -99,8 +98,16 @@ class BambaMagicBook extends DisplayObject {
 		}
 	}
 
-	function magicClicked(param1:Dynamic):Void {
-		var _loc2_:Dynamic = null;
+	function magicClicked(magicId:Int):Void {
+		for (i in 0...magicBookArray.length) {
+			magicBookArray[i].isPicked = false;
+			if (magicBookArray[i].id == magicId) {
+				magicBookArray[i].isPicked = true;
+				currMagicId = magicId;
+			}
+			magicBookArray[i].setGraphics();
+		}
+		/* var _loc2_:Dynamic = null;
 		_loc2_ = 0;
 		while (_loc2_ < magicBookArray.length) {
 			magicBookArray[_loc2_].isPicked = false;
@@ -110,6 +117,6 @@ class BambaMagicBook extends DisplayObject {
 			}
 			magicBookArray[_loc2_].setGraphics();
 			_loc2_++;
-		}
+		} */
 	}
 }

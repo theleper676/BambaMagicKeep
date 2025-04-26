@@ -1,0 +1,19 @@
+package containers;
+
+import openfl.display.MovieClip;
+
+@:access(swf.exporters.animate)
+
+class ScrollPane extends MovieClip
+{
+	
+
+	public function new()
+	{
+		var library = swf.exporters.animate.AnimateLibrary.get("40YIf0lE7lVtVgPBVcJt");
+		var symbol = library.symbols.get(421);
+		symbol.__init(library);
+
+		super();
+	}
+}

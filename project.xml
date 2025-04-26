@@ -17,6 +17,7 @@
 	<assets path="assets/openingAssets/openingAssets.zip" preload="true" id="openingAssets"/> 
 	<assets path="assets/game_assets/general.zip" generate="true" id="general.swf"/>
 	<assets path="assets/game_assets/newPlayer.zip" generate="true" id="newPlayer.swf"/>
+	<assets path="assets/game_assets/towerScreens_mod.zip" generate="true" id="towerScreens.swf"/>
 	<assets path="assets/game_assets/menu.zip" generate="true" id="menu.swf"/>
 	<assets path="assets/game_assets/cards.zip" generate="true" id="cards.swf"/>
 	<assets path="assets/game_assets/items.zip" generate="true" id="items.swf"/>
