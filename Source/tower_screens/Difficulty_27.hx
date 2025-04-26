@@ -1,4 +1,4 @@
-package tower_screen;
+package tower_screens;
 
 @:access(swf.exporters.animate)
 

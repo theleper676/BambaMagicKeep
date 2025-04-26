@@ -1,5 +1,6 @@
 package;
 
+import tower_screens.CardsUpgradeScreen;
 import openfl.display.*;
 import openfl.events.MouseEvent;
 import general.ButtonUpdater;
@@ -12,16 +13,16 @@ class BambaUpgradeSystem extends DisplayObject {
 
 	var game:BambaMain;
 
-	public var mc:Dynamic;
+	public var mc:CardsUpgradeScreen;
 
 	var currCardId:Float;
 
 	public function new(mainGame:BambaMain) {
 		super();
 		game = mainGame;
-		mc = BambaAssets.cardsUpgradeScreen;
-		mc.orgWidth = mc.width;
-		mc.orgHeight = mc.height;
+		mc = new CardsUpgradeScreen();
+		//mc.orgWidth = mc.width;
+		//mc.orgHeight = mc.height;
 		ButtonUpdater.setButton(mc.upgradeMC, upgradeClicked);
 		ButtonUpdater.setButton(mc.exitMC, exitClicked);
 		cardsArray = [];
@@ -35,7 +36,7 @@ class BambaUpgradeSystem extends DisplayObject {
 		var _loc4_:Null<Dynamic> = null;
 		var _loc5_:Null<Dynamic> = null;
 		currCardId = 0;
-		cardsArray = [];
+		//cardsArray = [];
 		_loc3_ = game.gameData.playerData.cards;
 		_loc4_ = true;
 		while (mc.cardsMC.numChildren > 0) {
@@ -119,11 +120,11 @@ class BambaUpgradeSystem extends DisplayObject {
 			var _upgradeToCard = game.gameData.getCatalogCard(_currentCard.upgradeTo);
 			Heb.setText(mc.detailsMC.nameDT, _upgradeToCard.cName);
 			Heb.setText(mc.detailsMC.descDT, _currentCard.upgradeDesc);
-			mc.detailsMC.minLevelDT.text = _upgradeToCard.minLevel;
-			mc.detailsMC.ingredient1DT.text = _currentCard.ingredient1;
-			mc.detailsMC.ingredient2DT.text = _currentCard.ingredient2;
-			mc.detailsMC.ingredient3DT.text = _currentCard.ingredient3;
-			mc.detailsMC.ingredient4DT.text = _currentCard.ingredient4;
+			mc.detailsMC.minLevelDT.text = Std.string(_upgradeToCard.minLevel);
+			mc.detailsMC.ingredient1DT.text = Std.string(_currentCard.ingredient1);
+			mc.detailsMC.ingredient2DT.text = Std.string(_currentCard.ingredient2);
+			mc.detailsMC.ingredient3DT.text = Std.string(_currentCard.ingredient3);
+			mc.detailsMC.ingredient4DT.text = Std.string(_currentCard.ingredient4);
 			while (mc.detailsMC.newCardMC.numChildren > 0) {
 				mc.detailsMC.newCardMC.removeChildAt(0);
 			}

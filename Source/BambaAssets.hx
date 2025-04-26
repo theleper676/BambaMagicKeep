@@ -20,7 +20,7 @@ class BambaAssets {
 
 	public static var mapIcon:Dynamic;
 
-	public static var cardsUpgradeScreen:Dynamic;
+	public static var cardsUpgradeScreen:CardsUpgradeScreen;
 
 	public static var help06:Dynamic;
 
@@ -110,7 +110,7 @@ class BambaAssets {
 
 	public static var prizeIcon:PrizeIcon;
 
-	public static var storeScreen:Dynamic;
+	public static var storeScreen:StoreScreen;
 
 	public static var babyMain:BabyMain;
 
@@ -171,8 +171,8 @@ class BambaAssets {
 		//help03 = cast(param1, Dynamic);
 	}
 
-	function define_cardsUpgradeScreen(param1:Dynamic):Void  {
-		cardsUpgradeScreen = param1;
+	function define_cardsUpgradeScreen():Void  {
+		cardsUpgradeScreen = new CardsUpgradeScreen();
 		//cardsUpgradeScreen = cast(param1, Dynamic);
 	}
 
@@ -282,8 +282,8 @@ class BambaAssets {
 		//prizeIcon = cast(param1, Dynamic);
 	}
 
-	function define_storeScreen(param1:Dynamic):Void  {
-		storeScreen = param1;
+	function define_storeScreen():Void  {
+		storeScreen = new StoreScreen();
 		//storeScreen = cast(param1, Dynamic);
 	}
 

@@ -1,5 +1,7 @@
 package;
 
+import utils.DisplayClipComponent;
+import tower_screens.StoreScreen;
 import openfl.display.*;
 import openfl.events.MouseEvent;
 import general.ButtonUpdater;
@@ -13,7 +15,7 @@ class BambaStore extends DisplayObject {
 
 	public var currStoreItemPickIndex:Float;
 
-	public var mc:Dynamic;
+	public var mc:StoreScreen;
 
 	public var currItemPickId:Float;
 
@@ -22,20 +24,20 @@ class BambaStore extends DisplayObject {
 	public var currStoreItemPickId:Float;
 
 	public function new(mainGame:BambaMain) {
-		var _loc2_:MovieClip = null;
+		//var _loc2_:MovieClip = null;
 		super();
 		game = mainGame;
-		mc = BambaAssets.storeScreen();
-		mc.orgWidth = mc.width;
-		mc.orgHeight = mc.height;
+		mc = new StoreScreen();
+		//mc.orgWidth = mc.width;
+		//mc.orgHeight = mc.height;
 		screenType = 2;
 		ButtonUpdater.setButton(mc.exitMC, closeWin);
 		ButtonUpdater.setButton(mc.putOnMC, putOnItem);
 		ButtonUpdater.setButton(mc.sellMC, sellItemClicked);
 		ButtonUpdater.setButton(mc.buyMC, buyItemClicked);
-		_loc2_ = new MovieClip();
-		mc.itemsSP.setStyle("upSkin", _loc2_);
-		mc.storeItemsSP.setStyle("upSkin", _loc2_);
+		//_loc2_ = new MovieClip();
+		//mc.itemsSP.setStyle("upSkin", _loc2_);
+		//mc.storeItemsSP.setStyle("upSkin", _loc2_);
 		update();
 	}
 
@@ -125,16 +127,26 @@ class BambaStore extends DisplayObject {
 		_loc4_ = game.gameData.getCatalogItem(param1);
 		_loc3_ = 0;
 		while (_loc3_ < mc.itemsMC.numChildren) {
-			if (mc.itemsMC.getChildAt(_loc3_).disabled) {
-				mc.itemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("disable");
+			var itemMcChild = mc.itemsMC.getChildAt(_loc3_);
+			var _mc = cast(itemMcChild, MovieClip);
+			var _child  = _mc.getChildAt(0);
+			var _childMC = cast (_child, MovieClip);
+			if (!_mc.mouseEnabled) {
+				//var _child  = _mc.getChildAt(0);
+				//var _childMC = cast (_child, MovieClip);
+				_childMC.gotoAndStop("disable");
+				//mc.itemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("disable");
 			} else {
-				mc.itemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("reg");
+				_childMC.gotoAndStop("reg");
+				//mc.itemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("reg");
 			}
 			if (_loc3_ == currItemPickIndex) {
-				if (mc.itemsMC.getChildAt(_loc3_).disabled) {
-					mc.itemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("disable-pick");
+				if (!_mc.mouseEnabled) {
+					_childMC.gotoAndStop("disable-pick");
+					//mc.itemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("disable-pick");
 				} else {
-					mc.itemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("pick");
+					_childMC.gotoAndStop("pick");
+					//mc.itemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("pick");
 				}
 			}
 			_loc3_++;
@@ -142,10 +154,16 @@ class BambaStore extends DisplayObject {
 		currStoreItemPickId = 0;
 		_loc3_ = 0;
 		while (_loc3_ < mc.storeItemsMC.numChildren) {
-			if (mc.storeItemsMC.getChildAt(_loc3_).disabled) {
-				mc.storeItemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("disable");
+			var _storeitemsMcChild = mc.storeItemsMC.getChildAt(_loc3_);
+			var _mc = cast(_storeitemsMcChild, MovieClip);
+			var _child  = _mc.getChildAt(0);
+			var _childMC = cast (_child, MovieClip);
+			if (!_mc.mouseEnabled) {
+				_childMC.gotoAndStop("disable");
+				//mc.storeItemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("disable");
 			} else {
-				mc.storeItemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("reg");
+				_childMC.gotoAndStop("reg");
+				//mc.storeItemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("reg");
 			}
 			_loc3_++;
 		}
@@ -197,8 +215,12 @@ class BambaStore extends DisplayObject {
 			mc.storeItemsMC.addChild(_loc5_);
 			_loc5_.y = Math.floor(_loc2_ / 4) * 52 + 20;
 		}
-		mc.storeItemsSP.source = mc.storeItemsMC;
-		mc.storeItemsSP.refreshPane();
+		//mc.storeItemsSP.addClass(mc.storeItemsMC);
+		var _current = new DisplayClipComponent(mc.storeItemsMC);
+		mc.storeItemsSP.addComponent(_current);
+		mc.storeItemsSP.invalidateComponentLayout();
+		//mc.storeItemsSP.source = mc.storeItemsMC;
+		//mc.storeItemsSP.refreshPane();
 	}
 
 	public function buyItemClicked(param1:MouseEvent):Void {

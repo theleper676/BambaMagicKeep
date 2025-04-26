@@ -11,7 +11,7 @@ import general.PlayerDataUpdater;
 class BambaMagicBook extends DisplayObject {
 	var magicBookArray:Array<BambaMagic>;
 
-	var game:BambaMain;
+	public var game:BambaMain;
 
 	var currMagicId:Float;
 
@@ -20,6 +20,7 @@ class BambaMagicBook extends DisplayObject {
 	public function new(mainGame:BambaMain) {
 		super();
 		game = mainGame;
+		magicBookArray = [];
 		mc = new MagicBookScreen();
 		ButtonUpdater.setButton(mc.buyMC, buyClicked);
 		ButtonUpdater.setButton(mc.exitMC, exitClicked);
@@ -73,16 +74,29 @@ class BambaMagicBook extends DisplayObject {
 	}
 
 	function setMagicBook():Void {
-		var _loc1_:Dynamic = null;
-		var _loc2_:Dynamic = null;
-		var _loc3_:Dynamic = null;
+		//var _loc1_:Dynamic = null;
+		//var _loc2_:Dynamic = null;
+		//var _loc3_:Dynamic = null;
 		while (mc.magicBookMC.numChildren > 0) {
 			mc.magicBookMC.removeChildAt(0);
 		}
-		magicBookArray = [];
-		_loc1_ = 0;
-		_loc2_ = 0;
-		while (_loc2_ < game.gameData.magicCatalog.length) {
+		//magicBookArray = [];
+		//_loc1_ = 0;
+		//_loc2_ = 0;
+
+		for (i in 0...game.gameData.magicCatalog.length) {
+			var _currentMagic = game.gameData.magicCatalog[i];
+			if (_currentMagic.order == game.gameData.playerData.orderCode || _currentMagic.order == game.gameData.sharedOrder ) {
+				_currentMagic.init(this);
+				_currentMagic.generateMC();
+				mc.magicBookMC.addChild(_currentMagic.mc);
+				_currentMagic.mc.x = 362 - Math.floor(i  / 6) * 362;
+				_currentMagic.mc.y = i % 6 * 77;
+				_currentMagic.setGraphics();
+				magicBookArray.push(_currentMagic);
+			}
+		}
+		/* while (_loc2_ < game.gameData.magicCatalog.length) {
 			_loc3_ = game.gameData.magicCatalog[_loc2_];
 			if (_loc3_.order == game.gameData.playerData.orderCode || _loc3_.order == game.gameData.sharedOrder) {
 				_loc3_.init(this);
@@ -95,10 +109,10 @@ class BambaMagicBook extends DisplayObject {
 				magicBookArray.push(_loc3_);
 			}
 			_loc2_++;
-		}
+		} */
 	}
 
-	function magicClicked(magicId:Int):Void {
+	public function magicClicked(magicId:Int):Void {
 		for (i in 0...magicBookArray.length) {
 			magicBookArray[i].isPicked = false;
 			if (magicBookArray[i].id == magicId) {

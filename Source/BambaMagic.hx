@@ -36,7 +36,7 @@ class BambaMagic  {
 
 	public var mName:String;
 
-	public var id:Float;
+	public var id:Int;
 
 	public var mDesc:String;
 
@@ -46,7 +46,7 @@ class BambaMagic  {
 
 	public var graphicsName:String;
 
-	public var magicBookScreen:Dynamic;
+	public var magicBookScreen:BambaMagicBook;
 
 	public var fixedLocation:Array<Int>;
 
@@ -125,8 +125,8 @@ class BambaMagic  {
 		}
 	}
 
-	function init(param1:Dynamic):Void {
-		magicBookScreen = param1;
+	public function init(screen:BambaMagicBook):Void {
+		magicBookScreen = screen;
 	}
 
 	public function removeClickEvent():Void {
@@ -156,7 +156,7 @@ class BambaMagic  {
 		}
 	}
 
-	function generateMC():Void {
+	public function generateMC():Void {
 		var _loc2_:ColorTransform;
 		var _loc3_:Dynamic;
 		var _loc4_:Int;

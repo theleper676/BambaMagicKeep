@@ -38,7 +38,7 @@ class BambaPlayerData extends EventDispatcher {
 
 	public var orderCode:Int;
 
-	public var cards:Array<Dynamic>;
+	public var cards:Array<BambaCard>;
 
 	public var currentQuestId:Float;
 
@@ -112,7 +112,8 @@ class BambaPlayerData extends EventDispatcher {
 	}
 
 	public function updatePlayerData(param1:Xml):Void {
-		pName = param1.get("name");
+		trace("fix update player Data");
+		/* pName = param1.get("name");
 		orderCode = Std.parseInt(param1.get("orderCode"));
 		level = Std.parseFloat(param1.get("level"));
 		if (param1.exists("cards")) {
@@ -147,7 +148,7 @@ class BambaPlayerData extends EventDispatcher {
 			pastDungeonsIds = param1.get("pastDungeonsIds").split(",");
 		} else {
 			pastDungeonsIds = [];
-		}
+		} */
 	}
 
 	public function addPrizes(param1:Float, param2:Dynamic, param3:Dynamic):Array<Dynamic> {

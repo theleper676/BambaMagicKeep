@@ -1,7 +1,6 @@
 package tower_screens;
 
 import openfl.display.MovieClip;
-
 @:access(swf.exporters.animate)
 
 class StoreScreen extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.display.MovieClip #end
@@ -12,8 +11,8 @@ class StoreScreen extends #if flash flash.display.MovieClip.MovieClip2 #else ope
 	@:keep @:noCompletion @:dox(hide) public var progressMC(default, null):Bars_5;
 	@:keep @:noCompletion @:dox(hide) public var moneyMC(default, null):Money_4;
 	@:keep @:noCompletion @:dox(hide) public var itemsMC(default, null):openfl.display.MovieClip;
-	@:keep @:noCompletion @:dox(hide) public var itemsSP(default, null):MovieClip;
-	@:keep @:noCompletion @:dox(hide) public var storeItemsSP(default, null):MovieClip;
+	@:keep  @:dox(hide) public var itemsSP(default, null): tower_screens.fl.containers.ScrollPane;
+	@:keep  @:dox(hide) public var storeItemsSP(default, null): tower_screens.fl.containers.ScrollPane;
 	@:keep @:noCompletion @:dox(hide) public var exitMC(default, null):ExitButton_19;
 	@:keep @:noCompletion @:dox(hide) public var putOnMC(default, null):Action_btn_arrowed_80;
 	@:keep @:noCompletion @:dox(hide) public var sellMC(default, null):Action_btn_arrowed_miror_84;
