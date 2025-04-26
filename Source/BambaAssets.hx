@@ -132,7 +132,7 @@ class BambaAssets {
 
 	public static var enemyTip:EnemyTip;
 
-	public static var characterScreen:Dynamic;
+	public static var characterScreen:CharacterScreen;
 
 	public static var hairMC:HairMC;
 
@@ -144,8 +144,8 @@ class BambaAssets {
 		game = mainGame;
 	}
 
-	function define_characterScreen(param1:Dynamic):Void {
-		characterScreen = param1;
+	function define_characterScreen():Void {
+		characterScreen = new CharacterScreen();
 		/* if(Std.is(param1, Dynamic))
 			characterScreen = param1;
 		characterScreen = cast(param1, BambaCharacterScreen); */

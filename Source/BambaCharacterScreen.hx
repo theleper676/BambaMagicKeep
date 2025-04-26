@@ -1,5 +1,6 @@
 package;
 
+import tower_screens.CharacterScreen;
 import openfl.display.*;
 import openfl.events.MouseEvent;
 import general.ButtonUpdater;
@@ -10,20 +11,18 @@ class BambaCharacterScreen extends DisplayObject {
 
 	var game:BambaMain;
 
-	public var mc:Dynamic;
+	public var mc:CharacterScreen;
 
 	public function new(mainGame:BambaMain) {
 		super();
 		var _loc2_:MovieClip = null;
 		game = mainGame;
-		mc = BambaAssets.characterScreen;
-		mc.orgWidth = mc.width;
-		mc.orgHeight = mc.height;
+		mc = new CharacterScreen();
 		ButtonUpdater.setButton(mc.exitMC, closeWin);
 		mc.exitMC.buttonMode = true;
 		mc.exitMC.tabEnabled = false;
 		_loc2_ = new MovieClip();
-		mc.itemsSP.setStyle("upSkin", _loc2_);
+		//mc.itemsSP.setStyle("upSkin", _loc2_);
 		screenType = 1;
 		update();
 	}

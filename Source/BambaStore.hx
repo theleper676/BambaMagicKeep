@@ -238,14 +238,22 @@ class BambaStore extends DisplayObject {
 		}
 	}
 
-	public function itemStoreClicked(param1:Dynamic, param2:Dynamic):Void {
-		var _loc3_:Null<Dynamic> = null;
-		var _loc4_:Null<Dynamic> = null;
-		currStoreItemPickId = param1;
-		currStoreItemPickIndex = param2;
-		_loc4_ = game.gameData.getCatalogItem(param1);
-		_loc3_ = 0;
-		while (_loc3_ < mc.storeItemsMC.numChildren) {
+	public function itemStoreClicked(pickId:Float, pickIndex:Float):Void {
+		//var _loc3_:Null<Dynamic> = null;
+		//var _loc4_:Null<Dynamic> = null;
+		currStoreItemPickId = pickId;
+		currStoreItemPickIndex = pickIndex;
+		var _currentCatalogItem = game.gameData.getCatalogItem(pickId);
+		currItemPickId = 0;
+		//_loc3_ = 0;
+		for (i in 0...mc.storeItemsMC.numChildren) {
+			var _currentDisplayContainer = mc.storeItemsMC.getChildAt(i);
+			var _inner = cast (_currentDisplayContainer, MovieClip);
+			var _childDisplayContainer = _inner.getChildAt(0);
+			var _childMC = cast (_childDisplayContainer, MovieClip);
+			!_inner.mouseEnabled ? _childMC.gotoAndStop("disable") : _childMC.gotoAndStop("regular");
+		}
+		/* while (_loc3_ < mc.storeItemsMC.numChildren) {
 			if (mc.storeItemsMC.getChildAt(_loc3_).disabled) {
 				mc.storeItemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("disable");
 			} else {
@@ -259,16 +267,23 @@ class BambaStore extends DisplayObject {
 				}
 			}
 			_loc3_++;
+		} */
+		
+		//_loc3_ = 0;
+		for (i in 0...mc.itemsMC.numChildren) {
+			var _currentDisplayContainer = mc.itemsMC.getChildAt(i);
+			var _inner = cast (_currentDisplayContainer, MovieClip);
+			var _childDisplayContainer = _inner.getChildAt(0);
+			var _childMC = cast (_childDisplayContainer, MovieClip);
+			!_inner.mouseEnabled ? _childMC.gotoAndStop("disable") : _childMC.gotoAndStop("reg");
 		}
-		currItemPickId = 0;
-		_loc3_ = 0;
-		while (_loc3_ < mc.itemsMC.numChildren) {
+		/* while (_loc3_ < mc.itemsMC.numChildren) {
 			if (mc.itemsMC.getChildAt(_loc3_).disabled) {
 				mc.itemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("disable");
 			} else {
 				mc.itemsMC.getChildAt(_loc3_).getChildAt(0).gotoAndStop("reg");
 			}
 			_loc3_++;
-		}
+		} */
 	}
 }
