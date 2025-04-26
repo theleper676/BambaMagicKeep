@@ -1,5 +1,6 @@
 package;
 
+import dungeon_graphics.DungeonMain;
 import general_assets.GeneralFrame;
 import haxe.Timer;
 import erate.ERate;
@@ -78,7 +79,7 @@ class BambaMain extends Sprite{
 
 	public var frameMC:GeneralFrame;
 
-	var dungeonMC:MovieClip;
+	var dungeonMC:DungeonMain;
 
 	public function new() {
 		super();
@@ -642,7 +643,7 @@ class BambaMain extends Sprite{
 		if (aDungeon != null) {
 			aDungeon.clearEvents();
 		}
-		dungeonMC = BambaAssets.dungeonMain();
+		dungeonMC = new DungeonMain();
 		this.addChildAt(dungeonMC, 0);
 		if (questManager.currQuestDungeonId == currDongeonId) {
 			aDungeon = new BambaDungeon(this, dungeonMC, questManager.currQuestDungeonId, questManager.currQuestDungeonDifficulty,

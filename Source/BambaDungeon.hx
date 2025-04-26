@@ -1,5 +1,7 @@
 package;
 
+import dungeon_graphics.PossibleMove;
+import dungeon_graphics.DungeonMain;
 import fight_graphics.FightScreen;
 import openfl.display.*;
 import openfl.events.Event;
@@ -68,7 +70,7 @@ class BambaDungeon extends DisplayObject {
 
 	var currDiceNum:Float;
 
-	public var dungeonMC:Dynamic;
+	public var dungeonMC:DungeonMain;
 
 	var rollDiceAnimIntervalTimer:Timer;
 	//var rollDiceAnimInterval:Float;
@@ -79,12 +81,12 @@ class BambaDungeon extends DisplayObject {
 
 	var label:TextField;
 
-	public function new(mainGame:BambaMain, param2:Dynamic, dungeonId:Dynamic, param4:Dynamic, param5:Dynamic, param6:Dynamic, param7:Dynamic, param8:Dynamic,
+	public function new(mainGame:BambaMain, dungeonMC:DungeonMain, dungeonId:Dynamic, param4:Dynamic, param5:Dynamic, param6:Dynamic, param7:Dynamic, param8:Dynamic,
 			param9:Dynamic) {
 		var _loc10_:TextFormat = null;
 		super();
 		game = mainGame;
-		MC = param2;
+		MC = dungeonMC;
 		this.dungeonId = dungeonId;
 		dungeonDifficulty = Std.int(param4 - 1);
 		dungeonData = game.gameData.getCatalogDungeonData(dungeonId);
@@ -161,12 +163,13 @@ class BambaDungeon extends DisplayObject {
 		} else {
 			_loc3_ = game.gameData.dictionary.FOUND_TREASURE_MSG;
 			dungeonIcons.splice(dungeonIcons.indexOf(currIcon), 1);
-			if (dungeonMC.lowerMC.contains(currIcon.iconGraphics)) {
+			// TODO: understand what is upper MC
+			 if (dungeonMC.lowerMC.contains(currIcon.iconGraphics)) {
 				dungeonMC.lowerMC.removeChild(currIcon.iconGraphics);
 			}
-			if (dungeonMC.uperMC.contains(currIcon.iconGraphics)) {
+			/*if (dungeonMC.uperMC.contains(currIcon.iconGraphics)) {
 				dungeonMC.uperMC.removeChild(currIcon.iconGraphics);
-			}
+			} */
 		}
 		_loc5_ = 0;
 		_loc6_ = 3;
@@ -201,9 +204,10 @@ class BambaDungeon extends DisplayObject {
 		if (dungeonMC.lowerMC.contains(me.iconGraphics)) {
 			dungeonMC.lowerMC.setChildIndex(me.iconGraphics, 0);
 		}
-		if (dungeonMC.uperMC.contains(me.iconGraphics)) {
+		// TODO: understand what is upper MC
+		/* if (dungeonMC.uperMC.contains(me.iconGraphics)) {
 			dungeonMC.uperMC.setChildIndex(me.iconGraphics, 0);
-		}
+		} */
 		_loc1_ = false;
 		_loc2_ = 0;
 		while (_loc2_ < dungeonIcons.length) {
@@ -352,9 +356,10 @@ class BambaDungeon extends DisplayObject {
 		if (dungeonMC.lowerMC.contains(currIcon.iconGraphics)) {
 			dungeonMC.lowerMC.removeChild(currIcon.iconGraphics);
 		}
-		if (dungeonMC.uperMC.contains(currIcon.iconGraphics)) {
+		// TODO: understand what is upper MC
+		/* if (dungeonMC.uperMC.contains(currIcon.iconGraphics)) {
 			dungeonMC.uperMC.removeChild(currIcon.iconGraphics);
-		}
+		} */
 		switch (currSurprise.type) {
 			case 1:
 				_loc2_ = [];
@@ -431,7 +436,7 @@ class BambaDungeon extends DisplayObject {
 
 	function showDiceArraw():Void {
 		hideDiceArraw();
-		diceArraw = BambaAssets.possibleMove();
+		diceArraw = new PossibleMove();
 		MC.addChild(diceArraw);
 		diceArraw.x = Math.floor(MC.diceMC.x + MC.diceMC.width / 2);
 		diceArraw.y = Math.floor(MC.diceMC.y + 5);
@@ -445,18 +450,19 @@ class BambaDungeon extends DisplayObject {
 		if (dungeonMC.lowerMC.contains(me.iconGraphics)) {
 			dungeonMC.lowerMC.removeChild(me.iconGraphics);
 		}
-		if (dungeonMC.uperMC.contains(me.iconGraphics)) {
+		// TODO: understand what is upper MC
+		/* if (dungeonMC.uperMC.contains(me.iconGraphics)) {
 			dungeonMC.uperMC.removeChild(me.iconGraphics);
-		}
+		} */
 	}
 
 	function showMe(param1:Dynamic):Void {
 		trace("showMe");
 		if (me.currLevel == 1) {
 			dungeonMC.lowerMC.addChild(me.iconGraphics);
-		} else {
+		} /* else {
 			dungeonMC.uperMC.addChild(me.iconGraphics);
-		}
+		} */
 		me.iconGraphics.scaleX = 1;
 		me.setTile(param1);
 		me.setLevel();
@@ -489,9 +495,9 @@ class BambaDungeon extends DisplayObject {
 			dungeonIcons.push(dungeonData.dungeonIconsGib[_loc5_]);
 			if (dungeonData.dungeonIconsGib[_loc5_].currLevel == 1) {
 				dungeonMC.lowerMC.addChild(dungeonData.dungeonIconsGib[_loc5_].iconGraphics);
-			} else {
+			} /* else {
 				dungeonMC.uperMC.addChild(dungeonData.dungeonIconsGib[_loc5_].iconGraphics);
-			}
+			} */
 			if (param1 || param2 || param3 || param4) {
 				if (dungeonData.dungeonIconsGib[_loc5_].isSpecial) {
 					dungeonData.dungeonIconsGib[_loc5_].markSpecial(true);
@@ -506,9 +512,9 @@ class BambaDungeon extends DisplayObject {
 		if (dungeonMC.lowerMC.contains(me.iconGraphics)) {
 			dungeonMC.lowerMC.setChildIndex(me.iconGraphics, dungeonMC.lowerMC.numChildren - 1);
 		}
-		if (dungeonMC.uperMC.contains(me.iconGraphics)) {
+		/* if (dungeonMC.uperMC.contains(me.iconGraphics)) {
 			dungeonMC.uperMC.setChildIndex(me.iconGraphics, dungeonMC.uperMC.numChildren - 1);
-		}
+		} */
 	}
 
 	function generateDungeonIcons(param1:Dynamic, param2:Dynamic, param3:Dynamic, param4:Dynamic):Void {
@@ -596,9 +602,9 @@ class BambaDungeon extends DisplayObject {
 		}
 		if (me.currLevel == 1) {
 			dungeonMC.lowerMC.setChildIndex(me.iconGraphics, dungeonMC.lowerMC.numChildren - 1);
-		} else {
+		} /* else {
 			dungeonMC.uperMC.setChildIndex(me.iconGraphics, dungeonMC.uperMC.numChildren - 1);
-		}
+		} */
 	}
 
 	function showMazePlan(param1:MouseEvent):Void {
@@ -632,9 +638,9 @@ class BambaDungeon extends DisplayObject {
 				if (dungeonMC.lowerMC.contains(me.iconGraphics)) {
 					dungeonMC.lowerMC.setChildIndex(me.iconGraphics, dungeonMC.lowerMC.numChildren - 1);
 				}
-				if (dungeonMC.uperMC.contains(me.iconGraphics)) {
+				/* if (dungeonMC.uperMC.contains(me.iconGraphics)) {
 					dungeonMC.uperMC.setChildIndex(me.iconGraphics, dungeonMC.uperMC.numChildren - 1);
-				}
+				} */
 				dontDoJump = false;
 				calledChackTileAfterEnemyMove = false;
 				_loc1_ = "out" + currDiceNum;
@@ -860,9 +866,9 @@ class BambaDungeon extends DisplayObject {
 					if (dungeonMC.lowerMC.contains(currIcon.iconGraphics)) {
 						dungeonMC.lowerMC.removeChild(currIcon.iconGraphics);
 					}
-					if (dungeonMC.uperMC.contains(currIcon.iconGraphics)) {
+					/* if (dungeonMC.uperMC.contains(currIcon.iconGraphics)) {
 						dungeonMC.uperMC.removeChild(currIcon.iconGraphics);
-					}
+					} */
 				}
 				_loc3_ = 0;
 				_loc4_ = 0;

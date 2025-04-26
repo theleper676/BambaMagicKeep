@@ -1,5 +1,7 @@
 package;
 
+import dungeon_graphics.EnemyTip;
+import dungeon_graphics.DungeonIcon;
 import motion.Actuate;
 import openfl.display.DisplayObject;
 import openfl.display.*;
@@ -7,7 +9,7 @@ import openfl.events.MouseEvent;
 import general.Heb;
 
 class BambaDungeonIcon extends DisplayObject {
-	public var popupMC:Dynamic;
+	public var popupMC:EnemyTip;
 
 	public var type:Int;
 
@@ -32,7 +34,7 @@ class BambaDungeonIcon extends DisplayObject {
 		dungeon = param1;
 		type = param2;
 		isSpecial = false;
-		iconGraphics = BambaAssets.dungeonIcon();
+		iconGraphics = new DungeonIcon();
 		switch (type) {
 			case 1:
 				iconGraphics.iconMC.gotoAndStop("me");
@@ -40,13 +42,13 @@ class BambaDungeonIcon extends DisplayObject {
 			case 2:
 				iconGraphics.iconMC.gotoAndStop("enemy");
 				setEnemyLevel();
-				popupMC = BambaAssets.enemyTip();
+				popupMC = new EnemyTip();
 				iconGraphics.iconMC.addEventListener(MouseEvent.ROLL_OVER, enemyRolledOver);
 				iconGraphics.iconMC.addEventListener(MouseEvent.ROLL_OUT, enemyRolledOut);
 			case 3:
 				iconGraphics.iconMC.gotoAndStop("boss");
 				setEnemyLevel();
-				popupMC = BambaAssets.enemyTip();
+				popupMC = new EnemyTip();
 				iconGraphics.iconMC.addEventListener(MouseEvent.ROLL_OVER, enemyRolledOver);
 				iconGraphics.iconMC.addEventListener(MouseEvent.ROLL_OUT, enemyRolledOut);
 			case 4:
@@ -63,13 +65,13 @@ class BambaDungeonIcon extends DisplayObject {
 		if (dungeon.dungeonMC.lowerMC.contains(iconGraphics)) {
 			dungeon.dungeonMC.lowerMC.removeChild(iconGraphics);
 		}
-		if (dungeon.dungeonMC.uperMC.contains(iconGraphics)) {
+		/* if (dungeon.dungeonMC.uperMC.contains(iconGraphics)) {
 			dungeon.dungeonMC.uperMC.removeChild(iconGraphics);
-		}
-		if (param1 == 2) {
+		} */
+		/* if (param1 == 2) {
 			dungeon.dungeonMC.uperMC.addChild(iconGraphics);
 			dungeon.dungeonMC.uperMC.setChildIndex(iconGraphics, dungeon.dungeonMC.uperMC.numChildren - 1);
-		} else {
+		} */ else {
 			dungeon.dungeonMC.lowerMC.addChild(iconGraphics);
 			dungeon.dungeonMC.lowerMC.setChildIndex(iconGraphics, dungeon.dungeonMC.lowerMC.numChildren - 1);
 		}
@@ -127,12 +129,12 @@ class BambaDungeonIcon extends DisplayObject {
 			if (dungeon.dungeonMC.lowerMC.contains(iconGraphics)) {
 				dungeon.dungeonMC.lowerMC.removeChild(iconGraphics);
 			}
-			if (dungeon.dungeonMC.uperMC.contains(iconGraphics)) {
+			/* if (dungeon.dungeonMC.uperMC.contains(iconGraphics)) {
 				dungeon.dungeonMC.uperMC.removeChild(iconGraphics);
-			}
-			if (currLevel == 1) {
+			} */
+			/* if (currLevel == 1) {
 				dungeon.dungeonMC.uperMC.addChild(iconGraphics);
-			} else {
+			} */ else {
 				dungeon.dungeonMC.lowerMC.addChild(iconGraphics);
 			}
 			currLevel = _loc3_;

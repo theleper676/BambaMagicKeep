@@ -1,6 +1,7 @@
 package;
 
 
+import dungeon_graphics.*;
 import fight_graphics.*;
 import baby.*;
 import items.*;
@@ -62,7 +63,7 @@ class BambaAssets {
 
 	public static var winBox:WinBox;
 
-	public static var dungeonIcon:Dynamic;
+	public static var dungeonIcon:DungeonIcon;
 
 	public static var hitPoints:HitPoints;
 
@@ -94,7 +95,7 @@ class BambaAssets {
 
 	public static var skipButton:SkipButton;
 
-	public static var dungeonMain:Dynamic;
+	public static var dungeonMain:DungeonMain;
 
 	public static var characterBuildScreen:CharacterBuildScreen;
 
@@ -124,11 +125,11 @@ class BambaAssets {
 
 	public static var openingScreen:OpeningScreen;
 
-	public static var possibleMove:Dynamic;
+	public static var possibleMove:PossibleMove;
 
 	public static var enemyReg:Dynamic;
 
-	public static var enemyTip:Dynamic;
+	public static var enemyTip:EnemyTip;
 
 	public static var characterScreen:Dynamic;
 
@@ -255,8 +256,8 @@ class BambaAssets {
 		//help09 = cast(param1, Dynamic);
 	}
 
-	function define_dungeonMain(param1:Dynamic):Void  {
-		dungeonMain = param1;
+	function define_dungeonMain():Void  {
+		dungeonMain = new DungeonMain();
 		//dungeonMain = cast(param1, Dynamic);
 	}
 
@@ -350,8 +351,8 @@ class BambaAssets {
 		//dungeonMap = cast(param1, Dynamic);
 	}
 
-	function define_dungeonIcon(param1:Dynamic):Void  {
-		dungeonIcon = param1;
+	function define_dungeonIcon():Void  {
+		dungeonIcon = new DungeonIcon();
 		//dungeonIcon = cast(param1, Dynamic);
 	}
 
@@ -391,8 +392,8 @@ class BambaAssets {
 		// beltMC = cast(param1, MovieClip);
 	}
 
-	function define_possibleMove(param1:Dynamic):Void  {
-		possibleMove = param1;
+	function define_possibleMove():Void  {
+		possibleMove = new PossibleMove();
 		// possibleMove = cast(param1, Dynamic);
 	}
 
@@ -466,8 +467,8 @@ class BambaAssets {
 		// eyesMC = cast(param1, MovieClip);
 	}
 
-	function define_enemyTip(param1:Dynamic):Void  {
-		enemyTip = param1;
+	function define_enemyTip():Void  {
+		enemyTip = new EnemyTip();
 		// enemyTip = cast(param1, MovieClip);
 	}
 
