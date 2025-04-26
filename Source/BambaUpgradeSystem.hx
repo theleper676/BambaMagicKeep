@@ -1,5 +1,6 @@
 package;
 
+import cards.CardBase;
 import tower_screens.CardsUpgradeScreen;
 import openfl.display.*;
 import openfl.events.MouseEvent;
@@ -8,18 +9,14 @@ import general.Heb;
 import general.MsgBox;
 import general.PlayerDataUpdater;
 
-class BambaUpgradeSystem extends DisplayObject {
-	var cardsArray:Array<Dynamic>;
-
-	var game:BambaMain;
-
-	public var mc:CardsUpgradeScreen;
+class BambaUpgradeSystem extends BambaScreen {
+	var cardsArray:Array<BambaCard>;
 
 	var currCardId:Float;
 
 	public function new(mainGame:BambaMain) {
-		super();
-		game = mainGame;
+		super(mainGame);
+		
 		mc = new CardsUpgradeScreen();
 		//mc.orgWidth = mc.width;
 		//mc.orgHeight = mc.height;
@@ -67,7 +64,7 @@ class BambaUpgradeSystem extends DisplayObject {
 		}
 	}
 
-	public function update():Void {
+	override public function update():Void {
 		PlayerDataUpdater.updateBasicData(mc.basicDataMC);
 		PlayerDataUpdater.updateMoneyData(mc.moneyMC);
 		PlayerDataUpdater.updateProgressData(mc.progressMC);
@@ -113,7 +110,7 @@ class BambaUpgradeSystem extends DisplayObject {
 		}
 	}
 
-	public function cardRollOver(id:Float): Void {
+	override public function cardRollOver(id:Float): Void {
 		var _currentCard = game.gameData.getCatalogCard(id);
 		if (_currentCard.upgradeTo != 0) {
 			mc.detailsMC.visible = true;
@@ -141,7 +138,7 @@ class BambaUpgradeSystem extends DisplayObject {
 		mc.detailsMC.visible = false;
 	}
 
-	public function cardClicked(param1:Dynamic):Void {
+	override public function cardClicked(param1:Dynamic):Void {
 		var _loc2_:Null<Dynamic> = null;
 		_loc2_ = 0;
 		while (_loc2_ < cardsArray.length) {

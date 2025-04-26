@@ -77,7 +77,7 @@ class BambaCard {
 
 	public var animDelay:Float;
 
-	public var screen:BambaUpgradeSystem;
+	public var screen:BambaScreen;
 
 	public var orgX:Float;
 
@@ -155,8 +155,8 @@ class BambaCard {
 		mc.tabEnabled = false;
 	}
 
-	function addPopupEvents(param1:Dynamic):Void {
-		screen = param1;
+	public function addPopupEvents(screen:BambaCharacterScreen):Void {
+		this.screen = screen;
 		mc.addEventListener(MouseEvent.ROLL_OVER, cardRolledOver);
 		mc.addEventListener(MouseEvent.ROLL_OUT, cardRolledOut);
 	}

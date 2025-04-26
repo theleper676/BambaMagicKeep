@@ -6,15 +6,21 @@ import openfl.events.MouseEvent;
 import general.ButtonUpdater;
 import general.PlayerDataUpdater;
 
-class BambaCharacterScreen extends DisplayObject {
+class BambaCharacterScreen extends BambaScreen {
 	public var screenType:Float;
 
-	var game:BambaMain;
 
-	public var mc:CharacterScreen;
+
 
 	public function new(mainGame:BambaMain) {
-		super();
+		super(mainGame);
+		mc = new CharacterScreen();
+		setupButton(mc.exitMC, closeWin);
+		mc.exitMC.buttonMode = true;
+		mc.exitMC.tabEnabled = false;
+		screenType = 1;
+		update();
+		/* super();
 		var _loc2_:MovieClip = null;
 		game = mainGame;
 		mc = new CharacterScreen();
@@ -22,9 +28,9 @@ class BambaCharacterScreen extends DisplayObject {
 		mc.exitMC.buttonMode = true;
 		mc.exitMC.tabEnabled = false;
 		_loc2_ = new MovieClip();
-		//mc.itemsSP.setStyle("upSkin", _loc2_);
+		mc.itemsSP.setStyle("upSkin", _loc2_);
 		screenType = 1;
-		update();
+		update(); */
 	}
 
 	public function setCards():Void {
@@ -52,7 +58,7 @@ class BambaCharacterScreen extends DisplayObject {
 		}
 	}
 
-	public function update():Void {
+	override public function update():Void {
 		setCards();
 		PlayerDataUpdater.setBaby(mc.babyMC, this);
 		PlayerDataUpdater.setItems(mc.itemsMC, mc.itemsSP, this, screenType);
