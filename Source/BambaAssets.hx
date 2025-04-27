@@ -1,6 +1,8 @@
 package;
 
 
+import map_graphics.MapIcon;
+import map_graphics.KingdomMap;
 import tower_screens.*;
 import dungeon_graphics.*;
 import fight_graphics.*;
@@ -18,7 +20,7 @@ class BambaAssets {
 
 	public static var help02:Dynamic;
 
-	public static var mapIcon:Dynamic;
+	public static var mapIcon:MapIcon;
 
 	public static var cardsUpgradeScreen:CardsUpgradeScreen;
 
@@ -30,7 +32,7 @@ class BambaAssets {
 
 	public static var help07:Dynamic;
 
-	public static var kingdomMap:Any;
+	public static var kingdomMap:KingdomMap;
 
 	public static var help03:Dynamic;
 
@@ -217,8 +219,8 @@ class BambaAssets {
 		waitBox = new WaitBox();
 	}
 
-	function define_mapIcon(param1:Dynamic):Void  {
-		mapIcon = param1;
+	function define_mapIcon():Void  {
+		mapIcon = new MapIcon();
 		//mapIcon = cast(param1, Dynamic);
 	}
 
@@ -272,8 +274,8 @@ class BambaAssets {
 		//stickMC = cast(param1, Dynamic);
 	}
 
-	function define_kingdomMap(param1:Dynamic):Void  {
-		kingdomMap = param1;
+	function define_kingdomMap():Void  {
+		kingdomMap = new KingdomMap();
 		//kingdomMap = cast(param1, Dynamic);
 	}
 

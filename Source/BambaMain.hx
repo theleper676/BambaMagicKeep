@@ -521,7 +521,7 @@ class BambaMain extends Sprite{
 	}
 
 	public function startGame():Void {
-		var _loc1_:Null<Dynamic> = null;
+		//var _loc1_:Null<Dynamic> = null;
 		if (finishLoading && didLogin) {
 			if (gameData.playerData.pName == "") {
 				startNewPlayer();
@@ -540,8 +540,8 @@ class BambaMain extends Sprite{
 				character = new BambaCharacterScreen(this);
 				store = new BambaStore(this);
 				gameData.playerData.setLevelDependingData();
-				_loc1_ = "order" + gameData.playerData.orderCode;
-				frameMC.holesMC.gotoAndStop(_loc1_);
+				var _orderCode = "order" + gameData.playerData.orderCode;
+				frameMC.holesMC.gotoAndStop(_orderCode);
 				hideCharacterBuild();
 				hideOpeningScreen();
 				showMenuScreen();
@@ -580,8 +580,8 @@ class BambaMain extends Sprite{
 		menu.slideIn();
 	}
 
-	public function hideAllScreens(param1:Bool = true):Void {
-		if (param1) {
+	public function hideAllScreens(shouldHide:Bool = true):Void {
+		if (shouldHide) {
 			if (aDungeon != null) {
 				aDungeon.exitDungeon();
 			}
@@ -689,12 +689,12 @@ class BambaMain extends Sprite{
 		//showCharacterBuildInteval = setInterval(showCharacterBuild, 600);
 	}
 
-	public function startDungeon(param1:Dynamic):Void {
-		var _loc2_:Float;
-		var _loc3_:BambaDungeonData;
-		_loc2_ = 100 + param1;
-		currDongeonId = param1;
-		_loc3_ = gameData.getCatalogDungeonData(currDongeonId);
-		gameLoader.loadDungeonAssetStart(_loc3_.assetFileName);
+	public function startDungeon(dugeonId:Float):Void {
+		//var _loc2_:Float;
+		//var _loc3_:BambaDungeonData;
+		//_loc2_ = 100 + dugeonId;
+		currDongeonId = dugeonId;
+		var _dungeonData = gameData.getCatalogDungeonData(currDongeonId);
+		gameLoader.loadDungeonAssetStart(_dungeonData.assetFileName);
 	}
 }

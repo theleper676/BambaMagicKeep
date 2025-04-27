@@ -1,11 +1,14 @@
 package;
 
+import dungeon_graphics.DungeonIcon;
+import map_graphics.MapIcon;
+import map_graphics.KingdomMap;
 import openfl.display.*;
 import openfl.events.MouseEvent;
 import openfl.utils.*;
 import haxe.Timer;
 class BambaMap extends DisplayObject {
-	var dungeons:Array<Dynamic>;
+	var dungeons:Array<Array<Int>>;
 
 	var areas:Array<Dynamic>;
 
@@ -18,7 +21,7 @@ class BambaMap extends DisplayObject {
 
 	var firstTime:Bool;
 
-	var mapIcons:Array<Dynamic>;
+	var mapIcons:Array<MapIcon>;
 
 	var currDungeonId:Float;
 
@@ -32,9 +35,9 @@ class BambaMap extends DisplayObject {
 	public function new(mainGame:BambaMain) {
 		super();
 		game = mainGame;
-		mc = BambaAssets.kingdomMap;
-		mc.orgWidth = mc.width;
-		mc.orgHeight = mc.height;
+		mc = new KingdomMap();
+		//mc.orgWidth = mc.width;
+		//mc.orgHeight = mc.height;
 		mc.towerMC.addEventListener(MouseEvent.CLICK, towerClicked);
 		mc.towerMC.buttonMode = true;
 		mc.towerMC.tabEnabled = false;
@@ -129,11 +132,11 @@ class BambaMap extends DisplayObject {
 	}
 
 	function dongeonRollOver(param1:MouseEvent):Void {
-		var _loc2_:Null<Dynamic> = null;
+		//var _loc2_:Null<Dynamic> = null;
 		if (!game.msgShown) {
-			_loc2_ = game.gameData.getCatalogDungeonData(param1.currentTarget.dongeonId);
+			var _dungeonData = game.gameData.getCatalogDungeonData(param1.currentTarget.dongeonId);
 			param1.currentTarget.iconMC.gotoAndStop(2);
-			param1.currentTarget.iconMC.DT.text = _loc2_.dName;
+			param1.currentTarget.iconMC.DT.text = _dungeonData.dName;
 		}
 	}
 
@@ -283,32 +286,38 @@ class BambaMap extends DisplayObject {
 		}
 	}
 
-	function addDungeonIcon(param1:Dynamic):Void {
-		var _loc2_:Null<Dynamic> = null;
-		var _loc3_:Null<Dynamic> = null;
-		var _loc4_:Null<Dynamic> = null;
-		var _loc5_:Null<Dynamic> = null;
-		_loc2_ = game.gameData.getCatalogDungeonData(param1);
-		_loc3_ = BambaAssets.mapIcon;
-		mc.iconsMC.addChild(_loc3_);
-		_loc3_.dongeonId = param1;
-		_loc4_ = 0;
-		_loc5_ = 0;
-		while (_loc5_ < dungeons.length) {
-			if (dungeons[_loc5_][0] == param1) {
-				_loc4_ = _loc5_;
+	function addDungeonIcon(dungeonId:Float):Void {
+		//var _loc2_:Null<Dynamic> = null;
+		//var _loc3_:Null<Dynamic> = null;
+		//var _loc4_:Null<Dynamic> = null;
+		//var _loc5_:Null<Dynamic> = null;
+		var _loc2_ = game.gameData.getCatalogDungeonData(dungeonId);
+		var _mapIcon = new MapIcon();
+		mc.iconsMC.addChild(_mapIcon);
+		//TODO: is this neccecery?
+		//_mapIcon.dongeonId = dungeonId;
+		var _index = 0;
+		//_loc5_ = 0;
+		for (i in 0...dungeons.length) {
+			if (dungeons[i][0] == dungeonId) {
+				_index = i;
+			}
+		}
+		/* while (_loc5_ < dungeons.length) {
+			if (dungeons[_loc5_][0] == dungeonId) {
+				_index = _loc5_;
 			}
 			_loc5_++;
-		}
-		_loc3_.x = dungeons[_loc4_][1];
-		_loc3_.y = dungeons[_loc4_][2];
-		_loc3_.iconMC.mazeIconMC.gotoAndStop(_loc2_.areaCode);
-		_loc3_.buttonMode = true;
-		_loc3_.tabEnabled = false;
-		_loc3_.addEventListener(MouseEvent.CLICK, dongeonClicked);
-		_loc3_.addEventListener(MouseEvent.ROLL_OVER, dongeonRollOver);
-		_loc3_.addEventListener(MouseEvent.ROLL_OUT, dongeonRollOut);
-		mapIcons.push(_loc3_);
+		} */
+		_mapIcon.x = dungeons[_index][1];
+		_mapIcon.y = dungeons[_index][2];
+		_mapIcon.iconMC.mazeIconMC.gotoAndStop(_loc2_.areaCode);
+		_mapIcon.buttonMode = true;
+		_mapIcon.tabEnabled = false;
+		_mapIcon.addEventListener(MouseEvent.CLICK, dongeonClicked);
+		_mapIcon.addEventListener(MouseEvent.ROLL_OVER, dongeonRollOver);
+		_mapIcon.addEventListener(MouseEvent.ROLL_OUT, dongeonRollOut);
+		mapIcons.push(_mapIcon);
 	}
 
 	function afterDongeonClickedAnim():Void {
@@ -321,14 +330,17 @@ class BambaMap extends DisplayObject {
 	}
 
 	function showAllDungeons():Void {
-		var _loc1_:Null<Dynamic> = null;
+		//var _loc1_:Null<Dynamic> = null;
 		game.help.showTutorial(5);
       addDungeonIntervalTimer.stop();
 		//clearInterval(addDungeonInterval);
-		_loc1_ = 0;
-		while (_loc1_ < mapIcons.length) {
+		/* _loc1_ = 0; */
+		for (i in 0...mapIcons.length) {
+			mapIcons[i].visible = true;
+		}
+		/* while (_loc1_ < mapIcons.length) {
 			mapIcons[_loc1_].visible = true;
 			_loc1_++;
-		}
+		} */
 	}
 }
