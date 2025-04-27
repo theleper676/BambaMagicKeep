@@ -1,5 +1,6 @@
 package;
 
+import help.EmptyCard;
 import motion.Actuate;
 import haxe.Constraints.Function;
 import openfl.display.*;
@@ -16,7 +17,7 @@ class BambaHelp {
 
 	var game:BambaMain;
 
-	var emptyCardMC:MovieClip;
+	var emptyCardMC:EmptyCard;
 
 	var mc:Dynamic;
 
@@ -114,7 +115,7 @@ class BambaHelp {
 		_loc3_ = game.gameData.getCatalogHelpPage(param1);
 		if (_loc3_ != null) {
 			if (emptyCardMC == null) {
-				emptyCardMC = BambaAssets.emptyCard();
+				emptyCardMC = new EmptyCard();
 			}
 			if (!param2) {
 				game.addChild(emptyCardMC);

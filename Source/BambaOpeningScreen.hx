@@ -22,7 +22,7 @@ class BambaOpeningScreen extends Sprite {
 	public function new(mainGame:BambaMain) {
 		super();
 		game = mainGame;
-		mc = BambaAssets.openingScreen;
+		mc = new OpeningScreen();
 		//ButtonUpdater.setButton(mc.enterMC, enterClicked);
 
 		ButtonUpdater.setButton(mc.enterMC, enterClicked);

@@ -62,7 +62,7 @@ class BambaDungeon extends DisplayObject {
 
 	public var fightScreen:FightScreen;
 
-	var possibleWaysToMove:Array<Dynamic>;
+	var possibleWaysToMove:Array<String>;
 
 	public var enemyId:Float;
 
@@ -322,17 +322,22 @@ class BambaDungeon extends DisplayObject {
 		}
 	}
 
-	function showPossibleIcons(param1:Float):Void {
-		var _loc2_:Null<Dynamic> = null;
-		var _loc3_:Null<Dynamic> = null;
-		var _loc4_:Array<Dynamic> = null;
-		var _loc5_:Float = Math.NaN;
-		var _loc6_:Null<Dynamic> = null;
-		possibleWaysToMove = dungeonData.getPossibleWays(me.currTileId, param1);
+	function showPossibleIcons(depth:Float):Void {
+		possibleWaysToMove = dungeonData.getPossibleWays(me.currTileId, depth);
 		removePossibleIcons();
-		_loc2_ = 0;
-		while (_loc2_ < possibleWaysToMove.length) {
-			_loc3_ = BambaAssets.possibleMove;
+		for (i in 0...possibleWaysToMove.length){
+			var _possibleMove = new PossibleMove();
+			MC.mapMC.addChild(_possibleMove);
+			possibleMoveIcons.push(_possibleMove);
+			var _possibleWays = possibleWaysToMove[i].split(',');
+			var	_possibleWayTile = _possibleWays[_possibleWays.length -1];
+			var _dungeonTile = dungeonData.getTile(_possibleWayTile);
+			_possibleMove.x = _dungeonTile.x;
+			_possibleMove.y = _dungeonTile.y;
+			ButtonUpdater.setButton(_possibleMove, pickMoveIcon);
+		}
+		/* while (_loc2_ < possibleWaysToMove.length) {
+			_loc3_ = new PossibleMove();
 			MC.mapMC.addChild(_loc3_);
 			possibleMoveIcons.push(_loc3_);
 			_loc4_ = possibleWaysToMove[_loc2_].split(",");
@@ -342,7 +347,7 @@ class BambaDungeon extends DisplayObject {
 			_loc3_.y = _loc6_.y;
 			ButtonUpdater.setButton(_loc3_, pickMoveIcon);
 			_loc2_++;
-		}
+		} */
 	}
 
 	function openSurprise(param1:Dynamic):Void {

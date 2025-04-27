@@ -1,10 +1,12 @@
-package ;
+package help;
+
+import haxe.ui.components.CheckBox;
 
 @:access(swf.exporters.animate)
 
 class Help07 extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.display.MovieClip #end
 {
-	@:keep @:noCompletion @:dox(hide) public var dontShowCB(default, null):fl.controls.CheckBox;
+	@:keep @:noCompletion @:dox(hide) public var dontShowCB(default, null): CheckBox;
 	@:keep @:noCompletion @:dox(hide) public var PIC1(default, null):openfl.display.MovieClip;
 	@:keep @:noCompletion @:dox(hide) public var PIC2(default, null):openfl.display.MovieClip;
 	@:keep @:noCompletion @:dox(hide) public var PIC3(default, null):openfl.display.MovieClip;
@@ -12,8 +14,8 @@ class Help07 extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.d
 	@:keep @:noCompletion @:dox(hide) public var P1(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var P2(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var P3(default, null):openfl.text.TextField;
-	@:keep @:noCompletion @:dox(hide) public var L1(default, null):help_fla.Link_15;
-	@:keep @:noCompletion @:dox(hide) public var L2(default, null):help_fla.Link_15;
+	@:keep @:noCompletion @:dox(hide) public var L1(default, null):Link_15;
+	@:keep @:noCompletion @:dox(hide) public var L2(default, null):Link_15;
 	
 
 	public function new()

@@ -25,6 +25,7 @@
 	<assets path="assets/game_assets/baby.zip" generate="true" id="baby.swf"/>
 	<assets path="assets/game_assets/fightGraphics.zip" generate="true" id="fightGraphics.swf"/>
 	<assets path="assets/game_assets/dungeonGraphics.zip" generate="true" id="dungeonGraphics.swf"/>
+	<assets path="assets/game_assets/help.zip" generate="true" id="help.swf"/>
 	<assets path="assets/xmls/params.xml" embed="false" id="params" />
 	<assets path="assets/xmls/dictionary.xml" embed="false" id="dictionary" />
 	<assets path="assets/xmls/generalData.xml" embed="false" id="generalData" />

@@ -1,5 +1,6 @@
 package general;
 
+import general_assets.WaitBox;
 import general_assets.WinBox;
 import general_assets.LevelBox;
 import general_assets.QuestBox;
@@ -95,16 +96,16 @@ class MsgBox extends DisplayObject  {
 		game = param1;
 	}
 
-	public static function showWaitBox(param1:String, param2:Dynamic = null):Void {
-		var _loc3_:Dynamic = null;
-		_loc3_ = BambaAssets.waitBox;
-		waitBoxLink = _loc3_;
-		waitBoxCloseFunction = param2;
+	public static function showWaitBox(param1:String, waitBoxFunction:Dynamic = null):Void {
+		//var _loc3_:Dynamic = null;
+		var _waitBox = new WaitBox();
+		waitBoxLink = _waitBox;
+		waitBoxCloseFunction = waitBoxFunction;
 		updateWaitBox(0);
-		game.addChild(_loc3_);
+		game.addChild(_waitBox);
 		game.msgShown = true;
-		Heb.setText(_loc3_.dt, param1);
-		game.centerScreen(_loc3_);
+		Heb.setText(_waitBox.dt, param1);
+		game.centerScreen(_waitBox);
 	}
 
 	static function yesNoConfirm(param1:MouseEvent):Void {
@@ -257,16 +258,16 @@ class MsgBox extends DisplayObject  {
 		}
 	}
 
-	public static function show(param1:String, param2:Dynamic = null, param3:Float = 4):Void {
-		var _msgBox = BambaAssets.msgBox;
+	public static function show(text:String, closeFunction:Dynamic = null, iconId:Float = 4):Void {
+		var _msgBox = new general_assets.MsgBox();
 		msgBoxMCLink = _msgBox;
-		msgBoxCloseFunction = param2;
+		msgBoxCloseFunction = closeFunction;
 		game.addChild(_msgBox);
 		game.msgShown = true;
 		game.centerScreen(_msgBox);
 		ButtonUpdater.setButton(_msgBox.exitButton, closeMsgBox);
-		Heb.setText(_msgBox.dt, param1);
-		_msgBox.iconMC.gotoAndStop(param3);
+		Heb.setText(_msgBox.dt, text);
+		_msgBox.iconMC.gotoAndStop(iconId);
 	}
 
 	public static function closeWaitBox():Void {

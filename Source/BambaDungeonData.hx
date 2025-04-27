@@ -206,7 +206,48 @@ class BambaDungeonData {
 		}
 	}
 
-	public function getPossibleWays(param1:Dynamic, param2:Dynamic):Array<Dynamic> {
+
+	public function getPossibleWays(start:Float, depth:Float):Array<String> {
+		var results:Array<String> = [];
+		var stack:Array<Array<Dynamic>> = [[start, null, depth, ""]];
+		
+		while (stack.length > 0) {
+			var entry = stack.pop();
+			var current = entry[0];
+			var previous = entry[1];
+			var remainingDepth = entry[2];
+			var path = entry[3];
+			
+			if (remainingDepth == 0) {
+				results.push(path + "," + current);
+				continue;
+			}
+			
+			var tile = getTile(current);
+			var i = 0;
+			while (i < tile.links.length) {
+				var link = tile.links[i];
+				if (link != previous || tile.links.length == 1) {
+					var newPath = path == "" ? Std.string(current) : path + "," + current;
+					stack.push([link, current, remainingDepth - 1, newPath]);
+				}
+				i++;
+			}
+		}
+	
+		var uniqueResults:Array<String> = [];
+		var seen = new Map<String, Bool>();
+		for (way in results) {
+			if (!seen.exists(way)) {
+				seen.set(way, true);
+				uniqueResults.push(way);
+			}
+		}
+		
+		return uniqueResults;
+	}
+	
+	/* public function getPossibleWays(param1:Dynamic, param2:Dynamic):Array<Dynamic> {
 		var _loc3_:Array<Dynamic> = null;
 		var _loc4_:Array<Dynamic> = null;
 		var _loc5_:Array<Dynamic> = null;
@@ -264,7 +305,7 @@ class BambaDungeonData {
 		}
 		return _loc4_;
 	}
-
+ */
 	public function drawDungeon(param1:MovieClip):Void {
 		var _loc2_:Int = 0;
 		var _loc3_:Int = 0;

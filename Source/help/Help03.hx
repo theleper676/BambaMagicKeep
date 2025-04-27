@@ -1,4 +1,7 @@
-package ;
+package help;
+
+import haxe.ui.components.CheckBox;
+
 
 @:access(swf.exporters.animate)
 
@@ -10,8 +13,8 @@ class Help03 extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.d
 	@:keep @:noCompletion @:dox(hide) public var P2(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var P5(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var P4(default, null):openfl.text.TextField;
-	@:keep @:noCompletion @:dox(hide) public var L1(default, null):help_fla.Link_15;
-	@:keep @:noCompletion @:dox(hide) public var dontShowCB(default, null):fl.controls.CheckBox;
+	@:keep @:noCompletion @:dox(hide) public var L1(default, null):Link_15;
+	@:keep @:noCompletion @:dox(hide) public var dontShowCB(default, null): CheckBox;
 	
 
 	public function new()

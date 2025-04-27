@@ -1,4 +1,4 @@
-package ;
+package help;
 
 @:access(swf.exporters.animate)
 

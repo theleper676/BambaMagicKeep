@@ -6,6 +6,7 @@ import map_graphics.KingdomMap;
 import tower_screens.*;
 import dungeon_graphics.*;
 import fight_graphics.*;
+import help.*;
 import baby.*;
 import items.*;
 import cards.*;
@@ -18,23 +19,23 @@ import haxe.Exception;
 class BambaAssets {
 	public static var cardBase:CardBase;
 
-	public static var help02:Dynamic;
+	public static var help02:Help02;
 
 	public static var mapIcon:MapIcon;
 
 	public static var cardsUpgradeScreen:CardsUpgradeScreen;
 
-	public static var help06:Dynamic;
+	public static var help06:Help06;
 
-	public static var help01:Dynamic;
+	public static var help01:Help01;
 
-	public static var help04:Dynamic;
+	public static var help04:Help04;
 
-	public static var help07:Dynamic;
+	public static var help07:Help07;
 
 	public static var kingdomMap:KingdomMap;
 
-	public static var help03:Dynamic;
+	public static var help03:Help03;
 
 	public static var enemyBoss:Any;
 
@@ -42,19 +43,19 @@ class BambaAssets {
 
 	public static var fightBack:Dynamic;
 
-	public static var help08:Dynamic;
+	public static var help08:Help08;
 
 	public static var itemFrame:ItemFrame;
 
 	public static var magicBase:MagicBase;
 
-	public static var help10:Dynamic;
+	public static var help10:Help01;
 
 	public static var stickMC:StickMC;
 
-	public static var help05:Dynamic;
+	public static var help05:Help05;
 
-	public static var help09:Dynamic;
+	public static var help09:Help01;
 
 	public static var hitMatrix:HitMatrix;
 
@@ -138,7 +139,7 @@ class BambaAssets {
 
 	public static var hairMC:HairMC;
 
-	public static var emptyCard:Dynamic;
+	public static var emptyCard:EmptyCard;
 
 	public var game:BambaMain;
 
@@ -163,13 +164,13 @@ class BambaAssets {
 		//cardBase = cast(param1, BambaCard);
 	}
 
-	function define_help01(param1:Dynamic):Void  {
-		help01 = param1;
+	function define_help01():Void  {
+		help01 = new Help01();
 		//help01 = cast(param1, Dynamic);
 	}
 
-	function define_help03(param1:Dynamic):Void  {
-		help03 = param1;
+	function define_help03():Void  {
+		help03 = new Help03();
 		//help03 = cast(param1, Dynamic);
 	}
 
@@ -178,18 +179,18 @@ class BambaAssets {
 		//cardsUpgradeScreen = cast(param1, Dynamic);
 	}
 
-	function define_help05(param1:Dynamic):Void  {
-		help05 = param1;
+	function define_help05():Void  {
+		help05 = new Help05();
 		//help05 = cast(param1, BambaHelp);
 	}
 
-	function define_help06(param1:Dynamic):Void  {
-		help06 = param1;
+	function define_help06():Void  {
+		help06 = new Help06();
 		//help06 = cast(param1, BambaHelp);
 	}
 
-	function define_help07(param1:Dynamic):Void  {
-		help07 = param1;
+	function define_help07():Void  {
+		help07 = new Help07();
 		//help07 = cast(param1, BambaHelp);
 	}
 
@@ -205,8 +206,8 @@ class BambaAssets {
 		msgBox = cast(param1, MsgBox); */
 	}
 
-	function define_help04(param1:Dynamic):Void  {
-		help04 = param1;
+	function define_help04():Void  {
+		help04 = new Help04();
 		//help04 = cast(param1, BambaHelp);
 	}
 
@@ -224,8 +225,8 @@ class BambaAssets {
 		//mapIcon = cast(param1, Dynamic);
 	}
 
-	function define_help08(param1:Dynamic):Void  {
-		help08 = param1;
+	function define_help08():Void  {
+		help08 = new Help08();
 		//help08 = cast(param1, BambaHelp);
 	}
 
@@ -264,8 +265,8 @@ class BambaAssets {
 		//dungeonMain = cast(param1, Dynamic);
 	}
 
-	function define_help02(param1:Dynamic):Void  {
-		help02 = param1;
+	function define_help02():Void  {
+		help02 = new Help02();
 		// help02 = cast(param1, Dynamic);
 	}
 
@@ -455,8 +456,8 @@ class BambaAssets {
 		// cardPopup = cast(param1, MovieClip);
 	}
 
-	function define_emptyCard(param1:Dynamic):Void  {
-		emptyCard = param1;
+	function define_emptyCard():Void  {
+		emptyCard = new EmptyCard();
 		// emptyCard = cast(param1, BambaCard);
 	}
 
