@@ -1,5 +1,7 @@
 package;
 
+import dungeon_map.DungeonMap;
+import swf.runtime.MovieClip;
 import dungeon_graphics.PossibleMove;
 import dungeon_graphics.DungeonMain;
 import fight_graphics.FightScreen;
@@ -38,7 +40,7 @@ class BambaDungeon extends DisplayObject {
 
 	var dontDoJump:Bool;
 
-	var dungeonMapMC:Dynamic;
+	var dungeonMapMC:DungeonMap;
 
 	var usedAction:Bool;
 
@@ -52,7 +54,7 @@ class BambaDungeon extends DisplayObject {
 
 	public var dungeonData:BambaDungeonData;
 
-	public var MC:Dynamic;
+	public var MC:DungeonMap;
 
 	var currEndTile:Float;
 
@@ -70,30 +72,30 @@ class BambaDungeon extends DisplayObject {
 
 	var currDiceNum:Float;
 
-	public var dungeonMC:DungeonMain;
+	public var dungeonMC:DungeonMap;
 
 	var rollDiceAnimIntervalTimer:Timer;
 	//var rollDiceAnimInterval:Float;
 
-	var diceArraw:MovieClip;
+	var diceArraw:PossibleMove;
 
 	public var game:BambaMain;
 
 	var label:TextField;
 
-	public function new(mainGame:BambaMain, dungeonMC:DungeonMain, dungeonId:Dynamic, param4:Dynamic, param5:Dynamic, param6:Dynamic, param7:Dynamic, param8:Dynamic,
+	public function new(mainGame:BambaMain, dungeonMC:DungeonMap, dungeonId:Dynamic, dungeonDifficulty:Float, enemyId:Float, param6:Dynamic, param7:Dynamic, param8:Dynamic,
 			param9:Dynamic) {
 		var _loc10_:TextFormat = null;
 		super();
 		game = mainGame;
 		MC = dungeonMC;
 		this.dungeonId = dungeonId;
-		dungeonDifficulty = Std.int(param4 - 1);
+		this.dungeonDifficulty = Std.int(dungeonDifficulty - 1);
 		dungeonData = game.gameData.getCatalogDungeonData(dungeonId);
-		dungeonMapMC = BambaAssets.dungeonMap();
+		dungeonMapMC = new DungeonMap();
 		MC.mapMC.addChild(dungeonMapMC);
-		dungeonMC = MC.mapMC.getChildAt(MC.mapMC.numChildren - 1);
-		enemyId = param5;
+		this.dungeonMC = MC.mapMC.getChildAt(MC.mapMC.numChildren - 1);
+		this.enemyId = enemyId;
 		if (dungeonData.dungeonIconsGib.length == 0) {
 			generateDungeonIcons(param6, param7, param8, param9);
 		} else {
@@ -167,9 +169,9 @@ class BambaDungeon extends DisplayObject {
 			 if (dungeonMC.lowerMC.contains(currIcon.iconGraphics)) {
 				dungeonMC.lowerMC.removeChild(currIcon.iconGraphics);
 			}
-			/*if (dungeonMC.uperMC.contains(currIcon.iconGraphics)) {
+			if (dungeonMC.uperMC.contains(currIcon.iconGraphics)) {
 				dungeonMC.uperMC.removeChild(currIcon.iconGraphics);
-			} */
+			} 
 		}
 		_loc5_ = 0;
 		_loc6_ = 3;

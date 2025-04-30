@@ -1,6 +1,7 @@
 package;
 
 
+import dungeon_map.DungeonMap;
 import map_graphics.MapIcon;
 import map_graphics.KingdomMap;
 import tower_screens.*;
@@ -63,7 +64,7 @@ class BambaAssets {
 
 	public static var hitAnim:HitAnim;
 
-	public static var dungeonMap:Dynamic;
+	public static var dungeonMap:DungeonMap;
 
 	public static var winBox:WinBox;
 
@@ -350,8 +351,8 @@ class BambaAssets {
 		//hitAnim = cast(param1, Dynamic);
 	}
 
-	function define_dungeonMap(param1:Dynamic):Void  {
-		dungeonMap = param1;
+	function define_dungeonMap():Void  {
+		dungeonMap = new DungeonMap();
 		//dungeonMap = cast(param1, Dynamic);
 	}
 
