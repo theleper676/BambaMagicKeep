@@ -1,4 +1,4 @@
-package ;
+package dungeon_map;
 
 @:access(swf.exporters.animate)
 

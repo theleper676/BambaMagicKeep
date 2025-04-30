@@ -1,8 +1,8 @@
 package;
 
 
-import map_graphics.MapIcon;
-import map_graphics.KingdomMap;
+import dungeon_map.*;
+import map_graphics.*;
 import tower_screens.*;
 import dungeon_graphics.*;
 import fight_graphics.*;
@@ -63,7 +63,7 @@ class BambaAssets {
 
 	public static var hitAnim:HitAnim;
 
-	public static var dungeonMap:Dynamic;
+	public static var dungeonMap:DungeonMap;
 
 	public static var winBox:WinBox;
 
@@ -325,8 +325,8 @@ class BambaAssets {
 		//enemyAttacks = cast(param1, Dynamic);
 	}
 
-	function define_fightBack(param1:Dynamic):Void  {
-		fightBack = param1;
+	function define_fightBack():Void  {
+		fightBack = new FightBack();
 		// fightBack = cast(param1, Dynamic);
 	}
 
@@ -350,8 +350,8 @@ class BambaAssets {
 		//hitAnim = cast(param1, Dynamic);
 	}
 
-	function define_dungeonMap(param1:Dynamic):Void  {
-		dungeonMap = param1;
+	function define_dungeonMap():Void  {
+		dungeonMap = new DungeonMap();
 		//dungeonMap = cast(param1, Dynamic);
 	}
 
