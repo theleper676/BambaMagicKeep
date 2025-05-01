@@ -1,10 +1,9 @@
 package general;
-
-import openfl.events.EventDispatcher;
+ 
 import openfl.display.MovieClip;
 import openfl.events.MouseEvent;
 
-class ButtonUpdater extends EventDispatcher  {
+class ButtonUpdater  {
 	public static function setButton (clip:MovieClip, listener: MouseEvent -> Void):Void {
 		if(clip != null) {
 		clip.addEventListener(MouseEvent.CLICK, listener);

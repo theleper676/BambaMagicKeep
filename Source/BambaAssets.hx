@@ -13,7 +13,7 @@ import cards.*;
 import menu.MenuScreen;
 import new_player.*;
 import general_assets.*;
-import haxe.Exception;
+import opening_assets.*;
 
 @:access(swf.exporters.animate)
 class BambaAssets {
@@ -95,7 +95,7 @@ class BambaAssets {
 
 	public static var questBox:QuestBox;
 
-	public static var msgBox:general_assets.MsgBox;
+	public static var msgBox:general.MsgBox;
 
 	public static var skipButton:SkipButton;
 
@@ -200,7 +200,7 @@ class BambaAssets {
 	}
 
 	function define_msgBox():Void  {
-		msgBox = new MsgBox();
+		msgBox = new general.MsgBox();
 		//msgBox = new MsgBox();
 		/* msgBox = param1;
 		msgBox = cast(param1, MsgBox); */

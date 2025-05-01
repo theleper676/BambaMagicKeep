@@ -1,4 +1,4 @@
-package opening_screen;
+package ;
 
 @:access(swf.exporters.animate)
 
@@ -7,13 +7,13 @@ class LoginMC extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.
 	@:keep @:noCompletion @:dox(hide) public var userIT(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var passIT(default, null):openfl.text.TextField;
 	@:keep @:noCompletion @:dox(hide) public var errorDT(default, null):openfl.text.TextField;
-	@:keep @:noCompletion @:dox(hide) public var forgetPassMC(default, null): Forget_pass_btn_4;
-	@:keep @:noCompletion @:dox(hide) public var backMC(default, null): Back_btn_7;
+	@:keep @:noCompletion @:dox(hide) public var forgetPassMC(default, null):openingAssets_fla.Forget_pass_btn_4;
+	@:keep @:noCompletion @:dox(hide) public var backMC(default, null):openingAssets_fla.Back_btn_7;
 	
 
 	public function new()
 	{
-		var library = swf.exporters.animate.AnimateLibrary.get("jTVIao1d2wKanvG6a3e1");
+		var library = swf.exporters.animate.AnimateLibrary.get("uOEBAPPOKEcvSyhH7DIX");
 		var symbol = library.symbols.get(33);
 		symbol.__init(library);
 

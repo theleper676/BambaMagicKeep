@@ -2,6 +2,7 @@ package;
 
 import openfl.display.*;
 import openfl.events.KeyboardEvent;
+import opening_assets.OpeningScreen;
 import openfl.events.MouseEvent;
 import openfl.net.SharedObject;
 import openfl.ui.Keyboard;

@@ -13,7 +13,7 @@ class OpeningScreen extends #if flash flash.display.MovieClip.MovieClip2 #else o
 
 	public function new()
 	{
-		var library = swf.exporters.animate.AnimateLibrary.get("jTVIao1d2wKanvG6a3e1");
+		var library = swf.exporters.animate.AnimateLibrary.get("uOEBAPPOKEcvSyhH7DIX");
 		var symbol = library.symbols.get(71);
 		symbol.__init(library);
 
