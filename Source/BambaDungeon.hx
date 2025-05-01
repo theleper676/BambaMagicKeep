@@ -1,5 +1,6 @@
 package;
 
+import dungeon_map.DungeonMap;
 import dungeon_graphics.PossibleMove;
 import dungeon_graphics.DungeonMain;
 import fight_graphics.FightScreen;
@@ -90,7 +91,7 @@ class BambaDungeon extends DisplayObject {
 		this.dungeonId = dungeonId;
 		dungeonDifficulty = Std.int(param4 - 1);
 		dungeonData = game.gameData.getCatalogDungeonData(dungeonId);
-		dungeonMapMC = BambaAssets.dungeonMap();
+		dungeonMapMC = new DungeonMap();
 		MC.mapMC.addChild(dungeonMapMC);
 		dungeonMC = MC.mapMC.getChildAt(MC.mapMC.numChildren - 1);
 		enemyId = param5;

@@ -433,9 +433,9 @@ class BambaAssets {
 	 * @param instanceClass  
 	 */
 	public function defineAsset<T>(instance:String):Void {
-		var functionName:String = "define_" + instance;
-		var method = Reflect.field(this, functionName);
-
+		/* var functionName:String = "define_" + instance;
+		var method = Reflect.field(this, functionName); */
+/* 
 		try {
 			if(method != null && Reflect.isFunction(method)) {
 				Reflect.callMethod(this,method, []);
@@ -443,7 +443,7 @@ class BambaAssets {
 			}
 		} catch(error) {
 			trace("function define error" + error);
-		}
+		} */
 	}
 
 	function define_questIcon():Void  {

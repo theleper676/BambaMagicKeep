@@ -123,21 +123,21 @@ class BambaLoader extends EventDispatcher {
 			currAsset = assets[assetsIndex];
 			var _currAssetSwf = currAsset[0];
 			var _assetPath = Assets.getPath(_currAssetSwf);
-			trace("loading assets of " + _currAssetSwf);
 			Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);
 			AnimateLibrary.loadFromFile(_assetPath)
 			.onProgress((bytesLoaded, bytesTotal) -> {
+				trace("loading" + bytesLoaded + "out of " + bytesTotal);
 				loadAssetsProgress(bytesLoaded, bytesTotal);
 			})
 			.onError((error) -> {
 				showIOError(error);
 			})
 			.onComplete((library) -> {
-				trace(library);
 				loadAssetsComplete();
 			});
 		} else {
 			loadSoundsData();
+			//loadSoundsData();
 		}
 		/* var tempCurrAssetString:Null<Dynamic>;
 		var loader:Loader;
@@ -292,7 +292,6 @@ class BambaLoader extends EventDispatcher {
 	}
 
 	function loadAssetsComplete():Void {
-		trace("loading asset complete");
 		++loadingCounter;
 		currBytes += Std.parseFloat(fileSizes[msgCounter]);
 		setLoaderGraphics(currBytes / totalBytes);
@@ -303,30 +302,6 @@ class BambaLoader extends EventDispatcher {
 		}
 		++assetsIndex;
 		loadAssets();
-		/* var _assetToDefine = currAsset[_assetCounter];
-		trace(_assetToDefine); */
-		/* while (_assetCounter < currAsset.length) {
-			var _assetToDefine = currAsset[_assetCounter];
-			trace(_assetToDefine);
-			game.gameAssets.defineAsset(_assetToDefine, BambaMain);
-			_assetCounter++;
-		}
-		++assetsIndex;
-		loadAssets(); */
-		/* var _loc2_:Null<Dynamic> = null;
-		var _loc3_:Null<Dynamic> = null;
-		++loadingCounter;
-		currBytes += Std.parseFloat(fileSizes[msgCounter]);
-		setLoaderGraphics(currBytes / totalBytes);
-		++msgCounter;
-		_loc2_ = 1;
-		while (_loc2_ < currAsset.length) {
-			_loc3_ = currAsset[_loc2_];
-			game.gameAssets.defineAsset(_loc3_, BambaMain);
-			_loc2_++;
-		}
-		++assetsIndex; */
-		//loadAssets();
 	}
 
 	function loadParamsComplete(paramXml:Xml):Void {
@@ -589,16 +564,17 @@ class BambaLoader extends EventDispatcher {
 	}
 
 	function loadSoundsData():Void {
-		var _loc1_:URLRequest = null;
-		var _loc2_:URLLoader = null;
+		/* var _loc1_:URLRequest = null;
+		var _loc2_:URLLoader = null; */
 		currFunctionName = "loadSoundsData";
 		++loadingCounter;
 		Heb.setText(game.opening.mc.loadingBarMC.loaderDT, loadingMsgs[msgCounter]);
-		_loc1_ = new URLRequest(xmlPath + "/" + soundsFileName);
+		/* _loc1_ = new URLRequest(xmlPath + "/" + soundsFileName);
 		_loc2_ = new URLLoader();
 		_loc2_.addEventListener(Event.COMPLETE, loadSoundsDataComplete);
 		currLoader = _loc2_;
-		_loc2_.load(_loc1_);
+		_loc2_.load(_loc1_); */
+		loadSoundsDataComplete();
 	}
 
 	
@@ -772,12 +748,12 @@ class BambaLoader extends EventDispatcher {
 		loadGeneralDataComplete();
 	}
 
-	function loadSoundsDataComplete(param1:Event):Void {
-		var _loc2_:Xml = null;
+	function loadSoundsDataComplete():Void {
+		//var _loc2_:Xml = null;
 		++loadingCounter;
 		++msgCounter;
-		_loc2_ = Xml.parse(param1.target.data);
-		game.sound.loadSoundsStart(_loc2_);
+		/* _loc2_ = Xml.parse(param1.target.data);
+		game.sound.loadSoundsStart(_loc2_); */
 		loadFinished();
 	}
 

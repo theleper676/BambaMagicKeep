@@ -12,7 +12,6 @@ class MsgBox extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.d
 	public function new()
 	{
 		var library = swf.exporters.animate.AnimateLibrary.get("f2suLAQTJ2VYvrLpu6D7");
-		trace("the library", library);
 		var symbol = library.symbols.get(115);
 		symbol.__init(library);
 
