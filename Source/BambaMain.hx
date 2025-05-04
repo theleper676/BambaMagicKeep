@@ -1,5 +1,6 @@
 package;
 
+import opening_assets.BambaOpeningScreen;
 import haxe.ui.Toolkit;
 import dungeon_graphics.DungeonMain;
 import general_assets.GeneralFrame;

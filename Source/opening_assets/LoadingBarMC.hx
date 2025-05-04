@@ -12,7 +12,7 @@ class LoadingBarMC extends #if flash flash.display.MovieClip.MovieClip2 #else op
 
 	public function new()
 	{
-		var library = swf.exporters.animate.AnimateLibrary.get("uOEBAPPOKEcvSyhH7DIX");
+		var library = swf.exporters.animate.AnimateLibrary.get("kpEpsRs04x0FUUF3irW9");
 		var symbol = library.symbols.get(49);
 		symbol.__init(library);
 

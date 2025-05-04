@@ -1,4 +1,4 @@
-/*  package;
+package;
 
 import openfl.utils.Assets;
 import swf.exporters.animate.AnimateLibrary;
@@ -24,4 +24,3 @@ class Main extends Sprite
         });
 	}
 }
- */
