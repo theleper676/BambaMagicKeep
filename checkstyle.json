@@ -1,0 +1,36 @@
+{
+    "defaultSeverity": "INFO",
+    "checks": [
+      {
+        "type": "IndentationCharacter",
+        "props": {
+          "severity": "ERROR",
+          "character": "tab"
+        }
+      },
+      {
+        "type": "LineLength",
+        "props": {
+          "severity": "WARNING",
+          "max": 100
+        }
+      },
+      {
+        "type": "MethodLength",
+        "props": {
+          "severity": "WARNING",
+          "max": 50
+        }
+      },
+      {
+        "type": "CyclomaticComplexity",
+        "props": {
+          "severity": "WARNING",
+          "thresholds": [
+            { "severity": "WARNING", "complexity": 10 },
+            { "severity": "ERROR", "complexity": 20 }
+          ]
+        }
+      }
+    ]
+  }

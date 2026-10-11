@@ -1,0 +1,10 @@
+Export/
+Assets/fla/
+dist/
+captures/
+*.log
+.idea/
+.claude/
+.DS_Store
+._*
+Thumbs.db

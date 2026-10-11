@@ -1,0 +1,17 @@
+package fight_graphics;
+
+@:access(swf.exporters.animate)
+
+class Allpoints_yellow_24 extends #if flash flash.display.MovieClip.MovieClip2 #else openfl.display.MovieClip #end
+{
+	
+
+	public function new()
+	{
+		var library = swf.exporters.animate.AnimateLibrary.get("BusqAnD3ocfdm6w9UTmT");
+		var symbol = library.symbols.get(79);
+		symbol.__init(library);
+
+		super();
+	}
+}

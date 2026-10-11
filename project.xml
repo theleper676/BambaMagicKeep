@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="BambaMagicKeep" package="com.sample.bambamagickeep" version="1.0.0" company="Company Name" />
+	<app main="BambaMain" path="Export" file="BambaMagicKeep" />
+
+	<!-- Game icon: lime auto-generates .ico (Windows), .icns (Mac) and the Switch NRO's
+	     icon from this one PNG, by resampling to each platform's size set. Square source
+	     with transparent background is best. -->
+	<icon path="icon.png" />
+	
+	<!-- 1041x720 is the authored 940x650 stage scaled up at its exact aspect ratio, so the game
+	     fills the window edge to edge at that size; any other size rescales it and centres it
+	     (BambaMain.fitToStage). -->
+	<!-- allow-high-dpi: lime's mac target forces this off by default, which renders at window-point
+	     resolution and lets the OS upscale the result. On, OpenFL rasterises vectors and text at the
+	     real device resolution (Graphics.__update takes its scale from the display matrix). This is
+	     a no-op on a non-HiDPI monitor - window.scale is 1 - and a clear win on a Retina one.
+	     Bitmap filtering is a separate matter, handled by utils.BitmapSmoothing. -->
+	<window width="1041" height="720" resizable="true" background="#000000" allow-high-dpi="true" unless="switch"/>
+	<!-- Frame rate: vsync paces it to the monitor (60, 144, 240 Hz...); fps is only the ceiling.
+	     Timeline art still steps at its authored 12-30 fps; time-based motion (tweens, the tower
+	     scroll in BambaTower) gets smoother. -->
+	<window fps="240" vsync="true" />
+	<!-- Desktop builds start fullscreen at the monitor's resolution; fitToStage scales the game to
+	     it. F11 toggles back to a window (BambaMain.onStageKeyDown). Disabled for now - uncomment
+	     to start fullscreen again.
+	<window fullscreen="true" if="desktop" unless="switch" /> -->
+
+	<!-- Nintendo Switch homebrew, via the lime-nx fork (https://github.com/Slushi-Github/lime-nx).
+	     Target name is "switch", built with `haxelib run lime build switch`; requires that fork's
+	     lime/hxcpp haxelibs installed locally, which this project does not set up on its own. -->
+	<haxedef name="lime-opengl" if="switch" />
+	<haxedef name="lime-cairo" value="false" if="switch" />
+	<set name="LIME_CAIRO" value="0" if="switch" />
+	<set name="LIME_OPENGL" value="1" if="switch" />
+	<window if="switch" orientation="landscape" fullscreen="true" width="0" height="0" resizable="false" hardware="true" />
+
+	<source path="Source" />
+	<haxelib name="openfl" />
+	<haxelib name="actuate" />
+	<haxelib name="swf" />
+	<haxelib name="format" />
+	<haxelib name="haxeui-core" />
+	<haxelib name="haxeui-openfl" />
+	<assets path="Assets" rename="assets" exclude="*.mp3" /> <!-- mp3 kept as source only: lime cannot decode mp3 on native targets, the game loads the .ogg copies -->
+	<assets path="Assets/splash.png" rename="assets/splash.png" preload="true" /> <!-- Studio splash: preloaded so utils.StudioIntro can show it before BambaLoader starts. -->
+	<assets path="assets/intro/IntroBamba.zip" embed="false" id="IntroBamba" /> <!-- converted from IntroBamba.swf via `haxelib run swf generate`: OpenFL has no runtime SWF parser on native -->
+	<assets path="assets/swf/OpeningAssets.swf" preload="true" generate="true"  />
+	<assets path="assets/openingAssets/openingAssets.zip" preload="true" id="openingAssets"/> 
+	<assets path="assets/game_assets/general.zip" generate="true" id="general.swf"/>
+	<assets path="assets/game_assets/newPlayer.zip" generate="true" id="newPlayer.swf"/>
+	<assets path="assets/game_assets/towerScreens_mod.zip" generate="true" id="towerScreens.swf"/>
+	<assets path="assets/game_assets/menu.zip" generate="true" id="menu.swf"/>
+	<assets path="assets/game_assets/cards.zip" generate="true" id="cards.swf"/>
+	<assets path="assets/game_assets/items.zip" generate="true" id="items.swf"/>
+	<assets path="assets/game_assets/mapGraphics.zip" generate="true" id="mapGraphics.swf"/>
+	<assets path="assets/game_assets/baby.zip" generate="true" id="baby.swf"/>
+	<assets path="assets/game_assets/fightGraphics.zip" generate="true" id="fightGraphics.swf"/>
+	<assets path="assets/game_assets/dungeonGraphics.zip" generate="true" id="dungeonGraphics.swf"/>
+	<assets path="assets/game_assets/help.zip" generate="true" id="help.swf"/>
+	<!-- Per-dungeon and per-enemy art, loaded on demand by BambaLoader.loadArtLibrary under the
+	     file names in dungeonsData.json / enemies.json. dungeon4 came with the project; the rest
+	     are from the Flashpoint copy of the game, converted with `haxelib run swf process`
+	     (not generate: every dungeon exports the same class names, as does every enemy). -->
+	<assets path="assets/game_assets/dungeon2.zip" id="dungeon2.swf"/>
+	<assets path="assets/game_assets/dungeon3.zip" id="dungeon3.swf"/>
+	<assets path="assets/game_assets/dungeon4.zip" id="dungeon4.swf"/>
+	<assets path="assets/game_assets/dungeon5.zip" id="dungeon5.swf"/>
+	<assets path="assets/game_assets/dungeon6.zip" id="dungeon6.swf"/>
+	<assets path="assets/game_assets/dungeon7.zip" id="dungeon7.swf"/>
+	<assets path="assets/game_assets/dungeon8.zip" id="dungeon8.swf"/>
+	<assets path="assets/game_assets/dungeon9.zip" id="dungeon9.swf"/>
+	<assets path="assets/game_assets/dungeon10.zip" id="dungeon10.swf"/>
+	<assets path="assets/game_assets/dungeon11.zip" id="dungeon11.swf"/>
+	<assets path="assets/game_assets/enemy1.zip" id="enemy1.swf"/>
+	<assets path="assets/game_assets/enemy2.zip" id="enemy2.swf"/>
+	<assets path="assets/game_assets/enemy3.zip" id="enemy3.swf"/>
+	<assets path="assets/game_assets/enemy4.zip" id="enemy4.swf"/>
+	<assets path="assets/game_assets/enemy5.zip" id="enemy5.swf"/>
+	<assets path="assets/game_assets/enemy6.zip" id="enemy6.swf"/>
+	<assets path="assets/game_assets/enemy7.zip" id="enemy7.swf"/>
+	<assets path="assets/game_assets/enemy8.zip" id="enemy8.swf"/>
+	<assets path="assets/game_assets/enemy9.zip" id="enemy9.swf"/>
+	<assets path="assets/game_assets/enemy10.zip" id="enemy10.swf"/>
+	<assets path="assets/game_assets/enemy11.zip" id="enemy11.swf"/>
+	<assets path="assets/game_assets/enemy12.zip" id="enemy12.swf"/>
+	<assets path="assets/game_assets/enemy13.zip" id="enemy13.swf"/>
+	<assets path="assets/game_assets/enemy14.zip" id="enemy14.swf"/>
+	<assets path="assets/game_assets/enemy15.zip" id="enemy15.swf"/>
+	<assets path="assets/game_assets/enemy16.zip" id="enemy16.swf"/>
+	<assets path="assets/game_assets/enemy17.zip" id="enemy17.swf"/>
+	<assets path="assets/game_assets/enemy18.zip" id="enemy18.swf"/>
+	<assets path="assets/game_assets/enemy19.zip" id="enemy19.swf"/>
+	<assets path="assets/game_assets/enemy20.zip" id="enemy20.swf"/>
+	<assets path="assets/xmls/params.xml" embed="false" id="params" />
+	<assets path="assets/xmls/dictionary.xml" embed="false" id="dictionary" />
+	<assets path="assets/xmls/generalData.xml" embed="false" id="generalData" />
+	<assets path="assets/xmls/cards.xml" embed="false" id="cards" />
+	<assets path="assets/xmls/enemies.xml" embed="false" id="suprises" /> <!-- This is not a fluke I dont know WTF is wrong with the XML-->
+	<assets path="assets/xmls/enemies.xml" embed="false" id="enemies" />
+	<assets path="assets/xmls/dungeonsData.xml" embed="false" id="dungeonsData" />
+	<assets path="assets/xmls/help.xml" embed="false" id="help" />
+	<assets path="assets/xmls/quests.xml" embed="false" id="quests" />
+	<assets path="assets/xmls/enemiesLevels.xml" embed="false" id="enemiesLevel" />
+	<assets path="assets/xmls/itemsBase.xml" embed="false" id="items" />
+	<assets path="assets/xmls/storeItems.xml" embed="false" id="storeItems" />
+	<assets path="assets/xmls/items.xml" embed="false" id="itemsBase" />
+	<assets path="assets/xmls/prizes.xml" embed="false" id="prizes" />
+	<assets path="assets/xmls/enemiesLevels.xml" embed="false" id="enemiesLevels" />
+	<assets path="assets/json/generalData.json" embed="false" id="generalDataJson" />
+	<assets path="assets/xmls/playerLevels.xml" embed="false" id="playerLevels" />
+	<assets path="assets/xmls/magicBook.xml" embed="false" id="magicBook" />
+	<assets path="assets/json/magicBook.json" embed="false" id="magicBookJson" />
+	<assets path="assets/fonts/Arial.ttf" id="Arial" embed="true" />
+	<!-- "Arial Bold": 21 tower-screen fields ask for it by name. This is Windows' arialbd.ttf with
+	     its family renamed to "Arial Bold" by tools/rename_font_family.py: lime registers a font
+	     under its family name, and the stock file's family is "Arial", which would replace the
+	     regular face and turn every Arial field bold. -->
+	<assets path="assets/fonts/Arial_Bold.ttf" id="Arial Bold" embed="true" />
+	<assets path="assets/fonts/Choco.ttf" id="Choco" embed="true" />
+	<assets path="assets/fonts/Choco_Bold.ttf" id="Choco Bold" embed="true" />
+	<assets path="assets/fonts/Footlight_MT_Light.ttf" id="Footlight MT Light" embed="true" />
+	<!-- Petel (Meir Sadan, oketz.com - free Hebrew font, see Assets/fonts/Petel-license.txt).
+	     The regular weight only: nothing in the libraries asks for "Petel Bold". Its internal
+	     family name is already "Petel", which is what the SWFs request, so utils.FontBinder
+	     matches it exactly - the id below plays no part in that. -->
+	<assets path="assets/fonts/Petel.ttf" id="Petel" embed="true" />
+</project>
