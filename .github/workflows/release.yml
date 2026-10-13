@@ -45,6 +45,7 @@ jobs:
         shell: pwsh
         run: |
           haxelib setup ~/haxelib
+          haxelib install hxcpp --quiet --always
           haxelib install lime --quiet --always
           haxelib install openfl --quiet --always
           haxelib install actuate --quiet --always
