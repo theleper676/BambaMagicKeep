@@ -1,4 +1,4 @@
-name: Build Windows Installer
+name: Build Installers
 
 on:
   push:
@@ -10,24 +10,32 @@ on:
         required: true
         default: '1.0.0'
 
-jobs:
-  build:
-    runs-on: windows-latest
+# Needed so softprops/action-gh-release can create the release and upload artifacts.
+permissions:
+  contents: write
 
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      v: ${{ steps.ver.outputs.v }}
+    steps:
+      - id: ver
+        shell: bash
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            v="${GITHUB_REF#refs/tags/v}"
+          else
+            v="${{ github.event.inputs.version }}"
+          fi
+          echo "v=$v" >> "$GITHUB_OUTPUT"
+          echo "Building version $v"
+
+  build-windows:
+    needs: version
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Resolve version
-        id: ver
-        shell: pwsh
-        run: |
-          if ($env:GITHUB_REF -like 'refs/tags/v*') {
-            $v = $env:GITHUB_REF -replace '^refs/tags/v',''
-          } else {
-            $v = '${{ github.event.inputs.version }}'
-          }
-          "version=$v" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
-          Write-Host "Building version $v"
 
       - name: Setup Haxe
         uses: krdlab/setup-haxe@v1
@@ -58,7 +66,7 @@ jobs:
       - name: Patch version in project.xml
         shell: pwsh
         run: |
-          $v = '${{ steps.ver.outputs.version }}'
+          $v = '${{ needs.version.outputs.v }}'
           (Get-Content project.xml) -replace 'version="[^"]*"', "version=""$v""" | Set-Content project.xml -Encoding utf8
 
       - name: Build Windows release
@@ -68,20 +76,88 @@ jobs:
       - name: Build installer
         shell: pwsh
         run: |
-          $v = '${{ steps.ver.outputs.version }}'
+          $v = '${{ needs.version.outputs.v }}'
           # Inno Setup 6 ships preinstalled on windows-latest runners.
           # /DMyAppVersion overrides the #define in the .iss so one source of truth is the git tag.
           iscc "/DMyAppVersion=$v" installer\BambaMagicKeep.iss
 
-      - name: Upload installer artifact
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
-          name: BambaMagicKeepSetup-${{ steps.ver.outputs.version }}
+          name: windows-installer
           path: installer/Output/*.exe
 
-      - name: Create GitHub release
-        if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v2
+  build-macos:
+    needs: version
+    # macos-latest is arm64 (Apple Silicon). The build is unsigned — users will need
+    # right-click → Open the first time, or `xattr -dr com.apple.quarantine` on the .app.
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@v1
         with:
-          files: installer/Output/*.exe
+          haxe-version: 4.3.6
+
+      - name: Cache haxelib
+        uses: actions/cache@v4
+        with:
+          path: ~/haxelib
+          key: haxelib-${{ runner.os }}-${{ hashFiles('project.xml') }}
+          restore-keys: haxelib-${{ runner.os }}-
+
+      - name: Install haxelibs
+        shell: bash
+        run: |
+          mkdir -p ~/haxelib
+          haxelib setup ~/haxelib
+          haxelib install hxcpp --quiet --always
+          haxelib install lime --quiet --always
+          haxelib install openfl --quiet --always
+          haxelib install actuate --quiet --always
+          haxelib install swf --quiet --always
+          haxelib install format --quiet --always
+          haxelib install haxeui-core --quiet --always
+          haxelib install haxeui-openfl --quiet --always
+          haxelib run lime setup -alias -y
+
+      - name: Patch version in project.xml
+        shell: bash
+        run: |
+          v='${{ needs.version.outputs.v }}'
+          # BSD sed on macOS: -i needs an explicit (empty) backup extension
+          sed -i '' -E "s/version=\"[^\"]*\"/version=\"$v\"/" project.xml
+
+      - name: Build macOS release
+        run: haxelib run lime build macos -release
+
+      - name: Package DMG
+        shell: bash
+        run: |
+          v='${{ needs.version.outputs.v }}'
+          hdiutil create \
+            -volname "BambaMagicKeep" \
+            -srcfolder Export/macos/bin/BambaMagicKeep.app \
+            -ov -format UDZO \
+            "BambaMagicKeep-$v.dmg"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: macos-dmg
+          path: BambaMagicKeep-*.dmg
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [build-windows, build-macos]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            artifacts/windows-installer/*.exe
+            artifacts/macos-dmg/*.dmg
           generate_release_notes: true
