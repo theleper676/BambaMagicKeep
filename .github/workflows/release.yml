@@ -1,0 +1,86 @@
+name: Build Windows Installer
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version (without leading v)'
+        required: true
+        default: '1.0.0'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve version
+        id: ver
+        shell: pwsh
+        run: |
+          if ($env:GITHUB_REF -like 'refs/tags/v*') {
+            $v = $env:GITHUB_REF -replace '^refs/tags/v',''
+          } else {
+            $v = '${{ github.event.inputs.version }}'
+          }
+          "version=$v" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          Write-Host "Building version $v"
+
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@v1
+        with:
+          haxe-version: 4.3.6
+
+      - name: Cache haxelib
+        uses: actions/cache@v4
+        with:
+          path: ~/haxelib
+          key: haxelib-${{ runner.os }}-${{ hashFiles('project.xml') }}
+          restore-keys: haxelib-${{ runner.os }}-
+
+      - name: Install haxelibs
+        shell: pwsh
+        run: |
+          haxelib setup ~/haxelib
+          haxelib install lime --quiet --always
+          haxelib install openfl --quiet --always
+          haxelib install actuate --quiet --always
+          haxelib install swf --quiet --always
+          haxelib install format --quiet --always
+          haxelib install haxeui-core --quiet --always
+          haxelib install haxeui-openfl --quiet --always
+          haxelib run lime setup -alias -y
+
+      - name: Patch version in project.xml
+        shell: pwsh
+        run: |
+          $v = '${{ steps.ver.outputs.version }}'
+          (Get-Content project.xml) -replace 'version="[^"]*"', "version=""$v""" | Set-Content project.xml -Encoding utf8
+
+      - name: Build Windows release
+        shell: pwsh
+        run: haxelib run lime build windows -release
+
+      - name: Build installer
+        shell: pwsh
+        run: |
+          $v = '${{ steps.ver.outputs.version }}'
+          # Inno Setup 6 ships preinstalled on windows-latest runners.
+          # /DMyAppVersion overrides the #define in the .iss so one source of truth is the git tag.
+          iscc "/DMyAppVersion=$v" installer\BambaMagicKeep.iss
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: BambaMagicKeepSetup-${{ steps.ver.outputs.version }}
+          path: installer/Output/*.exe
+
+      - name: Create GitHub release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: installer/Output/*.exe
+          generate_release_notes: true
